@@ -1,0 +1,119 @@
+﻿#Region "NameSpaces "
+Imports MaxGeneric
+Imports System.Data
+Imports HTS.SAS.BusinessObjects
+Imports HTS.SAS.Entities
+#End Region
+Partial Class WorkFlowStudentAccountView
+    Inherits System.Web.UI.Page
+#Region "Global Declarations "
+    Private _WorkflowDAL As New HTS.SAS.DataAccessObjects.WorkflowDAL
+    Private _Helper As New Helper
+#End Region
+
+#Region "Page_Load "
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Try
+
+            If Not Page.IsPostBack Then
+
+                DirectCast(Master.FindControl("Panel1"), System.Web.UI.WebControls.Panel).Visible = False
+                DirectCast(Master.FindControl("td"), System.Web.UI.HtmlControls.HtmlTableCell).Visible = False
+
+                'Call Bind Grid
+                Call BindGrid()
+
+                'While loading the page make the CFlag as null
+                Session("PageMode") = ""
+                'Loading User Rights
+                ' LoadUserRights()
+
+                'while loading list object make it nothing
+                'Session("ListObj") = Nothing
+                ' DisableRecordNavigator()
+                'load PageName
+                '  Menuname(CInt(Request.QueryString("Menuid")))
+            End If
+
+        Catch ex As Exception
+
+            Call MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+#End Region
+
+#Region "Bind Grid "
+
+    Private Sub BindGrid()
+
+        'Create Instances
+        Dim WorkFlowAccountDetails As DataSet = Nothing
+        'varaible declearation
+        Dim TransID As Integer = Nothing
+        Dim StudentCount As Integer = 0
+        Dim BatchAmount As Decimal = 0
+
+        Try
+
+            TransID = MaxGeneric.clsGeneric.NullToInteger(Session(Helper.TransIDSession))
+            'TransID = MaxGeneric.clsGeneric.NullToInteger(Request.QueryString("TransID"))
+
+            'get WorkFlowAccount Details
+            WorkFlowAccountDetails = _WorkflowDAL.WorkFlowSASAcountStudentDetails(TransID)
+
+            'if data available - Start
+            If WorkFlowAccountDetails.Tables(0).Rows.Count = 0 Then
+                lblMsg.Text = "No Records"
+            Else
+
+                'enable labels
+                lblCount.Visible = True
+                lblstucount.Visible = True
+                lblAmount.Visible = True
+                lblbatch.Visible = True
+
+                StudentCount = WorkFlowAccountDetails.Tables(0).Rows.Count
+                BatchAmount = WorkFlowAccountDetails.Tables(0).Compute("SUM(transamount)", "")
+
+                'asssing values
+                lblstucount.Text = StudentCount
+
+                lblbatch.Text = _Helper.DecimalFormat(BatchAmount)
+
+            End If
+            'if data available - Ended
+
+            If WorkFlowAccountDetails.Tables(0).Rows.Count = 0 Then
+                'Bind Data grid - Start
+                dgWorkFlowStudentAccount.DataSource = WorkFlowAccountDetails
+                dgWorkFlowStudentAccount.DataBind()
+                'Bind Data grid - Stop
+            End If
+        Catch ex As Exception
+
+            MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Pagination Grid "
+    Protected Sub dgWorkFlowStudentAccount_PageIndexChanged(source As Object, e As DataGridPageChangedEventArgs) Handles dgWorkFlowStudentAccount.PageIndexChanged
+
+        'Grid Index - Start
+        dgWorkFlowStudentAccount.CurrentPageIndex = e.NewPageIndex
+        dgWorkFlowStudentAccount.DataBind()
+
+        'Bind Data grid - Start
+        Call BindGrid()
+        'Bind Data grid - Stop
+
+    End Sub
+#End Region
+End Class

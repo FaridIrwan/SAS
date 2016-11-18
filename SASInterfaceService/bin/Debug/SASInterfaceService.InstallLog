@@ -1,0 +1,1579 @@
+﻿Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV225112008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Projects\SAS\SASV208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Warning: The source SASInterface is not registered on the local machine.
+Service SASInterface is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Attempt to stop service SASInterface.
+Installing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = D:\Developments\SAS\SASV2208012009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Creating EventLog source SASInterface in log Application...
+Rolling back assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Restoring event log to previous state for source SASInterface.
+Installing assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Rolling back assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Uninstalling assembly 'E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   logfile = E:\SASV2VS2008\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Removing EventLog source SASInterface.
+Service SASInterface is being removed from the system...
+Service SASInterface was successfully removed from the system.
+Installing assembly 'C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   i = 
+   logfile = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   i = 
+   logfile = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing assembly 'C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   i = 
+   logfile = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog
+Installing service SASInterface...
+Service SASInterface has been successfully installed.
+Creating EventLog source SASInterface in log Application...
+Committing assembly 'C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe
+   i = 
+   logfile = C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog

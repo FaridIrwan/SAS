@@ -1,0 +1,123 @@
+diff --git a/addSpnRecpts.aspx b/addSpnRecpts.aspx
+--- a/addSpnRecpts.aspx
++++ b/addSpnRecpts.aspx
+@@ -45,9 +45,7 @@
+                 </td>
+             </tr>
+         </table>
+-        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="500px">
+-            <hr /><table style="width: 100%">
+-                <tr>
+-                    <td colspan="1" style="width: 503px">
+-                    </td>
++        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="611px">
++            <hr /><table style="width: 82%">
++                <tr>                    
+                     <td colspan="2" style="width: 153px">
+@@ -53,5 +51,5 @@
+                     <td colspan="2" style="width: 153px">
+-                        <div style="overflow: auto; width: 500px; height: 150px">
++                        <div style="overflow: auto; width: 569px; height: 150px">
+                             <asp:DataGrid ID="dgView" runat="server" AutoGenerateColumns="False" DataKeyField="TransactionCode"
+                                 Width="100%">
+                                 <FooterStyle CssClass="dgFooterStyle" Height="20px" />
+@@ -60,7 +58,7 @@
+                                     Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                                 <ItemStyle CssClass="dgItemStyle" />
+                                 <HeaderStyle BackColor="#CDD7EE" CssClass="dgHeaderStyle" Font-Bold="True" Font-Italic="False"
+-                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" />
++                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" />
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
+@@ -64,5 +62,6 @@
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
++                                    <asp:BoundColumn DataField="BatchCode" HeaderText="Sponsor Invoice"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+@@ -67,8 +66,8 @@
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+@@ -72,9 +71,7 @@
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+-                    </td>
+-                    <td colspan="1" style="width: 4192px">
+-                    </td>
++                    </td>                    
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+@@ -78,21 +75,25 @@
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+-                <tr><hr />
+-                    <td style="width: 8px; height: 30px; text-align: right">
+-                        <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif"
+-                            Width="28px" /></td>
+-                    <td style="width: 49px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label></td>
+-                    <td style="width: 34px; height: 30px; text-align: left">
+-                        <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg"
+-                            Width="28px" /></td>
+-                    <td style="width: 158px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label></td>
+-                    <td style="width: 142px; height: 30px; text-align: left">
+-                    </td>
+-                    <td style="width: 100px; height: 30px; text-align: left">
+-                    </td>
++                <caption>
++                    <hr />
++                    <tr>
++                        <td style="width: 8px; height: 30px; text-align: right">
++                            <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif" Width="28px" />
++                        </td>
++                        <td style="width: 49px; height: 30px; text-align: left">
++                            <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 34px; height: 30px; text-align: left">
++                            <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg" Width="28px" />
++                        </td>
++                        <td style="width: 158px; height: 30px; text-align: left">
++                            <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 142px; height: 30px; text-align: left"></td>
++                        <td style="width: 100px; height: 30px; text-align: left"></td>
++                    </tr>
++                </caption>
+                 </tr>
+             </table>
+         </asp:Panel>
+diff --git a/addSpnRecpts.aspx.vb b/addSpnRecpts.aspx.vb
+--- a/addSpnRecpts.aspx.vb
++++ b/addSpnRecpts.aspx.vb
+@@ -42,11 +42,11 @@
+         If dgView.SelectedIndex <> -1 Then
+             Dim eobj As New SponsorEn
+             eobj.TransactionCode = dgView.DataKeys(dgView.SelectedIndex)
+-            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(1).Text
+-            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(2).Text
+-            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(4).Text
+-            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
+-            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(2).Text
++            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(3).Text
++            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
++            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(7).Text
+             dgView.SelectedIndex = -1
+             Session("spnobj") = eobj
+         End If

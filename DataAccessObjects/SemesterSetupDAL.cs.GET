@@ -1,0 +1,807 @@
+#region NameSpaces 
+
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.Common;
+using HTS.SAS.Entities;
+using MaxGeneric;
+
+#endregion
+
+namespace HTS.SAS.DataAccessObjects
+{
+    /// <summary>
+    /// Class to handle all the SemesterSetup Methods.
+    /// </summary>
+    public class SemesterSetupDAL
+    {
+        #region Global Declarations 
+
+        private MaxModule.DatabaseProvider _DatabaseFactory =
+            new MaxModule.DatabaseProvider();
+
+        private string DataBaseConnectionString = Helper.
+           GetConnectionString();
+
+        #endregion
+
+        public SemesterSetupDAL()
+        {
+        }
+
+        #region Get Session List 
+
+        /// <summary>
+        /// Method to Get List of Semesters
+        /// </summary>
+        /// <param name="argEn">SemisterSetupCode as Input.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetSessionList(string argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SessionList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //build sql statement - Start
+                SqlStatement = "SELECT DISTINCT * FROM SAS_SemesterSetup WHERE SAST_Semester = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn);
+                //build sql statement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                 //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = LoadObject(_IDataReader);
+                        SessionList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SessionList;
+                }
+                //if details available - Stop
+
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get List Semester Current 
+
+        /// <summary>
+        /// Method to Get List of SemesterSetup
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity as an Input.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetListSemesterCur(SemesterSetupEn argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SemesterList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //Build Sqlstatement - Start
+                SqlStatement = "SELECT Distinct SAST_Code From SAS_SemesterSetup ";
+                SqlStatement += " ORDER BY SAST_Code";
+                //Build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+                        _SemesterSetupEn.Semester = GetValue<string>(_IDataReader, "SAST_Code");
+                        SemesterList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SemesterList;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get List 
+
+        /// <summary>
+        /// Method to Get List of SemesterSetup
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity as an Input.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetList(SemesterSetupEn argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SemesterList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //build sql statement - Start
+                SqlStatement = "Select Distinct SAST_Semester From SAS_SemesterSetup ";
+                SqlStatement += " order by SAST_Semester";
+                //build sql statement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+                        _SemesterSetupEn.Semester = GetValue<string>(_IDataReader, "SAST_Semester");
+                        SemesterList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SemesterList;
+                }
+                //if details available - Stop
+
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get List Semester Code 
+
+        /// <summary>
+        /// Method to Get List of SemesterSetup
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity as an Input.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetListSemesterCode(SemesterSetupEn argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SemesterList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //Build Sql Statement - Start
+                SqlStatement = "Select Distinct * From SAS_SemesterSetup ";
+                SqlStatement += " order by SAST_Description, SAST_Code";
+                //Build Sql Statement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = LoadObject(_IDataReader);
+                        SemesterList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SemesterList;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get Semester Setup List 
+
+        /// <summary>
+        /// Method to Get List of Active or Inactive Semesters
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity as an Input.SemesterSetupCode,Description and Status as Input Properties.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetSemesterSetupList(SemesterSetupEn argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SemseterSetupList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //build Sqlstatement - Start
+                argEn.SemisterSetupCode = argEn.SemisterSetupCode.Replace("*", "%");
+                argEn.Description = argEn.Description.Replace("*", "%");
+                SqlStatement = "select distinct * from SAS_SemesterSetup where SAST_Code <> '0'";
+                if (argEn.SemisterSetupCode.Length != 0) SqlStatement = SqlStatement + " and SAST_Code like " + clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                if (argEn.Description.Length != 0) SqlStatement = SqlStatement + " and SAST_Description like " + clsGeneric.AddQuotes(argEn.Description);
+                if (argEn.Status == true) SqlStatement = SqlStatement + " and SAST_Status = true";
+                if (argEn.Status == false) SqlStatement = SqlStatement + " and SAST_Status = false";
+                SqlStatement = SqlStatement + " order by SAST_Code";
+                //build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = LoadObject(_IDataReader);
+                        SemseterSetupList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SemseterSetupList;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get Semester Setup List All 
+
+        /// <summary>
+        /// Method to Get List of All Semesters
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity as an Input.SemesterSetupCode and Description as Input Properties.</param>
+        /// <returns>Returns List of SemesterSetup</returns>
+        public List<SemesterSetupEn> GetSemesterSetupListAll(SemesterSetupEn argEn)
+        {
+            //create instances
+            List<SemesterSetupEn> SemseterSetupList = new List<SemesterSetupEn>();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //build Sqlstatement - Start
+                argEn.SemisterSetupCode = argEn.SemisterSetupCode.Replace("*", "%");
+                argEn.Description = argEn.Description.Replace("*", "%");
+                SqlStatement = "select distinct * from SAS_SemesterSetup where SAST_Code <> '0'";
+                if (argEn.SemisterSetupCode.Length != 0) SqlStatement = SqlStatement + " and SAST_Code like '" + clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                if (argEn.Description.Length != 0) SqlStatement = SqlStatement + " and SAST_Description like '" + clsGeneric.AddQuotes(argEn.Description);
+                SqlStatement = SqlStatement + " order by SAST_Code";
+                //build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        SemesterSetupEn _SemesterSetupEn = LoadObject(_IDataReader);
+                        SemseterSetupList.Add(_SemesterSetupEn);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return SemseterSetupList;
+                }
+                //if details available - Stop
+
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get Item 
+
+        /// <summary>
+        /// Method to Get SemesterSetup Entity
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.Semester and Description as Input Property.</param>
+        /// <returns>Returns SemesterSetup Entity</returns>
+        public SemesterSetupEn GetItem(SemesterSetupEn argEn)
+        {
+            //create instances
+            SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //Build Sqlstatement - Start
+                SqlStatement = "Select * FROM SAS_SemesterSetup WHERE SAST_Semester = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn.Semester) + " AND SAST_Description = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn.Description);
+                //Build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    if (_IDataReader.Read())
+                    {
+                       _SemesterSetupEn = LoadObject(_IDataReader);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return _SemesterSetupEn;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get Session Item 
+
+        /// <summary>
+        /// Method to Get SemesterSetup Entity
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.SAST_Code as Input Property.</param>
+        /// <returns>Returns SemesterSetup Entity</returns>
+        public SemesterSetupEn GetSessionItem(string argEn)
+        {
+            //create instances
+            SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+            
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //Build Sqlstatement - Start
+                SqlStatement = "Select * FROM SAS_SemesterSetup WHERE SAST_Code = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn);
+                //Build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        _SemesterSetupEn = LoadObject(_IDataReader);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return _SemesterSetupEn;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Get Item By Session 
+
+        /// <summary>
+        /// Method to Get SemesterSetup Entity
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.SAST_Code as Input Property.</param>
+        /// <returns>Returns SemesterSetup Entity</returns>
+        public SemesterSetupEn GetItemBySession(SemesterSetupEn argEn)
+        {
+            //create instances
+            SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+
+            //variable declarations
+            string SqlStatement = null;
+
+            try
+            {
+                //Build Sqlstatement - Start
+                SqlStatement = "Select * FROM SAS_SemesterSetup WHERE SAST_Code = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                //Build Sqlstatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    while (_IDataReader.Read())
+                    {
+                        _SemesterSetupEn = LoadObject(_IDataReader);
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    return _SemesterSetupEn;
+                }
+                //if details available - Stop
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Insert 
+
+        /// <summary>
+        /// Method to Insert SemesterSetup 
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Insert(SemesterSetupEn argEn)
+        {
+            //variable declarations - Start
+            bool Result = false; string Boolvalue = "false";
+            string SqlStatement = null; int RecordsSaved = 0;
+            //variable declarations - Stop
+
+            try
+            {
+                //build sqlstatement - Start
+                SqlStatement = "Select SAST_Code From SAS_SemesterSetup WHERE ";
+                SqlStatement += "(SAST_Code = " + clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                SqlStatement += ") OR (SAST_Semester = " + clsGeneric.AddQuotes(argEn.Semester);
+                SqlStatement += " AND SAST_Description = " + clsGeneric.AddQuotes(argEn.Description) + ")";
+                //build sqlstatement - Stop
+
+                 //if no duplicate records - Start
+                if (_DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).Rows.Count == 0)
+                {
+                    if (argEn.Status)
+                    { Boolvalue = "true"; }
+
+                     //Build Sql Columns - Start
+                    SqlStatement = "INSERT INTO SAS_SemesterSetup(SAST_Code,SAST_Semester,SAST_Description,";
+                    SqlStatement += "SAST_Status,SABR_Code,SAST_UpdatedUser,SAST_UpdatedDtTm) VALUES (";
+                    SqlStatement += clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.Semester);
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.Description);
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(Boolvalue);
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.Code.ToString());
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.UpdatedUser);
+                    SqlStatement += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.UpdatedDtTm) + ");";
+                    //Build Sql Columns - Stop
+
+                     //Save Details to Database - Start
+                    RecordsSaved = _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType, 
+                        DataBaseConnectionString, SqlStatement);
+                    //Save Details to Database - Stop
+
+                    //if records saved successfully - Start
+                    if (RecordsSaved > -1)
+                        Result = true;
+                    else
+                        throw new Exception("Insertion Failed! No Row has been updated...");
+                    //if records saved successfully - Stop
+                }
+                //if no duplicate records - Stop
+
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Update 
+
+        /// <summary>
+        /// Method to Update SemesterSetup 
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Update(SemesterSetupEn argEn)
+        {
+            //variable declarations - Start
+            string Boolvalue = "false"; bool Result = false;
+            string SqlStatement = null; int RecordsSaved = 0;
+            //variable declarations - Stop
+
+            try
+            {
+                //Build Sql Statement - Start
+                SqlStatement = "SELECT Sast_Code From SAS_SemesterSetup WHERE ";
+                SqlStatement += " Sast_Code != " + clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                SqlStatement += " AND SAST_Semester = " + clsGeneric.AddQuotes(argEn.Semester);
+                //Build Sql Statement - Stop
+
+                //if no duplicate records - Start
+                if (_DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).Rows.Count == 0)
+                {
+                    if (argEn.Status)
+                    { Boolvalue = "true"; }
+
+                    //Build Update Statement - Start
+                    SqlStatement = "UPDATE SAS_SemesterSetup SET ";
+                    SqlStatement += "SAST_Code = " + clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                    SqlStatement += clsGeneric.AddComma() + "SAST_Semester = " + clsGeneric.AddQuotes(argEn.Semester);
+                    SqlStatement += clsGeneric.AddComma() + "SAST_Description = " + clsGeneric.AddQuotes(argEn.Description);
+                    SqlStatement += clsGeneric.AddComma() + "SABR_Code = " + clsGeneric.AddQuotes(argEn.Code.ToString());
+                    SqlStatement += clsGeneric.AddComma() + "SAST_Status = " + clsGeneric.AddQuotes(Boolvalue);
+                    SqlStatement += clsGeneric.AddComma() + "SAST_UpdatedUser = " + clsGeneric.AddQuotes(argEn.UpdatedUser);
+                    SqlStatement += clsGeneric.AddComma() + "SAST_UpdatedDtTm = " + clsGeneric.AddQuotes(argEn.UpdatedDtTm);
+                    //Build Update Statement - Stop
+
+                    //Save Details to Database
+                    RecordsSaved = _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement);
+
+                    //if records saved successfully - Start
+                    if (RecordsSaved > -1)
+                        Result = true;
+                    else
+                        throw new Exception("Update Failed! No Row has been updated...");
+                    //if records saved successfully - Stop
+                }
+                //if no duplicate records - Stop
+
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Delete 
+
+        /// <summary>
+        /// Method to Delete SemesterSetup 
+        /// </summary>
+        /// <param name="argEn">SemesterSetup Entity is an Input.SASR_Code as Input Property.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Delete(SemesterSetupEn argEn)
+        {
+            //variable declarations
+            string SqlStatement = null; int HasRows = 0; int RecordsSaved = 0; bool Result = false;
+
+            try
+            {
+                //Build Sql Statement - Start
+                SqlStatement = "SELECT SUM(rows) as rows from (select count(*) as rows  from SAS_Student WHERE ";
+                SqlStatement += "SASI_Intake = " + clsGeneric.AddQuotes(argEn.SemisterSetupCode) + " UNION ALL ";
+                SqlStatement += " SELECT count(*) as rows from SAS_Student WHERE SASI_CurSemYr = ";
+                SqlStatement += clsGeneric.AddQuotes(argEn.SemisterSetupCode) + ") AS U ";
+                //Build Sql Statement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    if (_IDataReader.Read())
+                    {
+                        HasRows = clsGeneric.NullToInteger(_IDataReader["rows"]);
+                        if (HasRows > 0)
+                            throw new Exception("Record Already in Use");
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+
+                    //if record not used - Start
+                    if (HasRows == 0)
+                    {
+                        //build sql statement - Start
+                        SqlStatement = "DELETE FROM SAS_SemesterSetup WHERE SAST_Code = ";
+                        SqlStatement += clsGeneric.AddQuotes(argEn.SemisterSetupCode);
+                        //build sql statement - Stop
+
+                        //Save Details to Database
+                        RecordsSaved = _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType,
+                            DataBaseConnectionString, SqlStatement);
+
+                        //if records saved successfully - Start
+                        if (RecordsSaved > -1)
+                            Result = true;
+                        else
+                            throw new Exception("Delete Failed! No Row has been deleted...");
+                        //if records saved successfully - Stop
+                    }
+                    //if record not used - Sto
+
+                    return Result;
+                }
+                //if details available - Stop
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Fetch Total Batch Amount 
+
+        public string FetchTotalBatchAmount(string BatchNumber)
+        {
+            //varaiable declarations
+            string SqlStatement = null; string BatchTotal = null;
+
+            try
+            {
+                //build SqlStatement - Start
+                SqlStatement = "SELECT SUM(TransAmount) AS Total from SAS_Accounts where BatchCode = ";
+                SqlStatement += clsGeneric.AddQuotes(BatchNumber);
+                //build SqlStatement - Stop
+
+                //Get User Login Details - Start
+                IDataReader _IDataReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, SqlStatement).CreateDataReader();
+                //Get User Login Details - Stop
+
+                //if details available - Start
+                if (_IDataReader != null)
+                {
+                    if (_IDataReader.Read())
+                    {
+                        //get batch total - Start
+                        BatchTotal = clsGeneric.NullToString(
+                            _IDataReader["Total"]);
+                        //get batch total - Stop
+                    }
+
+                    _IDataReader.Close();
+                    _IDataReader.Dispose();
+                }
+                //if details available - Stop
+
+                return BatchTotal;
+
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        #endregion
+
+        #region Load Object 
+
+        /// <summary>
+        /// Method to Load SemesterSetup Entity 
+        /// </summary>
+        /// <param name="argReader">IDataReader Object is an Input.</param>
+        /// <returns>Returns SemesterSetup Entity</returns>
+        private SemesterSetupEn LoadObject(IDataReader argReader)
+        {
+            SemesterSetupEn _SemesterSetupEn = new SemesterSetupEn();
+            _SemesterSetupEn.SemisterSetupCode = GetValue<string>(argReader, "SAST_Code");
+            _SemesterSetupEn.Semester = GetValue<string>(argReader, "SAST_Semester");
+            _SemesterSetupEn.Description = GetValue<string>(argReader, "SAST_Description");
+            _SemesterSetupEn.Status = GetValue<bool>(argReader, "SAST_Status");
+            _SemesterSetupEn.Code = GetValue<int>(argReader, "SABR_Code");
+            _SemesterSetupEn.UpdatedUser = GetValue<string>(argReader, "SAST_UpdatedUser");
+            _SemesterSetupEn.UpdatedDtTm = GetValue<string>(argReader, "SAST_UpdatedDtTm");
+
+            return _SemesterSetupEn;
+        }
+
+        
+
+        private static T GetValue<T>(IDataReader argReader, string argColNm)
+        {
+            if (!argReader.IsDBNull(argReader.GetOrdinal(argColNm)))
+                return (T)argReader.GetValue(argReader.GetOrdinal(argColNm));
+            else
+                return default(T);
+        }
+
+        #endregion
+    }
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <_x0030_>
+    <sasi_matricno>108319</sasi_matricno>
+    <numbertoword>NumberWord</numbertoword>
+    <sasi_name>NARINI BT YUSOF</sasi_name>
+    <address />
+    <transcode>RT000000000000378</transcode>
+    <description>test</description>
+    <paymentmode>BNK</paymentmode>
+    <date>2015-09-03T00:00:00+08:00</date>
+    <transamount>300</transamount>
+    <batchcode>B000000000000671</batchcode>
+    <bankcode>A11101</bankcode>
+    <userid>demo</userid>
+  </_x0030_>
+  <_x0030_>
+    <sasi_matricno>108318</sasi_matricno>
+    <numbertoword>NumberWord</numbertoword>
+    <sasi_name>MARZUNIZA BINTI HASSAN</sasi_name>
+    <address />
+    <transcode>RT000000000000377</transcode>
+    <description>test</description>
+    <paymentmode>BNK</paymentmode>
+    <date>2015-09-03T00:00:00+08:00</date>
+    <transamount>200</transamount>
+    <batchcode>B000000000000671</batchcode>
+    <bankcode>A11101</bankcode>
+    <userid>demo</userid>
+  </_x0030_>
+  <_x0030_>
+    <sasi_matricno>108316</sasi_matricno>
+    <numbertoword>NumberWord</numbertoword>
+    <sasi_name>FAZLINA BINTI MASBAH</sasi_name>
+    <address />
+    <transcode>RT000000000000376</transcode>
+    <description>test</description>
+    <paymentmode>BNK</paymentmode>
+    <date>2015-09-03T00:00:00+08:00</date>
+    <transamount>100</transamount>
+    <batchcode>B000000000000671</batchcode>
+    <bankcode>A11101</bankcode>
+    <userid>demo</userid>
+  </_x0030_>
+</NewDataSet>

@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <sasi_name>MUSLIHA BINTI ADB RAZAK</sasi_name>
+    <sasi_icno>910605115664</sasi_icno>
+    <sasi_matricno>158357</sasi_matricno>
+    <faculty>FAKULTI PERUBATAN DAN SAINS KESIHATAN</faculty>
+    <program>DOKTOR PERUBATAN</program>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_intake>201020111</sasi_intake>
+    <no_of_sem>1</no_of_sem>
+    <category>AFC</category>
+    <hostel>TIADA DATA</hostel>
+    <curr_status>1-AKTIF</curr_status>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>06/05/2016</sb_transdate>
+    <description>AFC-201020111</description>
+    <transcode>AFC000000000000040</transcode>
+    <credit>0</credit>
+    <debit>603.6</debit>
+    <sponsor>0001-PERBADANAN TABUNG PENDIDIKAN TINGGI NASIONAL</sponsor>
+  </Table>
+  <Table>
+    <sasi_name>MUHAMMAD NIZAM BIN MOHD HARIS</sasi_name>
+    <sasi_icno>911007146107</sasi_icno>
+    <sasi_matricno>158683</sasi_matricno>
+    <faculty>FAKULTI PERUBATAN DAN SAINS KESIHATAN</faculty>
+    <program>DOKTOR PERUBATAN</program>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_intake>201020111</sasi_intake>
+    <no_of_sem>1</no_of_sem>
+    <category>AFC</category>
+    <hostel>TIADA DATA</hostel>
+    <curr_status>1-AKTIF</curr_status>
+    <sasc_code>BW</sasc_code>
+    <sb_transdate>06/05/2016</sb_transdate>
+    <description>AFC-201020111</description>
+    <transcode>AFC000000000000041</transcode>
+    <credit>0</credit>
+    <debit>789</debit>
+  </Table>
+</NewDataSet>

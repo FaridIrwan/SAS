@@ -1,0 +1,29 @@
+diff --git a/DataAccessObjects.csproj b/DataAccessObjects.csproj
+--- a/DataAccessObjects.csproj
++++ b/DataAccessObjects.csproj
+@@ -70,9 +70,6 @@
+       <SpecificVersion>False</SpecificVersion>
+       <HintPath>bin\EntLibContrib.Data.PostgreSql.dll</HintPath>
+     </Reference>
+-    <Reference Include="HTS.SAS.DataAccessObjects">
+-      <HintPath>bin\HTS.SAS.DataAccessObjects.dll</HintPath>
+-    </Reference>
+     <Reference Include="MaxGeneric">
+       <HintPath>bin\MaxGeneric.dll</HintPath>
+     </Reference>
+@@ -116,6 +113,7 @@
+     <Compile Include="FeeStrDetailsDAL.cs" />
+     <Compile Include="FeeStructDAL.cs" />
+     <Compile Include="FeeTypesDAL.cs" />
++    <Compile Include="GSTSetupDAL.cs" />
+     <Compile Include="Helper.cs" />
+     <Compile Include="HostelStrAmountDAL.cs" />
+     <Compile Include="HostelStrDetailsDAL.cs" />
+@@ -142,6 +140,7 @@
+     <Compile Include="UserGroupDAL.cs" />
+     <Compile Include="UserRightsDAL.cs" />
+     <Compile Include="UsersDAL.cs" />
++    <Compile Include="WorkflowDAL.cs" />
+   </ItemGroup>
+   <ItemGroup>
+     <ProjectReference Include="..\Entities\Entities.csproj">

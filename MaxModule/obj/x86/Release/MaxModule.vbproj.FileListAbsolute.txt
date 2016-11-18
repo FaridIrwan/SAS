@@ -1,0 +1,9 @@
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\MaxModule.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\EntLibContrib.Data.PostgreSql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\MaxGeneric.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\x86\Release\Npgsql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\obj\x86\Release\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\obj\x86\Release\MaxModule.xml

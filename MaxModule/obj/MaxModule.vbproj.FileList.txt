@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\MaxModule.dll
+obj\Debug\MaxModule.xml
+obj\Debug\MaxModule.pdb
+bin\MaxModule.dll
+bin\MaxModule.xml
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\MaxModule.dll
+obj\Release\MaxModule.xml

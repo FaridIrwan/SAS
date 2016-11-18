@@ -1,0 +1,1775 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000020</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000020</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000020</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000020</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000024</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000024</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000024</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>INV000000000024</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000136</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000136</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000136</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000136</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>INV000000000019</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>INV000000000019</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>INV000000000019</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>INV000000000019</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000022</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000022</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000022</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000022</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX005</CreditRef>
+    <SASI_MatricNo>MX005</SASI_MatricNo>
+    <SASI_Add1>RT</SASI_Add1>
+    <SASI_Add2>Y</SASI_Add2>
+    <SASI_Add3>YR</SASI_Add3>
+    <SASI_City>TY</SASI_City>
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode>456</SASI_Postcode>
+    <SASI_Name>KUMAR</SASI_Name>
+    <TransCode>INV000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM007</SASI_Intake>
+    <SAPG_Program>BE</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX005</CreditRef>
+    <SASI_MatricNo>MX005</SASI_MatricNo>
+    <SASI_Add1>RT</SASI_Add1>
+    <SASI_Add2>Y</SASI_Add2>
+    <SASI_Add3>YR</SASI_Add3>
+    <SASI_City>TY</SASI_City>
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode>456</SASI_Postcode>
+    <SASI_Name>KUMAR</SASI_Name>
+    <TransCode>INV000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM007</SASI_Intake>
+    <SAPG_Program>BE</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX005</CreditRef>
+    <SASI_MatricNo>MX005</SASI_MatricNo>
+    <SASI_Add1>RT</SASI_Add1>
+    <SASI_Add2>Y</SASI_Add2>
+    <SASI_Add3>YR</SASI_Add3>
+    <SASI_City>TY</SASI_City>
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode>456</SASI_Postcode>
+    <SASI_Name>KUMAR</SASI_Name>
+    <TransCode>INV000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM007</SASI_Intake>
+    <SAPG_Program>BE</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX005</CreditRef>
+    <SASI_MatricNo>MX005</SASI_MatricNo>
+    <SASI_Add1>RT</SASI_Add1>
+    <SASI_Add2>Y</SASI_Add2>
+    <SASI_Add3>YR</SASI_Add3>
+    <SASI_City>TY</SASI_City>
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode>456</SASI_Postcode>
+    <SASI_Name>KUMAR</SASI_Name>
+    <TransCode>INV000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM007</SASI_Intake>
+    <SAPG_Program>BE</SAPG_Program>
+    <TransAmount>5000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000128</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000128</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000128</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000128</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000130</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000130</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000130</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000130</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>4000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000131</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000131</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000131</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>SA000000000131</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000041</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000041</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000041</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000041</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000042</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000042</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000042</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000042</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000043</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>adas</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1100</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000043</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>adas</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1100</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000043</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>adas</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1100</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>CR000000000043</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>adas</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1100</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>RD000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>dvfv</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>100</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>RD000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>dvfv</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>100</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>RD000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>dvfv</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>100</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>RD000000000021</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>dvfv</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>100</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000044</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>xcvcxv</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1300</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000044</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>xcvcxv</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1300</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000044</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>xcvcxv</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1300</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>CR000000000044</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>xcvcxv</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>1300</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>RD000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>RD000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>RD000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX002</CreditRef>
+    <SASI_MatricNo>MX002</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BC</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>ELANGO</SASI_Name>
+    <TransCode>RD000000000023</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>sdf</Description>
+    <SASI_ID>1</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>JKJ</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000026</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000026</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000026</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX004</CreditRef>
+    <SASI_MatricNo>MX004</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PRABHU</SASI_Name>
+    <TransCode>INV000000000026</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM001</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000133</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>0</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000133</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>0</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000133</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>0</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000133</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>0</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000134</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000134</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000134</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000134</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>300</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000129</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000129</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000129</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX001</CreditRef>
+    <SASI_MatricNo>MX001</SASI_MatricNo>
+    <SASI_Add1>DFwewe</SASI_Add1>
+    <SASI_Add2>GDFrtertytuy</SASI_Add2>
+    <SASI_Add3>D</SASI_Add3>
+    <SASI_City>FGDF</SASI_City>
+    <SAFC_SName>BSC</SAFC_SName>
+    <SASI_Postcode>5</SASI_Postcode>
+    <SASI_Name>ARUN</SASI_Name>
+    <TransCode>SA000000000129</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>18/08/2008</TransDate>
+    <Description>Sponsor Pocket Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM005</SASI_Intake>
+    <SAPG_Program>DFG</SAPG_Program>
+    <TransAmount>1000</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000025</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000025</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000025</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>INV000000000025</TransCode>
+    <TransType>Credit</TransType>
+    <TransDate>22/06/2008</TransDate>
+    <Description>INVOICE</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>1450</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000135</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>4450</TransAmount>
+    <SASR_Code>SP1</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000135</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>4450</TransAmount>
+    <SASR_Code>SP2</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000135</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>4450</TransAmount>
+    <SASR_Code>SP3</SASR_Code>
+  </StatmentAC>
+  <StatmentAC>
+    <CreditRef>MX003</CreditRef>
+    <SASI_MatricNo>MX003</SASI_MatricNo>
+    <SASI_Add1 />
+    <SASI_Add2 />
+    <SASI_Add3 />
+    <SASI_City />
+    <SAFC_SName>BE</SAFC_SName>
+    <SASI_Postcode />
+    <SASI_Name>PAVAN</SASI_Name>
+    <TransCode>SA000000000135</TransCode>
+    <TransType>Debit</TransType>
+    <TransDate>22/08/2008</TransDate>
+    <Description>Sponsor Allocation Amount</Description>
+    <SASI_ID>2</SASI_ID>
+    <SASI_Intake>SEM006</SASI_Intake>
+    <SAPG_Program>ms</SAPG_Program>
+    <TransAmount>4450</TransAmount>
+    <SASR_Code>SP4</SASR_Code>
+  </StatmentAC>
+  <DunningLatter>
+    <SADL_Code>DL0001</SADL_Code>
+    <SADL_Title>Dunning Letter</SADL_Title>
+    <SADL_Ref>Ref/010/082008</SADL_Ref>
+    <SADL_Message>make sure the payment will reach s before due date</SADL_Message>
+    <SADL_SignBy>Ramalingam</SADL_SignBy>
+    <SADL_Name>Ramalingam</SADL_Name>
+    <FromDate>20/08/2008</FromDate>
+    <ToDateSADL_ToDate>20/08/2008</ToDateSADL_ToDate>
+    <SADL_UpdatedBy>Admin</SADL_UpdatedBy>
+    <UpdateDate>20/08/2008</UpdateDate>
+  </DunningLatter>
+</NewDataSet>

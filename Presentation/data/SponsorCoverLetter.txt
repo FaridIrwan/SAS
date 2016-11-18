@@ -1,0 +1,122 @@
+<br />
+        <table style="width:100%">
+            <tr>
+                <td>Rujukan Kami	
+                </td>
+                <td>:
+                </td>
+                <td>{0} ({4})
+                </td>
+            </tr>
+            <tr>
+                <td>Rujukan Tuan		
+                </td>
+                <td>:
+                </td>
+                <td>{1}{5}
+                </td>
+            </tr>
+            <tr>
+                <td>Tarikh			
+                </td>
+                <td>:
+                </td>
+                <td>{2}
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td>{3}</td>
+            </tr>
+        </table>
+        <p>Tuan/Puan,</p>
+        <p><h2>TUNTUTAN YURAN PENGAJIAN PELAJAR IJAZAH LANJUTAN DI UNIVERSITI PUTRA MALAYSIA</h2></p>
+        <p>Adalah dimaklumkan pelajar tersebut  adalah pelajar ijazah lanjutan yang berdaftar di Universiti Putra Malaysia. Berikut adalah maklumat pembayaran yuran pelajar.</p>
+        <table style="width:100%">
+            <tr>
+                <td>Nama Pelajar
+                </td>
+                <td>:
+                </td>
+                <td>{4}
+                </td>
+            </tr>
+            <tr>
+                <td>No. Matrik	
+                </td>
+                <td>:</td>
+                <td>{5}</td>
+            </tr>
+            <tr>
+                <td>No. Kad Pengenalan	
+                </td>
+                <td>:</td>
+                <td>{6}</td>
+            </tr>
+            <tr>
+                <td>Program Pengajian  </td>
+                <td>:</td>
+                <td>{7}</td>
+            </tr>
+            <tr>
+                <td>Semester</td>
+                <td>:</td>
+                <td>SEMESTER {8}</td>
+            </tr>
+        </table>
+        <br />{9}<br />
+        <p>Sila sertakan senarai nama pelajar yang dibayar dan maklumat pembayaran adalah seperti berikut :</p>
+        <table style="width:100%">
+            <tr>
+                <td>Nama Bank	
+                </td>
+                <td>:
+                </td>
+                <td>CIMB BANK BERHAD
+                </td>
+            </tr>
+            <tr>
+                <td>No.  Akaun
+                </td>
+                <td>:
+                </td>
+                <td>8002155042
+                </td>
+            </tr>
+            <tr>
+                <td>Nama Akaun
+                </td>
+                <td>:</td>
+                <td>UPM COLLECTION</td>
+            </tr>
+            <tr>
+                <td>Nama Penerima
+                </td>
+                <td>:</td>
+                <td>BURSAR, KEWANGAN PELAJAR II</td>
+            </tr>
+            <tr>
+                <td>Alamat
+                </td>
+                <td>:
+                </td>
+                <td>SEKSYEN KEWANGAN PELAJAR II<br/>PEJABAT BURSAR, UNIVERSITI PUTRA MALAYSIA<br/>43400 SERDANG, SELANGOR
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat Emel
+                </td>
+                <td>:</td>
+                <td>bursar.student_pg@upm.edu.my
+                </td>
+            </tr>
+        </table>
+        <p>Sekian, terima kasih.            
+        </p>
+        <p>“ BERLIMU, BERBAKTI “
+        </p>
+        <p>Yang menjalankan tugas,
+        </p>
+        <p>( MAZITAH BINTI AHMAD ) <br />Penolong Bendahari Kanan <br />Pejabat Bursar	<br />Universiti Putra Malaysia
+        </p>

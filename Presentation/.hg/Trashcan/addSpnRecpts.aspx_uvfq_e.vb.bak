@@ -1,0 +1,67 @@
+Imports HTS.SAS.Entities
+Imports HTS.SAS.BusinessObjects
+Imports System.Data
+Imports System.Collections.Generic
+Partial Class addSpnRecpts
+    Inherits System.Web.UI.Page
+    ''Private LogErrors As LogError
+    ''' <summary>
+    ''' Method to Load Sponsors in Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub LoadGrid()
+        Dim ds As New DataSet
+        Dim eobj As New SponsorEn
+        Dim eobjlist As New List(Of SponsorEn)
+        Dim bobj As New AccountsBAL
+
+        If Not eobjlist Is Nothing Then
+            eobj.Name = txtSponsorName.Text
+            eobj.SponserCode = txtSponsorCode.Text
+            eobj.TransStatus = "Open"
+            eobj.PostStatus = "Posted"
+            eobj.Category = "Receipt"
+            Try
+                eobjlist = bobj.GetRecipt(eobj)
+            Catch ex As Exception
+                LogError.Log("addSpnRecpts", "LoadGrid", ex.Message)
+            End Try
+            dgView.DataSource = eobjlist
+            dgView.DataBind()
+        Else
+            Response.Write("No Fee types are Available")
+        End If
+    End Sub
+
+    Private Sub UpdateGrid()
+        Dim cScript As String = ""
+        cScript = "<SCRIPT LANGUAGE=""JavaScript"">window.opener.document.getElementById('ctl00_ContentPlaceHolder1_btnHidden').click();self.close();</SCRIPT>"
+        ClientScript.RegisterStartupScript(Me.GetType(), "ClosePopUp", cScript)
+    End Sub
+    Protected Sub ibtnOK_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnOK.Click
+        If dgView.SelectedIndex <> -1 Then
+            Dim eobj As New SponsorEn
+            eobj.TransactionCode = dgView.DataKeys(dgView.SelectedIndex)
+            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(2).Text
+            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(3).Text
+            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
+            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(6).Text
+            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(7).Text
+            dgView.SelectedIndex = -1
+            Session("spnobj") = eobj
+        End If
+        UpdateGrid()
+    End Sub
+
+    Protected Sub ibtnClose_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnClose.Click
+        UpdateGrid()
+    End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        LoadGrid()
+    End Sub
+
+    Protected Sub ibtnLoad_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnLoad.Click
+        LoadGrid()
+    End Sub
+End Class

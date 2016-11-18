@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+	<Table>
+		<TransDate>16/01/2011</TransDate>
+		<TransCode>SA000000000000012</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>1661</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>16/01/2011</TransDate>
+		<TransCode>SA000000000000013</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>20/05/2011</TransDate>
+		<TransCode>RCPT000000000000006</TransCode>
+		<CreditRef>20100002</CreditRef>
+		<Category>Receipt</Category>
+		<TransAmount>2000</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Close</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100002</SASI_MatricNo>
+		<SASI_Name>MOO GHI LAH</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>20/05/2011</TransDate>
+		<TransCode>RCPT000000000000007</TransCode>
+		<CreditRef>20100002</CreditRef>
+		<Category>Receipt</Category>
+		<TransAmount>1500</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Close</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100002</SASI_MatricNo>
+		<SASI_Name>MOO GHI LAH</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>20/05/2011</TransDate>
+		<TransCode>RD000000000000002</TransCode>
+		<CreditRef>20100002</CreditRef>
+		<Category>Refund</Category>
+		<TransAmount>78</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Credit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100002</SASI_MatricNo>
+		<SASI_Name>MOO GHI LAH</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>20/05/2011</TransDate>
+		<TransCode>SA000000000000009</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>200</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>20/05/2011</TransDate>
+		<TransCode>SA000000000000010</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000002</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000004</TransCode>
+		<CreditRef>20100002</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>520</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100002</SASI_MatricNo>
+		<SASI_Name>MOO GHI LAH</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000006</TransCode>
+		<CreditRef>20100003</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>520</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100003</SASI_MatricNo>
+		<SASI_Name>MUTHU A/L SAMY</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>RCPT000000000000002</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>Receipt</Category>
+		<TransAmount>520</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Close</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000003</TransCode>
+		<CreditRef>20100001</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000005</TransCode>
+		<CreditRef>20100002</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100002</SASI_MatricNo>
+		<SASI_Name>MOO GHI LAH</SASI_Name>
+	</Table>
+	<Table>
+		<TransDate>01/01/2011</TransDate>
+		<TransCode>SA000000000000007</TransCode>
+		<CreditRef>20100003</CreditRef>
+		<Category>SPA</Category>
+		<TransAmount>0</TransAmount>
+		<SAPG_Program>BACHELOR OF ACCOUNTING</SAPG_Program>
+		<SAFC_Desc>FAKULTI EKONOMI DAN PENGURUSAN</SAFC_Desc>
+		<TransStatus>Open</TransStatus>
+		<BankCode>CIMB</BankCode>
+		<SABD_Desc>CIMB</SABD_Desc>
+		<TransType>Debit</TransType>
+		<SASI_PgId>BACC</SASI_PgId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_MatricNo>20100003</SASI_MatricNo>
+		<SASI_Name>MUTHU A/L SAMY</SASI_Name>
+	</Table>
+</NewDataSet>

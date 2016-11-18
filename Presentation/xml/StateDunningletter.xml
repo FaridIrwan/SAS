@@ -1,0 +1,870 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <DunningLatter>
+    <creditref>112233</creditref>
+    <sasi_matricno>112233</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>TFD</safc_sname>
+    <sasi_postcode />
+    <sasi_name>ABharadwaj</sasi_name>
+    <transcode>AFC000000000000042</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>2</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>Under Program Test</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>456789</creditref>
+    <sasi_matricno>456789</sasi_matricno>
+    <sasi_add1>B-03-08</sasi_add1>
+    <sasi_add2>Jalan Srijati</sasi_add2>
+    <sasi_add3>Taman Srijati,Jalan Puchong</sasi_add3>
+    <sasi_city>Kuala Lumpur</sasi_city>
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode>58200</sasi_postcode>
+    <sasi_name>adsd</sasi_name>
+    <transcode>RT000000000000348</transcode>
+    <transtype>Credit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On Student</description>
+    <sasi_id>2</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107592</creditref>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+    <transcode>AFC000000000000049</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>333444</creditref>
+    <sasi_matricno>333444</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>Bharad</sasi_name>
+    <transcode>AFC000000000000044</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>2</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>119664</creditref>
+    <sasi_matricno>119664</sasi_matricno>
+    <sasi_add1>LOT 291 JALAN BATU BIAH</sasi_add1>
+    <sasi_add2>LIMBANG</sasi_add2>
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>CHIENG LUNG ANN</sasi_name>
+    <transcode>AFC000000000000052</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>72487</creditref>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <safc_sname>PASPA</safc_sname>
+    <sasi_postcode>81300</sasi_postcode>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <transcode>IN000000000000123</transcode>
+    <transtype>Debit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On student</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <transamount>600</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>72487</creditref>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <safc_sname>PASPA</safc_sname>
+    <sasi_postcode>81300</sasi_postcode>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <transcode>CN000000000000022</transcode>
+    <transtype>Credit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On Student</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <transamount>600</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>72487</creditref>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <safc_sname>PASPA</safc_sname>
+    <sasi_postcode>81300</sasi_postcode>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <transcode>IN000000000000122</transcode>
+    <transtype>Debit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On Student</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <transamount>300</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>72487</creditref>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <safc_sname>PASPA</safc_sname>
+    <sasi_postcode>81300</sasi_postcode>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <transcode>DN000000000000020</transcode>
+    <transtype>Debit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On Student</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <transamount>600</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>72487</creditref>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <safc_sname>PASPA</safc_sname>
+    <sasi_postcode>81300</sasi_postcode>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <transcode>RT000000000000349</transcode>
+    <transtype>Credit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description>Test On Student</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <transamount>200</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108305</creditref>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+    <transcode>A7849822</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>70</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108305</creditref>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+    <transcode>A7849825</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>73</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108305</creditref>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+    <transcode>A7849823</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>70</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108337</creditref>
+    <sasi_matricno>108337</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>HAFIZAH BINTI ISMAIL</sasi_name>
+    <transcode>AFC000000000000043</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108340</creditref>
+    <sasi_matricno>108340</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>LILI MASTURA BINTI CHE WIL</sasi_name>
+    <transcode>AFC000000000000045</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>RT000000000000347</transcode>
+    <transtype>Credit</transtype>
+    <transdate>19/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>IN000000000000111</transcode>
+    <transtype>Debit</transtype>
+    <transdate>13/08/2015</transdate>
+    <description>test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>CN000000000000019</transcode>
+    <transtype>Credit</transtype>
+    <transdate>13/08/2015</transdate>
+    <description>test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>200</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>DN000000000000017</transcode>
+    <transtype>Debit</transtype>
+    <transdate>13/08/2015</transdate>
+    <description />
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>200</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>RT000000000000242</transcode>
+    <transtype>Credit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>IN000000000000112</transcode>
+    <transtype>Debit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description>test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>D000000000000002</transcode>
+    <transtype>Credit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>IN000000000000116</transcode>
+    <transtype>Debit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description />
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>200</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>RT000000000000319</transcode>
+    <transtype>Credit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description>Loan Description</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>1526</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>AFC000000000000054</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>IN000000000000120</transcode>
+    <transtype>Debit</transtype>
+    <transdate>19/08/2015</transdate>
+    <description />
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>300</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>IN000000000000121</transcode>
+    <transtype>Debit</transtype>
+    <transdate>20/08/2015</transdate>
+    <description />
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>RT000000000000318</transcode>
+    <transtype>Credit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description>testing</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>106688</creditref>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <transcode>A7849825</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>73</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>RT000000000000244</transcode>
+    <transtype>Credit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>300</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>DN000000000000019</transcode>
+    <transtype>Debit</transtype>
+    <transdate>19/08/2015</transdate>
+    <description>sdwef</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>200</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>AFC000000000000050</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>CN000000000000020</transcode>
+    <transtype>Credit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description />
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>700</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>RT000000000000243</transcode>
+    <transtype>Credit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>107591</creditref>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <transcode>IN000000000000115</transcode>
+    <transtype>Debit</transtype>
+    <transdate>17/08/2015</transdate>
+    <description>Test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>500</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>177519</creditref>
+    <sasi_matricno>177519</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NADHIRATUL SHAHIRA BINTI HASSAN</sasi_name>
+    <transcode>AFC000000000000048</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108304</creditref>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+    <transcode>A7849825</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>63</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108304</creditref>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+    <transcode>A7849823</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108304</creditref>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FS</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+    <transcode>A7849822</transcode>
+    <transtype>Credit</transtype>
+    <transdate>24/06/2015</transdate>
+    <description>CIMB CLICKS</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108342</creditref>
+    <sasi_matricno>108342</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NORIMAH MURNI BINTI YASIN</sasi_name>
+    <transcode>AFC000000000000046</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>108328</creditref>
+    <sasi_matricno>108328</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPV</safc_sname>
+    <sasi_postcode />
+    <sasi_name>NURUL NADIRAH BT NASRON</sasi_name>
+    <transcode>IN000000000000117</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>test</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF VETERINARY MEDICINE</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>119616</creditref>
+    <sasi_matricno>119616</sasi_matricno>
+    <sasi_add1>62 RUMAH MURAH 3 JALAN KENANGAN</sasi_add1>
+    <sasi_add2>PEKAN MERU</sasi_add2>
+    <sasi_add3>KLANG</sasi_add3>
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>ONG YIEN FANG</sasi_name>
+    <transcode>AFC000000000000053</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>119419</creditref>
+    <sasi_matricno>119419</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FEP</safc_sname>
+    <sasi_postcode />
+    <sasi_name>STEPHANIE TOH SHU SHU</sasi_name>
+    <transcode>AFC000000000000051</transcode>
+    <transtype>Debit</transtype>
+    <transdate>18/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>1</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>170397</creditref>
+    <sasi_matricno>170397</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>XIE WANRU</sasi_name>
+    <transcode>AFC000000000000047</transcode>
+    <transtype>Debit</transtype>
+    <transdate>14/08/2015</transdate>
+    <description>AFC-0220152016</description>
+    <sasi_id>2</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>60</transamount>
+  </DunningLatter>
+  <DunningLatter>
+    <creditref>170397</creditref>
+    <sasi_matricno>170397</sasi_matricno>
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <safc_sname>FPSK</safc_sname>
+    <sasi_postcode />
+    <sasi_name>XIE WANRU</sasi_name>
+    <transcode>IN000000000000118</transcode>
+    <transtype>Debit</transtype>
+    <transdate>19/08/2015</transdate>
+    <description>test</description>
+    <sasi_id>2</sasi_id>
+    <sasi_intake>0120152016</sasi_intake>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <transamount>100</transamount>
+  </DunningLatter>
+  <_x0031_>
+    <sadl_code>ref0092</sadl_code>
+    <sadl_title>Test 092</sadl_title>
+    <sadl_ref>ref092</sadl_ref>
+    <sadl_message>fsdfd</sadl_message>
+    <sadl_signby>testby092</sadl_signby>
+    <sadl_name>name092</sadl_name>
+    <fromdate>22/07/2015</fromdate>
+    <todatesadl_todate>22/07/2015</todatesadl_todate>
+    <sadl_updatedby>demo</sadl_updatedby>
+    <updatedate>22/07/2015</updatedate>
+  </_x0031_>
+</NewDataSet>

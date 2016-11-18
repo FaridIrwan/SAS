@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title=""  description="">
+    <siteMapNode url="Home.aspx" title="Home"  description="">
+      <siteMapNode url="Setup.aspx" title="Setup"  description="">
+        <siteMapNode url="UniversityProfile.aspx" title="University Profile"  description="" />
+        <siteMapNode url="UniversityFund.aspx" title="University Fund"  description="" />
+        <siteMapNode url="StudentCategory.aspx" title="Student Category"  description="" />
+        <siteMapNode url="bankDetails.aspx" title="Bank Profile"  description="" />
+        <siteMapNode url="Sponsor.aspx" title="Sponsor"  description="" />
+        <siteMapNode url="degreeType.aspx" title="Program Types"  description="" />
+        <siteMapNode url="SemesterSetup.aspx" title="Semester Setup"  description="" />
+        <siteMapNode url="Semester.aspx" title="Change Semester"  description="" />
+        <siteMapNode url="StudentStutus.aspx" title="Student Status"  description="" />
+        <siteMapNode url="programInfo.aspx" title="Program Information"  description="" />
+        <siteMapNode url="FeeType.aspx" title="Fee Types"  description="" />
+        <siteMapNode url="FeeStructure.aspx" title="Fee Structure"  description="" />
+        <siteMapNode url="HostelFee.aspx" title="Hostel Fee"  description="" />
+        <siteMapNode url="Student.aspx" title="Student Info"  description="" />
+        <siteMapNode url="UserGroups.aspx" title="User Groups"  description="" />
+        <siteMapNode url="UserRights.aspx" title="User Rights"  description="" />
+        <siteMapNode url="RptDunninglatters.aspx" title="Dunning Letter"  description="" />
+        <siteMapNode url="Kokorikulum.aspx" title="Kolejgiat"  description="" />
+		    <siteMapNode url="Users.aspx" title="Users"  description="" />
+		    <siteMapNode url="ErrorLog.aspx" title="Error Log"  description="" />
+		    <siteMapNode url="Faculty.aspx" title="Faculty"  description="" />
+		    <siteMapNode url="Kolej.aspx" title="Kolej"  description="" />
+		    <siteMapNode url="Block.aspx" title="Block"  description="" />
+		    <siteMapNode url="RoomType.aspx" title="RoomType"  description="" />
+		    <siteMapNode url="PaymentType.aspx" title="Payment Mode"  description="" />
+        <siteMapNode url="~/GroupSetup/Department.aspx" title="Department"  description="" />
+        <siteMapNode url="~/GroupSetup/PTPTNFeeSetup.aspx" title="PTPTN Fee Setup"  description="" />
+        <siteMapNode url="GST_Setup.aspx" title="GST Setup" description="" />
+        <siteMapNode url="FileUpload.aspx" title="File Upload" description="" />
+        <siteMapNode url="Bidang.aspx" title="Bidang Setup" description="" />
+        <siteMapNode url="RptSponsorCoverLetter.aspx" title="Sponsor Cover Letter Setup" description="" />
+        <siteMapNode url="WorkflowSetup.aspx" title="Workflow Setup" description=""/>
+        <siteMapNode url="StudentBank.aspx" title="Student Bank" description=""/>
+        <siteMapNode url="~/GroupSetup/PTPTNSetup.aspx" title="PTPTN Setup" description=""/>
+      </siteMapNode>
+      <siteMapNode url="Process.aspx" title="Process"  description="" >
+		    <siteMapNode url="BatchInvoice.aspx" title="Student Invoice" query="MenuId" description="" />
+		    <siteMapNode url="SponsorCreditNote.aspx" title="Sponsor Debit/Credit Note" query="MenuId" description="" />
+		    <siteMapNode url="Receipts.aspx" title="Receipts"  description="" />
+		    <siteMapNode url="SponsorAllocation.aspx" title="Sponsor Allocation"  description="" />
+        <siteMapNode url="~/GroupProcess/Integration.aspx" title="Integration"  description="" />
+		    <siteMapNode url="Payments.aspx" title="Student Payments"  description="" />
+        <siteMapNode url="~/GroupProcess/PTPTNFileGeneration.aspx" title="PTPTN File Generation"  description="" />		    
+		    <siteMapNode url="StudentLedger.aspx" title="Student Ledger"  description="" />
+		    <siteMapNode url="SponsorPayments.aspx" title="Sponsor Payments"  description="" />
+        <siteMapNode url="Pre-SponsorAllocation.aspx" title="PreRun-Sponsor Allocation"  description="" />
+        <siteMapNode url="FeePosting.aspx" title="AFC"  description="" />
+		    <siteMapNode url="ChequeManagement.aspx" title="Cheque Management"  description="" />
+		    <siteMapNode url="ExportData.aspx" title="Export Data"  description="" />
+        <siteMapNode url="StudentDunningLetter.aspx" title="Student Dunning Letter"  description="" />
+		    <siteMapNode url="StudentOutstanding.aspx" title="Student Outstanding Amount"  description="" />
+		    <siteMapNode url="StudentLoan.aspx" title="Student Advance"  description="" />
+        <siteMapNode url="SponsorInvoice.aspx" title="Sponsor Invoice"  description="" />
+        <siteMapNode url="ReceiptHistory.aspx" title="Receipt History"  description="" />
+        <siteMapNode url="SponsorSuccessTransaction.aspx" title="Succeed Transaction"  description="" />
+        <siteMapNode url="WorkFlowDetails.aspx" title="WorkFlow" description=""/>
+        <siteMapNode url="CimbClicksTrans.aspx" title="CIMB Clicks File Upload" description="" />
+        <siteMapNode url="Bank_Recon.aspx" title="Bank Reconciliation" description="" />
+        <siteMapNode url="StudentAcctsUpd.aspx" title="Update Student Account" description="" />
+        <siteMapNode url="SponsorCoverLetter.aspx" title="Sponsor Cover Letter" description="" />
+      </siteMapNode>
+	<!--<siteMapNode url="Enquiry.aspx" title="Enquiry"  description="" />-->
+	    <siteMapNode url="Reports.aspx" title="Reports"  description="" >
+        <siteMapNode url="~/GroupReport/RptStudentLedger.aspx" title="Student Ledger" description="" />
+        <siteMapNode url="~/GroupReport/RptCollectionAnalysis.aspx" title="Collection Analysis Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptDailyCashCollection.aspx" title="Daily Cash Collection Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptDailyReport.aspx" title="Daily Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptDebitCreditNote.aspx" title="Debit/Credit Note Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptDepositLedger.aspx" title="Deposit Ledger Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptLedger.aspx" title="Ledger Reports" description="" />
+        <siteMapNode url="~/GroupReport/RptLetterToBIMB.aspx" title="Letter To BIMB Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptReconciliation.aspx" title="Reconciliation Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptRefreshmentFund.aspx" title="Refreshment Fund Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptRefund.aspx" title="Refund Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptRegistrationPayment.aspx" title="Registration Payment Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptSponsorAgeing.aspx" title="Sponsor Ageing Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptSponsorAllocation.aspx" title="Sponsor Allocation Report" description="" />
+        <siteMapNode url="~/GroupReport/RptStudentAgeing.aspx" title="Student Ageing Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptStudentOutStanding.aspx" title="Outstanding Balance"  description="" />
+        <siteMapNode url="~/GroupReport/RptStudentOverPaid.aspx" title="OverPaid Balance"  description="" />
+        <siteMapNode url="~/GroupReport/RptTotalGL.aspx" title="Total General Ledger"  description="" />
+        <siteMapNode url="~/GroupReport/RptTransactionDetail.aspx" title="Transaction Detail Report"  description="" />
+        <siteMapNode url="~/GroupReport/RptStatementAccount.aspx" title="Statement of Account Report" description="" />
+		    <siteMapNode url="RptSpAllocation.aspx" title="Sponsor Allocation Report" description="" />
+		    <siteMapNode url="RptStuAgeing.aspx" title="Student Ageing Report"  description="" />
+		    <siteMapNode url="RptDepositLedger.aspx" title="Deposit Ledger Report"  description="" />
+		    <siteMapNode url="RptStatementAcc.aspx" title="Statement of Accounts Report"  description="" />
+        <siteMapNode url="~/GroupReport/SponsorLedger.aspx" title="Sponsor Ledger"  description="" />		    
+	    </siteMapNode>
+	</siteMapNode>
+	</siteMapNode>
+</siteMap>
+
+<!--Bank Profile	
+
+Degree Types	
+
+	
+
+?Menuid=13
+Student Invoice	BatchInvoice.aspx?Menuid=14&Formid=Inv
+Student Debit Note	BatchInvoice.aspx?Menuid=15&Formid=DN
+StudentCreditNote	BatchInvoice.aspx?Menuid=16&Formid=CN
+Receipts	Receipts.aspx?Menuid=17
+Student Ledger	StudentLedger.aspx?Menuid=18
+Payments	Payments.aspx?Menuid=19
+Sponsor Payments	Payments.aspx?Menuid=20
+Reports	Reports.aspx
+Student Ledger	StudentLedger.aspx?Menuid=40
+Home	Home.aspx
+Setup	Setup.aspx
+Process	Process.aspx
+Enquiry	Enquiry.aspx
+Reports	Reports.aspx
+Sponsor Credit Note	SponsorCreditNote.aspx?Menuid=21&Formid=CN
+Sponsor Debit Note	SponsorCreditNote.aspx?Menuid=22&Formid=DN-->

@@ -1,0 +1,393 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <STD_NoPelajar>028835</STD_NoPelajar>
+    <STD_NamaPelajar>MOHAMAD QAYYUM BIN SHAMSUDIN</STD_NamaPelajar>
+    <STD_NoIC>930506015551</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021427763</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>632.50</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,855.00</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>028893</STD_NoPelajar>
+    <STD_NamaPelajar>NURRRASHID BIN ABU HASSAN</STD_NamaPelajar>
+    <STD_NoIC>930211055599</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021433623</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,322.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029121</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMAD AMIR SOLIHIN BIN MUHAMAD KHAIRI</STD_NamaPelajar>
+    <STD_NoIC>930808086005</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021428516</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,675.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>812.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029186</STD_NoPelajar>
+    <STD_NamaPelajar>MOHD HAFIZ BIN MOHD ALIM</STD_NamaPelajar>
+    <STD_NoIC>930427115925</STD_NoIC>
+    <STD_NoAkaunPelajar>13053020032512</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>994.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,493.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029191</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD SYAHMI BIN ISMAIL</STD_NamaPelajar>
+    <STD_NoIC>930610045419</STD_NoIC>
+    <STD_NoAkaunPelajar>04042020004438</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,322.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029314</STD_NoPelajar>
+    <STD_NamaPelajar>MOHAMAD HELMI BIN HARUN</STD_NamaPelajar>
+    <STD_NoIC>930429065183</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021427669</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>680.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,807.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029388</STD_NoPelajar>
+    <STD_NamaPelajar>NORSYAHIDAN BIN AHMAD NORDIN</STD_NamaPelajar>
+    <STD_NoIC>930322075031</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021431611</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>994.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,493.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029501</STD_NoPelajar>
+    <STD_NamaPelajar>MOHD SYAHIRAN BIN AHMAD SHUKRI</STD_NamaPelajar>
+    <STD_NoIC>930527115471</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021428401</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>2,387.50</STD_AmaunPotongan>
+    <STD_NilaiBersih>100.00</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029552</STD_NoPelajar>
+    <STD_NamaPelajar>MARDHIYYAH BINTI SHAMSUDIN</STD_NamaPelajar>
+    <STD_NoIC>930320025452</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021447524</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,907.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029579</STD_NoPelajar>
+    <STD_NamaPelajar>ROSTAM MOHD SAFWAN BIN ABDUL RAHIM</STD_NamaPelajar>
+    <STD_NoIC>930227065169</STD_NoIC>
+    <STD_NoAkaunPelajar>06019020986250</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>990.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,497.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029592</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD ADIB BIN GHAZALI</STD_NamaPelajar>
+    <STD_NoIC>930531115167</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021451373</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.80</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,554.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>933.80</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029634</STD_NoPelajar>
+    <STD_NamaPelajar>NUR ATIQAH BINTI MAT SALLEH</STD_NamaPelajar>
+    <STD_NoIC>930707035778</STD_NoIC>
+    <STD_NoAkaunPelajar>03072020830924</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>870.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,617.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029659</STD_NoPelajar>
+    <STD_NamaPelajar>AHMAD ADIB HAKIMI BIN FAIRUS</STD_NamaPelajar>
+    <STD_NoIC>930130115297</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021453622</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,987.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,407.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029667</STD_NoPelajar>
+    <STD_NamaPelajar>RAUDHATUN NADIAH BT MOHD RAZEMIN</STD_NamaPelajar>
+    <STD_NoIC>930327115004</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021451967</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>830.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,657.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029674</STD_NoPelajar>
+    <STD_NamaPelajar>SAUFI HAFIZI BIN MOHD NASIR</STD_NamaPelajar>
+    <STD_NoIC>930430136313</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028315690</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.05</STD_AmaunWarran>
+    <STD_AmaunPotongan>750.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,737.05</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029691</STD_NoPelajar>
+    <STD_NamaPelajar>MOHAMAD RIDZUAN BIN MOHD NOOR</STD_NamaPelajar>
+    <STD_NoIC>930221035401</STD_NoIC>
+    <STD_NoAkaunPelajar>13017021452735</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,540.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>947.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>029771</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD SAFUAN BIN MOHD YUSOFF</STD_NamaPelajar>
+    <STD_NoIC>931224086751</STD_NoIC>
+    <STD_NoAkaunPelajar>08068020594795</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,487.50</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,335.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,152.50</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031220</STD_NoPelajar>
+    <STD_NamaPelajar>NURLIYANA BINTI ISMAIL</STD_NamaPelajar>
+    <STD_NoIC>940321115010</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028292818</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>812.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031284</STD_NoPelajar>
+    <STD_NamaPelajar>NURUL SALWANI BINTI MOHD RAZALI</STD_NamaPelajar>
+    <STD_NoIC>940312115414</STD_NoIC>
+    <STD_NoAkaunPelajar>13035020524486</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,035.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>942.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031363</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD SHAHRIZZAM BIN ABD MUSA</STD_NamaPelajar>
+    <STD_NoIC>940822016061</STD_NoIC>
+    <STD_NoAkaunPelajar>01050020357997</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,976.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,265.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>711.87</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031374</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMAD NAZDI SHAREEN BIN MAJDI</STD_NamaPelajar>
+    <STD_NoIC>940214086189</STD_NoIC>
+    <STD_NoAkaunPelajar>02057022446133</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,976.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,415.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>561.87</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031385</STD_NoPelajar>
+    <STD_NamaPelajar>MOHAMAD HAKIMI BIN MOHAMAD</STD_NamaPelajar>
+    <STD_NoIC>941016035609</STD_NoIC>
+    <STD_NoAkaunPelajar>03090020659058</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,777.43</STD_AmaunPotongan>
+    <STD_NilaiBersih>200.00</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031455</STD_NoPelajar>
+    <STD_NamaPelajar>NURHAZIRAH BINTI MOHAMMAD</STD_NamaPelajar>
+    <STD_NoIC>940218115450</STD_NoIC>
+    <STD_NoAkaunPelajar>13017024856836</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,976.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,035.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>941.87</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031762</STD_NoPelajar>
+    <STD_NamaPelajar>SOFIATUL AKMAL BINTI IBRAHIM</STD_NamaPelajar>
+    <STD_NoIC>940521115402</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028297509</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>812.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031901</STD_NoPelajar>
+    <STD_NamaPelajar>AMALINA FARHANAH BINTI AHMAD NOR</STD_NamaPelajar>
+    <STD_NoIC>941023065136</STD_NoIC>
+    <STD_NoAkaunPelajar>06019021063232</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,397.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031913</STD_NoPelajar>
+    <STD_NamaPelajar>MOHAMMAD SYAFIQ BIN AHMAD SAHIMI</STD_NamaPelajar>
+    <STD_NoIC>940217085413</STD_NoIC>
+    <STD_NoAkaunPelajar>08059020314682</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,976.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>744.50</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,232.37</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031914</STD_NoPelajar>
+    <STD_NamaPelajar>ZULKARNAIN BIN MAT HUSSIN</STD_NamaPelajar>
+    <STD_NoIC>941024035529</STD_NoIC>
+    <STD_NoAkaunPelajar>03018021406171</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,476.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>961.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,515.87</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031916</STD_NoPelajar>
+    <STD_NamaPelajar>MOHD AZRIZAN BIN JANUIN</STD_NamaPelajar>
+    <STD_NoIC>940223126285</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028324448</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,397.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031947</STD_NoPelajar>
+    <STD_NamaPelajar>NUR AMALINA BINTI KAMALUDDIN</STD_NamaPelajar>
+    <STD_NoIC>940708126486</STD_NoIC>
+    <STD_NoAkaunPelajar>10016020939974</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,035.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,442.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031956</STD_NoPelajar>
+    <STD_NamaPelajar>NUR NABIHAH BT MAT GHANI</STD_NamaPelajar>
+    <STD_NoIC>941006115576</STD_NoIC>
+    <STD_NoAkaunPelajar>13035020541471</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,897.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031966</STD_NoPelajar>
+    <STD_NamaPelajar>NURUL SYAHEERA AZWA BINTI ZUKIFLI</STD_NamaPelajar>
+    <STD_NoIC>940524115010</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028315286</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,476.87</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,526.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>950.87</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031970</STD_NoPelajar>
+    <STD_NamaPelajar>NURSYAFIQAH BINTI AZIZ</STD_NamaPelajar>
+    <STD_NoIC>940906115550</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028314808</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,585.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>892.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031972</STD_NoPelajar>
+    <STD_NamaPelajar>SITI RAWIAH RASYIQAH BINTI ABD RAZAK</STD_NamaPelajar>
+    <STD_NoIC>940430115036</STD_NoIC>
+    <STD_NoAkaunPelajar>13026020546217</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>812.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>031984</STD_NoPelajar>
+    <STD_NamaPelajar>NUR ATHIRAH IZZATTI BINTI MD RAHIM</STD_NamaPelajar>
+    <STD_NoIC>940429115020</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028323939</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>812.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>032011</STD_NoPelajar>
+    <STD_NamaPelajar>TUAN MAIZAN NASUHA BINTI TUAN JUSOH</STD_NamaPelajar>
+    <STD_NoIC>940201115120</STD_NoIC>
+    <STD_NoAkaunPelajar>13035020541456</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>1,977.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,285.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>692.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>032017</STD_NoPelajar>
+    <STD_NamaPelajar>NURUL IZZAH BT CHE ZAIDI</STD_NamaPelajar>
+    <STD_NoIC>940226115506</STD_NoIC>
+    <STD_NoAkaunPelajar>13035020515420</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,165.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,312.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>032049</STD_NoPelajar>
+    <STD_NamaPelajar>NOR AZLIN BT ZAKARIA</STD_NamaPelajar>
+    <STD_NoIC>940504035582</STD_NoIC>
+    <STD_NoAkaunPelajar>13017028322321</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>580.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,897.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>032078</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD KAMARUDDIN BIN RAZALI</STD_NamaPelajar>
+    <STD_NoIC>940221115531</STD_NoIC>
+    <STD_NoAkaunPelajar>13017024841155</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>850.00</STD_AmaunPotongan>
+    <STD_NilaiBersih>1,627.43</STD_NilaiBersih>
+  </Table>
+  <Table>
+    <STD_NoPelajar>032082</STD_NoPelajar>
+    <STD_NamaPelajar>MUHAMMAD IKHWAN BIN AZMAN</STD_NamaPelajar>
+    <STD_NoIC>940128115203</STD_NoIC>
+    <STD_NoAkaunPelajar>13053020120014</STD_NoAkaunPelajar>
+    <STD_StatusBayaran>C</STD_StatusBayaran>
+    <STD_AmaunWarran>2,477.43</STD_AmaunWarran>
+    <STD_AmaunPotongan>1,913.50</STD_AmaunPotongan>
+    <STD_NilaiBersih>563.93</STD_NilaiBersih>
+  </Table>
+</NewDataSet>

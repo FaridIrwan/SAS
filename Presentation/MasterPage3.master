@@ -1,0 +1,205 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage3.master.vb" Inherits="MasterPage3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to SAS</title>
+    <style type="text/css">
+        h1
+        {
+            margin: 0px;
+        }
+        
+        #Panel1
+        {
+            height: 10%;
+            margin:0px;
+        }
+        
+        #nav1
+        {
+            height: 520px;
+            width: 100%;
+        }
+        
+        #content1
+        {
+            height: 900px;
+            width: 100%;
+        }
+        #container
+        {
+            width: 100%;
+        }
+        #footer1
+        {
+            clear: both;
+            height: 50px;
+        }
+    </style>
+    <script src="Scripts/functions.js" type="text/javascript"></script>
+    <script src="Scripts/popcalendar.js" type="text/javascript"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <asp:contentPlaceholder id="head" runat="server" />
+</head>
+<body>
+    <script language="JavaScript" type="text/javascript">
+        var value = null;
+        var isV5 = false;
+        
+        var sessionTimeout = "<%= Session.Timeout %>";
+
+    </script>
+    <script type="text/javascript">
+        function ExpandAllChildren(sender, args) {
+            enumerateChildItems(args.get_item());
+        }
+
+        function enumerateChildItems(myitem) {
+            for (var i = 0; i < myitem.get_items().get_count(); i++) {
+                myitem.get_items().getItem(i).expand()
+                enumerateChildItems(myitem.get_items().getItem(i));
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function OnClientItemClicking(sender, eventArgs) {
+
+            var item = eventArgs.get_item();
+            alert(item.get_value());
+            var items = item.get_value();
+            var navigateUrl = item.get_navigateUrl();
+            if (navigateUrl && navigateUrl != "#") {
+
+                eventArgs.set_cancel(true);
+            }
+        }
+    </script>
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="ScriptManager" runat="server" />
+    <div id="container">
+        <asp:Panel ID="Panel1" runat="server">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;
+                height: 14%; color: #FFFFFF;">
+                <tr>
+                    <td class="topbg" style="height: 110px;">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="height: 46px">
+                                    &nbsp;
+                                </td>
+                                <td class="topText" style="width: 610px; height: 46px; text-align: right">
+                                    &nbsp;
+                                </td>
+                                <td class="topText" style="width: 250px; height: 46px; right: auto; text-align: right;">
+                                    <asp:Label ID="Label7" runat="server" Font-Bold="True" Text="Login Id :" Style="font-size: medium"></asp:Label>
+                                    <asp:Label ID="lblUser" runat="server" Font-Bold="True" Text="ABC" Style="font-size: medium"></asp:Label>&nbsp;&nbsp;<br />
+                                    <script language="JavaScript" type="text/javascript" class="date">
+				<!--//
+					var myMonths=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+					var myDays= new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+					today=new Date();
+					thisDay=myDays[today.getDay()]
+					thisMonth=myMonths[today.getMonth()]
+					<!--//thisYear=today.Year()
+					thisDate=today.getDate()
+					switch (thisDate) {
+					case 1:
+					dateSuffix="<sup>st</sup>"
+					break
+					case 21:
+					dateSuffix="<sup>st</sup>"
+					break
+					case 31:
+					dateSuffix="<sup>st</sup>"
+					break
+					case 2:
+					dateSuffix="<sup>nd</sup>"
+					break
+					case 22:
+					dateSuffix="<sup>nd</sup>"
+					break;
+					case 3:
+					dateSuffix="<sup>rd</sup>"
+					break
+					case 23:
+					dateSuffix="<sup>rd</sup>"
+					break
+					default:
+					dateSuffix="<sup>th</sup>"
+					}
+					todaysDate=thisDay+", "+thisDate+dateSuffix+" "+thisMonth
+					function myClock(){
+					today=new Date()
+					var theHours=today.getHours()
+					if (theHours>11)
+					{
+					theTimeSuffix="PM"
+					}
+					if (theHours>12)
+					var theHours=theHours-12
+					else
+					{
+					theTimeSuffix="AM"
+					}
+					var theMinutes=today.getMinutes()
+					if (theMinutes<10)
+					var theMinutes="0"+theMinutes
+					var theSeconds=today.getSeconds()
+					if (theSeconds<10)
+					var theSeconds="0"+theSeconds
+					var theTimeNow=theHours+":"+theMinutes+":"+theSeconds+" "+theTimeSuffix
+					}
+					var clockWork=setInterval("myClock()",1000)
+					
+					document.write('<b><font face=verdana size=2 color=#ffffff>' + todaysDate + '</font></b>')
+										//-->
+                                    </script>
+                                    &nbsp;&nbsp;
+                                    <br />
+                                   <%-- <strong>Time Left :&nbsp;<asp:Label ID="lblSessionTime" runat="server" Width="1px"></asp:Label>&nbsp;&nbsp;&nbsp;
+                                        Min</strong>&nbsp;&nbsp;&nbsp;--%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 46px">
+                                    &nbsp;
+                                </td>
+                                <td class="topText" style="width: 610px; height: 46px; text-align: right">
+                                </td>
+                                <td valign="bottom" style="width: 250px; height: 46px; text-align: right">
+                                    <asp:Button ID="btnLogout" runat="server" Text="Logout" BackColor="Transparent" BorderWidth="0px"
+                                        Font-Size="Small" />
+                                    <asp:ImageButton ID="btnImgLogout" runat="server" ImageUrl="~/images/button.png" />
+                                    &nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="td" runat="server" width="16%" valign="top" align="left">
+                    <div id="nav1">
+                        <telerik:RadPanelBar HorizontalAlignment="Left" runat="server" ID="RadPanelBar1"
+                            Skin="Vista" ExpandMode="FullExpandedItem" DataFieldID="MenuId" Height="90%"
+                            DataFieldParentID="MenuId" OnItemClick="RadPanelBar1_ItemClick" DataTextField="MenuName"
+                            OnClientItemClicking="ExpandAllChildren" PersistStateInCookie="true">
+                        </telerik:RadPanelBar>
+                    </div>
+                </td>
+                <td width="84%" valign="top" align="left">
+                    <div id="content1">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

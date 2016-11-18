@@ -1,0 +1,2203 @@
+Imports System.Collections.Generic
+Imports HTS.SAS.Entities
+Imports HTS.SAS.BusinessObjects
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Globalization
+Imports SQLPowerQueryManager.PowerQueryManager
+
+Partial Class BatchInvoice
+    Inherits System.Web.UI.Page
+#Region "Global Declarations "
+    'Global Declaration - Starting
+    Private _Helper As New Helper
+    Private ListTRD As New List(Of AccountsDetailsEn)
+    Private ListObjects As List(Of AccountsEn)
+    Dim listStu As New List(Of StudentEn)
+    Private ErrorDescription As String
+    Private sumAmt As Double = 0
+    Dim DFlag As String
+    Dim AutoNo As Boolean
+    Dim ListObjectsStudent As List(Of StudentEn)
+    Dim MJ_JnlLineEn As New BusinessEntities.MJ_JnlLine
+    Dim MJ_JnlHdrEn As New BusinessEntities.MJ_JnlHdr
+    Dim AutoNumberEn As New BusinessEntities.AutoNumberEn
+    Dim AccountEn As New BusinessEntities.AccountsEn
+    Dim objIntegrationDL As New SQLPowerQueryManager.PowerQueryManager.IntegrationDL
+    Dim objIntegration As New IntegrationModule.IntegrationNameSpace.Integration
+
+    Dim dsReturn As New DataSet
+    Dim dsReturn_II As New DataSet
+
+    'Global Declaration - Ended
+#End Region
+
+#Region "Done By "
+
+    Public Function DoneBy() As Integer
+
+        Return MaxGeneric.clsGeneric.
+            NullToInteger(Session(Helper.UserSession))
+
+    End Function
+
+#End Region
+
+    ''Private LogErrors As LogError
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'load PageName
+        If Not IsPostBack() Then
+            'Getting MenuId
+            Menuname(CInt(Request.QueryString("Menuid")))
+            Session("Menuid") = Request.QueryString("Menuid")
+
+            If CInt(Request.QueryString("IsStudentLedger")).Equals(1) Then
+                btnViewStu.Visible = False
+                btnSelection.Visible = False
+            End If
+            Session("ReceiptFor") = "St"
+            Session("BatchNo") = Nothing
+            'Client Validations
+            ibtnDelete.Attributes.Add("onClick", "return getconfirm()")
+            ibtnInDate.Attributes.Add("onClick", "return getDate1from()")
+            ibtnDueDate.Attributes.Add("onClick", "return getDate2from()")
+            ibtnPosting.Attributes.Add("onClick", "return getpostconfirm()")
+            ibtnBDate.Attributes.Add("onClick", "return getibtnBDate()")
+            ibtnSave.Attributes.Add("onCLick", "return Validate()")
+            btnSelection.Attributes.Add("onCLick", "return Validate()")
+            btnViewStu.Attributes.Add("onCLick", "return Validate()")
+            txtRecNo.Attributes.Add("OnKeyup", "return geterr()")
+            txtBatchDate.Attributes.Add("OnKeyup", "return CheckBatchDate()")
+            txtSemster.Attributes.Add("OnKeyup", "return CheckSem()")
+            txtDuedate.Attributes.Add("OnKeyup", "return CheckDueDate()")
+            txtInvoiceDate.Attributes.Add("OnKeyup", "return CheckInvDate()")
+            txtBatchDate.Attributes.Add("OnKeyup", "return CheckBatchDate()")
+            'Load Upload File Sponsor
+            btnupload.Attributes.Add("onclick", "new_window=window.open('FileSponsor.aspx?type=addstud','Hanodale','width=470,height=200,resizable=0');new_window.focus();")
+            'Student Screen Popup
+            ibtnStudent.Attributes.Add("onclick", "new_window=window.open('AddMulStudents.aspx?cat=St','Hanodale','width=520,height=600,resizable=0');new_window.focus();")
+            'Student FeeTypes Screen Popup
+            'Student FeeTypes Screen Popup
+            ibtnAddFeeType.Attributes.Add("onclick", "new_window=window.open('StudentFeetype.aspx','Hanodale','width=520,height=500,resizable=0');new_window.focus();")
+            'Loading Date Fields
+            OnLoadItem()
+            lblMsg.Text = ""
+            'Clearing Sesssions
+            Session("PageMode") = "Add"
+            Session("eobj") = Nothing
+            Session("AddFee") = Nothing
+            Session("LstStueObj") = Nothing
+            Session("liststu") = Nothing
+            Session("ListObj") = Nothing
+            'Loading UserRights
+            LoadUserRights()
+            'Loading Navigation Controls
+            DisableRecordNavigator()
+            'Formatting DateFields
+            dates()
+            LoadStudentCategory()
+            LoadFaculty()
+            LoadFields()
+            If dgView.Items.Count <= 0 Then
+                txtTotal.Visible = False
+                lblTotal.Visible = False
+            End If
+        End If
+        ibtnPrint.Attributes.Add("onCLick", "return getPrint()")
+        If Request.QueryString("Formid") = "Inv" Then
+            btnBatchInvoice.Text = "Invoice"
+            Page.Title = String.Format("Student Invoice")
+            btnChangeProg.Visible = False
+            btnChangeCdtHr.Visible = False
+            btnChangeHostel.Visible = False
+        ElseIf Request.QueryString("Formid") = "DN" Then
+            btnBatchInvoice.Text = "Debit Note"
+            Page.Title = String.Format("Student Debit Note")
+            btnChangeProg.Visible = False
+            btnChangeCdtHr.Visible = True
+            btnChangeHostel.Visible = False
+        ElseIf Request.QueryString("Formid") = "CN" Then
+            btnBatchInvoice.Text = "Credit Note"
+            Page.Title = String.Format("Student Credit Debit Note")
+            btnChangeProg.Visible = True
+            btnChangeCdtHr.Visible = True
+            btnChangeHostel.Visible = True
+        End If
+        'Checking for Faculty
+        If Not Session("eobj") Is Nothing Then
+            addFeeType()
+        End If
+        'Checking for Added list of Students
+        If Not Session("liststu") Is Nothing Then
+            addStudent()
+        End If
+        lblMsg.Text = ""
+        'Display Rcord from Student Ledger screen
+        Try
+            If Not Session("fileSponsor") Is Nothing And Session("fileType") = "excel" Then
+                Dim importobj As New ImportData
+                ListObjectsStudent = importobj.GetImportedSponsorData(Session("fileSponsor").ToString())
+                LoadStudentsTemplates(ListObjectsStudent)
+                Session("fileType") = Nothing
+            End If
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+        If Not Request.QueryString("BatchCode") Is Nothing Then
+            Dim str As String = Request.QueryString("BatchCode")
+            Dim constr As String() = str.Split(";")
+            txtBatchNo.Text = constr(0)
+            DirectCast(Master.FindControl("Panel1"), System.Web.UI.WebControls.Panel).Visible = False
+            DirectCast(Master.FindControl("td"), System.Web.UI.HtmlControls.HtmlTableCell).Visible = False
+
+            pnlToolbar.Visible = False
+            OnSearchOthers()
+        End If
+
+    End Sub
+
+    Protected Sub btnBatchInvoice_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBatchInvoice.Click
+        LoadBatchInvoice()
+    End Sub
+
+    Protected Sub btnSelection_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSelection.Click
+        MultiView1.SetActiveView(View2)
+
+        'imgLeft2.ImageUrl = "images/b_white_left.png"
+        'imgRight2.ImageUrl = "images/b_white_right.png"
+        btnSelection.CssClass = "TabButtonClick"
+
+
+        'imgLeft1.ImageUrl = "images/b_orange_left.png"
+        'imgRight1.ImageUrl = "images/b_orange_right.png"
+        btnBatchInvoice.CssClass = "TabButton"
+
+        'imgLeft3.ImageUrl = "images/b_orange_left.png"
+        'imgRight3.ImageUrl = "images/b_orange_right.png"
+        btnViewStu.CssClass = "TabButton"
+
+        pnlBatch.Visible = False
+        pnlSelection.Visible = True
+        pnlView.Visible = False
+
+        '
+        SponsorGrid()
+        '
+        HostelGrid()
+
+    End Sub
+
+    Protected Sub btnViewStu_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnViewStu.Click
+        OnViewStudentGrid()
+    End Sub
+    Protected Sub ibtnNext_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnNext.Click
+        OnMoveNext()
+    End Sub
+    Protected Sub ibtnLast_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnLast.Click
+        OnMoveLast()
+    End Sub
+    Protected Sub ibtnPrevs_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnPrevs.Click
+        OnMovePrevious()
+    End Sub
+    Protected Sub ibtnFirst_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnFirst.Click
+        OnMoveFirst()
+    End Sub
+    Protected Sub ibtnNew_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnNew.Click
+        onAdd()
+        onClearData()
+        LoadBatchInvoice()
+    End Sub
+    Protected Sub ibtnDelete_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnDelete.Click
+        ondelete()
+    End Sub
+    Protected Sub ibtnCancel_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnCancel.Click
+        LoadUserRights()
+        onAdd()
+        onClearData()
+    End Sub
+    Protected Sub txtFeeAmt_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim eobjTRD As AccountsDetailsEn
+        Dim dgitem As DataGridItem
+        Dim i As Integer = 0
+        Dim txt As TextBox
+        For Each dgitem In dgView.Items
+            Session("AddFee") = Nothing
+            txt = dgitem.Cells(2).Controls(1)
+            If txt.Text = "" Then txt.Text = 0
+            dgitem.Cells(2).Text = String.Format("{0:F}", CDbl(txt.Text))
+            eobjTRD = New AccountsDetailsEn
+            eobjTRD.ReferenceCode = dgView.DataKeys(dgitem.ItemIndex).ToString
+            eobjTRD.Description = dgitem.Cells(1).Text
+            eobjTRD.TransactionAmount = String.Format("{0:F}", CDbl(txt.Text))
+            eobjTRD.Priority = dgitem.Cells(4).Text
+            ListTRD.Add(eobjTRD)
+            eobjTRD = Nothing
+            i = i + 1
+        Next
+        Session("AddFee") = ListTRD
+        dgView.DataSource = ListTRD
+        dgView.DataBind()
+        'AddTotal()
+    End Sub
+    Protected Sub dgProgram_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgProgram.ItemDataBound
+        Dim Chk As CheckBox
+        If chkSelectProgram.Checked = True Then
+            Select Case e.Item.ItemType
+                Case ListItemType.Item, ListItemType.AlternatingItem
+                    Chk = CType(e.Item.FindControl("chkProgram"), CheckBox)
+                    Chk.Checked = True
+            End Select
+        End If
+    End Sub
+    Protected Sub chkSelectProgram_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkSelectProgram.CheckedChanged ', chkSelectProgram.Load
+        If chkSelectProgram.Checked = True Then
+            rbProYes.Checked = True
+            rbProNo.Checked = False
+        Else
+            rbProYes.Checked = False
+            rbProNo.Checked = True
+        End If
+        programGrid()
+    End Sub
+    Protected Sub DgSponsor_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles DgSponsor.ItemDataBound
+        Dim Chk As CheckBox
+        If chkSelectSponsor.Checked = True Then
+            Select Case e.Item.ItemType
+                Case ListItemType.Item, ListItemType.AlternatingItem
+                    Chk = CType(e.Item.FindControl("chk"), CheckBox)
+                    Chk.Checked = True
+            End Select
+        End If
+    End Sub
+
+    Protected Sub chkSelectSponsor_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkSelectSponsor.CheckedChanged ', chkSelectSponsor.Load
+        If chkSelectSponsor.Checked = True Then
+            rbSemNo.Checked = False
+            rbSemYes.Checked = True
+        Else
+            rbSemNo.Checked = True
+            rbSemYes.Checked = False
+        End If
+        SponsorGrid()
+    End Sub
+
+    Protected Sub dgHostel_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgHostel.ItemDataBound
+        Dim Chk As CheckBox
+        If chkSelectHostel.Checked = True Then
+            Select Case e.Item.ItemType
+                Case ListItemType.Item, ListItemType.AlternatingItem
+                    Chk = CType(e.Item.FindControl("chk"), CheckBox)
+                    Chk.Checked = True
+            End Select
+        End If
+    End Sub
+    Protected Sub dgStudent_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgStudent.ItemDataBound
+        Dim Chk As CheckBox
+        If chkStudent.Checked = True Then
+            Select Case e.Item.ItemType
+                Case ListItemType.Item, ListItemType.AlternatingItem
+                    Chk = CType(e.Item.FindControl("chk"), CheckBox)
+                    Chk.Checked = True
+            End Select
+        End If
+    End Sub
+    Protected Sub chkSelectHostel_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkSelectHostel.CheckedChanged ', chkSelectHostel.Load
+        If chkSelectHostel.Checked = True Then
+            rbHosYes.Checked = True
+            rbHosNo.Checked = False
+        Else
+            rbHosYes.Checked = False
+            rbHosNo.Checked = True
+        End If
+        HostelGrid()
+    End Sub
+    Protected Sub rbSemIndividual_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbSemIndividual.CheckedChanged, rbSemIndividual.Load
+        If rbSemIndividual.Checked = True Then
+            txtSemster.Visible = True
+        End If
+    End Sub
+    Protected Sub rbSemAll_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbSemAll.CheckedChanged, rbSemAll.Load
+        If rbSemAll.Checked = True Then
+            txtSemster.Visible = False
+        End If
+    End Sub
+    Protected Sub ddlFaculty_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlFaculty.SelectedIndexChanged 'ddlFaculty.Load
+        Session("FC_Code") = ddlFaculty.SelectedValue
+        programGrid()
+
+    End Sub
+
+    Protected Sub btnUpdateCri_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnUpdateCri.Click
+        Dim objup As New StudentBAL
+        Dim i As Integer = 0
+        Dim lstobjects As New List(Of StudentEn)
+        Dim eob As New StudentEn
+        Dim sem As Integer = 0
+        Dim faculty As String
+        Dim cat As String
+
+        If rbProYes.Checked = True Then inprogram()
+        If rbSemYes.Checked = True Then inSponsor()
+        If rbHosYes.Checked = True Then inHOstel()
+        If rbSemAll.Checked = True Then
+            eob.CurrentSemester = 0
+        Else
+            If txtSemster.Text = "" Then
+                eob.CurrentSemester = 0
+            Else
+                eob.CurrentSemester = txtSemster.Text
+            End If
+        End If
+        eob.STsponsercode = New StudentSponEn
+        If Not Session("spnstr") Is Nothing Then
+            eob.STsponsercode.Sponsor = Session("spnstr")
+        Else
+            eob.STsponsercode.Sponsor = ""
+        End If
+        If Not Session("sstr") Is Nothing Then
+            eob.SAKO_Code = Session("sstr")
+        Else
+            eob.SAKO_Code = ""
+        End If
+        If Not Session("prgstr") Is Nothing Then
+            eob.ProgramID = Session("prgstr")
+        Else
+            eob.ProgramID = ""
+        End If
+        If ddlFaculty.SelectedValue = "-1" Then
+            faculty = ""
+        Else
+            faculty = ddlFaculty.SelectedValue
+
+        End If
+        If ddlStudentType.SelectedValue = "-1" Then
+            cat = ""
+        Else
+            cat = ddlStudentType.SelectedValue
+
+        End If
+        eob.Faculty = faculty
+        eob.CategoryCode = cat
+        eob.StCategoryAcess = New StudentCategoryAccessEn
+        eob.StCategoryAcess.MenuID = Session("Menuid")
+
+        Try
+            lstobjects = objup.GetlisStudent(eob)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "btnUpdateCri_Click", ex.Message)
+        End Try
+
+        pnlView.Visible = True
+
+        'Adding in the exisiting list
+        Dim mylst As List(Of StudentEn)
+        If Not Session("LstStueObj") Is Nothing Then
+            Dim Flag As Boolean
+            mylst = Session("LstStueObj")
+            While i < lstobjects.Count
+                Dim j As Integer = 0
+                While j < mylst.Count
+                    Flag = False
+                    If mylst(j).MatricNo = lstobjects(i).MatricNo Then
+                        Flag = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                If Flag = False Then
+                    mylst.Add(lstobjects(i))
+                End If
+                i = i + 1
+            End While
+        Else
+            mylst = lstobjects
+        End If
+        dgStudent.DataSource = mylst
+        dgStudent.DataBind()
+        Session("LstStueObj") = mylst
+        Session("sstr") = ""
+        Session("prgstr") = ""
+        Session("spnstr") = ""
+        If Not lstobjects Is Nothing Then
+            OnViewStudentGrid()
+        Else
+
+        End If
+    End Sub
+
+    Protected Sub dgView_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgView.ItemDataBound
+        Dim txtAmount As TextBox
+        Select Case e.Item.ItemType
+            Case ListItemType.Item, ListItemType.AlternatingItem, ListItemType.SelectedItem
+                txtAmount = CType(e.Item.FindControl("txtFeeAmt"), TextBox)
+                txtAmount.Text = e.Item.Cells(3).Text
+                txtAmount.Attributes.Add("onKeyPress", "checkValue();")
+                txtAmount.Text = String.Format("{0:F}", CDbl(txtAmount.Text))
+                sumAmt = sumAmt + CDbl(e.Item.Cells(3).Text)
+            Case ListItemType.Footer
+                e.Item.Cells(3).Text = sumAmt.ToString
+                e.Item.Cells(2).Text = String.Format("{0:F}", sumAmt)
+                txtTotal.Text = String.Format("{0:F}", sumAmt)
+        End Select
+
+    End Sub
+
+    Protected Sub ibtnSave_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnSave.Click
+        If dgView.Items.Count = 0 Then
+            lblMsg.Text = "Add At least One Fee Item"
+            lblMsg.Visible = True
+            Exit Sub
+        Else
+            lblMsg.Visible = False
+        End If
+        If dgStudent.Items.Count = 0 Then
+            lblMsg.Text = "Select At least One Student"
+            lblMsg.Visible = True
+            Exit Sub
+        Else
+            lblMsg.Visible = False
+        End If
+        'Call to add selected student list
+        CreateListObjStudent()
+
+        If Session("lstStu") Is Nothing Then
+            lblMsg.Text = "Select At least One Student"
+            lblMsg.Visible = True
+            Exit Sub
+        Else
+            lblMsg.Visible = False
+        End If
+        If lblStatus.Value = "Posted" Then
+            lblMsg.Text = "Post Record Cannot be Edited"
+            lblMsg.Visible = True
+            Exit Sub
+        End If
+        SpaceValidation()
+        onSave()
+        setDateFormat()
+    End Sub
+
+    Protected Sub ibtnView_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnView.Click
+        'LoadGrid()
+        LoadUserRights()
+        Session("loaddata") = "View"
+        If lblCount.Text <> "" Then
+            If CInt(lblCount.Text) > 0 Then
+                onClearData()
+                If ibtnNew.Enabled = False Then
+                    ibtnSave.Enabled = False
+                    ibtnSave.ImageUrl = "images/gsave.png"
+                    ibtnSave.ToolTip = "Access Denied"
+                End If
+            Else
+                LoadListObjects()
+                If lblCount.Text <> "" Then
+                    Session("PageMode") = "Edit"
+                Else
+                    Session("PageMode") = "Add"
+                End If
+                'Session("BatchNo") = txtBatchNo.Text
+            End If
+        Else
+            LoadListObjects()
+            If lblCount.Text <> "" Then
+                Session("PageMode") = "Edit"
+            Else
+                Session("PageMode") = "Add"
+            End If
+            'Session("BatchNo") = txtBatchNo.Text
+        End If
+    End Sub
+
+    Protected Sub txtRecNo_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtRecNo.TextChanged
+
+        If Trim(txtRecNo.Text).Length = 0 Then
+            txtRecNo.Text = 0
+            If lblCount.Text <> Nothing Then
+                If CInt(txtRecNo.Text) > CInt(lblCount.Text) Then
+                    txtRecNo.Text = lblCount.Text
+                    'txtRecNo.ReadOnly = True
+
+                End If
+                FillData(CInt(txtRecNo.Text) - 1)
+            Else
+                txtRecNo.Text = ""
+            End If
+        Else
+            If lblCount.Text <> Nothing Then
+                If CInt(txtRecNo.Text) > CInt(lblCount.Text) Then
+                    txtRecNo.Text = lblCount.Text
+                End If
+                FillData(CInt(txtRecNo.Text) - 1)
+            Else
+                txtRecNo.Text = ""
+            End If
+        End If
+    End Sub
+
+    Protected Sub ibtnPosting_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnPosting.Click
+
+        'Varaible Declaration
+        Dim BatchCode As String = MaxGeneric.clsGeneric.NullToString(txtBatchNo.Text)
+
+        'Calling PostToWorFlow
+        _Helper.PostToWorkflow(BatchCode, DoneBy(), Request.Url.AbsoluteUri)
+
+        'If lblStatus.Value = "New" Then
+        '    lblMsg.Text = "Record not ready for Posting"
+        '    lblMsg.Visible = True
+        'ElseIf lblStatus.Value = "Posted" Then
+        '    lblMsg.Text = "Record Already Posted"
+        '    lblMsg.Visible = True
+        'ElseIf lblStatus.Value = "Ready" Then
+        '    SpaceValidation()
+        '    OnPost()
+        '    setDateFormat()
+        'End If
+
+    End Sub
+
+    Protected Sub chkStudent_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkStudent.CheckedChanged
+
+        Dim chk As CheckBox
+        Dim dgitem As DataGridItem
+        If chkStudent.Checked = True Then
+            For Each dgitem In dgStudent.Items
+                chk = dgitem.Cells(0).Controls(1)
+                chk.Checked = True
+            Next
+        Else
+            For Each dgitem In dgStudent.Items
+                chk = dgitem.Cells(0).Controls(1)
+                chk.Checked = False
+            Next
+        End If
+    End Sub
+    Protected Sub ibtnRemoveFee_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs)
+        If dgView.SelectedIndex <> -1 Then
+            Dim dgitem As DataGridItem
+            Dim i As Integer = 0
+            For Each dgitem In dgView.Items
+                dgitem.Cells(5).Text = i
+                i = i + 1
+            Next
+            ListTRD = Session("AddFee")
+            If Not ListTRD Is Nothing Then
+                If dgView.SelectedIndex <> -1 Then
+
+                    Try
+                        ListTRD.RemoveAt(CInt(dgView.SelectedItem.Cells(5).Text))
+                    Catch ex As Exception
+                        LogError.Log("BatchInvoice", "ibtnRemoveFee_Click", ex.Message)
+                    End Try
+                    dgView.DataSource = ListTRD
+                    dgView.DataBind()
+                    If ListTRD.Count <> 0 Then
+                        Session("AddFee") = ListTRD
+                    Else
+                        Session("AddFee") = Nothing
+                    End If
+                    dgView.SelectedIndex = -1
+                End If
+            End If
+        Else
+            lblMsg.Text = "Please Select a Feetype to Remove"
+            lblMsg.Visible = True
+        End If
+    End Sub
+
+    Protected Sub ibtnOthers_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs)
+        LoadUserRights()
+        OnSearchOthers()
+    End Sub
+
+    Protected Sub dgView_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Protected Sub dgHostel_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+
+    Protected Sub txtRecNo_TextChanged1(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+#Region "Methods"
+    ''' <summary>
+    ''' Method to Fill the Intake DropDown
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addIntake()
+        Dim eIntake As New SemesterSetupEn
+        Dim bIntake As New SemesterSetupBAL
+        Dim listIntake As New List(Of SemesterSetupEn)
+        ddlIntake.Items.Clear()
+        ddlIntake.Items.Add(New ListItem("---Select---", "-1"))
+        'ddlIntake.Items.Add(New ListItem("All", "1"))
+        ddlIntake.DataTextField = "SemisterSetupCode"
+        ddlIntake.DataValueField = "SemisterSetupCode"
+        eIntake.SemisterSetupCode = "%"
+
+        Try
+            listIntake = bIntake.GetListSemesterCode(eIntake)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "addIntake", ex.Message)
+        End Try
+        ddlIntake.DataSource = listIntake
+        ddlIntake.DataBind()
+        'Session("faculty") = listfac
+    End Sub
+    ''' <summary>
+    ''' Method to Load Student Category Dropdown
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadStudentCategory()
+        Dim bStuCategory As New StudentCategoryBAL
+        Dim eStuCategory As New StudentCategoryEn
+        eStuCategory.StudentCategoryCode = ""
+        eStuCategory.Description = ""
+        eStuCategory.Status = True
+        ddlStudentType.Items.Clear()
+        Dim ListStuCat As New List(Of StudentCategoryEn)
+        ddlStudentType.Items.Add(New ListItem("---Select---", "-1"))
+        ddlStudentType.DataTextField = "Description"
+        ddlStudentType.DataValueField = "StudentCategoryCode"
+        Try
+            ddlStudentType.DataSource = bStuCategory.GetStudentCategoryListAll(eStuCategory)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "LoadStudentCategory", ex.Message)
+        End Try
+
+        ddlStudentType.DataBind()
+    End Sub
+    ''' <summary>
+    ''' Method to Load Faculty Dropdown
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadFaculty()
+        Dim eFaculty As New FacultyEn
+        Dim bFaculty As New FacultyBAL
+        ddlFaculty.Items.Clear()
+        ddlFaculty.Items.Add(New ListItem("---Select---", "-1"))
+        ddlFaculty.DataTextField = "SAFC_Desc"
+        ddlFaculty.DataValueField = "SAFC_Code"
+        eFaculty.SAFC_Code = "%"
+        Try
+            ddlFaculty.DataSource = bFaculty.GetList(eFaculty)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "LoadFaculty", ex.Message)
+        End Try
+
+        ddlFaculty.DataBind()
+    End Sub
+    ''' <summary>
+    ''' Method to get the MenuName
+    ''' </summary>
+    ''' <param name="MenuId">Parameter is MenuId</param>
+    ''' <remarks></remarks>
+    Private Sub Menuname(ByVal MenuId As Integer)
+        Dim eobj As New MenuEn
+        Dim bobj As New MenuBAL
+        eobj.MenuId = MenuId
+        Try
+            eobj = bobj.GetMenus(eobj)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "Menuname", ex.Message)
+        End Try
+        lblMenuName.Text = eobj.MenuName
+    End Sub
+    ''' <summary>
+    ''' Method to Load the Fields for Invoice Tab
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadBatchInvoice()
+        MultiView1.SetActiveView(View1)
+
+        'imgLeft1.ImageUrl = "images/b_white_left.png"
+        'imgRight1.ImageUrl = "images/b_white_right.png"
+        btnBatchInvoice.CssClass = "TabButtonClick"
+
+
+        'imgLeft2.ImageUrl = "images/b_orange_left.png"
+        'imgRight2.ImageUrl = "images/b_orange_right.png"
+        btnSelection.CssClass = "TabButton"
+
+        'imgLeft3.ImageUrl = "images/b_orange_left.png"
+        'imgRight3.ImageUrl = "images/b_orange_right.png"
+        btnViewStu.CssClass = "TabButton"
+
+        pnlBatch.Visible = True
+        pnlSelection.Visible = False
+        pnlView.Visible = False
+    End Sub
+    ''' <summary>
+    ''' Method to load the Fields for View Students Tab
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnViewStudentGrid()
+        MultiView1.SetActiveView(View3)
+
+        'imgLeft3.ImageUrl = "images/b_white_left.png"
+        'imgRight3.ImageUrl = "images/b_white_right.png"
+        btnViewStu.CssClass = "TabButtonClick"
+
+
+        'imgLeft1.ImageUrl = "images/b_orange_left.png"
+        'imgRight1.ImageUrl = "images/b_orange_right.png"
+        btnBatchInvoice.CssClass = "TabButton"
+
+        'imgLeft2.ImageUrl = "images/b_orange_left.png"
+        'imgRight2.ImageUrl = "images/b_orange_right.png"
+        btnSelection.CssClass = "TabButton"
+        chkStudent.Visible = False
+        pnlBatch.Visible = False
+        pnlSelection.Visible = False
+        pnlView.Visible = True
+        pnlView.Visible = True
+    End Sub
+
+
+    ''' <summary>
+    ''' Method to Change the Date Format
+    ''' </summary>
+    ''' <remarks>Date in ddd/mm/yyyy Format</remarks>
+    Private Sub dates()
+        'Dim GBFormat As System.Globalization.CultureInfo
+        'GBFormat = New System.Globalization.CultureInfo("en-GB")
+        txtBatchDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtInvoiceDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtDuedate.Text = Format(DateAdd(DateInterval.Day, 30, Date.Now), "dd/MM/yyyy")
+    End Sub
+    ''' <summary>
+    ''' Method to Validate
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SpaceValidation()
+        ibtnSave.Attributes.Add("onCLick", "return Validate()")
+        Dim GBFormat As System.Globalization.CultureInfo
+        GBFormat = New System.Globalization.CultureInfo("en-GB")
+        If Trim(txtDesc.Text).Length = 0 Then
+            txtDesc.Text = Trim(txtDesc.Text)
+            lblMsg.Text = "Enter Valid Description "
+            lblMsg.Visible = True
+            txtDesc.Focus()
+            Exit Sub
+        End If
+        'Batch Intake
+        If Trim(ddlIntake.SelectedValue).Length < 0 Then
+            ddlIntake.SelectedValue = Trim(ddlIntake.SelectedValue)
+            lblMsg.Text = "Select Batch Intake"
+            lblMsg.Visible = True
+            ddlIntake.Focus()
+            Exit Sub
+        End If
+        'Batch date
+        If Trim(txtBatchDate.Text).Length < 10 Then
+            lblMsg.Text = "Enter Valid Batch Date"
+            lblMsg.Visible = True
+            txtBatchDate.Focus()
+            Exit Sub
+        Else
+            Try
+                txtBatchDate.Text = DateTime.Parse(txtBatchDate.Text, GBFormat)
+            Catch ex As Exception
+                lblMsg.Text = "Enter Valid Batch Date"
+                lblMsg.Visible = True
+                txtBatchDate.Focus()
+                Exit Sub
+            End Try
+        End If
+        'Invoice date
+        If Trim(txtInvoiceDate.Text).Length < 10 Then
+            lblMsg.Text = "Enter Valid Invoice Date"
+            lblMsg.Visible = True
+            txtInvoiceDate.Focus()
+            Exit Sub
+        Else
+            Try
+                txtInvoiceDate.Text = DateTime.Parse(txtInvoiceDate.Text, GBFormat)
+            Catch ex As Exception
+                lblMsg.Text = "Enter Valid Invoice Date"
+                lblMsg.Visible = True
+                txtInvoiceDate.Focus()
+                Exit Sub
+            End Try
+        End If
+
+        'Due date
+        If Trim(txtDuedate.Text).Length < 10 Then
+            lblMsg.Text = "Enter Valid Due Date"
+            lblMsg.Visible = True
+            txtDuedate.Focus()
+            Exit Sub
+        Else
+            Try
+                txtDuedate.Text = DateTime.Parse(txtDuedate.Text, GBFormat)
+            Catch ex As Exception
+                lblMsg.Text = "Enter Valid Due Date"
+                lblMsg.Visible = True
+                txtDuedate.Focus()
+                Exit Sub
+            End Try
+        End If
+        If lblStatus.Value = "Posted" Then
+            lblMsg.Text = "Record Already Posted"
+            lblMsg.Visible = True
+            Exit Sub
+        End If
+
+    End Sub
+    ''' <summary>
+    ''' Method to Load DateFields
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnLoadItem()
+        If Session("PageMode") = "Add" Then
+            LoadBatchInvoice()
+            'txtBatchNo.Text = "Auto Number"
+            'txtBatchNo.ReadOnly = True
+        End If
+        'txtBatchDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtInvoiceDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtDuedate.Text = Format(DateAdd(DateInterval.Day, 30, Date.Now), "dd/MM/yyyy")
+        txtBatchDate.ReadOnly = True
+        txtInvoiceDate.ReadOnly = True
+        txtDuedate.ReadOnly = True
+    End Sub
+    ''' <summary>
+    ''' Method to Add FeeTypes
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addFeeType()
+        Dim eobjFt As FeeTypesEn
+        Dim listFee As New List(Of FeeTypesEn)
+        Dim eobjTRD As New AccountsDetailsEn
+        Dim i As Integer = 0
+
+        If Not Session("AddFee") Is Nothing Then
+            ListTRD = Session("AddFee")
+        Else
+            ListTRD = New List(Of AccountsDetailsEn)
+        End If
+        listFee = Session("eobj")
+        If listFee.Count <> 0 Then
+            While i < listFee.Count
+                eobjFt = listFee(i)
+                Dim j As Integer = 0
+                Dim Flag As Boolean = False
+                'Checking for Existing FeeTypes in the grid
+                While j < ListTRD.Count
+                    If ListTRD(j).ReferenceCode = eobjFt.FeeTypeCode Then
+                        Flag = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                'Adding only non Existing Records in the Grid
+                If Flag = False Then
+                    eobjTRD = New AccountsDetailsEn
+                    eobjTRD.ReferenceCode = eobjFt.FeeTypeCode
+                    eobjTRD.Description = eobjFt.Description
+                    eobjTRD.TransactionAmount = String.Format("{0:F}", eobjFt.tempAmount)
+                    eobjTRD.Priority = eobjFt.Priority
+                    eobjTRD.PostStatus = "Open"
+                    ListTRD.Add(eobjTRD)
+                    eobjTRD = Nothing
+                End If
+                i = i + 1
+            End While
+        End If
+        Session("AddFee") = ListTRD
+        dgView.DataSource = ListTRD
+        dgView.DataBind()
+        Session("eobj") = Nothing
+    End Sub
+    ''' <summary>
+    ''' Method to Add the List of Students
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addStudent()
+        Dim ListObjectsStu As List(Of StudentEn)
+        Dim eobj As StudentEn
+        Dim mylist As List(Of StudentEn)
+        Dim i As Integer = 0
+
+        If Not Session("LstStueObj") Is Nothing Then
+            ListObjectsStu = Session("LstStueObj")
+        Else
+            ListObjectsStu = New List(Of StudentEn)
+        End If
+        mylist = Session("liststu")
+        'Checking for the Exisiting Students in the Grid
+        If mylist.Count <> 0 Then
+            While i < mylist.Count
+                eobj = mylist(i)
+                Dim j As Integer = 0
+                Dim Flag As Boolean = False
+                While j < ListObjectsStu.Count
+                    If ListObjectsStu(j).MatricNo = eobj.MatricNo Then
+                        Flag = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                If Flag = False Then
+                    ListObjectsStu.Add(eobj)
+                End If
+                i = i + 1
+            End While
+        End If
+        If ListObjectsStu.Count = 0 Then
+            chkStudent.Visible = False
+        Else
+            chkStudent.Visible = True
+        End If
+        Session("LstStueObj") = ListObjectsStu
+        dgStudent.DataSource = ListObjectsStu
+        dgStudent.DataBind()
+        Session("liststu") = Nothing
+    End Sub
+    ''' <summary>
+    ''' Method to get the List Of Transactions
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub LoadListObjects()
+        Dim eob As New AccountsEn
+        Dim obj As New AccountsBAL
+        Dim Mylist As New List(Of AccountsEn)
+
+        If Session("loaddata") = "others" Then
+            If Request.QueryString("Formid") = "Inv" Then
+                eob.TransType = "Credit"
+                eob.Category = "Invoice"
+            ElseIf Request.QueryString("Formid") = "CN" Then
+                eob.TransType = "Debit"
+                eob.Category = "Credit Note"
+            ElseIf Request.QueryString("Formid") = "DN" Then
+                eob.TransType = "Credit"
+                eob.Category = "Debit Note"
+            End If
+            If txtBatchNo.Text <> "Auto Number" Then
+                eob.BatchCode = txtBatchNo.Text
+            Else
+                eob.BatchCode = ""
+            End If
+
+            If ddlIntake.SelectedIndex = 0 Then
+                eob.BatchIntake = ""
+            Else
+                eob.BatchIntake = ddlIntake.SelectedValue
+            End If
+
+            If txtBatchDate.Text <> "" Then
+                eob.BatchDate = Date.ParseExact(txtBatchDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+            End If
+
+            eob.PostStatus = "Posted"
+            eob.SubType = "Student"
+            Try
+                ListObjects = obj.GetTransactions(eob)
+            Catch ex As Exception
+                LogError.Log("BatchInvoice", "LoadListObjects", ex.Message)
+            End Try
+
+        ElseIf Session("loaddata") = "View" Then
+            If Request.QueryString("Formid") = "Inv" Then
+                eob.TransType = "Credit"
+                eob.Category = "Invoice"
+            ElseIf Request.QueryString("Formid") = "CN" Then
+                eob.TransType = "Debit"
+                eob.Category = "Credit Note"
+            ElseIf Request.QueryString("Formid") = "DN" Then
+                eob.TransType = "Credit"
+                eob.Category = "Debit Note"
+            End If
+            If txtBatchNo.Text <> "Auto Number" Then
+                eob.BatchCode = txtBatchNo.Text
+            Else
+                eob.BatchCode = ""
+            End If
+
+            If ddlIntake.SelectedIndex = 0 Then
+                eob.BatchIntake = ""
+            Else
+                eob.BatchIntake = ddlIntake.SelectedValue
+            End If
+
+            If txtBatchDate.Text <> "" Then
+                eob.BatchDate = Date.ParseExact(txtBatchDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+            End If
+            eob.PostStatus = "Ready"
+            eob.SubType = "Student"
+
+            Try
+                ListObjects = obj.GetTransactions(eob)
+            Catch ex As Exception
+                LogError.Log("BatchInvoice", "LoadListObjects", ex.Message)
+            End Try
+
+        End If
+        Session("loaddata") = Nothing
+
+        'Removing duplicate batchid object from the list
+        Dim i As Integer = 0
+        If Not ListObjects Is Nothing Then
+            While i < ListObjects.Count
+                Dim j As Integer = 0
+                Dim objcount As Boolean = False
+                While j < Mylist.Count
+                    If Mylist(j).BatchCode = ListObjects(i).BatchCode Then
+                        objcount = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                If objcount = False Then
+                    Mylist.Add(ListObjects(i))
+                End If
+                i = i + 1
+            End While
+        End If
+        ListObjects = Nothing
+        ListObjects = Mylist
+        Session("ListObj") = ListObjects
+
+        lblCount.Text = ListObjects.Count.ToString()
+        If ListObjects.Count <> 0 Then
+            Session("BatchNo") = Nothing
+            txtBatchNo.Enabled = True
+            Session("BatchNo") = txtBatchNo.Text
+            txtBatchNo.Enabled = False
+            'Enable Navigation
+            DisableRecordNavigator()
+            txtRecNo.Text = "1"
+            If lblStatus.Value <> "Posted" Then
+                OnMoveFirst()
+            End If
+            If Session("EditFlag") = True Then
+                lblMsg.Visible = True
+                txtBatchNo.Enabled = False
+                ibtnSave.Enabled = True
+                ibtnSave.ImageUrl = "images/save.png"
+                trPrint.Visible = True
+            Else
+                Session("PageMode") = ""
+                ibtnSave.Enabled = False
+                ibtnSave.ImageUrl = "images/gsave.png"
+            End If
+        Else
+            txtRecNo.Text = ""
+            lblCount.Text = ""
+            'Clear the fields
+            onClearData()
+            'Date Formatting
+            dates()
+
+            If DFlag = "Delete" Then
+            Else
+                lblMsg.Visible = True
+                onAdd()
+                ErrorDescription = "Record did not Exist"
+                lblMsg.Text = ErrorDescription
+                DFlag = ""
+            End If
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Move to First Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveFirst()
+        txtRecNo.Text = "1"
+        FillData(0)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Next Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveNext()
+        txtRecNo.Text = CInt(txtRecNo.Text) + 1
+        FillData(CInt(txtRecNo.Text) - 1)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Previous Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMovePrevious()
+        txtRecNo.Text = CInt(txtRecNo.Text) - 1
+        FillData(CInt(txtRecNo.Text) - 1)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Last Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveLast()
+        txtRecNo.Text = lblCount.Text
+        FillData(CInt(lblCount.Text) - 1)
+    End Sub
+    ''' <summary>
+    ''' Method to Enable or Disable Navigation Buttons
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub DisableRecordNavigator()
+        Dim flag As Boolean
+        If Session("ListObj") Is Nothing Then
+            flag = False
+            txtRecNo.Text = ""
+            lblCount.Text = ""
+        Else
+            flag = True
+        End If
+        ibtnFirst.Enabled = flag
+        ibtnLast.Enabled = flag
+        ibtnPrevs.Enabled = flag
+        ibtnNext.Enabled = flag
+        If flag = False Then
+            ibtnFirst.ImageUrl = "images/gnew_first.png"
+            ibtnLast.ImageUrl = "images/gnew_last.png"
+            ibtnPrevs.ImageUrl = "images/gnew_Prev.png"
+            ibtnNext.ImageUrl = "images/gnew_next.png"
+        Else
+            ibtnFirst.ImageUrl = "images/new_last.png"
+            ibtnLast.ImageUrl = "images/new_first.png"
+            ibtnPrevs.ImageUrl = "images/new_Prev.png"
+            ibtnNext.ImageUrl = "images/new_next.png"
+
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Fill the Field Values
+    ''' </summary>
+    ''' <param name="RecNo"></param>
+    ''' <remarks></remarks>
+    Private Sub FillData(ByVal RecNo As Integer)
+        'Conditions for Button Enable & Disable
+        If txtRecNo.Text = lblCount.Text Then
+            ibtnNext.Enabled = False
+            ibtnNext.ImageUrl = "images/gnew_next.png"
+            ibtnLast.Enabled = False
+            ibtnLast.ImageUrl = "images/gnew_last.png"
+        Else
+            ibtnNext.Enabled = True
+            ibtnNext.ImageUrl = "images/new_next.png"
+            ibtnLast.Enabled = True
+            ibtnLast.ImageUrl = "images/new_last.png"
+        End If
+        If txtRecNo.Text = "1" Then
+            ibtnPrevs.Enabled = False
+            ibtnPrevs.ImageUrl = "images/gnew_Prev.png"
+            ibtnFirst.Enabled = False
+            ibtnFirst.ImageUrl = "images/gnew_first.png"
+        Else
+            ibtnPrevs.Enabled = True
+            ibtnPrevs.ImageUrl = "images/new_prev.png"
+            ibtnFirst.Enabled = True
+            ibtnFirst.ImageUrl = "images/new_first.png"
+        End If
+        If txtRecNo.Text = 0 Then
+            txtRecNo.Text = 1
+        Else
+            If lblCount.Text = 0 Then
+                txtRecNo.Text = 0
+            Else
+                Dim obj As AccountsEn
+                Dim ListTranctionDetails As New List(Of AccountsDetailsEn)
+                Dim eobjTransDatails As AccountsDetailsEn
+                Dim objProcess As New AccountsDetailsBAL
+
+                ListObjects = Session("ListObj")
+                obj = ListObjects(RecNo)
+                txtBatchNo.Text = obj.BatchCode
+                txtBatchNo.ReadOnly = True
+                If obj.BatchIntake <> "" Or obj.BatchIntake IsNot Nothing Then
+                    ddlIntake.SelectedValue = obj.BatchIntake
+                Else
+                    ddlIntake.SelectedIndex = -1
+                End If
+
+                'ddlIntake.Enabled = False
+                txtDesc.Text = obj.Description
+                txtBatchDate.Text = obj.BatchDate
+                txtInvoiceDate.Text = obj.TransDate
+                txtDuedate.Text = obj.DueDate
+                txtTotal.Text = obj.TransactionAmount
+                eobjTransDatails = New AccountsDetailsEn
+                eobjTransDatails.TransactionID = obj.TranssactionID
+                If obj.PostStatus = "Ready" Then
+                    Try
+                        ListTranctionDetails = objProcess.GetStudentAccountsDetails(eobjTransDatails)
+                    Catch ex As Exception
+                        LogError.Log("BatchInvoice", "FillData", ex.Message)
+                    End Try
+
+                    dgView.DataSource = ListTranctionDetails
+                    dgView.DataBind()
+
+                    If dgView.Items.Count >= 0 Then
+                        txtTotal.Visible = True
+                        lblTotal.Visible = True
+                    End If
+                    Session("AddFee") = ListTranctionDetails
+                    Dim mylst As New List(Of StudentEn)
+                    Dim bsobj As New AccountsBAL
+                    Dim loen As New StudentEn
+                    loen.BatchCode = txtBatchNo.Text
+
+                    Try
+                        mylst = bsobj.GetListStudentbyBatchID(loen)
+                    Catch ex As Exception
+                        LogError.Log("BatchInvoice", "FillData", ex.Message)
+                    End Try
+                    dgStudent.DataSource = mylst
+                    dgStudent.DataBind()
+                    ibtnStatus.ImageUrl = "images/Ready.gif"
+                    lblStatus.Value = "Ready"
+                    Session("LstStueObj") = mylst
+
+                    'Changing Status
+                    If obj.PostStatus = "Ready" Then
+                        lblStatus.Value = "Ready"
+                        ibtnStatus.ImageUrl = "images/Ready.gif"
+                    End If
+                    If obj.PostStatus = "Posted" Then
+                        lblStatus.Value = "Posted"
+                        ibtnStatus.ImageUrl = "images/Posted.gif"
+                    End If
+
+                    'Enable checkbox
+
+                    Dim chk As CheckBox
+                    Dim dgitem As DataGridItem
+
+                    For Each dgitem In dgStudent.Items
+                        chk = dgitem.Cells(0).Controls(1)
+                        chk.Checked = True
+                    Next
+                ElseIf obj.PostStatus = "Posted" Then
+                    Try
+                        ListTranctionDetails = objProcess.GetStudentAccountsDetails(eobjTransDatails)
+                    Catch ex As Exception
+                        LogError.Log("BatchInvoice", "FillData", ex.Message)
+                    End Try
+
+                    dgView.DataSource = ListTranctionDetails
+                    dgView.DataBind()
+
+                    If dgView.Items.Count >= 0 Then
+                        txtTotal.Visible = True
+                        lblTotal.Visible = True
+                    End If
+                    Session("AddFee") = ListTranctionDetails
+                    Dim mylst As New List(Of StudentEn)
+                    Dim bsobj As New AccountsBAL
+                    Dim loen As New StudentEn
+                    loen.BatchCode = txtBatchNo.Text
+                    Try
+                        mylst = bsobj.GetListStudentbyBatchID(loen)
+                    Catch ex As Exception
+                        LogError.Log("BatchInvoice", "FillData", ex.Message)
+                    End Try
+
+                    dgStudent.DataSource = mylst
+                    dgStudent.DataBind()
+
+                    Session("LstStueObj") = mylst
+
+                    'Changing Status
+                    lblStatus.Value = "Posted"
+                    ibtnStatus.ImageUrl = "images/Posted.gif"
+
+                    'Enable checkbox
+                    Dim chk As CheckBox
+                    Dim dgitem As DataGridItem
+
+                    For Each dgitem In dgStudent.Items
+                        chk = dgitem.Cells(0).Controls(1)
+                        chk.Checked = True
+                    Next
+                End If
+
+            End If
+        End If
+        setDateFormat()
+    End Sub
+    ''' <summary>
+    ''' Method To Change the Date Format(dd/MM/yyyy)
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub setDateFormat()
+        Dim myInvoiceDate As Date = CDate(CStr(txtInvoiceDate.Text))
+        Dim myFormat As String = "dd/MM/yyyy"
+        Dim myFormattedDate As String = Format(myInvoiceDate, myFormat)
+        txtInvoiceDate.Text = myFormattedDate
+        Dim myDuedate As Date = CDate(CStr(txtDuedate.Text))
+        Dim myFormattedDate1 As String = Format(myDuedate, myFormat)
+        txtDuedate.Text = myFormattedDate1
+        Dim myBatchDate As Date = CDate(CStr(txtBatchDate.Text))
+        Dim myFormattedDate2 As String = Format(myBatchDate, myFormat)
+        txtBatchDate.Text = myFormattedDate2
+    End Sub
+    ''' <summary>
+    ''' Method to Delete the Transactions
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub ondelete()
+        lblMsg.Visible = True
+        Dim RecAff As Boolean
+        Dim bsobj As New AccountsBAL
+        Dim eob As New AccountsEn
+        If Trim(txtBatchNo.Text).Length <> 0 Then
+            If lblCount.Text = "" Then lblCount.Text = 0
+            If lblCount.Text > 0 Then
+                Try
+                    eob.BatchCode = Trim(txtBatchNo.Text)
+                    RecAff = bsobj.BatchDelete(eob)
+                    lblMsg.Visible = True
+                    ErrorDescription = "Record Deleted Successfully "
+                    lblMsg.Text = ErrorDescription
+                    DFlag = "Delete"
+                    Session("loaddata") = "View"
+                    txtBatchNo.Text = ""
+                    txtBatchDate.Text = ""
+                    txtInvoiceDate.Text = ""
+                    txtDesc.Text = ""
+                    txtDuedate.Text = ""
+                    dgView.DataSource = Nothing
+                    dgView.DataBind()
+                    dgStudent.DataSource = Nothing
+                    dgStudent.DataBind()
+                    LoadListObjects()
+                Catch ex As Exception
+                    lblMsg.Text = ex.Message.ToString()
+                    LogError.Log("BatchInvoice", "ondelete", ex.Message)
+                End Try
+            Else
+                ErrorDescription = "Select a Record to Delete"
+                lblMsg.Text = ErrorDescription
+            End If
+        Else
+            ErrorDescription = "Select a Record to Delete"
+            lblMsg.Text = ErrorDescription
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Add all the FeeAmounts in Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub AddTotal()
+        Dim sumValue As Double
+        Dim dgi As DataGridItem
+        Dim txt As TextBox
+        For Each dgi In dgView.Items
+            txt = dgi.Cells(2).Controls(1)
+            sumValue = sumValue + CDbl(txt.Text)
+            txt.Text = String.Format("{0:F}", CDbl(txt.Text))
+        Next
+        txtTotal.Text = String.Format("{0:F}", sumValue)
+        dgView.Columns(2).FooterText = String.Format("{0:F}", sumValue)
+    End Sub
+    ''' <summary>
+    ''' Method to Create List of Students
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub CreateListObjStudent()
+        Dim eobjstu As StudentEn
+
+        Dim chk As CheckBox
+        Dim dgitem As DataGridItem
+        listStu = Nothing
+        listStu = New List(Of StudentEn)
+        For Each dgitem In dgStudent.Items
+            chk = dgitem.Cells(0).Controls(1)
+
+            If chk.Checked = True Then
+                eobjstu = New StudentEn
+                eobjstu.MatricNo = dgitem.Cells(1).Text
+                eobjstu.StudentName = dgitem.Cells(2).Text
+                eobjstu.ProgramID = dgitem.Cells(3).Text
+                eobjstu.CurrentSemester = dgitem.Cells(4).Text
+                listStu.Add(eobjstu)
+                eobjstu = Nothing
+            End If
+        Next
+        If listStu.Count <> 0 Then
+            Session("lstStu") = listStu
+        Else
+            Session("lstStu") = Nothing
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Load the UserRights
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadUserRights()
+        Dim obj As New UsersBAL
+        Dim eobj As New UserRightsEn
+
+        Try
+            eobj = obj.GetUserRights(CInt(Request.QueryString("Menuid")), CInt(Session("UserGroup")))
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "LoadUserRights", ex.Message)
+        End Try
+
+        'Rights for Add
+        If eobj.IsAdd = True Then
+            'onAdd()
+            ibtnNew.ImageUrl = "~/images/add.png"
+            ibtnNew.Enabled = True
+        Else
+            ibtnNew.ImageUrl = "~/images/gadd.png"
+            ibtnNew.Enabled = False
+            ibtnNew.ToolTip = "Access Denied"
+
+        End If
+        'Rights for Edit
+        If eobj.IsEdit = True Then
+            ibtnSave.Enabled = True
+            ibtnSave.ImageUrl = "~/images/save.png"
+            ibtnSave.ToolTip = "Edit"
+            If eobj.IsAdd = False Then
+                ibtnSave.Enabled = False
+                ibtnSave.ImageUrl = "~/images/gsave.png"
+                ibtnSave.ToolTip = "Access Denied"
+            End If
+
+            Session("EditFlag") = True
+
+        Else
+            Session("EditFlag") = False
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "~/images/gsave.png"
+        End If
+        'Rights for View
+        ibtnView.Enabled = eobj.IsView
+        If eobj.IsView = True Then
+            ibtnView.ImageUrl = "~/images/ready.png"
+            ibtnView.Enabled = True
+        Else
+            ibtnView.ImageUrl = "~/images/ready.png"
+            ibtnView.Enabled = True
+            'ibtnView.ToolTip = "Access Denied"
+        End If
+        'Rights for Delete
+        If eobj.IsDelete = True Then
+            ibtnDelete.ImageUrl = "~/images/delete.png"
+            ibtnDelete.Enabled = True
+        Else
+            ibtnDelete.ImageUrl = "~/images/gdelete.png"
+            ibtnDelete.ToolTip = "Access Denied"
+            ibtnDelete.Enabled = False
+        End If
+        'Rights for Print
+        ibtnPrint.Enabled = eobj.IsPrint
+        If eobj.IsPrint = True Then
+            ibtnPrint.Enabled = True
+            ibtnPrint.ImageUrl = "~/images/print.png"
+            ibtnPrint.ToolTip = "Print"
+        Else
+            ibtnPrint.Enabled = False
+            ibtnPrint.ImageUrl = "~/images/gprint.png"
+            ibtnPrint.ToolTip = "Access Denied"
+        End If
+        If eobj.IsOthers = True Then
+            ibtnOthers.Enabled = True
+            ibtnOthers.ImageUrl = "~/images/post.png"
+            ibtnOthers.ToolTip = "Others"
+        Else
+            ibtnOthers.Enabled = False
+            ibtnOthers.ImageUrl = "~/images/post.png"
+            ibtnOthers.ToolTip = "Access Denied"
+        End If
+        If eobj.IsPost = True Then
+            ibtnPosting.Enabled = True
+            ibtnPosting.ImageUrl = "~/images/posting.png"
+            ibtnPosting.ToolTip = "Posting"
+        Else
+            ibtnPosting.Enabled = False
+            ibtnPosting.ImageUrl = "~/images/gposting.png"
+            ibtnPosting.ToolTip = "Access Denied"
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Save and Update Invoices
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onSave()
+        Dim eobj As New AccountsEn
+        Dim bsobj As New AccountsBAL
+        Dim LstTRDetails As New List(Of AccountsDetailsEn)
+        Dim listStu As New List(Of StudentEn)
+        Dim Status As String
+        lblMsg.Text = ""
+        lblMsg.Visible = True
+
+        If Request.QueryString("Formid") = "Inv" Then
+            eobj.Category = "Invoice"
+            Status = "O"
+            eobj.TransType = "Debit"
+        ElseIf Request.QueryString("Formid") = "DN" Then
+            eobj.Category = "Debit Note"
+            Status = "O"
+            eobj.TransType = "Debit"
+        ElseIf Request.QueryString("Formid") = "CN" Then
+            eobj.Category = "Credit Note"
+            Status = "O"
+            eobj.TransType = "Credit"
+        End If
+
+        If dgView.Items.Count <> 0 Then
+
+            CreateListObjStudent()
+
+            If txtBatchDate.Text = "" Then
+                eobj.BatchDate = Format(Date.Now, "dd/MM/yyyy")
+            Else
+                eobj.BatchDate = Trim(txtBatchDate.Text)
+            End If
+            eobj.Description = Trim(txtDesc.Text)
+            eobj.TransDate = Trim(txtInvoiceDate.Text)
+            eobj.DueDate = Trim(txtDuedate.Text)
+            eobj.SubType = "Student"
+            eobj.TransStatus = "Open"
+            eobj.PostedDateTime = DateTime.Now
+            eobj.UpdatedTime = DateTime.Now
+            eobj.ChequeDate = DateTime.Now
+            eobj.CreatedDateTime = DateTime.Now
+            eobj.PostStatus = "Ready"
+            'eobj.BatchCode = Trim(txtBatchNo.Text)
+            eobj.TransactionAmount = Trim(txtTotal.Text)
+            eobj.BatchIntake = Trim(ddlIntake.SelectedValue)
+            eobj.AccountDetailsList = Session("AddFee")
+            eobj.UpdatedBy = Session("User")
+            If Not Session("lstStu") Is Nothing Then
+                listStu = Session("lstStu")
+            Else
+                listStu = Nothing
+            End If
+            Dim bid As String = ""
+            'Saving
+            If Session("PageMode") = "Add" Then
+                Try
+
+                    txtBatchNo.ReadOnly = False
+                    txtBatchNo.Text = bsobj.StudentBatchInsert(eobj, listStu)
+                    ErrorDescription = "Record Saved Successfully "
+                    ' Update the Student OutStanding Table 
+
+                    ibtnStatus.ImageUrl = "images/ready.gif"
+                    lblStatus.Value = "Ready"
+                    lblMsg.Text = ErrorDescription
+
+                Catch ex As Exception
+                    lblMsg.Text = ex.Message.ToString()
+                    LogError.Log("BatchInvoice", "onSave", ex.Message)
+                End Try
+                ' Updating
+            ElseIf Session("PageMode") = "Edit" Then
+                Try
+
+                    txtBatchNo.Text = bsobj.StudentBatchUpdate(eobj, listStu)
+                    ErrorDescription = "Record Updated Successfully "
+                    ' Update the Student OutStanding Table 
+
+                    ibtnStatus.ImageUrl = "images/ready.gif"
+                    lblStatus.Value = "Ready"
+                    lblMsg.Text = ErrorDescription
+
+                Catch ex As Exception
+                    lblMsg.Text = ex.Message.ToString()
+                    LogError.Log("BatchInvoice", "onSave", ex.Message)
+                End Try
+
+            End If
+        Else
+            lblMsg.Text = "Please Enter At least one Feetype"
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Load the Programs in Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub programGrid()
+        Dim obj As New ProgramInfoBAL
+        Dim ds As New ProgramInfoEn
+        Dim FC_code As String
+        Dim list As New List(Of ProgramInfoEn)
+        If Session("FC_Code") = "" Then
+            FC_code = ""
+        Else
+            FC_code = Session("FC_Code")
+        End If
+        ds.SAFC_Code = FC_code
+
+        Try
+            list = obj.GetList(ds)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "programGrid", ex.Message)
+        End Try
+        dgProgram.DataSource = list
+        dgProgram.DataBind()
+
+    End Sub
+    ''' <summary>
+    ''' Method to load the Sponsors in Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SponsorGrid()
+        Dim obj As New SponsorBAL
+        Dim list As New List(Of SponsorEn)
+        Dim eob As New SponsorEn
+
+        Try
+            list = obj.GetList(eob)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "SponsorGrid", ex.Message)
+        End Try
+        DgSponsor.DataSource = list
+        DgSponsor.DataBind()
+    End Sub
+    ''' <summary>
+    ''' Method to load the HostelGrid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub HostelGrid()
+        Dim obj As New KolejBAL
+        Dim list As New List(Of KolejEn)
+        Dim eob As New KolejEn
+
+        Try
+            list = obj.GetList(eob)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "HostelGrid", ex.Message)
+        End Try
+        dgHostel.DataSource = list
+        dgHostel.DataBind()
+    End Sub
+    ''' <summary>
+    ''' Method to Load all the Grids in Selection Panel
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub selection()
+        programGrid()
+        SponsorGrid()
+        HostelGrid()
+    End Sub
+    ''' <summary>
+    ''' Method to Get Selected Programs from ProgramGrid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub inprogram()
+        Dim chkBox As CheckBox
+        Dim prgStr As String = ""
+        Dim pgCode As String
+        For Each dgi As DataGridItem In dgProgram.Items
+            chkBox = dgi.Cells(0).Controls(1)
+            If chkBox.Checked = True Then
+
+                If prgStr = "" Then
+                    pgCode = dgi.Cells(1).Text & ""
+                    prgStr = prgStr & "'" & pgCode & "'"
+                Else
+                    pgCode = dgi.Cells(1).Text
+                    prgStr = prgStr & ",'" & pgCode & "'"
+                End If
+
+            End If
+        Next
+        Session("prgstr") = prgStr
+    End Sub
+    ''' <summary>
+    ''' Method to Get Selected Sponsor from SponsorGrid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub inSponsor()
+        Dim chkBox As CheckBox
+        Dim sponStr As String = ""
+        Dim SPnCode As String
+        For Each dgi As DataGridItem In DgSponsor.Items
+            chkBox = dgi.Cells(0).Controls(1)
+            If chkBox.Checked = True Then
+                If sponStr = "" Then
+                    SPnCode = dgi.Cells(1).Text & ""
+                    sponStr = sponStr & "'" & SPnCode & "'"
+                Else
+                    SPnCode = dgi.Cells(1).Text
+                    sponStr = sponStr & ",'" & SPnCode & "'"
+                End If
+            End If
+        Next
+        Session("spnstr") = sponStr
+    End Sub
+    ''' <summary>
+    ''' Method to Get Selected Hostel from HostelGrid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub inHOstel()
+        Dim chkBox As CheckBox
+        Dim HsStr As String = ""
+        Dim HsCode As String
+        For Each dgi As DataGridItem In dgHostel.Items
+            chkBox = dgi.Cells(0).Controls(1)
+            If chkBox.Checked = True Then
+                If HsStr = "" Then
+                    HsCode = dgi.Cells(1).Text & ""
+                    HsStr = HsStr & "'" & HsCode & "'"
+                Else
+                    HsCode = dgi.Cells(1).Text
+                    HsStr = HsStr & ",'" & HsCode & "'"
+                End If
+            End If
+        Next
+        Session("sstr") = HsStr
+    End Sub
+    ''' <summary>
+    ''' Method to Clear the Field Values
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onClearData()
+        Session("ListObj") = Nothing
+        DisableRecordNavigator()
+        Session("AddFee") = Nothing
+        txtBatchNo.Text = ""
+        txtBatchNo.Enabled = True
+        txtBatchNo.ReadOnly = False
+        txtBatchDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtInvoiceDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtDuedate.Text = Format(DateAdd(DateInterval.Day, 30, Date.Now), "dd/MM/yyyy")
+        ibtnStatus.ImageUrl = "images/notready.gif"
+        lblStatus.Value = "New"
+        txtDesc.Text = ""
+        Session("lstStu") = Nothing
+        Session("liststu") = Nothing
+        Session("LstStueObj") = Nothing
+        dgStudent.DataSource = Nothing
+        dgStudent.DataBind()
+        dgView.DataSource = Nothing
+        dgView.DataBind()
+        ddlIntake.SelectedValue = "-1"
+        ddlFaculty.SelectedValue = "-1"
+        ddlStudentType.SelectedValue = "-1"
+        rbProYes.Checked = False
+        rbSemYes.Checked = False
+        rbHosYes.Checked = False
+        rbProNo.Checked = True
+        rbSemNo.Checked = True
+        rbHosNo.Checked = True
+        chkSelectProgram.Checked = False
+        chkSelectSponsor.Checked = False
+        chkSelectHostel.Checked = False
+
+        If dgView.Items.Count <= 0 Then
+            txtTotal.Visible = False
+            lblTotal.Visible = False
+        End If
+        LoadBatchInvoice()
+    End Sub
+    ''' <summary>
+    ''' Method to Load Fields in New Mode
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onAdd()
+        Session("PageMode") = "Add"
+        Session("AddFee") = Nothing
+        ibtnSave.Enabled = True
+        lblMsg.Text = ""
+        today.Value = Now.Date
+        today.Value = Format(CDate(today.Value), "dd/MM/yyyy")
+        ibtnStatus.ImageUrl = "images/notready.gif"
+        lblStatus.Value = "New"
+        ibtnSave.ImageUrl = "images/save.png"
+        'onClearData()
+        If ibtnNew.Enabled = False Then
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "images/gsave.png"
+            ibtnSave.ToolTip = "Access Denied"
+        End If
+        OnLoadItem()
+        LoadBatchInvoice()
+    End Sub
+
+    ''' <summary>
+    ''' Method to Post Invoices
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnPost()
+        Dim eobj As New AccountsEn
+        Dim bsobj As New AccountsBAL
+        Dim LstTRDetails As New List(Of AccountsDetailsEn)
+        Dim listStu As New List(Of StudentEn)
+        Dim Status As String
+        Dim bid As String = ""
+        lblMsg.Text = ""
+        lblMsg.Visible = True
+
+        If Request.QueryString("Formid") = "Inv" Then
+            eobj.Category = "Invoice"
+            Status = "O"
+            eobj.TransType = "Credit"
+        ElseIf Request.QueryString("Formid") = "DN" Then
+            eobj.Category = "Debit Note"
+            Status = "O"
+            eobj.TransType = "Credit"
+        ElseIf Request.QueryString("Formid") = "CN" Then
+            eobj.Category = "Credit Note"
+            Status = "O"
+            eobj.TransType = "Debit"
+        End If
+
+        If dgView.Items.Count <> 0 Then
+            CreateListObjStudent()
+            eobj.BatchCode = Trim(txtBatchNo.Text)
+            eobj.Description = Trim(txtDesc.Text)
+            eobj.BatchDate = Trim(txtBatchDate.Text)
+            eobj.TransDate = Trim(txtInvoiceDate.Text)
+            eobj.DueDate = Trim(txtDuedate.Text)
+            eobj.BatchCode = Trim(txtBatchNo.Text)
+            eobj.BatchIntake = ddlIntake.SelectedValue
+            eobj.TransactionAmount = Trim(txtTotal.Text)
+            eobj.AccountDetailsList = Session("AddFee")
+            eobj.DueDate = Trim(txtDuedate.Text)
+            eobj.SubType = "Student"
+            eobj.TransStatus = "Open"
+            eobj.PostedDateTime = DateTime.Now
+            eobj.UpdatedTime = DateTime.Now
+            eobj.ChequeDate = DateTime.Now
+            eobj.CreatedDateTime = DateTime.Now
+            'eobj.MatricNo = Trim(txtMatrciNo.Text)
+            'eobj.StudentName = Trim(txtName.Text)
+            'eobj.ProgramID = Trim(txtProgrammeName.Text)
+            eobj.PostStatus = "Posted"
+            eobj.UpdatedBy = Session("User")
+            If Not Session("lstStu") Is Nothing Then
+                listStu = Session("lstStu")
+            Else
+                listStu = Nothing
+            End If
+            Try
+                txtBatchNo.Text = bsobj.StudentBatchUpdate(eobj, listStu)
+                ErrorDescription = "Record Posted Successfully "
+                lblMsg.Text = ErrorDescription
+                ibtnStatus.ImageUrl = "images/posted.gif"
+                lblStatus.Value = "Posted"
+                eobj.PostStatus = "Posted"
+                lblMsg.Visible = True
+                Dim scriptstringCallUrl As String = "getCallUrl();"
+                ClientScript.RegisterStartupScript(Me.GetType(), "OpenUrl", scriptstringCallUrl, True)
+                If Not Session("ListObj") Is Nothing Then
+                    ListObjects = Session("ListObj")
+                    ListObjects(CInt(txtRecNo.Text) - 1) = eobj
+                    Session("ListObj") = ListObjects
+                    If lblStatus.Value = "Posted" Then
+                        ibtnStatus.ImageUrl = "images/posted.png"
+                        lblStatus.Value = "Posted"
+                    End If
+
+                End If
+            Catch ex As Exception
+                lblMsg.Text = ex.Message.ToString()
+                LogError.Log("BatchInvoice", "OnPost", ex.Message)
+            End Try
+
+        Else
+            lblMsg.Text = "Please Enter At least one Fee Type"
+        End If
+
+        If txtBatchNo.Text <> " " Then
+
+            'Get Status Integration To SAGA
+            dsReturn = objIntegrationDL.GetIntegrationStatus()
+
+            'Check Status Integration To SAGA
+            If dsReturn.Tables(0).Rows(0).Item("CON_Value1") = "1" Then
+                Dim strBatchNo As String = Trim(txtBatchNo.Text)
+                Invoice(strBatchNo)
+            Else
+                ErrorDescription = "Record Posted Successfully But No Integration To CF. Please Call Administrator "
+                lblMsg.Text = ErrorDescription
+            End If
+
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Method to Search for Posted Records
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnSearchOthers()
+        Session("loaddata") = "others"
+
+        If lblCount.Text <> "" Then
+            If CInt(lblCount.Text) > 0 Then
+                onClearData()
+                If ibtnNew.Enabled = False Then
+                    ibtnSave.Enabled = False
+                    ibtnSave.ImageUrl = "images/gsave.png"
+                    ibtnSave.ToolTip = "Access Denied"
+                End If
+
+            Else
+                Session("PageMode") = "Edit"
+                LoadListObjects()
+            End If
+        Else
+            Session("PageMode") = "Edit"
+            LoadListObjects()
+
+            PostEnFalse()
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Disable Options After Posting
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub PostEnFalse()
+        ibtnNew.Enabled = False
+        ibtnNew.ImageUrl = "images/gadd.png"
+        ibtnNew.ToolTip = "Access Denied"
+        ibtnSave.Enabled = False
+        ibtnSave.ImageUrl = "images/gsave.png"
+        ibtnSave.ToolTip = "Access Denied"
+        ibtnDelete.Enabled = False
+        ibtnDelete.ImageUrl = "images/gdelete.png"
+        ibtnDelete.ToolTip = "Access Denied"
+        'ibtnView.Enabled = False
+        'ibtnView.ImageUrl = "images/ready.png"
+        'ibtnView.ToolTip = "Access Denied"
+        ibtnPrint.Enabled = False
+        ibtnPrint.ImageUrl = "images/gprint.png"
+        ibtnPrint.ToolTip = "Access denied"
+        ibtnPosting.Enabled = False
+        ibtnPosting.ImageUrl = "images/gposting.png"
+        ibtnPosting.ToolTip = "Access denied"
+        'ibtnOthers.Enabled = False
+        'ibtnOthers.ImageUrl = "images/post.png"
+        'ibtnOthers.ToolTip = "Access denied"
+    End Sub
+    ''' <summary>
+    ''' Method to Load Students Template
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadStudentsTemplates(ByVal studentList As List(Of StudentEn))
+        dgView.DataSource = Nothing
+        dgView.DataBind()
+
+        Dim list As StudentEn
+        Dim liststud As New List(Of StudentEn)
+        Dim eobj As New StudentEn
+        Dim i As Integer = 0
+
+        Dim amt As Double = 0.0
+        Dim pocAmt As Double = 0.0
+        Dim j As Integer = 0
+        Dim stuen As New StudentEn
+        Dim bsstu As New AccountsBAL
+        Dim objStu As New StudentBAL
+        Dim outamt As Double = 0.0
+        'Dim NoKelompok As HiddenField = Nothing
+        'Dim NoWarran As HiddenField = Nothing
+        'Dim amaunWarran As HiddenField = Nothing
+        'Dim noAkaunPelajar As HiddenField = Nothing
+        'Dim statusBayaran As HiddenField = Nothing
+        'dgView.PageSize = mylst.Count
+
+        For Each stuItem As StudentEn In studentList
+            eobj = New StudentEn
+            eobj.MatricNo = stuItem.MatricNo
+            eobj.ICNo = String.Empty
+            eobj.Faculty = String.Empty
+            eobj.StudentName = String.Empty
+            eobj.ProgramID = String.Empty
+            eobj.Faculty = String.Empty
+            eobj.CurrentSemester = 0
+            eobj.SASI_StatusRec = True
+            eobj.STsponsercode = New StudentSponEn()
+            eobj.STsponsercode.Sponsor = ""
+            Try
+                'list = objStu.GetItem(eobj)
+                list = objStu.GetItem(eobj.MatricNo)
+                liststud.Add(list)
+            Catch ex As Exception
+                LogError.Log("SponsorAllocation", "UploadData", ex.Message)
+                Exit Sub
+            End Try
+            If list.MatricNo = "" Then
+                lblMsg.Text = "Invalid Matric No exists in uploaded file."
+                lblMsg.Visible = True
+                Session("fileSponsor") = Nothing
+                Exit Sub
+            End If
+        Next
+        chkStudent.Visible = True
+        dgStudent.DataSource = liststud
+        dgStudent.DataBind()
+
+    End Sub
+
+#End Region
+
+#Region "Post To SAGA"
+    Private Sub Invoice(strBatchCode As String)
+
+        Try
+            Dim strCategory As String = String.Empty
+
+            If Request.QueryString("Formid") = "Inv" Then
+                strCategory = "Invoice"
+            ElseIf Request.QueryString("Formid") = "DN" Then
+                strCategory = "Debit Note"
+            ElseIf Request.QueryString("Formid") = "CN" Then
+                strCategory = "Credit Note"
+            End If
+
+            objIntegration.InvoiceDebitCredit(strBatchCode, strCategory)
+
+        Catch ex As Exception
+            lblMsg.Text = ex.Message.ToString()
+        End Try
+
+    End Sub
+#End Region
+
+    Protected Overloads Sub LoadFields()
+        trPrint.Visible = False
+        addIntake()
+    End Sub
+
+    Protected Sub btnHidden_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        'If Not Session("liststu") Is Nothing Then
+        '    addStudent()
+        'End If
+        'If Not Session("eobj") Is Nothing Then
+        '    addFeeType()
+        'End If
+    End Sub
+
+    Protected Sub btnChangeProg_Click(sender As Object, e As EventArgs) Handles btnChangeProg.Click
+
+        Dim cat As String = "Credit Note"
+        Dim trackid As Integer = 1
+        ViewStudentChanges(cat, trackid)
+        dgStudentProg.Columns(3).Visible = True
+        dgStudentProg.Columns(4).Visible = True
+        dgStudentProg.Columns(5).Visible = False
+        dgStudentProg.Columns(6).Visible = False
+        dgStudentProg.Columns(7).Visible = False
+        dgStudentProg.Columns(8).Visible = False
+        dgStudentProg.Columns(9).Visible = False
+
+        btnViewStu.Enabled = False
+        
+    End Sub
+
+    Private Sub ViewStudentChanges(Category As String, ModuleId As Integer)
+
+        Dim objup As New StudentBAL
+        Dim i As Integer = 0
+        Dim lstobjects As New List(Of StudentEn)
+        Dim eob As New StudentEn
+        Dim sem As Integer = 0
+
+        Try
+            lstobjects = objup.GetListStudentChange(Category, ModuleId)
+        Catch ex As Exception
+            LogError.Log("BatchInvoice", "btnChangeProg_Click", ex.Message)
+        End Try
+
+        'pnlViewChange.Visible = True
+
+        ''Adding in the exisiting list
+        Dim mylst As List(Of StudentEn)
+        If Not Session("LstStueObj") Is Nothing Then
+            Dim Flag As Boolean
+            mylst = Session("LstStueObj")
+            While i < lstobjects.Count
+                Dim j As Integer = 0
+                While j < mylst.Count
+                    Flag = False
+                    If mylst(j).MatricNo = lstobjects(i).MatricNo Then
+                        Flag = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                If Flag = False Then
+                    mylst.Add(lstobjects(i))
+                End If
+                i = i + 1
+            End While
+        Else
+            mylst = lstobjects
+        End If
+        dgStudentProg.DataSource = mylst
+        dgStudentProg.DataBind()
+        Session("LstStueObj") = mylst
+        'Session("sstr") = ""
+        'Session("prgstr") = ""
+        'Session("spnstr") = ""
+
+        If Not lstobjects Is Nothing Then
+            OnViewStudentGridChange(ModuleId)
+        Else
+
+        End If
+    End Sub
+
+    Private Sub OnViewStudentGridChange(ModuleId As Integer)
+
+        MultiView1.SetActiveView(View4)
+        'btnViewStu.CssClass = "TabButtonClick"
+        btnViewStu.Enabled = False
+        btnBatchInvoice.CssClass = "TabButton"
+
+        btnSelection.CssClass = "TabButton"
+        chkStudentProg.Visible = False
+        pnlBatch.Visible = False
+        pnlSelection.Visible = False
+        pnlView.Visible = False
+
+        pnlViewChange.Visible = True
+
+    End Sub
+
+    Protected Sub btnChangeCdtHr_Click(sender As Object, e As EventArgs) Handles btnChangeCdtHr.Click
+
+        'Dim category As String
+        Dim trackid As Integer = 2
+
+        If Request.QueryString("Formid") = "DN" Then
+            ViewStudentChanges("Debit Note", trackid)
+        ElseIf Request.QueryString("Formid") = "CN" Then
+            ViewStudentChanges("Credit Note", trackid)
+        End If
+
+        dgStudentProg.Columns(5).Visible = True
+        dgStudentProg.Columns(6).Visible = True
+        dgStudentProg.Columns(7).Visible = True
+        dgStudentProg.Columns(3).Visible = False
+        dgStudentProg.Columns(4).Visible = False
+        dgStudentProg.Columns(8).Visible = False
+        dgStudentProg.Columns(9).Visible = False
+
+        btnViewStu.Enabled = False
+
+    End Sub
+
+    Protected Sub btnChangeHostel_Click(sender As Object, e As EventArgs) Handles btnChangeHostel.Click
+
+        Dim cat As String = "Credit Note"
+        Dim trackid As Integer = 3
+        ViewStudentChanges(cat, trackid)
+        dgStudentProg.Columns(8).Visible = True
+        dgStudentProg.Columns(9).Visible = True
+        dgStudentProg.Columns(3).Visible = False
+        dgStudentProg.Columns(4).Visible = False
+        dgStudentProg.Columns(5).Visible = False
+        dgStudentProg.Columns(6).Visible = False
+        dgStudentProg.Columns(7).Visible = False
+
+        btnViewStu.Enabled = False
+    End Sub
+
+End Class

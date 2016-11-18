@@ -1,0 +1,381 @@
+﻿#Region "NameSpaces "
+Imports MaxGeneric
+Imports System.Data
+Imports HTS.SAS.BusinessObjects
+Imports HTS.SAS.Entities
+Imports System.Web
+#End Region
+Partial Class WorkFlowDetails
+    Inherits System.Web.UI.Page
+
+#Region "Global Declarations "
+    Private _WorkflowDAL As New HTS.SAS.DataAccessObjects.WorkflowDAL
+    Private _MaxModule As New MaxModule.Workflow
+#End Region
+
+#Region "Page_Load "
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Try
+
+            If Not Page.IsPostBack Then
+
+
+
+                'Call Bind Grid
+                Call BindGrid()
+
+                'While loading the page make the CFlag as null
+                Session("PageMode") = ""
+                'Loading User Rights
+                LoadUserRights()
+
+                'while loading list object make it nothing
+                Session("ListObj") = Nothing
+                DisableRecordNavigator()
+                'load PageName
+                Menuname(CInt(Request.QueryString("Menuid")))
+            End If
+
+        Catch ex As Exception
+
+            Call MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+#End Region
+
+#Region "Bind Grid "
+
+    Private Sub BindGrid()
+
+        'Create Instances
+        Dim WorkFlowAccountDetails As DataSet = Nothing
+
+        Try
+
+            'get WorkFlowAccount Details
+            WorkFlowAccountDetails = _WorkflowDAL.WorkFlowSASAcountDetails()
+
+            'if data available - Start
+            If WorkFlowAccountDetails.Tables(0).Rows.Count = 0 Then
+                lblMsg.Visible = True
+                lblMsg.Text = "No Records"
+                viewbuttons.Visible = False
+            Else
+                viewbuttons.Visible = True
+            End If
+            'if data available - Start
+
+            'Bind Data grid - Start
+            dgWofkFlowView.DataSource = WorkFlowAccountDetails
+            dgWofkFlowView.DataBind()
+            'Bind Data grid - Stop
+        Catch ex As Exception
+
+            MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Pagination Grid "
+    Protected Sub dgWofkFlowView_PageIndexChanged(source As Object, e As DataGridPageChangedEventArgs) Handles dgWofkFlowView.PageIndexChanged
+
+        'Grid Index - Start
+        dgWofkFlowView.CurrentPageIndex = e.NewPageIndex
+        dgWofkFlowView.DataBind()
+
+        'Bind Data grid - Start
+        Call BindGrid()
+        'Bind Data grid - Stop
+
+    End Sub
+#End Region
+
+#Region "Methods"
+    ''' <summary>
+    ''' Method to Load UserRights
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadUserRights()
+        Dim obj As New UsersBAL
+        Dim eobj As New UserRightsEn
+
+        Try
+            eobj = obj.GetUserRights(CInt(Request.QueryString("Menuid")), CInt(Session("UserGroup")))
+        Catch ex As Exception
+            LogError.Log("UniversityFund", "LoadUserRights", ex.Message)
+        End Try
+        'Rights for Add
+
+        If eobj.IsAdd = True Then
+            'ibtnSave.Enabled = True
+
+            ibtnNew.ImageUrl = "images/add.png"
+            ibtnNew.Enabled = True
+        Else
+            ibtnNew.ImageUrl = "images/gadd.png"
+            ibtnNew.Enabled = False
+            ibtnNew.ToolTip = "Access Denied"
+
+        End If
+        'Rights for Edit
+        If eobj.IsEdit = True Then
+            ibtnSave.Enabled = True
+            ibtnSave.ImageUrl = "images/save.png"
+            ibtnSave.ToolTip = "Edit"
+            If eobj.IsAdd = False Then
+                ibtnSave.Enabled = False
+                ibtnSave.ImageUrl = "images/gsave.png"
+                ibtnSave.ToolTip = "Access Denied"
+            End If
+
+            Session("EditFlag") = True
+
+        Else
+            Session("EditFlag") = False
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "images/gsave.png"
+        End If
+        'Rights for View
+        ibtnView.Enabled = eobj.IsView
+        If eobj.IsView = True Then
+            ibtnView.ImageUrl = "images/find.png"
+            ibtnView.Enabled = True
+        Else
+            ibtnView.ImageUrl = "images/gfind.png"
+            ibtnView.ToolTip = "Access Denied"
+        End If
+        'Rights for Delete
+        If eobj.IsDelete = True Then
+            ibtnDelete.ImageUrl = "images/delete.png"
+            ibtnDelete.Enabled = True
+        Else
+            ibtnDelete.ImageUrl = "images/gdelete.png"
+            ibtnDelete.ToolTip = "Access Denied"
+            ibtnDelete.Enabled = False
+        End If
+        'Rights for Print
+        ibtnPrint.Enabled = eobj.IsPrint
+        If eobj.IsPrint = True Then
+            ibtnPrint.Enabled = True
+            ibtnPrint.ImageUrl = "images/print.png"
+            ibtnPrint.ToolTip = "Print"
+        Else
+            ibtnPrint.Enabled = False
+            ibtnPrint.ImageUrl = "images/gprint.png"
+            ibtnPrint.ToolTip = "Access Denied"
+        End If
+        If eobj.IsOthers = True Then
+            ibtnOthers.Enabled = True
+            ibtnOthers.ImageUrl = "images/others.png"
+            ibtnOthers.ToolTip = "Others"
+        Else
+            ibtnOthers.Enabled = False
+            ibtnOthers.ImageUrl = "images/gothers.png"
+            ibtnOthers.ToolTip = "Access Denied"
+        End If
+        If eobj.IsPost = True Then
+            ibtnPosting.Enabled = True
+            ibtnPosting.ImageUrl = "images/posting.png"
+            ibtnPosting.ToolTip = "Posting"
+        Else
+            ibtnPosting.Enabled = False
+            ibtnPosting.ImageUrl = "images/gposting.png"
+            ibtnPosting.ToolTip = "Access Denied"
+        End If
+    End Sub
+    ''' <summary>
+    ''' Method to Enable or Disable Navigation Buttons
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub DisableRecordNavigator()
+        Dim flag As Boolean
+        If Session("ListObj") Is Nothing Then
+            flag = False
+            txtRecNo.Text = ""
+            lblCount.Text = ""
+        Else
+            flag = True
+        End If
+        ibtnFirst.Enabled = flag
+        ibtnLast.Enabled = flag
+        ibtnPrevs.Enabled = flag
+        ibtnNext.Enabled = flag
+        If flag = False Then
+            ibtnFirst.ImageUrl = "images/gnew_first.png"
+            ibtnLast.ImageUrl = "images/gnew_last.png"
+            ibtnPrevs.ImageUrl = "images/gnew_Prev.png"
+            ibtnNext.ImageUrl = "images/gnew_next.png"
+        Else
+            ibtnFirst.ImageUrl = "images/new_last.png"
+            ibtnLast.ImageUrl = "images/new_first.png"
+            ibtnPrevs.ImageUrl = "images/new_Prev.png"
+            ibtnNext.ImageUrl = "images/new_next.png"
+
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Method to get the MenuName
+    ''' </summary>
+    ''' <param name="MenuId">Parameter is MenuId</param>
+    ''' <remarks></remarks>
+    Private Sub Menuname(ByVal MenuId As Integer)
+        Dim eobj As New MenuEn
+        Dim bobj As New MenuBAL
+        eobj.MenuId = MenuId
+        Try
+            eobj = bobj.GetMenus(eobj)
+        Catch ex As Exception
+            LogError.Log("UniversityFund", "Menuname", ex.Message)
+        End Try
+        lblMenuName.Text = eobj.MenuName
+    End Sub
+
+#End Region
+
+#Region "Grid Item "
+    Protected Sub dgWofkFlowView_ItemCommand(source As Object, e As DataGridCommandEventArgs)
+        'GridItem declaration
+        Dim gditem As DataGridItem
+        'varaible declaration
+        Dim rowindex As Integer
+        'LinkButton delclaration
+        Dim _LinkButton As New LinkButton
+
+
+
+        Try
+
+
+            gditem = DirectCast(DirectCast(e.CommandSource, LinkButton).NamingContainer, DataGridItem)
+            rowindex = DirectCast(dgWofkFlowView.DataKeys(gditem.ItemIndex), Integer)
+
+            'Set Session Values - Start
+            Session(Helper.TransIDSession) = rowindex
+            'Set Session Values - Stop
+
+            '        Load(popup - starting)
+
+            If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+
+                _LinkButton = DirectCast(e.Item.FindControl("studentlink"), LinkButton)
+                _LinkButton.Attributes.Add("onclick", "new_window=window.open('WorkFlowStudentAccountView.aspx','_blank','Hanodale', 'width=520,height=500,resizable=1,srcollable =yes');return false;")
+
+            End If
+            '        Load(popup - ended)
+
+
+        Catch ex As Exception
+            Call MaxModule.Helper.LogError(ex.Message)
+        End Try
+    End Sub
+#End Region
+
+#Region "Posting SAS Account Details "
+    Protected Sub btnApproved_Click(sender As Object, e As EventArgs) Handles btnApproved.Click
+        'Call Post SAS Accounts - Starting
+        lblMsg.Visible = True
+        lblMsg.Text = PostRejectSASAccounts(Generic._WorkflowType.Approved)
+        'Call Post SAS Accounts - Ended
+    End Sub
+#End Region
+
+#Region "Reject SAS Account Details "
+    Protected Sub btnReject_Click(sender As Object, e As EventArgs) Handles btnReject.Click
+
+        'Call Reject SAS Accounts - Starting
+        lblMsg.Visible = True
+        lblMsg.Text = PostRejectSASAccounts(Generic._WorkflowType.Rejected)
+        'Call Reject SAS Accounts - Ended
+
+    End Sub
+#End Region
+
+#Region "Post/Reject Records "
+
+    Public Function PostRejectSASAccounts(ByVal WorkflowType As Short) As String
+
+        'Create Instaces - Start
+        Dim _CheckBox As CheckBox
+        Dim _DataGridItem As DataGridItem
+        Dim _Posting As New MaxModule.Workflow
+        Dim _HtmlInputHidden As HtmlInputHidden
+        'Create Instaces - Stop
+
+        'varaible C declaration
+        Dim SuccessStatus As Short = 0, WorkflowId As Integer = 0, Result As Boolean = False
+
+        Try
+            'Looping Grid Items - Strating
+            For Each _DataGridItem In dgWofkFlowView.Items
+
+                'Get Controls - Start
+                _CheckBox = _DataGridItem.Cells(0).Controls(1)
+                _HtmlInputHidden = _DataGridItem.Cells(5).Controls(2).FindControl("Hidden_WorkFlowId")
+                'Get Controls - Stop
+
+                'Check Box Check -Starting
+                If _CheckBox.Checked = True Then
+
+                    'get Work Flow id
+                    WorkflowId = clsGeneric.NullToInteger(_HtmlInputHidden.Value)
+
+                    Select Case WorkflowType
+
+                        Case Generic._WorkflowType.Approved
+
+                            'Post to CF
+                            Result = _Posting.PostToCenturyFinancials(WorkflowId)
+
+                            If Result Then
+                                'Update Status
+                                Call _WorkflowDAL.UpdateWorkflow(WorkflowId, Generic._WorkflowType.Posted)
+                            End If
+
+                        Case Generic._WorkflowType.Rejected
+
+                            'Update Status
+                            Call _WorkflowDAL.UpdateWorkflow(WorkflowId, Generic._WorkflowType.Rejected)
+
+                    End Select
+
+                End If
+                'Check Box Check -Ended
+
+            Next
+            'Looping Grid Items - Ended
+
+
+            If WorkflowType = Generic._WorkflowType.Approved Then
+                If Result Then
+                    Return "Posting to CF Failed"
+                Else
+                    Return "Posting to CF Successful"
+                End If
+            Else
+                If Result Then
+                    Return "Rejection CF Failed"
+                Else
+                    Return "Rejection Successful"
+                End If
+            End If
+
+        Catch ex As Exception
+
+            Call MaxModule.Helper.LogError(ex.Message)
+            Return Nothing
+
+        End Try
+
+    End Function
+
+#End Region
+
+End Class

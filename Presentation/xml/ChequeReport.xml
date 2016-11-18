@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <TransAmount>90</TransAmount>
+    <ChequeDate>04-09-2008</ChequeDate>
+    <Name>ARUN</Name>
+    <words>Ninety Ringitss</words>
+  </Table>
+  <Table>
+    <TransAmount>80</TransAmount>
+    <ChequeDate>04-09-2008</ChequeDate>
+    <Name>ELANGO</Name>
+    <words>Eighty Ringitss</words>
+  </Table>
+</NewDataSet>

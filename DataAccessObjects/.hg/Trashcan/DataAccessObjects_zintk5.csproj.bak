@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33AC51A5-4C1C-482D-B2BE-92A9F974CDD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTS.SAS.DataAccessObjects</RootNamespace>
+    <AssemblyName>HTS.SAS.DataAccessObjects</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Runtime\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntLibContrib.Data.PostgreSql, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntLibContrib.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="HTS.SAS.DataAccessObjects">
+      <HintPath>bin\HTS.SAS.DataAccessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MaxGeneric">
+      <HintPath>bin\MaxGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.6.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsDAL.cs" />
+    <Compile Include="AccountsDetailsDAL.cs" />
+    <Compile Include="AFCDAL.cs" />
+    <Compile Include="AFCDetailsDAL.cs" />
+    <Compile Include="AutoNumberDAL.cs" />
+    <Compile Include="BankProfileDAL.cs" />
+    <Compile Include="BlockDAL.cs" />
+    <Compile Include="ChequeDAL.cs" />
+    <Compile Include="ChequeDetailsDAL.cs" />
+    <Compile Include="ConnectionDAL.cs" />
+    <Compile Include="DashboardDAL.cs" />
+    <Compile Include="DegreeTypeDAL.cs" />
+    <Compile Include="DunningLettersDAL.cs" />
+    <Compile Include="ExportDataDAL.cs" />
+    <Compile Include="FacultyDAL.cs" />
+    <Compile Include="FeeChargesDAL.cs" />
+    <Compile Include="FeeStrAmountDAL.cs" />
+    <Compile Include="FeeStrDetailsDAL.cs" />
+    <Compile Include="FeeStructDAL.cs" />
+    <Compile Include="FeeTypesDAL.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="HostelStrAmountDAL.cs" />
+    <Compile Include="HostelStrDetailsDAL.cs" />
+    <Compile Include="HostelStructDAL.cs" />
+    <Compile Include="KolejDAL.cs" />
+    <Compile Include="MenuDAL.cs" />
+    <Compile Include="PayModeDAL.cs" />
+    <Compile Include="ProgramAccountDAL.cs" />
+    <Compile Include="ProgramInfoDAL.cs" />
+    <Compile Include="RoomTypeDAL.cs" />
+    <Compile Include="SemesterSetupDAL.cs" />
+    <Compile Include="SponserFeeTypesDAL.cs" />
+    <Compile Include="SponsorDAL.cs" />
+    <Compile Include="StudentCategoryAccessDAL.cs" />
+    <Compile Include="StudentCategoryDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentDAL.cs" />
+    <Compile Include="StudentSponDAL.cs" />
+    <Compile Include="StudentStatusDAL.cs" />
+    <Compile Include="StuNotesDAL.cs" />
+    <Compile Include="StuSponFeetypesDAL.cs" />
+    <Compile Include="UniversityFundDAL.cs" />
+    <Compile Include="UniversityProfileDAL.cs" />
+    <Compile Include="UserGroupDAL.cs" />
+    <Compile Include="UserRightsDAL.cs" />
+    <Compile Include="UsersDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{99D0C1EB-1E04-4743-834E-9AD364F2E20E}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaxModule\MaxModule.vbproj">
+      <Project>{a47eaef6-4d5f-472f-8784-e2a77dbe866b}</Project>
+      <Name>MaxModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

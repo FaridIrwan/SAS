@@ -1,0 +1,53 @@
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\BusinessEntities.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\DBManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\BusinessEntities.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\BusinessEntities.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\DBManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Release\DBManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.Resources.resources
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\BusinessEntities.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\MaxGeneric.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\MaxModule.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\Npgsql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\EntLibContrib.Data.PostgreSql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\Microsoft.Practices.ObjectBuilder2.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\Microsoft.Practices.Unity.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\MaxModule.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Release\MaxModule.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.Resources.resources
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Release\SQLPowerQueryManager.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\SQLPowerQueryManager.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\BusinessEntities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\MaxGeneric.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\Npgsql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\EntLibContrib.Data.PostgreSql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\MaxModule.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Release\MaxModule.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.Resources.resources
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Release\SQLPowerQueryManager.pdb

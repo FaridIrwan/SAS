@@ -1,0 +1,9 @@
+syntax: glob
+web.config
+LogErrors
+crystalreportviewers
+\Bin
+\obj
+DataAccessObjects.csproj.vspscc
+DataAccessObjects.csproj.user
+DataAccessObjects.csproj

@@ -1,0 +1,8 @@
+syntax: glob
+web.config
+LogErrors
+crystalreportviewers
+\Bin\Microsoft.Practices.ObjectBuilder.dll
+\Bin\Microsoft.Practices.ServiceLocation.dll
+\Bin\Microsoft.Practices.Unity.Interception.dll
+\Bin\MySql.Web.v20.dll

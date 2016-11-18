@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <_x0030_>
+    <noofstudents>2</noofstudents>
+    <allocated>10</allocated>
+    <pocket>2</pocket>
+    <documentno>SA000000000000026</documentno>
+    <totalamount>12</totalamount>
+    <receiptnumber>B000000000000098</receiptnumber>
+    <transdate>12/02/2016</transdate>
+    <creditref>000</creditref>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <receivedamount>12</receivedamount>
+  </_x0030_>
+  <_x0030_>
+    <noofstudents>5</noofstudents>
+    <allocated>305</allocated>
+    <pocket>0</pocket>
+    <documentno />
+    <totalamount>305</totalamount>
+    <receiptnumber>B000000000000098</receiptnumber>
+    <transdate>12/02/2016</transdate>
+    <creditref>000</creditref>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <receivedamount>5</receivedamount>
+  </_x0030_>
+  <_x0030_>
+    <noofstudents>1</noofstudents>
+    <allocated>20</allocated>
+    <pocket>0</pocket>
+    <documentno>SA000000000000023</documentno>
+    <totalamount>20</totalamount>
+    <receiptnumber>B000000000000032</receiptnumber>
+    <transdate>05/02/2016</transdate>
+    <creditref>000</creditref>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <receivedamount>20</receivedamount>
+  </_x0030_>
+  <_x0030_>
+    <noofstudents>5</noofstudents>
+    <allocated>305</allocated>
+    <pocket>0</pocket>
+    <documentno />
+    <totalamount>305</totalamount>
+    <receiptnumber>B000000000000032</receiptnumber>
+    <transdate>05/02/2016</transdate>
+    <creditref>000</creditref>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <receivedamount>300</receivedamount>
+  </_x0030_>
+  <_x0030_>
+    <noofstudents>4</noofstudents>
+    <allocated>310</allocated>
+    <pocket>0</pocket>
+    <documentno>SA000000000000011</documentno>
+    <totalamount>310</totalamount>
+    <receiptnumber>B000000000000032</receiptnumber>
+    <transdate>05/02/2016</transdate>
+    <creditref>000</creditref>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <receivedamount>310</receivedamount>
+  </_x0030_>
+</NewDataSet>

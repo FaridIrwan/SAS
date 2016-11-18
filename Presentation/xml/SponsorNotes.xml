@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <SponsorNotes>
+    <sasr_code>0001</sasr_code>
+    <sasr_name>PERBADANAN TABUNG PENDIDIKAN TINGGI NASIONAL</sasr_name>
+    <sassr_sname>PTPTN</sassr_sname>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_contact />
+    <sasr_phone />
+    <sasr_fax />
+    <sasr_email />
+    <sasr_website />
+    <sasr_type>Scholarship</sasr_type>
+    <sasr_desc />
+    <sasr_glaccount>S-10-00000-XX-L84000</sasr_glaccount>
+    <sabr_code>0</sabr_code>
+    <sasr_updatedby>demo</sasr_updatedby>
+    <sasr_updateddttm>22/04/2016 15:41:26</sasr_updateddttm>
+    <sasr_status>true</sasr_status>
+    <glcode>GL-X12-T</glcode>
+    <batchcode>B000000000000121</batchcode>
+    <batchdate>02/06/2016</batchdate>
+    <description>xX Test Xx</description>
+    <transamount>200</transamount>
+    <type>Sponsor Debit Note</type>
+  </SponsorNotes>
+</NewDataSet>

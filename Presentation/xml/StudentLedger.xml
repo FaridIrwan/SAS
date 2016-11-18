@@ -1,0 +1,191 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>AFC</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>11/05/2016</sb_transdate>
+    <description>AFC-201220131</description>
+    <transcode>AFC000000000000017</transcode>
+    <credit>0</credit>
+    <debit>1922.4</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>AFC</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>AFC-201220131</description>
+    <transcode>AFC000000000000023</transcode>
+    <credit>0</credit>
+    <debit>1810</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>Debit Note</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Test for Credit Hour on Debit Note</description>
+    <transcode>DN000000000000019</transcode>
+    <credit>0</credit>
+    <debit>42.4</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>Credit Note</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Test Change of Program</description>
+    <transcode>CN000000000000017</transcode>
+    <credit>10</credit>
+    <debit>0</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>Credit Note</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Test Credit Hour-Decrease</description>
+    <transcode>CN000000000000019</transcode>
+    <credit>212</credit>
+    <debit>0</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>Receipt</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Test Bank Receipt Manual</description>
+    <transcode>A1234</transcode>
+    <credit>6000</credit>
+    <debit>0</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>Receipt</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Test Bank Receipt Manual</description>
+    <transcode>A1237</transcode>
+    <credit>300</credit>
+    <debit>0</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>STA</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Student Pocket Amount</description>
+    <transcode>N000000000000007</transcode>
+    <credit>0</credit>
+    <debit>100</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>SPA</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Sponsor Allocation Amount</description>
+    <transcode>A000000000000031</transcode>
+    <credit>1290</credit>
+    <debit>0</debit>
+  </Table>
+  <Table>
+    <sasi_name>NOOR AMIRAH BINTI MUSTAFA</sasi_name>
+    <sasi_icno>930814055010</sasi_icno>
+    <sasi_matricno>167300</sasi_matricno>
+    <sasi_pgid>40</sasi_pgid>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_intake>201220131</sasi_intake>
+    <sasi_cursem>2</sasi_cursem>
+    <category>SPA</category>
+    <hostel>KOLEJ SULTAN ALAEDDIN SULEIMAN SHAH</hostel>
+    <sass_code>1</sass_code>
+    <sasc_code>W</sasc_code>
+    <sb_transdate>12/05/2016</sb_transdate>
+    <description>Sponsor Pocket Amount</description>
+    <transcode>A000000000000033</transcode>
+    <credit>100</credit>
+    <debit>0</debit>
+  </Table>
+  <Category>
+    <Type>Student Ledger</Type>
+  </Category>
+  <StudentSpon>
+    <sasr_code>000</sasr_code>
+    <sasr_name>PERSENDIRIAN</sasr_name>
+    <sasi_matricno>167300</sasi_matricno>
+  </StudentSpon>
+</NewDataSet>

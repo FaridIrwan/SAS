@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+	<Table>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+		<SASI_PdId>BACC</SASI_PdId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_ICno>951111-10-1234</SASI_ICno>
+		<SASI_CurSem></SASI_CurSem>
+		<SASI_CurSemYr></SASI_CurSemYr>
+		<SASI_Studytype></SASI_Studytype>
+		<SASS_Code></SASS_Code>
+		<SASC_Code></SASC_Code>
+		<SASI_Hostel></SASI_Hostel>
+		<SAKO_Code></SAKO_Code>
+		<SASI_Add1></SASI_Add1>
+		<SASI_Add2></SASI_Add2>
+		<SASI_Add3></SASI_Add3>
+		<SASI_City></SASI_City>
+		<SASI_State></SASI_State>
+		<SASI_Country></SASI_Country>
+		<SASI_Postcode></SASI_Postcode>
+		<SASI_Email></SASI_Email>
+		<SASI_Tel></SASI_Tel>
+		<SASI_HP></SASI_HP>
+		<SASI_Bank></SASI_Bank>
+		<SASI_AccNo></SASI_AccNo>
+		<SASI_GLCode></SASI_GLCode>
+		<SASI_MAdd1></SASI_MAdd1>
+		<SASI_MAdd2></SASI_MAdd2>
+		<SASI_MAdd3></SASI_MAdd3>
+		<SASI_MCity></SASI_MCity>
+		<SASI_MState></SASI_MState>
+		<SASI_MCountry></SASI_MCountry>
+		<SASI_MPostcode></SASI_MPostcode>
+ 		<SASI_OtherID></SASI_OtherID>
+		<SABK_Code></SABK_Code>
+		<SASI_FloorNo></SASI_FloorNo>
+		<SART_Code></SART_Code>
+		<SASI_CrditHrs></SASI_CrditHrs>
+		<SASI_GPA></SASI_GPA>
+		<SAFC_Desc></SAFC_Desc>
+		<SAPG_Program></SAPG_Program>
+		<SAKO_Description></SAKO_Description>
+		<SABK_Description></SABK_Description>
+		<SASC_Desc></SASC_Desc>
+		<SART_Description></SART_Description>
+		<SASI_Intake></SASI_Intake>
+		<SASI_CGPA></SASI_CGPA>
+		<studytypedesc></studytypedesc>
+		<iddesc></iddesc>
+
+	</Table>
+<Table>
+		<SASI_MatricNo>20100001</SASI_MatricNo>
+		<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+		<SASI_PdId>BACC</SASI_PdId>
+		<SASI_Faculty>ECM</SASI_Faculty>
+		<SASI_ICno>951111-10-1234</SASI_ICno>
+		<SASI_CurSem></SASI_CurSem>
+		<SASI_CurSemYr></SASI_CurSemYr>
+		<SASI_Studytype></SASI_Studytype>
+		<SASS_Code></SASS_Code>
+		<SASC_Code></SASC_Code>
+		<SASI_Hostel></SASI_Hostel>
+		<SAKO_Code></SAKO_Code>
+		<SASI_Add1></SASI_Add1>
+		<SASI_Add2></SASI_Add2>
+		<SASI_Add3></SASI_Add3>
+		<SASI_City></SASI_City>
+		<SASI_State></SASI_State>
+		<SASI_Country></SASI_Country>
+		<SASI_Postcode></SASI_Postcode>
+		<SASI_Email></SASI_Email>
+		<SASI_Tel></SASI_Tel>
+		<SASI_HP></SASI_HP>
+		<SASI_Bank></SASI_Bank>
+		<SASI_AccNo></SASI_AccNo>
+		<SASI_GLCode></SASI_GLCode>
+		<SASI_MAdd1></SASI_MAdd1>
+		<SASI_MAdd2></SASI_MAdd2>
+		<SASI_MAdd3></SASI_MAdd3>
+		<SASI_MCity></SASI_MCity>
+		<SASI_MState></SASI_MState>
+		<SASI_MCountry></SASI_MCountry>
+		<SASI_MPostcode></SASI_MPostcode>
+ 		<SASI_OtherID></SASI_OtherID>
+		<SABK_Code></SABK_Code>
+		<SASI_FloorNo></SASI_FloorNo>
+		<SART_Code></SART_Code>
+		<SASI_CrditHrs></SASI_CrditHrs>
+		<SASI_GPA></SASI_GPA>
+		<SAFC_Desc></SAFC_Desc>
+		<SAPG_Program></SAPG_Program>
+		<SAKO_Description></SAKO_Description>
+		<SABK_Description></SABK_Description>
+		<SASC_Desc></SASC_Desc>
+		<SART_Description></SART_Description>
+		<SASI_Intake></SASI_Intake>
+		<SASI_CGPA></SASI_CGPA>
+		<studytypedesc></studytypedesc>
+		<iddesc></iddesc>
+		<SAST_Semester></SAST_Semester>
+
+
+
+	</Table>
+
+	
+</NewDataSet>

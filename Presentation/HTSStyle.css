@@ -1,0 +1,541 @@
+﻿td.style1{font-family:Arial; font-size:11px; color:#666666;}
+td.style2{font-family:Arial; font-size:11; color:#888888;}
+td.style3{font-family:Arial; font-size:11; color:#666666; background-color:#FDFDFF;}
+td.toolbar{font-family:verdana; font-size:10px; color:#003366; width: 100%; height: 100%;}
+/*td.fields{font-family:verdana; font-size:11px; color:#003366;}*/
+td.heading1{font-family:verdana; font-size:12px; color:black;}
+/*td.pagetext{font-family:verdana; font-size:30px; color:#003366; width: 100px;}/*
+/*td.topbg{background-color:#003366;}*/
+/*td.topText{font-family:verdana; font-size:10px; color:#ffffff; background-color:#003366;}*/
+td.topmenu{width: 100%; height: 21px; font-family:Arial; font-size:11px;  color:#ffffff; background-color:#000000;}
+td.sidemenu{ width: 18%;height: 100%;font-family:Arial; font-size:11px; color:#ffffff; }
+td.vline{ width: 100%; height: 1px; background-color:black; }
+td.mainbg{ background-color:#ccccff; width: 100%;}
+td.Alerts{font-family:Arial; font-size:11px;  color:Red;  }
+a:hover
+{
+color:black;
+text-decoration:underline;
+}
+a:link
+{
+color:Blue;
+}
+
+TD
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: 'arial', 'Helvetica';
+}
+UL
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: 'Arial', 'Helvetica';
+}
+OL
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: 'Arial', 'Helvetica';
+}
+LI
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: 'Arial', 'Helvetica';
+}
+TEXTAREA
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: 'Arial', 'Helvetica'
+}
+INPUT
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: 'Arial', 'Helvetica'
+}
+SELECT
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: 'Arial', 'Helvetica'
+}
+.dgSelectedItemStyle
+{
+Font-Size: 9pt; 
+Font-Family: Arial, Helvetica;
+color: #000000;
+background-color: #C0C0C0
+}
+
+.dgEditItemStyle
+{
+Font-Size: 9pt;
+Font-Family: Arial, Helvetica;
+Background-Color: #C0C0C0
+}
+
+tr.dgAlternatingItemStyle td
+{
+Font-Size: 8pt;
+Font-Family: arial, Helvetica;
+Background-Color: #EFEFF7;
+padding:5px;
+}
+
+tr.dgItemStyle td
+{
+Font-Size: 8pt;
+Font-Family: arial, Helvetica;
+Background-Color: #ffffff;
+padding:5px;
+}
+
+tr.dgHeaderStyle td
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #fff;
+	font-family: Arial, Helvetica;
+	background-color: #CDD7EE;
+	text-decoration: none;
+	padding:5px;
+	height:23px;
+}
+
+.dgFooterStyle
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #003366;
+	font-family: Arial, Helvetica;
+	background-color: #CDD7EE;
+	text-decoration: none;
+	padding:5px;
+	height:20px;
+}
+
+.dgPagerStyle
+{
+	font-weight: bold;
+	Font-Size: 9pt;
+	Font-Family: Arial, Helvetica;
+	Background-Color: #C0C0C0;
+	text-align: center; 
+}
+
+.dgFirstColumn
+{
+	padding-left: 10px;
+}
+.bodySmallBold
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #000000;
+	font-family: Arial, Helvetica;
+	background-color: #dddddd;
+	text-decoration: none;
+}
+A.bodySmallBold:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+    TEXT-DECORATION: none;
+}
+.pageTitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+    TEXT-DECORATION: none
+}
+.moduleTitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+    TEXT-DECORATION: none
+}
+.dataLabel
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    LINE-HEIGHT: 16px;
+    FONT-FAMILY: Arial, Helvetica;
+    BACKGROUND-COLOR: #dddddd;
+    TEXT-ALIGN: right
+}
+.actionLink
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica
+}
+A.actionLink:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica
+}
+A.actionLink:visited
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica
+}
+A:hover
+{
+	text-decoration:underline;    
+}
+a, a:link {
+	color: #224488;
+	text-decoration:none;
+    text-align: center;
+}
+.blackLine
+{
+    BACKGROUND-COLOR: #000000
+}
+.moduleLine
+{
+    BACKGROUND-COLOR: #5A012D /*4766a6*/
+}
+.TabLine
+{
+    BACKGROUND-COLOR: #D4D4D4 /*4766a6*/
+}
+.requiredInput
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: #ffffff;
+    LINE-HEIGHT: 16px;
+    FONT-FAMILY: Arial, Helvetica;
+    BACKGROUND-COLOR: #990000;
+    TEXT-ALIGN: right
+}
+.toclink
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+.tocsublink
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    TEXT-DECORATION: none
+}
+A.tocsublink:hover
+{
+    COLOR: red
+}
+
+.tabOn
+{
+    PADDING-RIGHT: 3px;
+    PADDING-LEFT: 3px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    PADDING-BOTTOM: 3px;
+    COLOR: #000000;
+    PADDING-TOP: 3px;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #D4D4D4; /* 4766a6 */
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.tabOn:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #D4D4D4; /*#4766a6*/
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+.tabOff
+{
+    PADDING-RIGHT: 3px;
+    PADDING-LEFT: 3px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    PADDING-BOTTOM: 3px;
+    COLOR: #D4D4D4;
+    PADDING-TOP: 3px;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #5A012D; /* #264989 */
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.tabOff:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #D4D4D4;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    BACKGROUND-COLOR: #5A012D; /*#264989*/
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+
+.topNav
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica;
+    BACKGROUND-COLOR: #5A012D; /*#264989*/
+    TEXT-ALIGN: left;
+    TEXT-DECORATION: none
+}
+A.topNav:link
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica;
+    BACKGROUND-COLOR: #5A012D; /*#264989*/
+    TEXT-ALIGN: right;
+    TEXT-DECORATION: none
+}
+.footer
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    COLOR: #666666;
+    FONT-FAMILY: Arial, Helvetica;
+    TEXT-DECORATION: none
+}
+A.footer:link
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    COLOR: #666666;
+    FONT-FAMILY: Arial, Helvetica;
+    TEXT-DECORATION: underline
+}
+A.tabOn:visited
+{
+    COLOR: #5A012D; /**/
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.tabOff:visited
+{
+    COLOR: #EFEFEF;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.topNav:visited
+{
+    COLOR: #ffffff;
+    TEXT-DECORATION: none
+}
+A.tabOn:hover
+{
+    COLOR: #5A012D;
+    BACKGROUND-COLOR: #D4D4D4; /* #4766a6*/
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.tabOff:hover
+{
+    FONT-SIZE: 9pt;
+    COLOR: white;
+    BACKGROUND-COLOR: #5A012D; /*264989*/
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+A.topNav:hover
+{
+    FONT-SIZE: 8pt;
+    COLOR: #ffffff;
+    BACKGROUND-COLOR: #D4D4D4;
+    TEXT-DECORATION: none
+}
+A.footer:hover
+{
+    COLOR: #FFB6B1; /*666666*/
+    TEXT-DECORATION: underline
+}
+.userMsg
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: 'Arial', 'Helvetica'
+}
+.columnHeadInactiveWhite
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: white;
+    FONT-FAMILY: 'Arial', 'Helvetica';
+    BACKGROUND-COLOR: #4766a6
+}
+.accountsTab
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: 'Verdana', 'Arial', 'Helvetica';
+    BACKGROUND-COLOR: #003399;
+    TEXT-DECORATION: none
+}
+TR.dark
+{
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #dddddd /*dddddd*/
+}
+TR.light
+{
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #eeeeee
+}
+
+.TabButton
+{
+	background-color:#FFA100;
+	COLOR: #ffffff;
+	border:none;
+	font-size:10px;
+	height:22px;
+	cursor:hand;
+	text-transform:uppercase;
+}
+
+.TabButtonClick
+{
+	background-color:yellow;
+	COLOR: #696965;
+	border:none;
+	font-size:11px;
+	FONT-WEIGHT: bold;
+	height:27px;
+	text-transform:uppercase;
+}
+
+.TabImage
+{
+	src:url('images/b_orange_left.gif');
+}
+
+.title
+{
+	font-size:18px;
+	color:#000000;
+	FONT-WEIGHT: bold;
+}
+
+.lblSearch
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    LINE-HEIGHT: 16px;
+    FONT-FAMILY: Arial, Helvetica;
+    PADDING-LEFT:10px;
+}
+.lblError
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: Red;
+    LINE-HEIGHT: 16px;
+    FONT-FAMILY: Arial, Helvetica;
+    PADDING-LEFT:10px;
+}
+.ddlSearch
+{
+    
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+}
+.txtSearch
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+}
+.txtPage
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial, Helvetica;
+    border-style:none;
+}
+.CalendarControl
+ { 
+        position:absolute;  
+        background-color:#CED5F2;  
+        margin:0; 
+        padding:0; 
+        display:none; 
+        z-index: 5000;
+        
+ }
+ 
+ .CalendarControl table {
+
+        font-family: arial, verdana, helvetica, sans-serif;
+
+        font-size: 8pt;
+
+        border-left: 1px solid #336;
+
+        border-right: 1px solid #336;
+
+      }
+      
+      .MyCalendar .ajax__calendar_container
+  {
+    border:1px solid #646464;
+    background-color: Green;
+    color: red;    
+}
+.modalBackground 
+{
+background-color:black;
+filter:alpha(opacity=70);
+opacity:0.7;
+   
+}
+.PopupPanel
+{
+ background-color: #eff3fb;
+	        border-width: 3px;
+	        border-style: solid;
+	        border-color: Gray;	       
+	        padding: 10px;
+	        width: 300px;
+	        height: 300px;
+	        font-size: 12px;
+}
+
+  .dialogContentCssClass
+    {
+	    
+ height: 100px;
+ background-color :Black; 
+ 
+    }

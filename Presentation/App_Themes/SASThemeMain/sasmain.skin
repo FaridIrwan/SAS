@@ -1,0 +1,8 @@
+
+<asp:TextBox runat="server" BorderColor="#23B2D0" BorderStyle="Solid" BorderWidth="1px" Height="15px" />
+<asp:CheckBox runat="server" BorderStyle="None" Font-Bold="True" />
+
+<asp:CheckBoxList runat="server" BorderColor="#23B2D0" BorderStyle="Solid" BorderWidth="1px" SkinID="checklist" />
+<asp:DropDownList runat="server" BorderColor="#23B2D0" BorderStyle="Solid" BorderWidth="1px" CssClass="dropdown" />
+<asp:RadioButton runat="server" BorderStyle="None" Font-Bold="True" />
+

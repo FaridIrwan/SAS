@@ -1,0 +1,196 @@
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\DBManager.dll
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\BusinessEntities.pdb
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\BusinessEntities.xml
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\DBManager.pdb
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\bin\Debug\DBManager.xml
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+H:\SAS\TFS-New\SASV2\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\DBManager.dll
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.pdb
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.xml
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\DBManager.pdb
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+C:\Users\CSHB-Alhisham\kojee\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\DBManager.dll
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.pdb
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.xml
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\DBManager.pdb
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\bin\Debug\DBManager.xml
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+H:\SAS\Team Foundation Server\SAS\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DBManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Common.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Mono.Security.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DBManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DBManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Common.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\Npgsql.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\de\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\es\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\fi\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\fr\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\ja\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\zh-CN\Npgsql.resources.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataObjects.dll
+D:\Development Workspace\Framework 4.5 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataObjects.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataObjects.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\MaxGeneric.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\MaxModule.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\BusinessEntities.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\DataObjects.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\MaxModule.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\MaxModule.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\SQLPowerQueryManager.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\SQLPowerQueryManager.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\SQLPowerQueryManager.xml
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\BusinessEntities.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\MaxGeneric.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\MaxModule.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\Npgsql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\MaxModule.pdb
+D:\Development WorkSpace\Framework 2.0 Projects\SAS-UPGRADE\SQL Power Query Manager\bin\Debug\MaxModule.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxGeneric.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxGeneric.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.pdb
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.xml
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\jess\SAS\project\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\DataObjects.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxGeneric.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\DataObjects.pdb
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.pdb
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.xml
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\Workspace\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.pdb
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\SQLPowerQueryManager.xml
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\BusinessEntities.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\DataObjects.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxGeneric.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\HTS.SAS.Entities.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Npgsql.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\EntLibContrib.Data.PostgreSql.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\DataObjects.pdb
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.pdb
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\bin\Debug\MaxModule.xml
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbprojResolveAssemblyReference.cache
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.Resources.resources
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.vbproj.GenerateResource.Cache
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.dll
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.xml
+D:\Projects\SAS\SAS4.0\SQLPowerQueryManager\obj\Debug\SQLPowerQueryManager.pdb

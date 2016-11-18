@@ -1,0 +1,880 @@
+diff --git a/addSpnRecpts.aspx b/addSpnRecpts.aspx
+--- a/addSpnRecpts.aspx
++++ b/addSpnRecpts.aspx
+@@ -45,9 +45,7 @@
+                 </td>
+             </tr>
+         </table>
+-        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="500px">
+-            <hr /><table style="width: 100%">
+-                <tr>
+-                    <td colspan="1" style="width: 503px">
+-                    </td>
++        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="611px">
++            <hr /><table style="width: 82%">
++                <tr>                    
+                     <td colspan="2" style="width: 153px">
+@@ -53,5 +51,5 @@
+                     <td colspan="2" style="width: 153px">
+-                        <div style="overflow: auto; width: 500px; height: 150px">
++                        <div style="overflow: auto; width: 569px; height: 150px">
+                             <asp:DataGrid ID="dgView" runat="server" AutoGenerateColumns="False" DataKeyField="TransactionCode"
+                                 Width="100%">
+                                 <FooterStyle CssClass="dgFooterStyle" Height="20px" />
+@@ -60,7 +58,7 @@
+                                     Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                                 <ItemStyle CssClass="dgItemStyle" />
+                                 <HeaderStyle BackColor="#CDD7EE" CssClass="dgHeaderStyle" Font-Bold="True" Font-Italic="False"
+-                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" />
++                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" />
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
+@@ -64,5 +62,6 @@
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
++                                    <asp:BoundColumn DataField="BatchCode" HeaderText="Sponsor Invoice"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+@@ -67,8 +66,8 @@
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+@@ -72,9 +71,7 @@
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+-                    </td>
+-                    <td colspan="1" style="width: 4192px">
+-                    </td>
++                    </td>                    
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+@@ -78,21 +75,25 @@
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+-                <tr><hr />
+-                    <td style="width: 8px; height: 30px; text-align: right">
+-                        <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif"
+-                            Width="28px" /></td>
+-                    <td style="width: 49px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label></td>
+-                    <td style="width: 34px; height: 30px; text-align: left">
+-                        <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg"
+-                            Width="28px" /></td>
+-                    <td style="width: 158px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label></td>
+-                    <td style="width: 142px; height: 30px; text-align: left">
+-                    </td>
+-                    <td style="width: 100px; height: 30px; text-align: left">
+-                    </td>
++                <caption>
++                    <hr />
++                    <tr>
++                        <td style="width: 8px; height: 30px; text-align: right">
++                            <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif" Width="28px" />
++                        </td>
++                        <td style="width: 49px; height: 30px; text-align: left">
++                            <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 34px; height: 30px; text-align: left">
++                            <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg" Width="28px" />
++                        </td>
++                        <td style="width: 158px; height: 30px; text-align: left">
++                            <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 142px; height: 30px; text-align: left"></td>
++                        <td style="width: 100px; height: 30px; text-align: left"></td>
++                    </tr>
++                </caption>
+                 </tr>
+             </table>
+         </asp:Panel>
+diff --git a/addSpnRecpts.aspx.vb b/addSpnRecpts.aspx.vb
+--- a/addSpnRecpts.aspx.vb
++++ b/addSpnRecpts.aspx.vb
+@@ -42,11 +42,11 @@
+         If dgView.SelectedIndex <> -1 Then
+             Dim eobj As New SponsorEn
+             eobj.TransactionCode = dgView.DataKeys(dgView.SelectedIndex)
+-            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(1).Text
+-            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(2).Text
+-            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(4).Text
+-            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
+-            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(2).Text
++            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(3).Text
++            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
++            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(7).Text
+             dgView.SelectedIndex = -1
+             Session("spnobj") = eobj
+         End If
+diff --git a/App_Code/Generic.vb b/App_Code/Generic.vb
+--- a/App_Code/Generic.vb
++++ b/App_Code/Generic.vb
+@@ -51,6 +51,7 @@
+         Exclusive = 1
+         Inclusive = 2
+     End Enum
++
+     Public Enum _ProcessType
+         Post = 1
+         Reject = 2
+@@ -54,6 +55,6 @@
+     Public Enum _ProcessType
+         Post = 1
+         Reject = 2
+-        Suceess = 3
++        Success = 3
+     End Enum
+ 
+@@ -58,5 +59,11 @@
+     End Enum
+ 
++    Public Enum _WorkflowType
++        Received = 1
++        Posted = 2
++        Rejected = 3
++        Approved = 4
++    End Enum
+ 
+ #End Region
+ 
+diff --git a/App_Code/Helper.vb b/App_Code/Helper.vb
+--- a/App_Code/Helper.vb
++++ b/App_Code/Helper.vb
+@@ -2,7 +2,7 @@
+ 
+ Imports MaxGeneric
+ Imports Microsoft.VisualBasic
+-
++Imports System.IO
+ #End Region
+ 
+ Public Class Helper
+@@ -6,6 +6,12 @@
+ #End Region
+ 
+ Public Class Helper
++#Region "Create Instances "
++    'Create Instances - Start
++    Private _WorkflowDAL As New HTS.SAS.DataAccessObjects.WorkflowDAL
++    Private _AccountsDAL As New HTS.SAS.DataAccessObjects.AccountsDAL
++    'Create Instances - Ended
++#End Region
+ 
+ #Region "Generic Constants "
+ 
+@@ -86,5 +92,40 @@
+     End Function
+ #End Region
+ 
++#Region "Post to Workflow "
++
++    'Purpose			: Post To Workflow
++    'Author			    : Sujith Sharatchandran - T-Melmax Sdn Bhd
++    'Created Date		: 04/06/2015
++    Public Function PostToWorkflow(ByVal BatchCode As String,
++        ByVal DoneBy As String, ByVal PageName As String) As Boolean
++
++
++        Try
++
++            'Post To workflow for apporval - Start
++            If _WorkflowDAL.Workflow(BatchCode, DoneBy, PageName) Then
++
++                'Update Accounts Details - Start
++                If _AccountsDAL.UpdatePostingStatus(BatchCode) Then
++                    Return True
++                End If
++                'Update Accounts Details - Stop
++
++            End If
++            'Post To workflow for apporval - Stop
++
++            Return False
++
++        Catch ex As Exception
++
++            Call MaxModule.Helper.LogError(ex.Message)
++            Return False
++
++        End Try
++
++    End Function
++    '  PostToWorkflow("", "", "")
++#End Region
+ 
+ End Class
+diff --git a/BatchInvoice.aspx.vb b/BatchInvoice.aspx.vb
+--- a/BatchInvoice.aspx.vb
++++ b/BatchInvoice.aspx.vb
+@@ -541,7 +541,7 @@
+         Dim BatchCode As String = MaxGeneric.clsGeneric.NullToString(txtBatchNo.Text)
+ 
+         'Calling PostToWorFlow
+-        '_Helper.PostToWorkflow(BatchCode, DoneBy(), Request.Url.AbsoluteUri)
++        _Helper.PostToWorkflow(BatchCode, DoneBy(), Request.Url.AbsoluteUri)
+ 
+         'If lblStatus.Value = "New" Then
+         '    lblMsg.Text = "Record not ready for Posting"
+@@ -1536,7 +1536,7 @@
+         If Request.QueryString("Formid") = "Inv" Then
+             eobj.Category = "Invoice"
+             Status = "O"
+-            eobj.TransType = "Credit"
++            eobj.TransType = "Debit"
+         ElseIf Request.QueryString("Formid") = "DN" Then
+             eobj.Category = "Debit Note"
+             Status = "O"
+@@ -1540,7 +1540,7 @@
+         ElseIf Request.QueryString("Formid") = "DN" Then
+             eobj.Category = "Debit Note"
+             Status = "O"
+-            eobj.TransType = "Credit"
++            eobj.TransType = "Debit"
+         ElseIf Request.QueryString("Formid") = "CN" Then
+             eobj.Category = "Credit Note"
+             Status = "O"
+@@ -1544,7 +1544,7 @@
+         ElseIf Request.QueryString("Formid") = "CN" Then
+             eobj.Category = "Credit Note"
+             Status = "O"
+-            eobj.TransType = "Debit"
++            eobj.TransType = "Credit"
+         End If
+ 
+         If dgView.Items.Count <> 0 Then
+@@ -2086,6 +2086,8 @@
+         dgStudentProg.Columns(7).Visible = False
+         dgStudentProg.Columns(8).Visible = False
+         dgStudentProg.Columns(9).Visible = False
++
++        btnViewStu.Enabled = False
+         
+     End Sub
+ 
+@@ -2096,54 +2098,6 @@
+         Dim lstobjects As New List(Of StudentEn)
+         Dim eob As New StudentEn
+         Dim sem As Integer = 0
+-        'Dim faculty As String
+-        'Dim cat As String
+-        'Dim trackid As Integer = 0
+-
+-        'If rbProYes.Checked = True Then inprogram()
+-        'If rbSemYes.Checked = True Then inSponsor()
+-        'If rbHosYes.Checked = True Then inHOstel()
+-        'If rbSemAll.Checked = True Then
+-        '    eob.CurrentSemester = 0
+-        'Else
+-        '    If txtSemster.Text = "" Then
+-        '        eob.CurrentSemester = 0
+-        '    Else
+-        '        eob.CurrentSemester = txtSemster.Text
+-        '    End If
+-        'End If
+-        'eob.STsponsercode = New StudentSponEn
+-        'If Not Session("spnstr") Is Nothing Then
+-        '    eob.STsponsercode.Sponsor = Session("spnstr")
+-        'Else
+-        '    eob.STsponsercode.Sponsor = ""
+-        'End If
+-        'If Not Session("sstr") Is Nothing Then
+-        '    eob.SAKO_Code = Session("sstr")
+-        'Else
+-        '    eob.SAKO_Code = ""
+-        'End If
+-        'If Not Session("prgstr") Is Nothing Then
+-        '    eob.ProgramID = Session("prgstr")
+-        'Else
+-        '    eob.ProgramID = ""
+-        'End If
+-        'If ddlFaculty.SelectedValue = "-1" Then
+-        '    faculty = ""
+-        'Else
+-        '    faculty = ddlFaculty.SelectedValue
+-
+-        'End If
+-        'If ddlStudentType.SelectedValue = "-1" Then
+-        '    cat = ""
+-        'Else
+-        '    cat = ddlStudentType.SelectedValue
+-
+-        'End If
+-        'eob.Faculty = faculty
+-        'eob.CategoryCode = cat
+-        'eob.StCategoryAcess = New StudentCategoryAccessEn
+-        'eob.StCategoryAcess.MenuID = Session("Menuid")
+ 
+         Try
+             lstobjects = objup.GetListStudentChange(Category, ModuleId)
+@@ -2193,8 +2147,8 @@
+     Private Sub OnViewStudentGridChange(ModuleId As Integer)
+ 
+         MultiView1.SetActiveView(View4)
+-        btnViewStu.CssClass = "TabButtonClick"
+-
++        'btnViewStu.CssClass = "TabButtonClick"
++        btnViewStu.Enabled = False
+         btnBatchInvoice.CssClass = "TabButton"
+ 
+         btnSelection.CssClass = "TabButton"
+@@ -2226,6 +2180,8 @@
+         dgStudentProg.Columns(8).Visible = False
+         dgStudentProg.Columns(9).Visible = False
+ 
++        btnViewStu.Enabled = False
++
+     End Sub
+ 
+     Protected Sub btnChangeHostel_Click(sender As Object, e As EventArgs) Handles btnChangeHostel.Click
+@@ -2240,6 +2196,8 @@
+         dgStudentProg.Columns(5).Visible = False
+         dgStudentProg.Columns(6).Visible = False
+         dgStudentProg.Columns(7).Visible = False
++
++        btnViewStu.Enabled = False
+     End Sub
+ 
+ End Class
+diff --git a/FeePosting.aspx b/FeePosting.aspx
+--- a/FeePosting.aspx
++++ b/FeePosting.aspx
+@@ -930,7 +930,7 @@
+                             </asp:BoundColumn>
+                             <asp:BoundColumn DataField="Faculty" HeaderText="Faculty" Visible="False"></asp:BoundColumn>
+                             <asp:BoundColumn DataField="Semester" HeaderText="Semester" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundColumn>
+-                            <asp:BoundColumn DataField="BatchNo" HeaderText="Batch Number"></asp:BoundColumn>
++                            <asp:BoundColumn DataField="BatchNo" HeaderText="Batch Number" Visible="false"></asp:BoundColumn>
+                             <asp:BoundColumn DataField="TransStatus" HeaderText="Status" Visible="False"></asp:BoundColumn>
+                             <asp:TemplateColumn HeaderText="View">
+                                 <HeaderStyle HorizontalAlign="Center" Width="12%" />
+diff --git a/GroupProcess/PTPTNFileGeneration.aspx.vb b/GroupProcess/PTPTNFileGeneration.aspx.vb
+--- a/GroupProcess/PTPTNFileGeneration.aspx.vb
++++ b/GroupProcess/PTPTNFileGeneration.aspx.vb
+@@ -1,7 +1,9 @@
+-﻿Imports HTS.SAS.Entities
++﻿#Region "NameSpaces "
++
++Imports HTS.SAS.Entities
+ Imports HTS.SAS.BusinessObjects
+ Imports System
+ Imports System.Data
+ Imports System.IO
+ Imports System.IO.FileSystemEventArgs
+ Imports System.Collections.Generic
+@@ -2,10 +4,14 @@
+ Imports HTS.SAS.BusinessObjects
+ Imports System
+ Imports System.Data
+ Imports System.IO
+ Imports System.IO.FileSystemEventArgs
+ Imports System.Collections.Generic
++Imports MaxGeneric
++Imports System.Configuration
++
++#End Region
+ 
+ Partial Class PTPTNFileGeneration
+     Inherits System.Web.UI.Page
+ 
+@@ -8,14 +14,8 @@
+ 
+ Partial Class PTPTNFileGeneration
+     Inherits System.Web.UI.Page
+ 
+-    Dim objBE As New BusinessEntities.PTPTN
+-    Dim objSQLQuery As New SQLPowerQueryManager.PowerQueryManager.PTPTNDL
+-    Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
+-    Dim DSReturn As New DataSet
+-    Dim strRetrunErrorMsg As String = String.Empty
+-    Dim blnReturnValue As Boolean
+-    Dim intCount As Integer
++#Region "Page Load "
+ 
+     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+         If Not IsPostBack() Then
+@@ -26,7 +26,9 @@
+         lblMsg.Text = ""
+     End Sub
+ 
+-#Region "Methods"
++#End Region
++
++#Region "Methods "
+     ''' <summary>
+     ''' Method to get the MenuName
+     ''' </summary>
+@@ -42,5 +44,5 @@
+ 
+ #End Region
+ 
+-    Protected Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
++#Region "Display Message "
+ 
+@@ -46,6 +48,3 @@
+ 
+-        Dim strFileName As String = String.Empty
+-        Dim strFileName2 As String = String.Empty
+-        Dim intLenght As Integer
+-        pnlDisplay.Visible = True
++    Private Sub DisplayMessage(ByVal MessageToDisplay As String)
+ 
+@@ -51,11 +50,6 @@
+ 
+-        strFileName = FileUpload1.FileName
+-        intLenght = strFileName.Length - 4
+-        strFileName = strFileName.Substring(0, intLenght)
+-
+-        FileUpload1.SaveAs(Server.MapPath("~\Upload\" & strFileName + ".txt"))
+-
+-        GenerateTextFile(strFileName)
++        lblMsg.Text = String.Empty
++        lblMsg.Text = MessageToDisplay
+ 
+     End Sub
+ 
+@@ -59,5 +53,5 @@
+ 
+     End Sub
+ 
+-    Private Sub GenerateTextFile(ByVal strFilename As String)
++#End Region
+ 
+@@ -63,4 +57,3 @@
+ 
+-        Dim dtCurr = Now()
+-        Dim dtCurrDate = Format(CDate(dtCurr), "yyyyMMdd")
++#Region "File Paths "
+ 
+@@ -66,22 +59,8 @@
+ 
+-        Dim strUploadPath = Server.MapPath("~\Upload\" + strFilename + ".txt")
+-        Dim strDownloadPath = Server.MapPath("~\Download\")
+-        Dim strGenFileName As String = strFilename & " - " & dtCurrDate & ".txt"
+-        System.IO.File.Delete(strDownloadPath + strGenFileName)
+-        Dim reader As StreamReader = New StreamReader(strUploadPath)
+-        Dim objWriter As New System.IO.StreamWriter(strDownloadPath + strGenFileName, True)
+-        Dim fileEntries As New List(Of String)
+-        Dim KumpulanPelajar As String = String.Empty
+-        Dim Detail As String = String.Empty
+-        Dim strHeader As String = String.Empty
+-        Dim strFooter As String = String.Empty
+-        Dim strAmaunPotongan As String = String.Empty
+-        Dim strAmaunPotongan_2 As String = String.Empty
+-        Dim strAmaunPotongan_3 As String = String.Empty
+-        Dim strNoPelajar As String = String.Empty
+-        Dim strDecimal As String = String.Empty
+-        Dim intTotalAmount As Integer = 0
+-        Dim intTotalCount As Integer = 0
+-        Dim strWarantAmount As String = String.Empty
+-        Dim strBalance As Integer
++    Private ReadOnly Property GetUploadFilePath As String
++        Get
++            Return clsGeneric.NullToString(
++                ConfigurationManager.AppSettings("PTPTN_UPLOAD_PATH"))
++        End Get
++    End Property
+ 
+@@ -87,2 +66,8 @@
+ 
++    Private ReadOnly Property GetDownloadFilePath As String
++        Get
++            Return clsGeneric.NullToString(
++                ConfigurationManager.AppSettings("PTPTN_DOWNLOAD_PATH"))
++        End Get
++    End Property
+ 
+@@ -88,3 +73,3 @@
+ 
+-        fileEntries.Clear()
++#End Region
+ 
+@@ -90,3 +75,3 @@
+ 
+-        With objBE
++#Region "btnGenerate_Click "
+ 
+@@ -92,9 +77,3 @@
+ 
+-            strHeader = reader.ReadLine.Substring(0, 25)
+-            Dim strNoKelompokHdr = strHeader.Substring(0, 10)
+-            Dim strKodUniversitiHdr = strHeader.Substring(10, 3)
+-            Dim strKumpPelajar = "00"
+-            Dim strTarikhProses = "00000000"
+-            Dim strKodBankHdr = strHeader.Substring(23, 2)
+-            objWriter.WriteLine(strNoKelompokHdr + strKodUniversitiHdr + strKumpPelajar + strTarikhProses + strKodBankHdr)
++    Protected Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+ 
+@@ -100,5 +79,4 @@
+ 
+-            Do Until reader.Peek = -1 'Until eof
+-                fileEntries.Add(reader.ReadLine)
+-            Loop
++        'Create Instances
++        Dim _FileHelper As New FileHelper()
+ 
+@@ -104,28 +82,6 @@
+ 
+-            For Each line In fileEntries
+-                If line.Substring(0, 10).Equals("0000000000") Then
+-                    'Get Value For Hearder Or Check Header
+-                ElseIf line.Substring(0, 10) = "9999999999" Then
+-                    'Check Line for footer
+-                    Dim intLenght As Integer = intTotalAmount.ToString.Length()
+-                    Dim b = intTotalAmount.ToString("D15")
+-                    intTotalAmount = Format(Integer.Parse(intTotalAmount), "000000000000000")
+-                    Dim strTotalCount = Format(Integer.Parse(intTotalCount), "000000000").ToString
+-                    strFooter = line.Substring(0, 13) + "00" + intTotalAmount.ToString("D15") + strTotalCount
+-                    'line.Substring(30, 9)
+-                Else
+-                    .NoKelompok = line.Substring(0, 10)
+-                    .KodUniversiti = line.Substring(10, 3)
+-                    .NoKP = line.Substring(43, 12)
+-                    '.KumpulanPelajar = line.Substring(13, 2)
+-                    .KumpulanPelajar = Space(2)
+-                    '.NoWaran = line.Substring(15, 14)
+-                    .NoWaran = Space(14)
+-                    .NoPelajar = line.Substring(29, 6)
+-                    strNoPelajar = Space(14)
+-                    .NoKP = line.Substring(43, 12)
+-                    .NamaPelajar = line.Substring(55, 80)
+-                    .AmaunWaran = line.Substring(135, 8)
+-                    strWarantAmount = .AmaunWaran
+-                    .AmaunWaran = Space(8)
++        'Variable Declarations - Start
++        Dim TotalAmount As Decimal = 0, TotalRecords As Integer = 0
++        Dim UploadedPtptnFile As String = Nothing, DirectDebitFile As String = Nothing
++        'Variable Declarations - Stop
+ 
+@@ -131,3 +87,7 @@
+ 
+-                    blnReturnValue = objSQLQuery.RetriveProgFee(objBE, strRetrunErrorMsg, GlobalSQLConnString, DSReturn)
++        Try
++            'Get Uploaded File - Start
++            UploadedPtptnFile = FileUpload1.FileName
++            UploadedPtptnFile = GetUploadFilePath & Path.GetFileName(UploadedPtptnFile)
++            'Get Uploaded File - Stop
+ 
+@@ -133,10 +93,4 @@
+ 
+-                    If blnReturnValue Then
+-                        If DSReturn.Tables(0).Rows.Count > 0 Then
+-                            strAmaunPotongan = DSReturn.Tables(0).Rows(0).Item("ProgFee").ToString
+-                            strDecimal = strAmaunPotongan.Substring(strAmaunPotongan.IndexOf("."))
+-                            strAmaunPotongan_2 = strAmaunPotongan.Replace(strDecimal, "00")
+-                            Dim intLength_1 = strAmaunPotongan.Substring(strAmaunPotongan.LastIndexOf(".")).Length
+-                            Dim intlength_2 = strAmaunPotongan.Length
+-                            strAmaunPotongan = strAmaunPotongan.Substring(0, intlength_2 - intLength_1)
++            'Save File
++            FileUpload1.SaveAs(UploadedPtptnFile)
+ 
+@@ -142,5 +96,5 @@
+ 
+-                        Else
+-                            strAmaunPotongan = "00000000"
+-                        End If
++            'Generate Direct Debit File
++            If _FileHelper.GenerateDirectDebitFile(UploadedPtptnFile,
++                TotalRecords, TotalAmount, DirectDebitFile) Then
+ 
+@@ -146,3 +100,4 @@
+ 
+-                        .AmaunPotongan = Format(Integer.Parse(strAmaunPotongan_2), "00000000")
++                'Show Panel
++                pnlDisplay.Visible = True
+ 
+@@ -148,5 +103,4 @@
+ 
+-                        strWarantAmount = Integer.Parse(strWarantAmount)
+-                        strAmaunPotongan_3 = Integer.Parse(.AmaunPotongan)
+-                        strBalance = strWarantAmount - strAmaunPotongan_3
++                'Display Error Message
++                Call DisplayMessage("File Generation Successful")
+ 
+@@ -152,5 +106,4 @@
+ 
+-                        If strBalance < 0 Then
+-                            .AmaunPotongan = Format(strWarantAmount - 10000, "00000000")
+-                        End If
++                'Display File Details
++                Call TextFileToLabel(DirectDebitFile, TotalAmount, TotalRecords)
+ 
+@@ -156,19 +109,3 @@
+ 
+-                    Else
+-                        LogError.Log("PTPTN File Generation", "GenerateTextFile", strRetrunErrorMsg)
+-                        lblMsg.Text = strRetrunErrorMsg
+-                    End If
+-                    '.AmaunPotongan = line.Substring(143, 8)
+-                    '.NilaiBersih = line.Substring(151, 8)
+-                    .NilaiBersih = Space(8)
+-                    '.TarikTransaksi = line.Substring(159, 8)
+-                    .TarikTransaksi = Space(8)
+-                    '.TarikLupusWaran = line.Substring(167, 8)
+-                    .TarikLupusWaran = Space(8)
+-                    '.NoAccPelajar = line.Substring(175, 14)
+-                    .NoAccPelajar = Space(14)
+-                    '.Filler = line.Substring(189, 2)
+-                    .Filler = Space(2)
+-                    '.StatusBayaran = line.Substring(191, 2)
+-                    .StatusBayaran = Space(2)
++            Else
+ 
+@@ -174,4 +111,4 @@
+ 
+-                    Detail = .NoKelompok + .KodUniversiti + .KumpulanPelajar + .NoWaran + strNoPelajar + .NoKP + .NamaPelajar + .AmaunWaran +
+-                                           .AmaunPotongan + .NilaiBersih + .TarikTransaksi + .TarikLupusWaran + .NoAccPelajar + .Filler + .StatusBayaran
++                'Show Panel
++                pnlDisplay.Visible = False
+ 
+@@ -177,3 +114,4 @@
+ 
+-                    objWriter.WriteLine(Detail)
++                'Display Error Message
++                Call DisplayMessage("File Generation Failed")
+ 
+@@ -179,3 +117,3 @@
+ 
+-                    intTotalAmount += Integer.Parse(.AmaunPotongan)
++            End If
+ 
+@@ -181,3 +119,3 @@
+ 
+-                    intTotalCount = intTotalCount + 1
++        Catch ex As Exception
+ 
+@@ -183,3 +121,5 @@
+ 
+-                End If
++            'Log & Display Error
++            Call MaxModule.Helper.LogError(ex.Message)
++            Call DisplayMessage(ex.Message)
+ 
+@@ -185,21 +125,5 @@
+ 
+-            Next
+-            objWriter.WriteLine(strFooter)
+-        End With
+-
+-        TextFileToLabel(strGenFileName, intTotalAmount, intTotalCount)
+-
+-        reader.Close()
+-        objWriter.Close()
+-
+-        strHeader = String.Empty
+-        strFooter = String.Empty
+-
+-        Response.ContentType = "text/plain"
+-        Response.AddHeader("content-disposition", "attachment; filename=" & strGenFileName & "")
+-        Response.TransmitFile(strDownloadPath & strGenFileName)
+-        Response.End()
+-
++        End Try
+ 
+     End Sub
+ 
+@@ -203,5 +127,5 @@
+ 
+     End Sub
+ 
+-    Private Sub TextFileToLabel(strGenFileName As String, intTotalAmount As Integer, intTotalCount As Integer)
++#End Region
+ 
+@@ -207,6 +131,12 @@
+ 
+-        lblFileName.Text = strGenFileName.ToString
+-        lblTotalAmount.Text = intTotalAmount.ToString
+-        lblTotalStudent.Text = intTotalCount.ToString
++#Region "TextFileToLabel "
++
++    Private Sub TextFileToLabel(ByVal DirectDebitFile As String,
++        ByVal TotalAmount As Decimal, ByVal TotalRecords As Integer)
++
++        lblFileName.Text = DirectDebitFile
++        lblTotalStudent.Text = TotalRecords
++        lblTotalAmount.Text = clsGeneric.SetCurrencyFormat(TotalAmount)
++
+     End Sub
+ 
+@@ -211,14 +141,5 @@
+     End Sub
+ 
+-    Private Sub DeleteTextFile(ByVal strFileName As String)
+-
+-        Dim FileToDelete = Server.MapPath("~\Download\" + strFileName + ".txt")
+-
+-        If System.IO.File.Exists(FileToDelete) = True Then
+-
+-            System.IO.File.Delete(FileToDelete)
+-
+-        End If
+-    End Sub
++#End Region
+ 
+ End Class
+diff --git a/GroupSetup/Department.aspx.vb b/GroupSetup/Department.aspx.vb
+--- a/GroupSetup/Department.aspx.vb
++++ b/GroupSetup/Department.aspx.vb
+@@ -8,7 +8,8 @@
+ 
+     Dim objBE As New BusinessEntities.DepartmentEn
+     Dim objSQLQuery As New SQLPowerQueryManager.PowerQueryManager.DepartmentDL
+-    Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
++    'Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
++    Private DataBaseConnectionString As String = SQLPowerQueryManager.Helper.GetConnectionString()
+ 
+     Dim DSReturn As New DataSet
+     Dim strRetrunErrorMsg As String = String.Empty
+@@ -29,7 +30,7 @@
+ 
+             If Not IsNothing(DSReturn) Then DSReturn.Clear()
+ 
+-            blnReturnValue = objSQLQuery.DataGrid(objBE, strRetrunErrorMsg, GlobalSQLConnString, DSReturn)
++            blnReturnValue = objSQLQuery.DataGrid(objBE, strRetrunErrorMsg, DataBaseConnectionString, DSReturn)
+ 
+             If blnReturnValue Then
+                 DataGridDataBinding(DSReturn, blnReturnValue)
+@@ -86,8 +87,7 @@
+             objBE.SQLCase = 2
+             If Not IsNothing(DSReturn) Then DSReturn.Clear()
+ 
+-            blnReturnValue = objSQLQuery.RetriveData(objBE, strRetrunErrorMsg, GlobalSQLConnString, DSReturn)
+-
++            blnReturnValue = objSQLQuery.RetriveData(objBE, strRetrunErrorMsg, DataBaseConnectionString, DSReturn)
+             If blnReturnValue Then
+                 If DSReturn.Tables(0).Rows.Count > 0 Then
+                     With DSReturn.Tables(0).Rows(0)
+@@ -137,7 +137,8 @@
+                 .Status = rblStatus.SelectedValue
+                 If strMode = "New" Then
+                     .CreatedBy = Session("User")
+-                    .CreateDate = Format(Now(), "yyyy-MM-dd")
++                    '.CreateDate = Format(Now(), "yyyy-MM-dd")
++                    .CreateDate = Format(Date.Now(), "dd-MM-yyyy")
+                 Else
+                     .AutoID = hdnAutoID.Value
+                     .ModifiedBy = Session("User")
+@@ -141,9 +142,10 @@
+                 Else
+                     .AutoID = hdnAutoID.Value
+                     .ModifiedBy = Session("User")
+-                    .ModifiedDate = Format(Now(), "yyyy-MM-dd")
++                    '.ModifiedDate = Format(Now(), "yyyy-MM-dd")
++                    .ModifiedDate = Format(Date.Now(), "dd-MM-yyyy")
+                 End If
+                 .SQLCase = 1
+             End With
+ 
+             If strMode = "New" Then
+@@ -145,7 +147,7 @@
+                 End If
+                 .SQLCase = 1
+             End With
+ 
+             If strMode = "New" Then
+-                blnReturnValue = objSQLQuery.RetriveData(objBE, strRetrunErrorMsg, GlobalSQLConnString, DSReturn)
++                blnReturnValue = objSQLQuery.RetriveData(objBE, strRetrunErrorMsg, DataBaseConnectionString, DSReturn)
+ 
+@@ -151,8 +153,9 @@
+ 
+-                If DSReturn.Tables(0).Rows.Count = 0 Then
+-                    blnReturnValue = objSQLQuery.InsertData(objBE, strRetrunErrorMsg, GlobalSQLConnString)
++                'If DSReturn.Tables(0).Rows.Count = 0 Then
++                If DSReturn.Tables.Count = 0 Then
++                    blnReturnValue = objSQLQuery.InsertData(objBE, strRetrunErrorMsg, DataBaseConnectionString)
+                 Else
+                     lblMsg.Text = "Record already exist."
+                     Exit Sub
+                 End If
+             Else
+@@ -154,12 +157,12 @@
+                 Else
+                     lblMsg.Text = "Record already exist."
+                     Exit Sub
+                 End If
+             Else
+-                blnReturnValue = objSQLQuery.UpdateData(objBE, strRetrunErrorMsg, GlobalSQLConnString)
++                blnReturnValue = objSQLQuery.UpdateData(objBE, strRetrunErrorMsg, DataBaseConnectionString)
+             End If
+ 
+             If blnReturnValue Then
+                 PageFunctional("Default")
+                 ClearData()
+                 FillDataGrid()
+@@ -160,9 +163,10 @@
+             End If
+ 
+             If blnReturnValue Then
+                 PageFunctional("Default")
+                 ClearData()
+                 FillDataGrid()
++                lblMsg.Text = "Record Updated Successfully "
+             Else
+                 LogError.Log("Department", "Insert", strRetrunErrorMsg)
+                 lblMsg.Text = strRetrunErrorMsg
+@@ -180,7 +184,7 @@
+             objBE.DepartmentID = strDepartmentID
+             objBE.SQLCase = 1
+ 
+-            blnReturnValue = objSQLQuery.DeleteData(objBE, strRetrunErrorMsg, GlobalSQLConnString)
++            blnReturnValue = objSQLQuery.DeleteData(objBE, strRetrunErrorMsg, DataBaseConnectionString)
+ 
+             If blnReturnValue Then
+                 PageFunctional("Default")
+@@ -257,6 +261,29 @@
+ 
+     Protected Sub ibtnSave_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnSave.Click
+         strMode = ViewState("strMode")
++
++        If txtDepartmentID.Text.Length = 0 Or txtDepartmentName.Text.Length = 0 Or rblStatus.SelectedValue = "-1" Then
++            lblMsg.Text = "Enter All Required Fields "
++            lblMsg.Visible = True
++            Exit Sub
++        End If
++
++        If txtDepartmentID.Text = "" Then
++            lblMsg.Text = "Enter valid Department ID."
++            txtDepartmentID.Focus()
++            Exit Sub
++        End If
++
++        If txtDepartmentName.Text = "" Then
++            lblMsg.Text = "Enter valid Department Name."
++            txtDepartmentName.Focus()
++            Exit Sub
++        End If
++        If rblStatus.SelectedIndex = -1 Then
++            lblMsg.Text = "Please Select Status."
++            Exit Sub
++        End If
++
+         Insert(strMode)
+     End Sub
+ 
+diff --git a/GroupSetup/Users.aspx.vb b/GroupSetup/Users.aspx.vb
+--- a/GroupSetup/Users.aspx.vb
++++ b/GroupSetup/Users.aspx.vb
+@@ -18,7 +18,8 @@
+     Dim objUserEn As New BusinessEntities.UserEn
+     Dim objUserDL As New SQLPowerQueryManager.PowerQueryManager.UserDL
+ 
+-    Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
++    'Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
++    Private GlobalSQLConnString As String = SQLPowerQueryManager.Helper.GetConnectionString()
+ 
+     Dim DSReturn As New DataSet
+     Dim strRetrunErrorMsg As String = String.Empty

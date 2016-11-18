@@ -1,0 +1,801 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <studledger>
+    <creditref>112233</creditref>
+    <sasi_name>ABharadwaj</sasi_name>
+    <sasi_pgid>12UG</sasi_pgid>
+    <sapg_program>Under Program Test</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000042</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108328</creditref>
+    <sasi_name>NURUL NADIRAH BT NASRON</sasi_name>
+    <sasi_pgid>32</sasi_pgid>
+    <sapg_program>DOCTOR OF VETERINARY MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/08/2015</date1>
+    <transcode>IN000000000000117</transcode>
+    <description>test</description>
+    <category>Invoice</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108316</creditref>
+    <sasi_name>FAZLINA BINTI MASBAH</sasi_name>
+    <sasi_pgid>5</sasi_pgid>
+    <sapg_program>DIPLOMA IN AGRICULTURAL ENGINEERING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>03/09/2015</date1>
+    <transcode>RT000000000000376</transcode>
+    <description>test</description>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>107592</creditref>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000069</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>119664</creditref>
+    <sasi_name>CHIENG LUNG ANN</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1>LOT 291 JALAN BATU BIAH</sasi_add1>
+    <sasi_add2>LIMBANG</sasi_add2>
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000072</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>13/08/2015</date1>
+    <transcode>DN000000000000017</transcode>
+    <description />
+    <category>Debit Note</category>
+    <transamount>200</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>13/08/2015</date1>
+    <transcode>CN000000000000019</transcode>
+    <description>test</description>
+    <category>Credit Note</category>
+    <transamount>200</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>13/08/2015</date1>
+    <transcode>IN000000000000111</transcode>
+    <description>test</description>
+    <category>Invoice</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>17/08/2015</date1>
+    <transcode>D000000000000002</transcode>
+    <description>Test</description>
+    <category>Refund</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>17/08/2015</date1>
+    <transcode>IN000000000000112</transcode>
+    <description>test</description>
+    <category>Invoice</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>17/08/2015</date1>
+    <transcode>IN000000000000116</transcode>
+    <description />
+    <category>Invoice</category>
+    <transamount>200</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>19/08/2015</date1>
+    <transcode>IN000000000000120</transcode>
+    <description />
+    <category>Invoice</category>
+    <transamount>300</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>20/08/2015</date1>
+    <transcode>IN000000000000121</transcode>
+    <description />
+    <category>Invoice</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>03/09/2015</date1>
+    <transcode>RT000000000000375</transcode>
+    <description>Test</description>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>106688</creditref>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000074</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>107591</creditref>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>17/08/2015</date1>
+    <transcode>CN000000000000020</transcode>
+    <description />
+    <category>Credit Note</category>
+    <transamount>700</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>107591</creditref>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>17/08/2015</date1>
+    <transcode>IN000000000000115</transcode>
+    <description>Test</description>
+    <category>Invoice</category>
+    <transamount>500</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>107591</creditref>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>19/08/2015</date1>
+    <transcode>DN000000000000019</transcode>
+    <description>sdwef</description>
+    <category>Debit Note</category>
+    <transamount>200</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>107591</creditref>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000070</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>119616</creditref>
+    <sasi_name>ONG YIEN FANG</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1>62 RUMAH MURAH 3 JALAN KENANGAN</sasi_add1>
+    <sasi_add2>PEKAN MERU</sasi_add2>
+    <sasi_add3>KLANG</sasi_add3>
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000073</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>119419</creditref>
+    <sasi_name>STEPHANIE TOH SHU SHU</sasi_name>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000071</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>72487</creditref>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <sasi_pgid>62</sasi_pgid>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <sasi_passport />
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>20/08/2015</date1>
+    <transcode>IN000000000000122</transcode>
+    <description>Test On Student</description>
+    <category>Invoice</category>
+    <transamount>300</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>72487</creditref>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <sasi_pgid>62</sasi_pgid>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <sasi_passport />
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>20/08/2015</date1>
+    <transcode>CN000000000000022</transcode>
+    <description>Test On Student</description>
+    <category>Credit Note</category>
+    <transamount>600</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>72487</creditref>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <sasi_pgid>62</sasi_pgid>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <sasi_passport />
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>20/08/2015</date1>
+    <transcode>DN000000000000020</transcode>
+    <description>Test On Student</description>
+    <category>Debit Note</category>
+    <transamount>600</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>72487</creditref>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+    <sasi_pgid>62</sasi_pgid>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <sasi_passport />
+    <sasi_add1>5687 QRTS. JKR ELEKTRIK</sasi_add1>
+    <sasi_add2>JALAN SKUDAI BATU 10 SKUDAI</sasi_add2>
+    <sasi_add3 />
+    <sasi_city>JOHOR BHARU</sasi_city>
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>20/08/2015</date1>
+    <transcode>IN000000000000123</transcode>
+    <description>Test On student</description>
+    <category>Invoice</category>
+    <transamount>600</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>333444</creditref>
+    <sasi_name>Bharad</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000044</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108337</creditref>
+    <sasi_name>HAFIZAH BINTI ISMAIL</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000043</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108340</creditref>
+    <sasi_name>LILI MASTURA BINTI CHE WIL</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000045</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>177519</creditref>
+    <sasi_name>NADHIRATUL SHAHIRA BINTI HASSAN</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000048</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108342</creditref>
+    <sasi_name>NORIMAH MURNI BINTI YASIN</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000046</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>170397</creditref>
+    <sasi_name>XIE WANRU</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>14/08/2015</date1>
+    <transcode>AFC000000000000047</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>170397</creditref>
+    <sasi_name>XIE WANRU</sasi_name>
+    <sasi_pgid>72A</sasi_pgid>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>19/08/2015</date1>
+    <transcode>IN000000000000118</transcode>
+    <description>test</description>
+    <category>Invoice</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108318</creditref>
+    <sasi_name>MARZUNIZA BINTI HASSAN</sasi_name>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>03/09/2015</date1>
+    <transcode>RT000000000000377</transcode>
+    <description>test</description>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108319</creditref>
+    <sasi_name>NARINI BT YUSOF</sasi_name>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>03/09/2015</date1>
+    <transcode>RT000000000000378</transcode>
+    <description>test</description>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108305</creditref>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/11/2015</date1>
+    <transcode>AFC000000000000102</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108305</creditref>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>24/06/9830</date1>
+    <transcode>A7849830</transcode>
+    <description>CIMB CLICKS</description>
+    <category>Receipt</category>
+    <transamount>73</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108306</creditref>
+    <sasi_name>JULIANA BINTI JAAFAR</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/11/2015</date1>
+    <transcode>AFC000000000000100</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108309</creditref>
+    <sasi_name>N. FAIZAH AHMAD</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/11/2015</date1>
+    <transcode>AFC000000000000101</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108304</creditref>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/11/2015</date1>
+    <transcode>AFC000000000000104</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>60</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108304</creditref>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Credit</transtype>
+    <date1>24/06/9830</date1>
+    <transcode>A7849830</transcode>
+    <description>CIMB CLICKS</description>
+    <category>Receipt</category>
+    <transamount>63</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>108311</creditref>
+    <sasi_name>ROZILAWATI BINTI MOHD PAZIR</sasi_name>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>18/11/2015</date1>
+    <transcode>AFC000000000000103</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+  <studledger>
+    <creditref>111222</creditref>
+    <sasi_name>Test One</sasi_name>
+    <sasi_pgid>PC1</sasi_pgid>
+    <sapg_program>Program Description One</sapg_program>
+    <sasi_passport />
+    <sasi_add1 />
+    <sasi_add2 />
+    <sasi_add3 />
+    <sasi_city />
+    <sass_code>1</sass_code>
+    <transtype>Debit</transtype>
+    <date1>05/10/2015</date1>
+    <transcode>AFC000000000000068</transcode>
+    <description>AFC-0220152016</description>
+    <category>AFC</category>
+    <transamount>100</transamount>
+    <subtype>Student</subtype>
+  </studledger>
+</NewDataSet>

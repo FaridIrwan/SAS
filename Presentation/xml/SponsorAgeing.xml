@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <SASR_Code>PTPTN</SASR_Code>
+    <TransAmount>4160</TransAmount>
+    <Dueamount>0</Dueamount>
+    <TransCode>SP000000000000001</TransCode>
+    <SASR_Name>PERBADANAN TABUNG PENDIDIKAN TINGGI NASIONAL</SASR_Name>
+    <SASR_Address>LOT G2, TINGKAT BAWAH, WISMA CHASE PERDANA,</SASR_Address>
+    <SASR_Address1>OFF JALAN SEMANTAN, DAMANSARA HEIGHTS</SASR_Address1>
+    <SASR_Address2>50490 KUALA LUMPUR</SASR_Address2>
+    <TRANSDATE>18-07-2011</TRANSDATE>
+    <DUEDATE>19-05-2011</DUEDATE>
+    <Different_Days>60</Different_Days>
+    <_x003C__x0020_30>0</_x003C__x0020_30>
+    <_x003C__x0020_60>0</_x003C__x0020_60>
+    <_x003C__x0020_90>0</_x003C__x0020_90>
+    <Others>0</Others>
+    <Header1>30</Header1>
+    <Header2>60</Header2>
+    <Header3>90</Header3>
+  </Table>
+  <Table>
+    <SASR_Code>PTPTN</SASR_Code>
+    <TransAmount>1040</TransAmount>
+    <Dueamount>0</Dueamount>
+    <TransCode>SA000000000000001</TransCode>
+    <SASR_Name>PERBADANAN TABUNG PENDIDIKAN TINGGI NASIONAL</SASR_Name>
+    <SASR_Address>LOT G2, TINGKAT BAWAH, WISMA CHASE PERDANA,</SASR_Address>
+    <SASR_Address1>OFF JALAN SEMANTAN, DAMANSARA HEIGHTS</SASR_Address1>
+    <SASR_Address2>50490 KUALA LUMPUR</SASR_Address2>
+    <TRANSDATE>18-07-2011</TRANSDATE>
+    <DUEDATE>19-05-2011</DUEDATE>
+    <Different_Days>60</Different_Days>
+    <_x003C__x0020_30>0</_x003C__x0020_30>
+    <_x003C__x0020_60>0</_x003C__x0020_60>
+    <_x003C__x0020_90>0</_x003C__x0020_90>
+    <Others>0</Others>
+    <Header1>30</Header1>
+    <Header2>60</Header2>
+    <Header3>90</Header3>
+  </Table>
+</NewDataSet>

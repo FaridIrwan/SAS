@@ -1,0 +1,15 @@
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\bin\MaxModule.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\obj\Release\MaxModule.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\MaxModule\obj\Release\MaxModule.xml
+D:\Workspace\SAS\SAS4.0\MaxModule\bin\MaxModule.dll
+D:\Workspace\SAS\SAS4.0\MaxModule\bin\MaxModule.xml
+D:\Workspace\SAS\SAS4.0\MaxModule\bin\Microsoft.Practices.ObjectBuilder2.dll
+D:\Workspace\SAS\SAS4.0\MaxModule\bin\Microsoft.Practices.Unity.dll
+D:\Workspace\SAS\SAS4.0\MaxModule\obj\Release\MaxModule.dll
+D:\Workspace\SAS\SAS4.0\MaxModule\obj\Release\MaxModule.xml
+D:\Projects\SAS\SAS4.0\MaxModule\bin\MaxModule.dll
+D:\Projects\SAS\SAS4.0\MaxModule\bin\MaxModule.xml
+D:\Projects\SAS\SAS4.0\MaxModule\obj\Release\MaxModule.dll
+D:\Projects\SAS\SAS4.0\MaxModule\obj\Release\MaxModule.xml
+D:\Projects\SAS\SAS4.0\MaxModule\obj\Release\MaxModule.vbprojResolveAssemblyReference.cache

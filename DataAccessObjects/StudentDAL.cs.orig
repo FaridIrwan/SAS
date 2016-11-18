@@ -1,0 +1,1819 @@
+#region NameSpaces 
+
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.Common;
+using HTS.SAS.Entities;
+using MaxGeneric;
+
+#endregion
+
+namespace HTS.SAS.DataAccessObjects
+{
+    /// <summary>
+    /// Class to handle all the Students Methods.
+    /// </summary>
+    public class StudentDAL
+    {
+        #region Global Declarations 
+
+        private DbParameterCollection _DbParameterCollection = null;
+
+        private MaxModule.DatabaseProvider _DatabaseFactory =
+            new MaxModule.DatabaseProvider();
+
+        private string DataBaseConnectionString = Helper.
+           GetConnectionString();
+
+        #endregion
+
+        public StudentDAL()
+        {
+        }
+
+        #region GetListBySemProgTypeProgID 
+
+        /// <summary>
+        /// Method to Get List of Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListBySemProgTypeProgID(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.CurretSemesterYear = argEn.CurretSemesterYear.Replace("*", "%");
+            argEn.ProgramType = argEn.ProgramType.Replace("*", "%");
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            //argEn.StudentName = argEn.StudentName.Replace("*", "%");
+            string sqlCmd = "select * from sas_student, SAS_Program, SAS_DegreeType " +
+            "where sas_student.SASI_PgId = SAS_Program.SAPG_Code and SAS_DegreeType.SADT_Code = SAS_Program.SAPG_ProgramType ";
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd = sqlCmd + " and sas_student.SASI_CurSemYr = '" + argEn.CurretSemesterYear + "'";
+            if (argEn.ProgramType.Length != 0) sqlCmd = sqlCmd + " and SAS_Program.SAPG_ProgramType = '" + argEn.ProgramType + "'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and sas_student.SASI_PgId = '" + argEn.ProgramID + "'";
+            sqlCmd = sqlCmd + " order by SASI_MatricNo, sas_student.SASI_CurSemYr,SAS_Program.SAPG_ProgramType";
+            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObjectForSem(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetList 
+
+        /// <summary>
+        /// Method to Get List of Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetList(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.MatricNo = argEn.MatricNo.Replace("*", "%");
+            string sqlCmd = "select * from SAS_Student";
+            if (argEn.MatricNo.Length != 0) sqlCmd = sqlCmd + " WHERE SASI_MatricNo like '" + argEn.MatricNo + "%'";
+            sqlCmd = sqlCmd + " order by SASI_MatricNo";
+            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObject(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetListByProgram 
+
+        /// <summary>
+        /// Method to Get List of Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListByProgram(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            string sqlCmd = "select * from SAS_Student";
+            if (argEn.ProgramID.Length != 0) sqlCmd += " WHERE SASI_PgId like '" + argEn.ProgramID + "' AND ";
+            //sqlCmd += " SAS_Student.SASI_PostStatus ="+argEn.PostStatus+" AND SAS_Student.SASI_StatusRec = '1' and SAS_Student.SASS_CODE = 'PA' ";
+            sqlCmd += " SAS_Student.SASI_PostStatus ='" + argEn.PostStatus +"'"+ " AND SAS_Student.SASI_StatusRec = 'true' and SAS_Student.SASS_CODE = 'PA' ";
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd += " and SASI_CurSemYr = '" + argEn.CurretSemesterYear + "'";
+            if (argEn.Faculty.Length != 0) sqlCmd += " and SASI_Faculty = '" + argEn.Faculty + "'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_PgId =  '" + argEn.ProgramID + "'";
+            sqlCmd += " order by SASI_MatricNo";
+            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObject(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {   
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetListGroupedByProgram 
+
+        /// <summary>
+        /// Method to Get List of Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListGroupedByProgram(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            string sqlCmd = "select SC.SASC_Desc AS SASI_Name,COUNT(ST.SASI_FeeCat) AS SASI_MatricNo from SAS_StudentCategory SC LEFT JOIN SAS_Student ST ON SC.SASC_Code=ST.SASI_FeeCat";
+            if (argEn.ProgramID.Length != 0) sqlCmd += " WHERE ST.SASI_PgId like '" + argEn.ProgramID + "' AND ";
+            //sqlCmd += " ST.SASI_PostStatus =" + argEn.PostStatus + " AND ST.SASI_StatusRec = '1' and ST.SASS_CODE = 'PA' ";
+            sqlCmd += " ST.SASI_PostStatus = '" + argEn.PostStatus + "'"+ " AND ST.SASI_StatusRec = 'true' and ST.SASS_CODE = 'PA' ";
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd += " and ST.SASI_CurSemYr = '" + argEn.CurretSemesterYear + "'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and ST.SASI_PgId =  '" + argEn.ProgramID + "'";
+            sqlCmd += "Group by ST.SASI_FeeCat,SC.SASC_Desc ";
+            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = loReader["SASI_MatricNo"].ToString();
+                            loItem.FeeCat = loReader["SASI_Name"].ToString();
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetListByProgramForFee 
+
+        /// <summary>
+        /// Added by Solomon to fetch the details based on the status
+        /// </summary>
+        /// <param name="argEn"></param>
+        /// <returns></returns>
+        public List<StudentEn> GetListByProgramForFee(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+
+            string sqlCmd = @"SELECT ST.SASI_MatricNo,ST.SASI_Name 
+                                FROM SAS_AFC AF 
+                                LEFT JOIN SAS_AFCDetails AFD ON AF.TransCode=AFD.TransCode
+                                LEFT JOIN SAS_Accounts AC ON AF.BatchCode=AC.BatchCode 
+                                LEFT JOIN SAS_AccountsDetails ACD ON AC.TransID=ACD.TransID
+                                LEFT JOIN SAS_Student ST ON AC.CreditRef=ST.SASI_MatricNo
+                                where AF.Reference='";
+            if (argEn.PostStatus == "2") sqlCmd += "Posted'";
+            else sqlCmd += "Ready'";
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd += "AND AF.Semester='" + argEn.CurretSemesterYear + "' ";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and ST.SASI_PgId =  '" + argEn.ProgramID + "'";
+            if (argEn.BatchCode.Length != 0) sqlCmd = sqlCmd + " and AF.BatchCode =  '" + argEn.BatchCode + "'";
+            sqlCmd += " GROUP BY ST.SASI_MatricNo,ST.SASI_Name ORDER BY ST.SASI_MatricNo";
+            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = loReader["SASI_MatricNo"].ToString();
+                            loItem.StudentName = loReader["SASI_Name"].ToString();
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetStudentList 
+
+        /// <summary>
+        /// Method to Get List of Active or Inactive Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId and StatusRec as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetStudentList(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.MatricNo = argEn.MatricNo.Replace("*", "%");
+            argEn.StudentName = argEn.StudentName.Replace("*", "%");
+            argEn.ICNo = argEn.ICNo.Replace("*", "%");
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            string sqlCmd = "SELECT  SAS_Student.* FROM SAS_Student where SASI_MatricNo <> '0'";
+            if (argEn.MatricNo.Length != 0) sqlCmd = sqlCmd + " and SASI_MatricNo like '" + argEn.MatricNo + "'";
+            if (argEn.StudentName.Length != 0) sqlCmd = sqlCmd + " and SASI_Name like '" + argEn.StudentName + "'";
+            if (argEn.ICNo.Length != 0) sqlCmd = sqlCmd + " and SASI_ICNo like '" + argEn.ICNo + "'";
+            if (argEn.ProgramID != "-1") sqlCmd = sqlCmd + " and SASI_PgId like '" + argEn.ProgramID + "'";
+            //if (argEn.SASI_StatusRec == true) sqlCmd = sqlCmd + " and SASI_StatusRec = 1";
+            if (argEn.SASI_StatusRec == true) sqlCmd = sqlCmd + " and SASI_StatusRec = 'true'";
+            //if (argEn.SASI_StatusRec == false) sqlCmd = sqlCmd + " and SASI_StatusRec = 0";
+            if (argEn.SASI_StatusRec == false) sqlCmd = sqlCmd + " and SASI_StatusRec = 'false'";
+            //if (argEn.Faculty.Length != 0 && argEn.Faculty != "-1") sqlCmd = sqlCmd + " and SASI_StatusRec = 0";
+            if (argEn.Faculty.Length != 0 && argEn.Faculty != "-1") sqlCmd = sqlCmd + " and SASI_StatusRec = 'false'";
+            sqlCmd = sqlCmd + " order by SASI_MatricNo";
+           try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentSponEn loStuSpnEn = new StudentSponEn();
+                            StudentSponDAL loStuSpnDal = new StudentSponDAL();                            
+                            StudentEn loItem = LoadObject(loReader);
+                            loStuSpnEn.MatricNo = loItem.MatricNo;
+                            //Getting the list of studentsponsors
+                            loItem.ListStuSponser = loStuSpnDal.GetStuSponserList(loStuSpnEn);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetListStudent 
+
+        /// <summary>
+        /// Method to Get List of All Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId,ID and StatusRec as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListStudent(StudentEn argEn)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.MatricNo = argEn.MatricNo.Replace("*", "%");
+            argEn.StudentName = argEn.StudentName.Replace("*", "%");
+            argEn.Faculty = argEn.Faculty.Replace("*", "%");
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            argEn.ID = argEn.ID.Replace("*", "%");
+            string sqlCmd = " SELECT SAS_Student.* FROM SAS_Student where sasi_statusrec = 'true' ";
+            if (argEn.MatricNo.Length != 0) sqlCmd = sqlCmd + " and SASI_MatricNo like '%" + argEn.MatricNo + "%'";
+            if (argEn.StudentName.Length != 0) sqlCmd = sqlCmd + " and SASI_Name like '%" + argEn.StudentName + "%'";
+            if (argEn.Faculty.Length != 0) sqlCmd = sqlCmd + " and SASI_Faculty like '%" + argEn.Faculty + "%'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and SASI_PgId like '%" + argEn.ProgramID + "%'";
+            if (argEn.ID.Length != 0) sqlCmd = sqlCmd + " and SASI_ICNo like '%" + argEn.ID + "%'";
+            if (argEn.SAKO_Code.Length != 0) sqlCmd = sqlCmd + " and SAKO_Code = '" + argEn.SAKO_Code + "'";
+            if (argEn.SABK_Code.Length != 0) sqlCmd = sqlCmd + " and SABK_Code = '" + argEn.SABK_Code + "'";
+            if (argEn.SART_Code.Length != 0) sqlCmd = sqlCmd + " and SART_Code = '" + argEn.SART_Code + "'";
+            sqlCmd = sqlCmd + "order by SASI_MatricNo";
+           try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObject(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+
+
+
+        #region GetListStudentOutstanding 
+
+        /// <summary>
+        /// Method to Get List of Students with Sponsers
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListStudentOutstanding(StudentEn argEn)
+        {
+            string sqlCmd;
+            List<StudentEn> loEnList = new List<StudentEn>();
+
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            argEn.CurretSemesterYear = argEn.CurretSemesterYear.Replace("*", "%");
+
+            sqlCmd = @"SELECT    * FROM      ( SELECT  DISTINCT
+                                                        SS.SASI_MatricNo ,
+                                                        SS.SASI_Name ,
+                                                        SS.SASI_PgId ,
+                                                        SS.SASI_CurSem ,
+                                                        SS.SASI_CurSemYr ,
+                                                        SS.SASI_Email,
+                                                        
+                                                       ( SELECT CASE WHEN SUM(TransAmount) IS NULL THEN 0
+								ELSE SUM(TransAmount) END 
+                                                                 FROM   SAS_Accounts
+                                                                 WHERE   CreditRef = SS.SASI_MatricNo
+                                                                        AND SubType = 'Student'
+                                                                        AND PostStatus = 'Posted'
+                                                                        AND TransType = 'Debit'
+                                                        )AS  TotalDebit ,
+                                                        ( SELECT CASE WHEN SUM(TransAmount) IS NULL THEN 0
+								ELSE SUM(TransAmount) END 
+                                                                 FROM   SAS_Accounts
+                                                                 WHERE   CreditRef = SS.SASI_MatricNo
+                                                                        AND SubType = 'Student'
+                                                                        AND PostStatus = 'Posted'
+                                                                        AND TransType = 'Credit'
+                                                        )AS  TotalCredit,
+                                                        ( SELECT CASE WHEN SUM(TransAmount) IS NULL THEN 0
+								ELSE SUM(TransAmount) END 
+                                                                 FROM   SAS_Accounts
+                                                                 WHERE   CreditRef = SS.SASI_MatricNo
+                                                                        AND SubType = 'Student'
+                                                                        AND PostStatus = 'Posted'
+                                                                        AND TransType = 'Credit'
+                                                        )
+                                                        - ( SELECT CASE WHEN SUM(TransAmount) IS NULL THEN 0
+								ELSE SUM(TransAmount) END 
+                                                                 FROM   SAS_Accounts
+                                                                 WHERE   CreditRef = SS.SASI_MatricNo
+                                                                        AND SubType = 'Student'
+                                                                        AND PostStatus = 'Posted'
+                                                                        AND TransType = 'Debit'
+                                                        ) AS OutstandingAmount ,
+                                                        NULL AS SASO_LoanAmount ,
+                                                        0 AS SASO_IsReleased,
+                                                        SS.SASI_Add1,
+                                                        SS.SASI_Add2,
+                                                        SS.SASI_City,
+                                                        SS.SASI_State,
+                                                        SS.SASI_Postcode
+                                              FROM      SAS_Accounts SA
+                                                        INNER JOIN SAS_Student SS ON SA.CreditRef = SS.SASI_MatricNo
+                                              WHERE     SA.SubType = 'Student'
+                                                        AND SA.PostStatus = 'Posted'
+                                            ) A
+                                  WHERE     A.OutstandingAmount > 0";
+
+
+
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd = sqlCmd + " AND A.SASI_CurSemYr = '" + argEn.CurretSemesterYear + "'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and A.SASI_PgId = '" + argEn.ProgramID + "'";
+
+            sqlCmd = sqlCmd + @" order by A.SASI_MatricNo";
+           try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loItem.SASI_Email = GetValue<string>(loReader, "SASI_Email");
+                            loItem.OutstandingAmount = GetValue<double>(loReader, "OutstandingAmount");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetListOutstanding 
+
+        /// <summary>
+        ///  Method to Get List of Students who has Outstanding amount.
+       /// </summary>
+        /// <param name="argEn">Students Entity as an Input.Students Program Id, Semester Properties.</param>
+       /// <param name="IncludeLoanAmount">Include Loan Amount Status</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetListOutstanding(StudentEn argEn,bool IncludeLoanAmount)
+        {
+            string sqlCmd;
+            List<StudentEn> loEnList = new List<StudentEn>();
+
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            argEn.CurretSemesterYear = argEn.CurretSemesterYear.Replace("*", "%");
+
+            if (IncludeLoanAmount)
+            {
+                sqlCmd = @"SELECT  SASO_Id ,
+                            SASI_MatricNo ,
+                            SASI_Name ,
+                            SASI_PgId ,
+                            SASI_CurSem ,
+                            SASI_CurSemYr ,
+                            ISNULL(SASO_DueAmount,0)  + ISNULL(SASO_LoanAmount,0) AS SASO_DueAmount,
+                            SASO_LoanAmount ,
+                            SASO_IsReleased
+                    FROM    SAS_StudentOutstanding WHERE (ISNULL(SASO_DueAmount,0)  + ISNULL(SASO_LoanAmount,0)) > 0  "; 
+            }
+            else
+            {
+                sqlCmd = @"SELECT  SASO_Id ,
+                            SASI_MatricNo ,
+                            SASI_Name ,
+                            SASI_PgId ,
+                            SASI_CurSem ,
+                            SASI_CurSemYr ,
+                            SASO_DueAmount ,
+                            SASO_LoanAmount ,
+                            SASO_IsReleased
+                    FROM    SAS_StudentOutstanding WHERE SASO_DueAmount> 0  ";
+            }
+
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " AND SASI_PgId = '" + argEn.ProgramID + "'";
+
+            if (argEn.CurretSemesterYear.Length != 0) sqlCmd = sqlCmd + " AND SASI_CurSemYr = '" + argEn.CurretSemesterYear + "'";
+           
+            sqlCmd = sqlCmd + @" order by SASI_MatricNo";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loItem.CurretSemesterYear = GetValue<string>(loReader, "SASI_CurSemYr");
+                            loItem.OutstandingAmount = GetValue<double>(loReader, "SASO_DueAmount");
+                            loItem.LoanAmount = GetValue<double>(loReader, "SASO_LoanAmount");
+                            loItem.IsReleased = GetValue<int>(loReader, "SASO_IsReleased");
+
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetlisStudent 
+
+        /// <summary>
+        /// Method to Get List of Students with Sponsers
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> GetlisStudent(StudentEn argEn)
+        {
+            string sqlCmd;
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.STsponsercode.Sponsor = argEn.STsponsercode.Sponsor.Replace("*", "%");
+            argEn.SAKO_Code = argEn.SAKO_Code.Replace("*", "%");
+            argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            argEn.Faculty = argEn.Faculty.Replace("*", "%");
+            argEn.CategoryCode = argEn.CategoryCode.Replace("*", "%");
+            // checking for student sponsor
+            if (argEn.STsponsercode.Sponsor.Length != 0)
+            {
+                sqlCmd = " select Distinct  A.SASI_MatricNo, SASI_Name, A.SASI_PgId, A.SASI_CurSem from SAS_student A INNER JOIN SAS_StudentSpon B ON A.SASI_MAtricNO = B.SASI_MAtricNO" +
+                                " INNER JOIN SAS_StudentCategoryAccess ON A.SASS_Code = SAS_StudentCategoryAccess.SASC_Code where " +
+                                " (SAS_StudentCategoryAccess.MenuID = " + argEn.StCategoryAcess.MenuID + ") and (SAS_StudentCategoryAccess.Status = '1')"+
+                                " and  B.SASS_Sponsor =" + argEn.STsponsercode.Sponsor + "";
+            }
+            else
+            {
+                sqlCmd = " select Distinct  A.SASI_MatricNo, SASI_Name, A.SASI_PgId, A.SASI_CurSem  from SAS_student A " +
+                                " INNER JOIN SAS_StudentCategoryAccess ON A.SASS_Code = SAS_StudentCategoryAccess.SASC_Code where " +
+                                " (SAS_StudentCategoryAccess.MenuID = " + argEn.StCategoryAcess.MenuID + ") and (SAS_StudentCategoryAccess.Status = '1')";
+                                
+            }
+            if (argEn.CategoryCode.Length != 0) sqlCmd = sqlCmd + " and A.SASC_Code ='" + argEn.CategoryCode + "'";
+            if (argEn.CurrentSemester != 0) sqlCmd = sqlCmd + " and SASI_CurSem =" + argEn.CurrentSemester;
+            if (argEn.SAKO_Code.Length != 0) sqlCmd = sqlCmd + " and SAKO_Code =" + argEn.SAKO_Code + "";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and SASI_PgId =" + argEn.ProgramID + "";
+            if (argEn.Faculty.Length != 0) sqlCmd = sqlCmd + " and SASI_Faculty ='" + argEn.Faculty + "'";
+            sqlCmd = sqlCmd + " order by A.SASI_MatricNo";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetlistStudentByStudent 
+
+        /// <summary>
+        /// Method to Get List of Students with Sponsers
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        
+        public List<StudentEn> GetlistStudentByStudent(StudentEn argEn)
+        {
+            string sqlCmd=string.Empty;
+            List<StudentEn> loEnList = new List<StudentEn>();
+          
+            // checking for student sponsor
+            if (argEn.STsponsercode.Sponsor.Length != 0)
+            {
+                //sqlCmd = " select Distinct  A.SASI_MatricNo, SASI_Name, A.SASI_PgId, A.SASI_CurSem,B.SASS_Sponsor from SAS_student A INNER JOIN SAS_StudentSpon B ON A.SASI_MAtricNO = B.SASI_MAtricNO" +
+                //                " INNER JOIN SAS_StudentCategoryAccess ON A.SASS_Code = SAS_StudentCategoryAccess.SASC_Code where " +
+                //                " (SAS_StudentCategoryAccess.MenuID = " + argEn.StCategoryAcess.MenuID + ") and (SAS_StudentCategoryAccess.Status = 'true')" +
+                //                " and  B.SASS_Sponsor = ('" + argEn.STsponsercode.Sponsor + "')";
+                sqlCmd = "select distinct A.sapg_code, A.sapg_program,B.SASI_CurSem,C.SASS_Sponsor from sas_program A INNER JOIN sas_student B on A.sapg_code = B.sasi_pgid " +
+                            "Inner Join sas_studentspon C on B.sasi_matricno = C.sasi_matricno " +
+                            "INNER JOIN  SAS_StudentCategoryAccess ON B.SASS_Code = SAS_StudentCategoryAccess.SASC_Code " +
+                            "where C.sass_sponsor = ('" + argEn.STsponsercode.Sponsor + "') AND (SAS_StudentCategoryAccess.MenuID = " + argEn.StCategoryAcess.MenuID + ")" +
+                            " and (SAS_StudentCategoryAccess.Status = 'true') AND sass_code IN (SELECT sass_code FROM sas_studentstatus where sass_blstatus  ='true')";    
+            }          
+            //sqlCmd = sqlCmd + " order by A.SASI_MatricNo";
+            sqlCmd = sqlCmd + "Group By A.sapg_code, A.sapg_Program, B.SASI_MatricNo,B.SASI_Name,B.SASI_CurSem,C.SASS_Sponsor";            
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            //loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            //loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ProgramID = GetValue<string>(loReader, "sapg_code");
+                            loItem.ProgramType = GetValue<string>(loReader, "sapg_program");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loItem.SponsorCode = GetValue<string>(loReader, "SASS_Sponsor");
+                            loEnList.Add(loItem);
+                            
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region CheckStudentList 
+
+        /// <summary>
+        /// Method to Check For Students
+        /// </summary>
+        /// <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId and Faculty as Input Properties.</param>
+        /// <returns>Returns List of Students</returns>
+        public List<StudentEn> CheckStudentList(StudentEn argEn)
+        {
+            string sqlCmd;
+            List<StudentEn> loEnList = new List<StudentEn>();
+            argEn.MatricNo = argEn.MatricNo.Replace("*", "%");
+            if(argEn.StudentName.Length!=0)argEn.StudentName = argEn.StudentName.Replace("*", "%");
+            if (argEn.ICNo.Length != 0) argEn.ICNo = argEn.ICNo.Replace("*", "%");
+            if (argEn.ProgramID.Length != 0) argEn.ProgramID = argEn.ProgramID.Replace("*", "%");
+            if (argEn.Faculty.Length != 0) argEn.Faculty = argEn.Faculty.Replace("*", "%");
+            //Checking for student sponsor
+           if (argEn.STsponsercode.Sponsor.Length != 0)
+            {
+            sqlCmd = " SELECT SAS_Student.SASI_MatricNo, SAS_Student.SASI_Name, SAS_Student.SASI_PgId, SAS_Student.SASI_Faculty," +
+                     " SAS_Student.SASI_ICNo, SAS_Student.SASI_CurSem, SAS_StudentSpon.SASS_Sponsor, SAS_StudentSpon.SASS_SDate," +
+                     " SAS_StudentSpon.SASS_EDate FROM SAS_Student INNER JOIN SAS_StudentSpon ON SAS_Student.SASI_MatricNo = SAS_StudentSpon.SASI_MatricNo " +
+                     " where SAS_StudentSpon.SASS_Sponsor = '" + argEn.STsponsercode.Sponsor + " ' ";
+            if (argEn.MatricNo.Length != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_MatricNo ='" + argEn.MatricNo + "'";
+              }
+            else
+              {
+               sqlCmd = " SELECT SAS_Student.SASI_MatricNo, SAS_Student.SASI_Name, SAS_Student.SASI_PgId, SAS_Student.SASI_Faculty," +
+                         " SAS_Student.SASI_ICNo, SAS_Student.SASI_CurSem, SAS_StudentSpon.SASS_Sponsor, SAS_StudentSpon.SASS_EDate, " +
+                         " SAS_StudentSpon.SASS_SDate FROM SAS_Student LEFT OUTER JOIN SAS_StudentSpon ON SAS_Student.SASI_MatricNo = SAS_StudentSpon.SASI_MatricNo" +
+                         " where  SAS_Student.SASI_MatricNo = '" + argEn.MatricNo + "'";
+               }
+
+            if (argEn.CurrentSemester != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_CurSem =" + argEn.CurrentSemester;
+            if (argEn.ICNo.Length != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_ICNo ='" + argEn.ICNo + "'";
+            if (argEn.ProgramID.Length != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_PgId = '" + argEn.ProgramID + "'";
+            if (argEn.Faculty.Length != 0) sqlCmd = sqlCmd + " and SAS_Student.SASI_Faculty = '" + argEn.Faculty + "'";
+            //if (argEn.SASI_StatusRec == true) sqlCmd = sqlCmd + " and SAS_Student.SASI_StatusRec = 1";
+            if (argEn.SASI_StatusRec == true) sqlCmd = sqlCmd + " and SAS_Student.SASI_StatusRec = 'true'";
+            //if (argEn.SASI_StatusRec == false) sqlCmd = sqlCmd + " and SAS_Student.SASI_StatusRec = 0";
+            if (argEn.SASI_StatusRec == false) sqlCmd = sqlCmd + " and SAS_Student.SASI_StatusRec = 'false'";
+            sqlCmd = sqlCmd + " order by SAS_Student.SASI_MatricNo";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            
+                            loItem.STsponsercode = new StudentSponEn();
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ICNo = GetValue<string>(loReader, "SASI_ICNo");
+                            loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.Faculty = GetValue<string>(loReader, "SASI_Faculty");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loItem.STsponsercode.Sponsor = GetValue<string>(loReader, "SASS_Sponsor");
+                            loItem.STsponsercode.SDate = GetValue<string>(loReader, "SASS_SDate");
+                            loItem.STsponsercode.EDate = GetValue<string>(loReader, "SASS_EDate");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetItem 
+
+        /// <summary>
+        /// Method to Get Student Entity
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns Student Entity</returns>
+        public StudentEn GetItem(string MatricNo)
+        {
+            StudentEn loItem = new StudentEn();
+            string sqlCmd = "Select * FROM SAS_Student WHERE SASI_MatricNo = " + clsGeneric.AddQuotes(MatricNo);
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    //DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    //_DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, MatricNo);
+                    //_DbParameterCollection = cmd.Parameters;
+
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType, 
+                        DataBaseConnectionString, sqlCmd).CreateDataReader()) 
+                    {
+                        if (loReader != null)
+                        {
+                            loReader.Read();
+                            loItem = LoadObject(loReader);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loItem;
+        }
+
+        #endregion
+
+        #region GetStudInfo 
+
+        /// <summary>
+        /// Method to Get Student Entity
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns Student Entity</returns>
+        public StudentEn GetStudInfo(string ICNO)
+        {
+            StudentEn loItem = new StudentEn();
+            string sqlCmd = "Select * FROM SAS_Student WHERE SASI_ICNo = @SASI_ICNo";
+            try
+            {
+                if(!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_ICNo", DbType.String, ICNO);
+                    _DbParameterCollection = cmd.Parameters;
+
+                    using (IDataReader loReader = _DatabaseFactory.GetIDataReader(Helper.GetDataBaseType, cmd,
+                        DataBaseConnectionString, sqlCmd, _DbParameterCollection).CreateDataReader())
+                    {
+                        if (loReader != null)
+                        {
+                            loReader.Read();
+                            loItem = LoadObject(loReader);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                loItem.MatricNo = "null";
+                return loItem;
+            }
+            return loItem;
+        }
+
+        #endregion
+
+        #region Insert 
+
+        /// <summary>
+        /// Method to Insert Student 
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Insert(StudentEn argEn)
+        {
+            bool lbRes = false;
+            int iOut = 0;
+            string sqlCmd = "Select count(*) as cnt From SAS_Student where SASI_MatricNo = '" + argEn.MatricNo + "'";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader dr = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        if (dr.Read())
+                            iOut = clsGeneric.NullToInteger(dr["cnt"]);
+                        if (iOut > 0)
+                            throw new Exception("Record Already Exist");
+                        dr.Close();
+                    }
+                    if (iOut == 0)
+                    {
+                        sqlCmd = "INSERT INTO SAS_Student(SASI_MatricNo,SASI_Name,SASI_PgId,SASI_Faculty,SASI_ICNo,SASI_Passport,SASI_ID,SASI_Intake," +
+                        "SASI_CurSem,SASI_CurSemYr,SASI_Studytype,SASS_Code,SASC_Code,SASI_Hostel,SAKO_Code,SASI_OtherID,SABK_Code,SASI_FloorNo," +
+                        "SART_Code,SASI_CrditHrs,SASI_GPA,SASI_CGPA,SASI_Add1,SASI_Add2,SASI_Add3,SASI_City,SASI_State,SASI_Country,SASI_Postcode," +
+                        "SASI_Email,SASI_Tel,SASI_HP,SASI_Bank,SASI_AccNo,SASI_GLCode,SABR_Code,SASI_StatusRec,SASI_AFCStatus,SASI_UpdatedBy," +
+                        "SASI_UpdatedDtTm,SASI_MAdd1,SASI_MAdd2,SASI_MAdd3,SASI_MCity,SASI_MState,SASI_MCountry,SASI_MPostcode,SASI_FeeCat,SASI_KokoCode,SASI_Reg_Status) " +
+                        "VALUES (@SASI_MatricNo,@SASI_Name,@SASI_PgId,@SASI_Faculty,@SASI_ICNo,@SASI_Passport,@SASI_ID,@SASI_Intake,@SASI_CurSem," +
+                        "@SASI_CurSemYr,@SASI_Studytype,@SASS_Code,@SASC_Code,@SASI_Hostel,@SAKO_Code,@SASI_OtherID,@SABK_Code,@SASI_FloorNo," +
+                        "@SART_Code,@SASI_CrditHrs,@SASI_GPA,@SASI_CGPA,@SASI_Add1,@SASI_Add2,@SASI_Add3,@SASI_City,@SASI_State,@SASI_Country," +
+                        "@SASI_Postcode,@SASI_Email,@SASI_Tel,@SASI_HP,@SASI_Bank,@SASI_AccNo,@SASI_GLCode,@SABR_Code,@SASI_StatusRec,@SASI_AFCStatus," +
+                        "@SASI_UpdatedBy,@SASI_UpdatedDtTm,@SASI_MAdd1,@SASI_MAdd2,@SASI_MAdd3,@SASI_MCity,@SASI_MState,@SASI_MCountry,@SASI_MPostcode," +
+                        "@SASI_FeeCat,@SASI_KokoCode, @SASI_RegStatus) ";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Name", DbType.String, argEn.StudentName);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_PgId", DbType.String, argEn.ProgramID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Faculty", DbType.String, argEn.Faculty);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_ICNo", DbType.String, argEn.ICNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Passport", DbType.String, argEn.Passport);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_ID", DbType.String, argEn.ID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Intake", DbType.String, argEn.Intake);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSem", DbType.Int32, argEn.CurrentSemester);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSemYr", DbType.String, argEn.CurretSemesterYear);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Studytype", DbType.String, argEn.Studytype);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Code", DbType.String, argEn.StudentCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASC_Code", DbType.String, argEn.CategoryCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Hostel", DbType.Boolean, argEn.Hostel);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SAKO_Code", DbType.String, argEn.SAKO_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_OtherID", DbType.String, argEn.SASI_OtherID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SABK_Code", DbType.String, argEn.SABK_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_FloorNo", DbType.String, argEn.SASI_FloorNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SART_Code", DbType.String, argEn.SART_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CrditHrs", DbType.Double, argEn.SASI_CrditHrs);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_GPA", DbType.Double, argEn.SASI_GPA);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CGPA", DbType.Double, argEn.SASI_CGPA);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add1", DbType.String, argEn.SASI_Add1);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add2", DbType.String, argEn.SASI_Add2);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add3", DbType.String, argEn.SASI_Add3);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_City", DbType.String, argEn.SASI_City);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_State", DbType.String, argEn.SASI_State);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Country", DbType.String, argEn.SASI_Country);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Postcode", DbType.String, argEn.SASI_Postcode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Email", DbType.String, argEn.SASI_Email);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Tel", DbType.String, argEn.SASI_Tel);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_HP", DbType.String, argEn.SASI_HP);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Bank", DbType.String, argEn.SASI_Bank);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_AccNo", DbType.String, argEn.SASI_AccNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_GLCode", DbType.String, argEn.SASI_GLCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SABR_Code", DbType.Int32, argEn.SABR_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_StatusRec", DbType.Boolean, argEn.SASI_StatusRec);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_AFCStatus", DbType.Boolean, argEn.SASI_AFCStatus);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_UpdatedBy", DbType.String, argEn.SASI_UpdatedBy);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_UpdatedDtTm", DbType.String, argEn.SASI_UpdatedDtTm);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd1", DbType.String, argEn.SASI_MAdd1);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd2", DbType.String, argEn.SASI_MAdd2);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd3", DbType.String, argEn.SASI_MAdd3);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MCity", DbType.String, argEn.SASI_MCity);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MState", DbType.String, argEn.SASI_MState);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MCountry", DbType.String, argEn.SASI_MCountry);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MPostcode", DbType.String, argEn.SASI_MPostcode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_FeeCat", DbType.String, argEn.FeeCat);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_KokoCode", DbType.String, argEn.KokoCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_RegStatus", DbType.String, argEn.RegistrationStatus);
+
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+
+                            if (liRowAffected > -1)
+                                lbRes = true;
+                            else
+                                throw new Exception("Insertion Failed! No Row has been updated...");
+
+                            StudentSponDAL loStuSpon = new StudentSponDAL();
+                            StudentSponEn loStuSponEn = new StudentSponEn();
+                            StuSponFeeTypesDAL loStuSponFee = new StuSponFeeTypesDAL();
+                            StuSponFeeTypesEn loStuSponFeeEn = new StuSponFeeTypesEn();
+
+                            //Deleting Existing StudentSponsor and StuFeeTypes
+                            loStuSponEn.MatricNo = argEn.MatricNo;
+                            loStuSpon.Delete(loStuSponEn);
+                            loStuSponFeeEn.MatricNo = argEn.MatricNo;
+                            loStuSponFee.Delete(loStuSponFeeEn);
+                            if (argEn.ListStuSponser != null)
+                            {
+                                for (int i = 0; i < argEn.ListStuSponser.Count; i++)
+                                {
+                                    //Insert Student Sponser
+                                    loStuSpon.Insert(argEn.ListStuSponser[i]);
+                                    //Insert Student Sponsor Fee Types                             
+                                    for (int j = 0; j < argEn.ListStuSponser[i].ListStuSponFeeTypes.Count; j++)
+                                    {
+                                        loStuSponFee.Insert(argEn.ListStuSponser[i].ListStuSponFeeTypes[j]);
+                                    }
+                                }
+                            }
+
+
+                           
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region UpdateSemester 
+
+        /// <summary>
+        /// Method to Update Student Semester
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool UpdateSemester(string CurSem, String newSem)
+        {
+            bool lbRes = false;
+            try
+            {
+                string sqlCmd = "UPDATE SAS_Student SET sasi_poststatus='0',SASI_CurSemYr = '" + newSem + "' WHERE SASI_CurSemYr = '" + CurSem + "'";
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    int liRowAffected = _DatabaseFactory.ExecuteSqlStatement(Helper.
+                        GetDataBaseType, DataBaseConnectionString, sqlCmd);
+
+                    if (liRowAffected > 0)
+                        lbRes = true;
+                    else
+                        throw new Exception("Update Failed! No Row has been updated...");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region Update 
+
+        /// <summary>
+        /// Method to Update Student 
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Update(StudentEn argEn)
+        {
+            bool lbRes = false;
+            int iOut = 0; int iOutTrack = 0;
+            string OutProg = null;
+            double OutCdtHr = 0.00;
+            Boolean OutHostel;
+            string strCategory = null;
+            int intModule = 0;
+            string sqlProg; string sqlCdtHr; string sqlHostel;
+            
+            string sqlCmd = "Select count(*) as cnt From SAS_Student where SASI_MatricNo = '" + argEn.MatricNo + "'";
+
+            //if program/credit hours/hostel changes
+            string sqlChanges = "Select SASI_PgId as Program, SASI_CrditHrs as CdtHour, SASI_Hostel as Hostel From SAS_Student where SASI_MatricNo = '" + argEn.MatricNo + "'";
+            //if matric no exist
+            string sqlCount = "Select count(*) as track From sas_trackingnotes where SASI_MatricNo = '" + argEn.MatricNo + "'";
+
+            using (IDataReader drTrack = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlChanges).CreateDataReader())
+            {
+                if (drTrack.Read())
+                    OutProg = clsGeneric.NullToString(drTrack["Program"]);
+                    OutCdtHr = Convert.ToDouble(drTrack["CdtHour"]);
+                    if(FormHelp.IsBlank(OutCdtHr))
+                    {
+                        OutCdtHr = 0.00;
+                    }
+                    OutHostel = clsGeneric.NullToBoolean(drTrack["Hostel"]);
+                drTrack.Close();
+                if (FormHelp.IsBlank(OutProg))
+                    throw new Exception("Record Doesn't Exist!");
+            }
+                        
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader dr = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        if (dr.Read())
+                            iOut = clsGeneric.NullToInteger(dr["cnt"]);
+                        dr.Close();
+                        if (iOut > 1)
+                            throw new Exception("Record Already Exist!");
+                    }
+                    
+                    if (iOut == 1)
+                    {
+                        sqlCmd = "UPDATE SAS_Student SET SASI_MatricNo = @SASI_MatricNo, SASI_Name = @SASI_Name, SASI_PgId = @SASI_PgId, SASI_Faculty = @SASI_Faculty,"+
+                                 " SASI_ICNo = @SASI_ICNo, SASI_Passport = @SASI_Passport, SASI_ID = @SASI_ID, SASI_Intake = @SASI_Intake, SASI_CurSem = @SASI_CurSem,"+
+                                 " SASI_CurSemYr = @SASI_CurSemYr, SASI_Studytype = @SASI_Studytype, SASS_Code = @SASS_Code, SASC_Code = @SASC_Code, SASI_Hostel = @SASI_Hostel,"+
+                                 " SAKO_Code = @SAKO_Code, SASI_OtherID = @SASI_OtherID, SABK_Code = @SABK_Code, SASI_FloorNo = @SASI_FloorNo, SART_Code = @SART_Code,"+
+                                 " SASI_CrditHrs = @SASI_CrditHrs, SASI_GPA = @SASI_GPA, SASI_CGPA = @SASI_CGPA, SASI_Add1 = @SASI_Add1, SASI_Add2 = @SASI_Add2, SASI_Add3 = @SASI_Add3," +
+                                 " SASI_City = @SASI_City, SASI_State = @SASI_State, SASI_Country = @SASI_Country, SASI_Postcode = @SASI_Postcode, SASI_Email = @SASI_Email,"+
+                                 " SASI_Tel = @SASI_Tel, SASI_HP = @SASI_HP, SASI_Bank = @SASI_Bank, SASI_AccNo = @SASI_AccNo, SASI_GLCode = @SASI_GLCode, SABR_Code = @SABR_Code,"+
+                                 " SASI_StatusRec = @SASI_StatusRec,SASI_AFCStatus = @SASI_AFCStatus, SASI_UpdatedBy = @SASI_UpdatedBy, SASI_UpdatedDtTm = @SASI_UpdatedDtTm, SASI_MAdd1 = @SASI_MAdd1," +
+                                 " SASI_MAdd2 = @SASI_MAdd2, SASI_MAdd3 = @SASI_MAdd3, SASI_MCity = @SASI_MCity, SASI_MState = @SASI_MState, SASI_MCountry = @SASI_MCountry,"+
+                                 " SASI_MPostcode = @SASI_MPostcode, SASI_FeeCat=@SASI_FeeCat, SASI_KokoCode = @SASI_KokoCode, SASI_Reg_Status = @SASI_RegStatus  WHERE SASI_MatricNo = @SASI_MatricNo";
+                        
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Name", DbType.String, argEn.StudentName);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_PgId", DbType.String, argEn.ProgramID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Faculty", DbType.String, argEn.Faculty);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_ICNo", DbType.String, argEn.ICNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Passport", DbType.String, argEn.Passport);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_ID", DbType.String, argEn.ID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Intake", DbType.String, argEn.Intake);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSem", DbType.Int32, argEn.CurrentSemester);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSemYr", DbType.String, argEn.CurretSemesterYear);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Studytype", DbType.String, argEn.Studytype);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Code", DbType.String, argEn.StudentCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASC_Code", DbType.String, argEn.CategoryCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Hostel", DbType.Boolean, argEn.Hostel);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SAKO_Code", DbType.String, argEn.SAKO_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_OtherID", DbType.String, argEn.SASI_OtherID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SABK_Code", DbType.String, argEn.SABK_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_FloorNo", DbType.String, argEn.SASI_FloorNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SART_Code", DbType.String, argEn.SART_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CrditHrs", DbType.Double, argEn.SASI_CrditHrs);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_GPA", DbType.Double, argEn.SASI_GPA);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CGPA", DbType.String, argEn.SASI_CGPA);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add1", DbType.String, argEn.SASI_Add1);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add2", DbType.String, argEn.SASI_Add2);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Add3", DbType.String, argEn.SASI_Add3);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_City", DbType.String, argEn.SASI_City);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_State", DbType.String, argEn.SASI_State);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Country", DbType.String, argEn.SASI_Country);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Postcode", DbType.String, argEn.SASI_Postcode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Email", DbType.String, argEn.SASI_Email);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Tel", DbType.String, argEn.SASI_Tel);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_HP", DbType.String, argEn.SASI_HP);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Bank", DbType.String, argEn.SASI_Bank);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_AccNo", DbType.String, argEn.SASI_AccNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_GLCode", DbType.String, argEn.SASI_GLCode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SABR_Code", DbType.Int32, argEn.SABR_Code);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_StatusRec", DbType.Boolean, argEn.SASI_StatusRec);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_AFCStatus", DbType.Boolean, argEn.SASI_AFCStatus);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_UpdatedBy", DbType.String, argEn.SASI_UpdatedBy);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_UpdatedDtTm", DbType.String, argEn.SASI_UpdatedDtTm);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd1", DbType.String, argEn.SASI_MAdd1);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd2", DbType.String, argEn.SASI_MAdd2);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MAdd3", DbType.String, argEn.SASI_MAdd3);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MCity", DbType.String, argEn.SASI_MCity);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MState", DbType.String, argEn.SASI_MState);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MCountry", DbType.String, argEn.SASI_MCountry);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MPostcode", DbType.String, argEn.SASI_MPostcode);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_FeeCat", DbType.String, argEn.FeeCat);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_KokoCode", DbType.String, argEn.KokoCode);                            
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_RegStatus", DbType.String, argEn.RegistrationStatus);
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+                            
+                            if (liRowAffected > -1)
+                            {
+                                lbRes = true;
+
+                                using (IDataReader drTrack = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                                    DataBaseConnectionString, sqlCount).CreateDataReader())
+                                {
+                                    if (drTrack.Read())
+                                        iOutTrack = clsGeneric.NullToInteger(drTrack["track"]);
+                                    drTrack.Close();                                    
+                                }
+
+                                //if program changes
+                                if (OutProg != argEn.ProgramID)
+                                {
+                                    strCategory = "Credit Note";
+                                    intModule = 1;
+                                                                        
+                                    sqlProg = "INSERT INTO sas_trackingnotes(sasi_matricno,cur_sasi_pgid,old_sasi_pgid,flag,category,track_module,updateby,updatedttm) ";
+                                    sqlProg += "VALUES ('" + argEn.MatricNo + "', '" + argEn.ProgramID + "', '" + OutProg + "', true," + clsGeneric.AddQuotes(strCategory);
+                                    sqlProg += clsGeneric.AddComma() + intModule;
+                                    sqlProg += clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.SASI_UpdatedBy) + ", '" + argEn.SASI_UpdatedDtTm + "');";
+                                   
+                                    if (!FormHelp.IsBlank(sqlProg))
+                                    {
+                                        _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType, DataBaseConnectionString, sqlProg);
+                                    }
+
+                                }                                
+                                
+                                //if credit hours changes
+                                if (!FormHelp.IsBlank(OutCdtHr) && OutCdtHr != argEn.SASI_CrditHrs)
+                                {
+                                    double diff = OutCdtHr - argEn.SASI_CrditHrs;
+
+                                    if (argEn.SASI_CrditHrs > OutCdtHr)
+                                    { 
+                                        strCategory = "Debit Note" ;
+                                    }
+
+                                    if (argEn.SASI_CrditHrs < OutCdtHr)
+                                    {
+                                        strCategory = "Credit Note";
+                                    }
+
+                                    intModule = 2;
+
+                                    sqlCdtHr = "INSERT INTO sas_trackingnotes(sasi_matricno,cur_sasi_crdithrs,old_sasi_crdithrs,difference,category,flag,track_module,updateby,updatedttm) ";
+                                    sqlCdtHr += "VALUES ('" + argEn.MatricNo + "', " + argEn.SASI_CrditHrs + ", " + OutCdtHr + clsGeneric.AddComma() + diff;
+                                    sqlCdtHr += clsGeneric.AddComma() + clsGeneric.AddQuotes(strCategory) + clsGeneric.AddComma();
+                                    sqlCdtHr += " true, " + intModule + clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.SASI_UpdatedBy) + ", '" + argEn.SASI_UpdatedDtTm + "');";
+                                    
+                                    if (!FormHelp.IsBlank(sqlCdtHr))
+                                    {
+                                        _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType, DataBaseConnectionString, sqlCdtHr);
+                                    }
+
+                                }
+                                //if hostel changes
+                                if (OutHostel == true && argEn.Hostel == false)
+                                {
+                                    strCategory = "Credit Note";
+                                    intModule = 3;
+                                                                        
+                                    sqlHostel = "INSERT INTO sas_trackingnotes(sasi_matricno,cur_sasi_hostel,old_sasi_hostel,flag,category,track_module,updateby,updatedttm) ";
+                                    sqlHostel += "VALUES ('" + argEn.MatricNo + "', " + argEn.Hostel + ", " + OutHostel + ", true, " + clsGeneric.AddQuotes(strCategory);
+                                    sqlHostel += clsGeneric.AddComma() + intModule + clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.SASI_UpdatedBy) + clsGeneric.AddComma() + clsGeneric.AddQuotes(argEn.SASI_UpdatedDtTm) + ");";
+                                    
+                                    if (!FormHelp.IsBlank(sqlHostel))
+                                    {
+                                        _DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType, DataBaseConnectionString, sqlHostel);
+                                    }
+                                }                                
+                                
+                            }
+
+                            else
+                                throw new Exception("Update Failed! No Row has been updated...");                            
+
+                            StudentSponDAL loStuSpon = new StudentSponDAL();
+                            StudentSponEn loStuSponEn = new StudentSponEn();
+                            StuSponFeeTypesDAL loStuSponFee = new StuSponFeeTypesDAL();
+                            StuSponFeeTypesEn loStuSponFeeEn = new StuSponFeeTypesEn();
+
+                            //Insert Student Sponser
+                            loStuSponEn.MatricNo = argEn.MatricNo;
+                            loStuSpon.Delete(loStuSponEn);
+                            loStuSponFeeEn.MatricNo = argEn.MatricNo;
+                            loStuSponFee.Delete(loStuSponFeeEn);
+                            if (argEn.ListStuSponser != null)
+                            {
+                                for (int i = 0; i < argEn.ListStuSponser.Count; i++)
+                                {
+                                    //Insert Student Sponser
+                                    loStuSpon.Insert(argEn.ListStuSponser[i]);
+                                    //Insert Student Sponsor Fee Types                             
+                                    for (int j = 0; j < argEn.ListStuSponser[i].ListStuSponFeeTypes.Count; j++)
+                                    {
+                                        loStuSponFee.Insert(argEn.ListStuSponser[i].ListStuSponFeeTypes[j]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region Delete 
+
+        /// <summary>
+        /// Method to Delete Student 
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool Delete(StudentEn argEn)
+        {
+            bool lbRes = false;
+            int rows = 0;
+
+            string sqlCmd = "select count(*) as rows  from SAS_Accounts WHERE CreditRef = @CreditRef";
+            try
+            {      // Checking for usage in Transactions
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmdSel = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmdSel, "@CreditRef", DbType.String, argEn.MatricNo);
+                    _DbParameterCollection = cmdSel.Parameters;
+
+                    using (IDataReader dr = _DatabaseFactory.GetIDataReader(Helper.GetDataBaseType, cmdSel,
+                       DataBaseConnectionString, sqlCmd, _DbParameterCollection).CreateDataReader())
+                    {
+                        if (dr.Read())
+                            rows = clsGeneric.NullToInteger(dr["rows"]);
+                        if (rows > 0)
+                            throw new Exception("Record Already in Use");
+                    }
+                    if (rows == 0)
+                    {
+
+                        sqlCmd = "DELETE FROM SAS_Student WHERE SASI_MatricNo = @SASI_MatricNo";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+
+                            if (liRowAffected > -1)
+                                lbRes = true;
+                            else
+                                throw new Exception("Insertion Failed! No Row has been updated...");
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region LoadObject 
+
+        /// <summary>
+        /// Method to Load Student Entity 
+        /// </summary>
+        /// <param name="argReader">IDataReader Object is an Input.</param>
+        /// <returns>Returns Student Entity</returns>
+        public StudentEn LoadObject(IDataReader argReader)
+        {
+            StudentEn loItem = new StudentEn();
+            loItem.MatricNo = GetValue<string>(argReader, "SASI_MatricNo");
+            loItem.StudentName = GetValue<string>(argReader, "SASI_Name");
+            loItem.ProgramID = GetValue<string>(argReader, "SASI_PgId");
+            loItem.Faculty = GetValue<string>(argReader, "SASI_Faculty");
+            loItem.ICNo = GetValue<string>(argReader, "SASI_ICNo");
+            loItem.Passport = GetValue<string>(argReader, "SASI_Passport");
+            loItem.ID = GetValue<string>(argReader, "SASI_ID");
+            loItem.Intake = GetValue<string>(argReader, "SASI_Intake");
+            loItem.CurrentSemester = GetValue<int>(argReader, "SASI_CurSem");
+            loItem.CurretSemesterYear = GetValue<string>(argReader, "SASI_CurSemYr");
+            loItem.Studytype = GetValue<string>(argReader, "SASI_Studytype");
+            loItem.StudentCode = GetValue<string>(argReader, "SASS_Code");
+            loItem.CategoryCode = GetValue<string>(argReader, "SASC_Code");
+            loItem.Hostel = GetValue<bool>(argReader, "SASI_Hostel");
+            loItem.SAKO_Code = GetValue<string>(argReader, "SAKO_Code");
+            loItem.SASI_OtherID = GetValue<string>(argReader, "SASI_OtherID");
+            loItem.SABK_Code = GetValue<string>(argReader, "SABK_Code");
+            loItem.SASI_FloorNo = GetValue<string>(argReader, "SASI_FloorNo");
+            loItem.SART_Code = GetValue<string>(argReader, "SART_Code");
+            loItem.SASI_CrditHrs = GetValue<double>(argReader, "SASI_CrditHrs");
+            loItem.SASI_GPA = GetValue<double>(argReader, "SASI_GPA");
+            loItem.SASI_CGPA = GetValue<double>(argReader, "SASI_CGPA");
+            loItem.SASI_Add1 = GetValue<string>(argReader, "SASI_Add1");
+            loItem.SASI_Add2 = GetValue<string>(argReader, "SASI_Add2");
+            loItem.SASI_Add3 = GetValue<string>(argReader, "SASI_Add3");
+            loItem.SASI_City = GetValue<string>(argReader, "SASI_City");
+            loItem.SASI_State = GetValue<string>(argReader, "SASI_State");
+            loItem.SASI_Country = GetValue<string>(argReader, "SASI_Country");
+            loItem.SASI_Postcode = GetValue<string>(argReader, "SASI_Postcode");
+            loItem.SASI_Email = GetValue<string>(argReader, "SASI_Email");
+            loItem.SASI_Tel = GetValue<string>(argReader, "SASI_Tel");
+            loItem.SASI_HP = GetValue<string>(argReader, "SASI_HP");
+            loItem.SASI_Bank = GetValue<string>(argReader, "SASI_Bank");
+            loItem.SASI_AccNo = GetValue<string>(argReader, "SASI_AccNo");
+            loItem.SASI_GLCode = GetValue<string>(argReader, "SASI_GLCode");
+            loItem.SABR_Code = GetValue<int>(argReader, "SABR_Code");
+            loItem.SASI_StatusRec = GetValue<bool>(argReader, "SASI_StatusRec");
+            loItem.SASI_AFCStatus = GetValue<bool>(argReader, "SASI_AFCStatus");
+            loItem.SASI_UpdatedBy = GetValue<string>(argReader, "SASI_UpdatedBy");
+            loItem.SASI_UpdatedDtTm = GetValue<string>(argReader, "SASI_UpdatedDtTm");
+            loItem.SASI_MAdd1 = GetValue<string>(argReader, "SASI_MAdd1");
+            loItem.SASI_MAdd2 = GetValue<string>(argReader, "SASI_MAdd2");
+            loItem.SASI_MAdd3 = GetValue<string>(argReader, "SASI_MAdd3");
+            loItem.SASI_MCity = GetValue<string>(argReader, "SASI_MCity");
+            loItem.SASI_MState = GetValue<string>(argReader, "SASI_MState");
+            loItem.SASI_MCountry = GetValue<string>(argReader, "SASI_MCountry");
+            loItem.SASI_MPostcode = GetValue<string>(argReader, "SASI_MPostcode");
+            loItem.FeeCat = GetValue<string>(argReader, "SASI_FeeCat");
+            loItem.KokoCode = GetValue<string>(argReader, "SASI_KokoCode");
+            loItem.RegistrationStatus = GetValue<int>(argReader, "SASI_Reg_Status");
+            return loItem;
+        }
+        /// <summary>
+        /// Method to Load Student Entity 
+        /// </summary>
+        /// <param name="argReader">IDataReader Object is an Input.</param>
+        /// <returns>Returns Student Entity</returns>
+        public StudentEn LoadObjectForSem(IDataReader argReader)
+        {
+            StudentEn loItem = new StudentEn();
+            loItem.MatricNo = GetValue<string>(argReader, "SASI_MatricNo");
+            loItem.StudentName = GetValue<string>(argReader, "SASI_Name");
+            //loItem.Intake = GetValue<string>(argReader, "SASI_Intake");
+            loItem.ProgramID = GetValue<string>(argReader, "SASI_PgId");
+            //loItem.CurretSemesterYear = GetValue<string>(argReader, "SASI_CurSemYr");
+            loItem.CurrentSemester = GetValue<int>(argReader, "SASI_CurSem");
+            loItem.SponsorLimit = GetValue<double>(argReader, "sass_limit");
+
+            return loItem;
+        }
+        private static T GetValue<T>(IDataReader argReader, string argColNm)
+        {
+            if (!argReader.IsDBNull(argReader.GetOrdinal(argColNm)))
+                return (T)argReader.GetValue(argReader.GetOrdinal(argColNm));
+            else
+                return default(T);
+        }
+
+        #endregion
+
+        #region InsertStudentOutstanding 
+
+        /// <summary>
+        /// Method to Insert Student Outstanding 
+        /// </summary>
+        /// <param name="argEn">Student Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns>
+        public bool InsertStudentOutstanding(StudentEn argEn)
+        {
+            bool lbRes = false;
+            int iOut = 0;
+            string sqlCmd = "Select count(*) as cnt From SAS_StudentOutstanding where SASI_MatricNo = '" + argEn.MatricNo + "'";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader dr = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        if (dr.Read())
+                            iOut = clsGeneric.NullToInteger(dr["cnt"]);
+                            dr.Close();
+                        if (iOut > 0)
+                            throw new Exception("Record Already Exist");
+                    }
+                    if (iOut == 0)
+                    {
+                        sqlCmd = "INSERT INTO SAS_StudentOutstanding(SASI_MatricNo,SASI_Name,SASI_PgId,SASI_CurSem,SASO_DueAmount) values(@SASI_MatricNo,@SASI_Name,@SASI_PgId,@SASI_CurSem,@SASO_DueAmount) ";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_Name", DbType.String, argEn.StudentName);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_PgId", DbType.String, argEn.ProgramID);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSem", DbType.Int32, argEn.CurrentSemester);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASO_DueAmount", DbType.Double, argEn.OutstandingAmount);
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+
+                            if (liRowAffected > -1)
+                                lbRes = true;
+                            else
+                                throw new Exception("Insertion Failed! No Row has been updated...");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion 
+
+        #region UpdateStudentOutstandingStatusEmpty 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="argEn"></param>
+        /// <returns></returns>
+        public bool UpdateStudentOutstandingStatusEmpty(StudentEn argEn)
+        {
+            bool lbRes = false;
+            string sqlCmd = string.Empty;
+           if (argEn.ProgramID.Length == 0 && argEn.CurretSemesterYear.Length == 0)
+            {
+                sqlCmd = "UPDATE SAS_StudentOutstanding SET SASO_IsReleased=0 ";
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    int liRowAffected = _DatabaseFactory.ExecuteSqlStatement(Helper.
+                        GetDataBaseType, DataBaseConnectionString, sqlCmd);
+
+                    if (liRowAffected > -1)
+                        lbRes = true;
+                    else
+                        throw new Exception("Update Failed! No Row has been updated...");
+                }
+            }
+            else if (argEn.ProgramID.Length != 0 && argEn.CurretSemesterYear.Length != 0)
+            {
+                sqlCmd = "UPDATE SAS_StudentOutstanding SET SASO_IsReleased=0 WHERE SASI_PgId=@SASI_PgId and SASI_CurSemYr=@SASI_CurSemYr ; ";
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_PgId", DbType.String, argEn.ProgramID);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_CurSemYr", DbType.String, argEn.CurretSemesterYear);
+                    _DbParameterCollection = cmd.Parameters;
+
+                    int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+                    
+                    if (liRowAffected > -1)
+                        lbRes = true;
+                    else
+                        throw new Exception("Update Failed! No Row has been updated...");
+                }
+
+            }
+            else
+            {
+                sqlCmd = "UPDATE SAS_StudentOutstanding SET SASO_IsReleased=0 WHERE SASI_PgId=@SASI_PgId ; ";
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_PgId", DbType.String, argEn.ProgramID);
+                    _DbParameterCollection = cmd.Parameters;
+
+                    int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+
+                    if (liRowAffected > -1)
+                        lbRes = true;
+                    else
+                        throw new Exception("Update Failed! No Row has been updated...");
+                }
+            }
+            
+            return lbRes;
+        }
+
+        #endregion
+
+        #region UpdateStudentOutstandingStatus 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="argEn"></param>
+        /// <returns></returns>
+        public bool UpdateStudentOutstandingStatus(StudentEn argEn)
+        {
+            bool lbRes = false;
+
+            string sqlCmd = string.Empty;
+            sqlCmd = "UPDATE SAS_StudentOutstanding SET SASO_IsReleased=1 WHERE SASI_MatricNo=@SASI_MatricNo ; ";
+            if (!FormHelp.IsBlank(sqlCmd))
+            {
+                DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                _DbParameterCollection = cmd.Parameters;
+
+                int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+
+                if (liRowAffected > -1)
+                    lbRes = true;
+                else
+                    throw new Exception("Update Failed! No Row has been updated...");
+            }
+
+            return lbRes;
+
+        }
+
+        #endregion
+
+        #region FetchLedgerDetails 
+
+        public StudentEn FetchLedgerDetails(string MatricNo)
+        {
+            StudentEn objStudent = new StudentEn();
+            string sqlCmd = @"SELECT ST.SASI_Hostel, ST.SASI_CurSemYr,SS.SASS_Description,SP.SAPG_ProgramBM,SK.SAKO_Description,SB.SABK_Description,ST.SASI_FloorNo,RT.SART_Description
+                            FROM SAS_Student ST LEFT JOIN SAS_StudentStatus SS ON ST.SASS_Code=SS.SASS_Code
+                            LEFT JOIN SAS_Program SP ON ST.SASI_PgId=SP.SAPG_Code 
+                            LEFT JOIN SAS_Kolej SK ON ST.SAKO_Code=SK.SAKO_Code 
+                            LEFT JOIN SAS_Block SB ON ST.SABK_Code=SB.SABK_Code
+                            LEFT JOIN SAS_RoomType RT ON SB.SABK_Code=RT.SABK_Code AND SK.SAKO_Code=RT.SART_Code
+                            WHERE ST.SASI_MatricNo='" + MatricNo + "'";
+            try
+            {
+                IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader();
+
+                //if (lsError.Length > 0)
+                //    throw new Exception(lsError);
+                if (loReader.Read())
+                {
+                    //Checking NULL value for CurretSemesterYear
+                    if (String.IsNullOrEmpty(loReader["SASI_CurSemYr"].ToString()))
+                    {
+                        objStudent.CurretSemesterYear = "";
+                    }
+                    else
+                    {
+                    objStudent.CurretSemesterYear = loReader["SASI_CurSemYr"].ToString();
+                    }
+
+                    //Checking NULL value for StatusBayaran
+                    if (String.IsNullOrEmpty(loReader["SASS_Description"].ToString()))
+                    {
+                        objStudent.StatusBayaran = "";
+                    }
+                    else
+                    {
+                        objStudent.StatusBayaran = loReader["SASS_Description"].ToString();
+                    }
+
+                    //Checking NULL value for SourceType
+                    if (String.IsNullOrEmpty(loReader["SAPG_ProgramBM"].ToString()))
+                    {
+                        objStudent.SourceType = "";
+                    }
+                    else
+                    {
+                        objStudent.SourceType = loReader["SAPG_ProgramBM"].ToString();
+                    }
+
+                    //Checking NULL value for SABK_Code
+                    if (String.IsNullOrEmpty(loReader["SABK_Description"].ToString()))
+                    {
+                        objStudent.SABK_Code = "";
+                    }
+                    else
+                    {
+                        objStudent.SABK_Code = loReader["SABK_Description"].ToString();
+                    }
+
+                    //Checking NULL value for SAKO_Code
+                    if (String.IsNullOrEmpty(loReader["SAKO_Description"].ToString()))
+                    {
+                        objStudent.SAKO_Code = "";
+                    }
+                    else
+                    {
+                        objStudent.SAKO_Code = loReader["SAKO_Description"].ToString();
+                    }
+
+                    //Checking NULL value for SASI_FloorNo
+                    if (String.IsNullOrEmpty(loReader["SASI_FloorNo"].ToString()))
+                    {
+                        objStudent.SASI_FloorNo = "";
+                    }
+                    else
+                    {
+                        objStudent.SASI_FloorNo = loReader["SASI_FloorNo"].ToString();
+                    }
+
+                    //Checking NULL value for SART_Code
+                    if (String.IsNullOrEmpty(loReader["SART_Description"].ToString()))
+                    {
+                        objStudent.SART_Code = "";
+                    }
+                    else
+                    {
+                        objStudent.SART_Code = loReader["SART_Description"].ToString();
+                    }
+
+                    //Checking NULL value for Hostel
+                    if (String.IsNullOrEmpty(loReader["SASI_Hostel"].ToString()))
+                    {
+                        //objStudent.Hostel = Convert.ToBoolean(loReader["SASI_Hostel"]);
+                        objStudent.Hostel = false;
+                    }
+                    else
+                    {
+                        //objStudent.Hostel = Convert.ToBoolean(loReader["SASI_Hostel"]);
+                        objStudent.Hostel = true;
+                    }
+                }
+                loReader.Close();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            return objStudent;
+        }
+
+        #endregion
+
+        #region GetListStudent Change Prog/Credit Hour/Hostel
+
+        public List<StudentEn> GetListStudentChange(string Category, int TrackModule)
+        {
+            string sqlCmd;
+            List<StudentEn> loEnList = new List<StudentEn>();            
+
+            sqlCmd = "select ST.*,SS.SASI_Name, SS.sasi_pgid, SS.sasi_cursem from sas_trackingnotes ST INNER JOIN SAS_student SS ON ST.sasi_matricno = SS.sasi_matricno " +
+                        "where flag = true and track_module = " + clsGeneric.NullToInteger(TrackModule) + " and category = " + clsGeneric.AddQuotes(Category);
+            sqlCmd = sqlCmd + " order by ST.sasi_matricno;"; 
+
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = new StudentEn();
+                            loItem.MatricNo = GetValue<string>(loReader, "sasi_matricno");
+                            loItem.StudentName = GetValue<string>(loReader, "sasi_name");
+                            loItem.OldProgramID = GetValue<string>(loReader, "old_sasi_pgid");
+                            loItem.CurProgramID = GetValue<string>(loReader, "cur_sasi_pgid"); 
+                            loItem.OldCrditHrs = GetValue<double>(loReader, "old_sasi_crdithrs");
+                            loItem.SASI_CrditHrs = GetValue<double>(loReader, "cur_sasi_crdithrs");
+                            loItem.CrditHrDiff = GetValue<double>(loReader, "difference");
+                            loItem.ProgramID = GetValue<string>(loReader, "sasi_pgid");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "sasi_cursem");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetStudentDetails
+        public List<StudentEn> GetStudentDetails(string MatricNo, string programID)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+
+            string sqlCmd = "select * from sas_student where " +
+                "sas_student.sasi_matricno ='" + MatricNo + "'";
+            //AND sasi_pgid ='" + programID +"'";
+
+            sqlCmd = sqlCmd + " order by SASI_MatricNo";
+
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObjectForSem(loReader);
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            //  loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+        #endregion
+
+        #region GetStudentDetailsBySponsor
+
+        public List<StudentEn> GetStudentDetailsBySponsor(string programID, string Sponsor)
+        {
+            List<StudentEn> loEnList = new List<StudentEn>();
+
+            string sqlCmd = "select Distinct A.SASI_MatricNo, SASI_Name, A.SASI_PgId, A.SASI_CurSem,B.SASS_Sponsor, B. sass_limit " +
+                            "from SAS_student A INNER JOIN SAS_StudentSpon B ON A.SASI_MAtricNO = B.SASI_MAtricNO " +
+                            "INNER JOIN SAS_StudentCategoryAccess ON A.SASS_Code = SAS_StudentCategoryAccess.SASC_Code where " +
+                            "B.SASS_Sponsor = " + clsGeneric.AddQuotes(Sponsor) + " and A.SASI_PgId = " + clsGeneric.AddQuotes(programID);
+
+            sqlCmd = sqlCmd + " order by A.SASI_MatricNo";
+
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentEn loItem = LoadObjectForSem(loReader);
+                            loItem.MatricNo = GetValue<string>(loReader, "SASI_MatricNo");
+                            loItem.StudentName = GetValue<string>(loReader, "SASI_Name");
+                            loItem.ProgramID = GetValue<string>(loReader, "SASI_PgId");
+                            loItem.CurrentSemester = GetValue<int>(loReader, "SASI_CurSem");                                                       
+                            loItem.SponsorLimit = GetValue<double>(loReader, "sass_limit");
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+           #endregion
+
+    }
+
+}
+
+

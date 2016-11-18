@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <BatchInvoice>
+    <sasi_matricno>151931</sasi_matricno>
+    <sasi_name>MOHAMAD FADLI BIN MOHAMED ZAILAN</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PERDAFTARAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_glcode>S-10-00000-XX-R11260</saft_glcode>
+    <saft_status>true</saft_status>
+    <transamount>53</transamount>
+    <refcode>1420</refcode>
+    <transid>333</transid>
+    <transtempcode />
+    <transcode>IN000000000000049</transcode>
+    <saft_taxmode>1</saft_taxmode>
+    <taxamount>3</taxamount>
+    <tax>0</tax>
+    <internal_use />
+  </BatchInvoice>
+  <BatchInvoice>
+    <sasi_matricno>151931</sasi_matricno>
+    <sasi_name>MOHAMAD FADLI BIN MOHAMED ZAILAN</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <saft_code>1421</saft_code>
+    <saft_desc>TABUNG KEBAJIKAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_glcode>6200200-12241-R11218</saft_glcode>
+    <saft_status>true</saft_status>
+    <transamount>60</transamount>
+    <refcode>1421</refcode>
+    <transid>333</transid>
+    <transtempcode />
+    <transcode>IN000000000000049</transcode>
+    <saft_taxmode>2</saft_taxmode>
+    <taxamount>3.4</taxamount>
+    <tax>0</tax>
+    <internal_use />
+  </BatchInvoice>
+  <Category>
+    <Type>Invoice</Type>
+  </Category>
+</NewDataSet>

@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <creditref>1</creditref>
+    <sasr_code>1</sasr_code>
+    <sasr_name>JABATAN PERKHIDMATAN AWAM MALAYSIA  (JPA)</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>17/08/2015</date>
+    <transcode>SPT000000000000004</transcode>
+    <description>qqawerwer</description>
+    <transtype>Credit</transtype>
+    <category>Payment</category>
+    <transamount>0</transamount>
+  </Table>
+  <Table>
+    <creditref>1</creditref>
+    <sasr_code>1</sasr_code>
+    <sasr_name>JABATAN PERKHIDMATAN AWAM MALAYSIA  (JPA)</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>24/08/2015</date>
+    <transcode />
+    <description>testing receipt</description>
+    <transtype>Credit</transtype>
+    <category>Receipt</category>
+    <transamount>600</transamount>
+  </Table>
+  <Table>
+    <creditref>2</creditref>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>14/08/2015</date>
+    <transcode>SA000000000000007</transcode>
+    <description>Test</description>
+    <transtype>Credit</transtype>
+    <category>Allocation</category>
+    <transamount>3</transamount>
+  </Table>
+  <Table>
+    <creditref>2</creditref>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>14/08/2015</date>
+    <transcode>SA000000000000006</transcode>
+    <description>Test1408</description>
+    <transtype>Credit</transtype>
+    <category>Allocation</category>
+    <transamount>180</transamount>
+  </Table>
+  <Table>
+    <creditref>NewSponsor</creditref>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>20/08/2015</date>
+    <transcode>SA000000000000009</transcode>
+    <description>test</description>
+    <transtype>Credit</transtype>
+    <category>Allocation</category>
+    <transamount>800</transamount>
+  </Table>
+  <Table>
+    <creditref>NewSponsor</creditref>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>17/08/2015</date>
+    <transcode>SA000000000000008</transcode>
+    <description>Test</description>
+    <transtype>Credit</transtype>
+    <category>Allocation</category>
+    <transamount>250</transamount>
+  </Table>
+  <Table>
+    <creditref>NewSponsor</creditref>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>17/08/2015</date>
+    <transcode>SPT000000000000002</transcode>
+    <description>test</description>
+    <transtype>Credit</transtype>
+    <category>Payment</category>
+    <transamount>-100</transamount>
+  </Table>
+  <Table>
+    <creditref>NewSponsor</creditref>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+    <sasr_address />
+    <sasr_address1 />
+    <sasr_address2 />
+    <sasr_status>true</sasr_status>
+    <date>17/08/2015</date>
+    <transcode>SPT000000000000003</transcode>
+    <description>Test for student</description>
+    <transtype>Credit</transtype>
+    <category>Payment</category>
+    <transamount>-100</transamount>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>FZ00</saft_code>
+    <saft_desc>Hostel Fee A</saft_desc>
+    <saft_glcode>H-1200-1300</saft_glcode>
+    <transamount>-583</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1423</saft_code>
+    <saft_desc>YURAN KOMPUTER</saft_desc>
+    <saft_glcode>6206500-11922-R11214</saft_glcode>
+    <transamount>-28850</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1424</saft_code>
+    <saft_desc>YURAN KENDERAAN</saft_desc>
+    <saft_glcode>6539200-12241-R11215</saft_glcode>
+    <transamount>-29131.2</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1433</saft_code>
+    <saft_desc>YURAN AKTIVITI</saft_desc>
+    <saft_glcode>S-05-10032-XX-R11900</saft_glcode>
+    <transamount>0</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>999</saft_code>
+    <saft_desc>Misc Fee</saft_desc>
+    <saft_glcode>S-10-00000-XX-R11260</saft_glcode>
+    <transamount>20</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1422</saft_code>
+    <saft_desc>YURAN PELBAGAI</saft_desc>
+    <saft_glcode>S-10-00000-XX-R11280</saft_glcode>
+    <transamount>-157724.43</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PENDAFTARAN</saft_desc>
+    <saft_glcode>S-10-00000-XX-R11260</saft_glcode>
+    <transamount>-118177.3</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1430</saft_code>
+    <saft_desc>YURAN MAKMAL</saft_desc>
+    <saft_glcode>S-10-10401-XX-R11212</saft_glcode>
+    <transamount>-174600</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_glcode>S-10-10601-XX-R11210</saft_glcode>
+    <transamount>-299440</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1431</saft_code>
+    <saft_desc>YURAN KESIHATAN</saft_desc>
+    <saft_glcode>S-10-12242-XX-R11211</saft_glcode>
+    <transamount>-1898530.59999997</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1900</saft_code>
+    <saft_desc>BILIK SEORANG</saft_desc>
+    <saft_glcode>444444</saft_glcode>
+    <transamount>300</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>F100</saft_code>
+    <saft_desc>Yuran Pendaftaran</saft_desc>
+    <saft_glcode>S-10-00000-XX-R11260</saft_glcode>
+    <transamount>-690.6</transamount>
+    <saft_feetype>01</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>1434</saft_code>
+    <saft_desc>YURAN MAKAN</saft_desc>
+    <saft_glcode>S-10-00000-XX-L85000</saft_glcode>
+    <transamount>60</transamount>
+    <saft_feetype>02</saft_feetype>
+  </Table>
+  <Table>
+    <dt>04/01/2016 - 17/03/2016</dt>
+    <saft_code>FZ01</saft_code>
+    <saft_desc>Hsotel Fee 2222</saft_desc>
+    <saft_glcode>H-1200-1300 -2</saft_glcode>
+    <transamount>31.8</transamount>
+    <saft_feetype>01</saft_feetype>
+  </Table>
+</NewDataSet>

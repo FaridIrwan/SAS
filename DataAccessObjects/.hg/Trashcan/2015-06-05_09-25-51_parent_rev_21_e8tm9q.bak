@@ -1,0 +1,52 @@
+diff --git a/DataAccessObjects.csproj b/DataAccessObjects.csproj
+--- a/DataAccessObjects.csproj
++++ b/DataAccessObjects.csproj
+@@ -70,9 +70,6 @@
+       <SpecificVersion>False</SpecificVersion>
+       <HintPath>bin\EntLibContrib.Data.PostgreSql.dll</HintPath>
+     </Reference>
+-    <Reference Include="HTS.SAS.DataAccessObjects">
+-      <HintPath>bin\HTS.SAS.DataAccessObjects.dll</HintPath>
+-    </Reference>
+     <Reference Include="MaxGeneric">
+       <HintPath>bin\MaxGeneric.dll</HintPath>
+     </Reference>
+@@ -116,6 +113,7 @@
+     <Compile Include="FeeStrDetailsDAL.cs" />
+     <Compile Include="FeeStructDAL.cs" />
+     <Compile Include="FeeTypesDAL.cs" />
++    <Compile Include="GSTSetupDAL.cs" />
+     <Compile Include="Helper.cs" />
+     <Compile Include="HostelStrAmountDAL.cs" />
+     <Compile Include="HostelStrDetailsDAL.cs" />
+@@ -142,6 +140,7 @@
+     <Compile Include="UserGroupDAL.cs" />
+     <Compile Include="UserRightsDAL.cs" />
+     <Compile Include="UsersDAL.cs" />
++    <Compile Include="WorkflowDAL.cs" />
+   </ItemGroup>
+   <ItemGroup>
+     <ProjectReference Include="..\Entities\Entities.csproj">
+diff --git a/StudentSponDAL.cs b/StudentSponDAL.cs
+--- a/StudentSponDAL.cs
++++ b/StudentSponDAL.cs
+@@ -213,8 +213,8 @@
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_SDate", DbType.String, argEn.SDate);
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_EDate", DbType.String, argEn.EDate);
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Status", DbType.Boolean, argEn.Status);
+-                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Num", DbType.Int32, argEn.Num);
+-                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Int32, argEn.FullySponsered);
++                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Num", DbType.Int32, argEn.Num);                            
++                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Boolean, argEn.FullySponsered);
+                             _DbParameterCollection = cmd.Parameters;
+ 
+                             int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+@@ -277,7 +277,7 @@
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_EDate", DbType.String, argEn.EDate);
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Status", DbType.Boolean, argEn.Status);
+                             _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Num", DbType.Int32, argEn.Num);
+-                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Int32, argEn.FullySponsered);
++                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Boolean, argEn.FullySponsered);
+                             _DbParameterCollection = cmd.Parameters;
+ 
+                             int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,

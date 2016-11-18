@@ -1,0 +1,9 @@
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\bin\x86\Debug\HTS.SAS.Entities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\bin\x86\Debug\HTS.SAS.Entities.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\bin\x86\Debug\HTS.SAS.Entities.XML
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\bin\x86\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\obj\x86\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\obj\x86\Debug\HTS.SAS.Entities.Properties.Resources.resources
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\obj\x86\Debug\Entities.csproj.GenerateResource.Cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\obj\x86\Debug\HTS.SAS.Entities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\Entities\obj\x86\Debug\HTS.SAS.Entities.pdb

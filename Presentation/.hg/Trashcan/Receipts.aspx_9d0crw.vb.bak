@@ -1,0 +1,3957 @@
+#Region "NameSpaces "
+
+Imports MaxModule
+Imports MaxGeneric
+Imports System.IO
+Imports System.Linq
+Imports System.Text
+Imports System.Data
+Imports HTS.SAS.Entities
+Imports System.Globalization
+Imports System.Data.SqlClient
+Imports HTS.SAS.BusinessObjects
+Imports System.Collections.Generic
+Imports HTS.SAS.DataAccessObjects
+
+#End Region
+
+Partial Class Receipts
+    Inherits System.Web.UI.Page
+
+#Region "Global Declarations "
+
+    'Create Instances - Start
+    Dim dsReturn As New DataSet
+    Private ListObjects As List(Of AccountsEn)
+    Private ListObjectsStudent As List(Of StudentEn)
+    Private ListTRD As New List(Of AccountsDetailsEn)
+    Dim objIntegration As New IntegrationModule.IntegrationNameSpace.Integration
+    Dim objIntegrationDL As New SQLPowerQueryManager.PowerQueryManager.IntegrationDL
+    'Create Instances - Stop
+
+    Public Auto As Boolean
+    Public RrcType As Boolean
+    Private StuFlag As Boolean
+    Private spnFlag As Boolean
+
+    'Variable Declarations - Start
+    Dim totPaidAmt As Double, tamount As Double, totBalAmt As Double
+    Dim DeleteFlag As String, flag As String, ErrorDescription As String, AutoNo As Boolean
+    'Variable Declarations - Stop
+
+#End Region
+
+#Region "Set Message "
+
+    Private Sub SetMessage(ByVal MessageDetails As String)
+
+        lblMsg.Text = String.Empty
+        lblMsg.Text = MessageDetails
+
+    End Sub
+
+#End Region
+
+#Region "Get Sub Type "
+
+    Private Function GetSubType() As String
+
+        Dim SubType As String = ddlReceiptFor.SelectedValue
+
+        Select Case SubType
+
+            Case ReceiptsClass.ReceiptStudent
+                Return ReceiptsClass.Student
+
+            Case ReceiptsClass.ReceiptSponsor
+                Return ReceiptsClass.Sponsor
+
+            Case Else
+                Return String.Empty
+
+        End Select
+
+    End Function
+
+#End Region
+
+#Region "Get Batch Date "
+
+    Private Function GetBatchDate() As String
+
+        If Not FormHelp.IsBlank(txtBatchDate.Text) Then
+            Return Trim(txtBatchDate.Text)
+        Else
+            Return Format(Date.Now, "dd/MM/yyyy")
+        End If
+
+    End Function
+
+#End Region
+
+#Region "Get Batch Date "
+
+    Private Function GetBatchCode() As String
+
+        Return clsGeneric.NullToString(txtBatchId.Text)
+
+    End Function
+
+#End Region
+
+#Region "Get Done By "
+
+    Private Function GetDoneBy() As String
+
+        Return Session("User")
+
+    End Function
+
+#End Region
+
+#Region "Page Load "
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Variable Declarations
+        Dim MenuId As Integer = 0, UserGroup As Integer = 0
+
+        Try
+
+            'Get Values - Start
+            UserGroup = clsGeneric.NullToInteger(Session("UserGroup"))
+            MenuId = clsGeneric.NullToInteger(Request.QueryString("Menuid"))
+            'Get Values - Stop
+
+            'if pafe not post back - Start
+            If Not Page.IsPostBack Then
+
+                Call Menuname(MenuId)
+                Call AddEvents()
+                Call DisableRecordNavigator()
+                Call LoadUserRights(MenuId, UserGroup)
+
+                'Set Session Values - Start
+                Session("Menuid") = MenuId
+                Session("PageMode") = "Add"
+                Session("AddBank") = Nothing
+                Session("ListObj") = Nothing
+                Session("stualloc") = Nothing
+                Session("stuupload") = Nothing
+                Session("LaporanHarian") = False
+                Session("liststu") = Nothing
+                Session("eobjspn") = Nothing
+                'Set Session Values - Stop
+
+                Call OnLoadItem()
+                Call dates()
+                Call nReceipt()
+                Call addPayMode()
+                Call addBankCode()
+
+            End If
+            'if pafe not post back - Stop
+
+            'Populate Sponsor Invoices
+            Call PopulateSponsorInvoice()
+
+            If Not Session("eobjspn") Is Nothing Then
+                spnFlag = True
+                Call addSpnCode()
+            End If
+            If Not Session("eobjstu") Is Nothing Then
+                Call AddLoanStudentCode()
+            End If
+            If Not Session("liststu") Is Nothing Then
+                StuFlag = True
+                Call LoadStudentDetails()
+            End If
+            If Not Session("File1") Is Nothing Then
+                Call uploadData()
+            End If
+
+            'Display Rcord from Student Ledger screen - Start
+            If Not Request.QueryString("BatchCode") Is Nothing Then
+                Dim str As String = Request.QueryString("BatchCode")
+                Dim constr As String() = str.Split(";")
+                txtBatchId.Text = constr(0)
+                If constr(1) = "St" Then
+                    ddlReceiptFor.SelectedValue = "St"
+                ElseIf constr(1) = "Sp" Then
+                    ddlReceiptFor.SelectedValue = "Sp"
+                End If
+                DirectCast(Master.FindControl("Panel1"), System.Web.UI.WebControls.Panel).Visible = False
+                DirectCast(Master.FindControl("td"), System.Web.UI.HtmlControls.HtmlTableCell).Visible = False
+                Panel1.Visible = False
+                OnSearchOthers()
+            End If
+            'Display Rcord from Student Ledger screen - Stop
+
+            If Not Session("fileSponsor") Is Nothing And Session("fileType") = "excel" Then
+                Dim importobj As New ImportData
+                ListObjectsStudent = importobj.GetImportedSponsorData(Session("fileSponsor").ToString())
+                Session("liststu") = Nothing
+                Session("liststu") = ListObjectsStudent
+                LoadStudentDetails()
+                Session("fileType") = Nothing
+            ElseIf Not Session("fileSponsor") Is Nothing And Session("fileType") = "text" Then
+                ListObjectsStudent = readTextFile(Session("fileSponsor").ToString())
+                If Session("Err") = Nothing Then
+                    LoadStudentDetails()
+                End If
+                System.IO.File.Delete(Session("fileSponsor"))
+                Session("fileSponsor") = Nothing
+                Session("fileType") = Nothing
+            End If
+
+
+
+        Catch ex As Exception
+
+            Session("fileSponsor") = Nothing
+            Session("fileType") = Nothing
+
+            'log error
+            Call MaxModule.Helper.LogError(ex.Message)
+
+            'Show Error Message
+            Call SetMessage(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Add Events "
+
+    Private Sub AddEvents()
+
+        Try
+
+            ibtnSave.Attributes.Add("onclick", "return validate()")
+            ibtnDelete.Attributes.Add("onclick", "return getconfirm()")
+            ibtnView.Attributes.Add("onclick", "return CheckSearch()")
+            ibtnOthers.Attributes.Add("onclick", "return CheckSearch()")
+            bTnUpdate.Attributes.Add("onClick", "return CheckInvgrid()")
+            txtSpnAmount.Attributes.Add("OnKeyUp", "CheckRecpAmount()")
+            txtBatchDate.Attributes.Add("onKeyPress", "return CheckBatchDate()")
+            txtReceiptDate.Attributes.Add("onKeyPress", "return CheckRecpDate()")
+            txtRecNo.Attributes.Add("onKeyPress", "return geterr()")
+            txtSpnAmount.Attributes.Add("onKeyPress", "return getcheck()")
+            ibtnDelete.Attributes.Add("onClick", "return getconfirm()")
+            ibtnRecDate.Attributes.Add("onClick", "return getDate1from()")
+            ibtnBatchDate.Attributes.Add("onClick", "return getDate2from()")
+            imgbankCode.Attributes.Add("onclick", "new_window=window.open('Addbank.aspx','Hanodale','width=470,height=550,resizable=0');new_window.focus();")
+            ibtnPosting.Attributes.Add("onClick", "return getpostconfirm()")
+            txtAllocateAmount.Attributes.Add("OnKeyUp", "return amount()")
+            txtTotalPenAmt.Attributes.Add("onKeyPress", "checkValue();")
+            txtRecNo.Attributes.Add("OnKeyUp", "return geterr()")
+            IdtnStud.Attributes.Add("onclick", "new_window=window.open('AddMulStudents.aspx','Hanodale','width=550,height=550,resizable=0');new_window.focus();")
+            btnUpload.Attributes.Add("onclick", "new_window=window.open('File.aspx','Hanodale','width=470,height=380,resizable=0');new_window.focus();")
+
+        Catch ex As Exception
+
+            'log error
+            Call MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Add Loan Student Code "
+
+    ''' <summary>
+    ''' Method to Add Students 
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub AddLoanStudentCode()
+        Dim eobjf As StudentEn
+        eobjf = Session("eobjstu")
+        txtStudentId.Text = eobjf.MatricNo
+        txtStudentName.Text = eobjf.StudentName
+
+        Dim ListInvObjects As New List(Of AccountsEn)
+        Dim obj As New AccountsBAL
+        Dim eob As New AccountsEn
+        eob.CreditRef = txtStudentId.Text
+        eob.PostStatus = "Posted"
+        eob.SubType = "Student"
+        eob.TransType = ""
+        eob.TransStatus = ""
+
+        Try
+            ListInvObjects = obj.GetStudentLoanLedgerDetailList(eob)
+
+            If ListInvObjects.Count > 0 Then
+                Dim crAmount As Double = 0
+                Dim dtAmount As Double = 0
+                Dim totalAmount As Double = 0
+
+                For Each loen As AccountsEn In ListInvObjects
+                    crAmount = crAmount + loen.Credit
+                    dtAmount = dtAmount + loen.Debit
+                Next
+                totalAmount = dtAmount - crAmount
+                lblLoanAmountToPay.Text = String.Format("{0:F}", totalAmount)
+            End If
+
+        Catch ex As Exception
+            LogError.Log("StudentLedger", "LoadInvoiceGrid", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Navigation Buttons "
+
+    Protected Sub ibtnNext_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnNext.Click
+        OnMoveNext()
+    End Sub
+    Protected Sub ibtnLast_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnLast.Click
+        OnMoveLast()
+    End Sub
+    Protected Sub ibtnPrevs_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnPrevs.Click
+        OnMovePrevious()
+    End Sub
+    Protected Sub ibtnFirst_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnFirst.Click
+        OnMoveFirst()
+    End Sub
+
+#End Region
+
+#Region "Save Click "
+
+    Protected Sub ibtnSave_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnSave.Click
+        If lblStatus.Value = "Posted" Then
+            lblMsg.Text = "Post Record Cannot be Edited"
+            lblMsg.Visible = True
+            Exit Sub
+        End If
+        Try
+            SpaceValidation()
+            ' Save Student Loan Receipt
+            If ddlReceiptFor.SelectedValue = "Sl" Then
+                If CDbl(txtLoanAmount.Text.Trim()) > CDbl(lblLoanAmountToPay.Text) Then
+                    lblMsg.Visible = True
+                    lblMsg.Text = "The amount should not exceed the loan amount"
+                    txtLoanAmount.Focus()
+                    Return
+                End If
+                onSaveStudentLoan()
+            Else
+                ' Save Student Receipt and Sponsor Receipt
+                onSave()
+            End If
+
+            setdateFormat()
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "View Click "
+
+    Protected Sub ibtnView_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnView.Click
+
+        'Variable Declarations
+        Dim LabelCount As Integer = 0
+
+        Try
+
+            'Get Lable Count
+            LabelCount = clsGeneric.NullToInteger(lblCount.Text)
+
+            'Set Session to view Status
+            Session(ReceiptsClass.SessionLoadData) = ReceiptsClass.StatusView
+
+            If Not FormHelp.IsBlank(lblCount.Text) Then
+                If LabelCount > 0 Then
+                    onAdd()
+                Else
+                    Session(ReceiptsClass.SessionPageMode) = ReceiptsClass.StatusEdit
+                    addBankCode()
+                    LoadListObjects(False)
+                End If
+            Else
+                Session(ReceiptsClass.SessionPageMode) = ReceiptsClass.StatusEdit
+                addBankCode()
+                LoadListObjects(False)
+            End If
+
+            If lblCount.Text.Length = 0 Then
+                Session("PageMode") = "Add"
+            End If
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+
+
+    End Sub
+
+#End Region
+
+#Region "Posting Click "
+
+    Protected Sub ibtnPosting_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnPosting.Click
+        If lblStatus.Value = "Ready" Then
+            SpaceValidation()
+            onPost()
+            ' Post Student Loan Receipt
+            'If ddlReceiptFor.SelectedValue = "Sl" Then
+            '    OnPostStudentLoan()
+            'Else
+            '    ' Post Student Receipt and Sponsor Receipt
+
+            'End If
+            setdateFormat()
+        ElseIf lblStatus.Value = "New" Then
+            lblMsg.Text = "Record not Ready for Posting"
+            lblMsg.Visible = True
+        ElseIf lblStatus.Value = "Posted" Then
+            lblMsg.Text = "Record Already Posted"
+            lblMsg.Visible = True
+        End If
+    End Sub
+
+#End Region
+
+#Region "Cancel Click "
+
+    Protected Sub ibtnCancel_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnCancel.Click
+        'Get Values - Start
+        Dim UserGroup As Integer = clsGeneric.NullToInteger(Session("UserGroup"))
+        Dim MenuId As Integer = clsGeneric.NullToInteger(Request.QueryString("Menuid"))
+        'Get Values - Stop
+        LoadUserRights(MenuId, UserGroup)
+        onAdd()
+    End Sub
+
+#End Region
+
+#Region "New Click "
+
+    Protected Sub ibtnNew_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnNew.Click
+        onAdd()
+    End Sub
+
+#End Region
+
+#Region "ddlReceiptFor_SelectedIndexChanged "
+
+    Protected Sub ddlReceiptFor_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlReceiptFor.SelectedIndexChanged
+
+        check_Receiptfor()
+        htxtCat.Value = ddlReceiptFor.SelectedValue
+
+    End Sub
+
+#End Region
+
+#Region "Data Grid Events "
+
+    Protected Sub dgInvoices_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgInvoices.ItemDataBound
+        Dim txtAmount As TextBox
+        Select Case e.Item.ItemType
+            Case ListItemType.Item, ListItemType.AlternatingItem
+
+                Dim alamount As Double
+
+                txtAmount = CType(e.Item.FindControl("AllovateAmount"), TextBox)
+                txtAmount.Attributes.Add("onKeyPress", "checkValue();")
+                If txtAmount.Text = "" Then txtAmount.Text = 0
+                totPaidAmt = totPaidAmt + CDbl(txtAmount.Text)
+                alamount = txtAmount.Text
+                txtAmount.Text = String.Format("{0:F}", alamount)
+
+        End Select
+
+    End Sub
+
+    Protected Sub dgStudentView_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgStudentView.ItemDataBound
+        Dim txtAmount As New TextBox
+        Dim chk As New CheckBox
+        Select Case e.Item.ItemType
+            Case ListItemType.Item, ListItemType.AlternatingItem
+                txtAmount = CType(e.Item.FindControl("TxtAmt"), TextBox)
+                txtAmount.Attributes.Add("onKeyPress", "checkValue();")
+                Dim bamount As Double = 0.0
+                txtAmount.Text = String.Format("{0:F}", bamount)
+                chk = CType(e.Item.FindControl("chkManual"), CheckBox)
+        End Select
+    End Sub
+    Protected Sub dgInvoices_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+#End Region
+
+#Region "cbInvoice_CheckedChanged "
+
+    Protected Sub cbInvoice_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        LoadInvTotals()
+    End Sub
+
+#End Region
+
+#Region "rBtnMultiple_CheckedChanged "
+
+    Protected Sub rBtnMultiple_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    End Sub
+
+#End Region
+
+#Region "AllovateAmount_TextChanged "
+
+    Protected Sub AllovateAmount_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        LoadInvTotals()
+    End Sub
+
+#End Region
+
+#Region "ibtnOthers_Click "
+
+    Protected Sub ibtnOthers_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs)
+        OnSearchOthers()
+    End Sub
+
+#End Region
+
+#Region "ibtnDelete_Click "
+
+    Protected Sub ibtnDelete_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnDelete.Click
+        ondelete()
+    End Sub
+
+#End Region
+
+#Region "Btnselect_Click "
+
+    Protected Sub Btnselect_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        uploadData()
+        setdateFormat()
+    End Sub
+
+#End Region
+
+#Region "TxtAmt_TextChanged "
+
+    Protected Sub TxtAmt_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+        Dim totalAmt As Double
+        Dim dgItem1 As DataGridItem
+        Dim amt As Double = 0.0
+        Dim txtAmount As TextBox
+        Dim listRect As New List(Of StudentEn)
+        Dim i As Integer
+        Dim StudentGridCheckBox As CheckBox
+        listRect = Session("listview")
+
+        'Loop thro the grid items - Start
+        For Each dgItem1 In dgStudentView.Items
+
+            StudentGridCheckBox = dgItem1.Cells(0).Controls(1)
+
+            If StudentGridCheckBox.Checked = True Then
+                txtAmount = dgItem1.Cells(9).Controls(1)
+                i = dgItem1.Cells(11).Text
+                amt = dgItem1.Cells(10).Text
+                If txtAmount.Text = "" Then txtAmount.Text = 0.0
+                If txtAmount.Text = amt Then
+                    amt = dgItem1.Cells(10).Text
+                    txtAmount.Text = String.Format("{0:F}", amt)
+                    totalAmt = totalAmt + txtAmount.Text
+                    txtAllocateAmount.Text = String.Format("{0:F}", totalAmt)
+                Else
+                    amt = txtAmount.Text
+                    dgItem1.Cells(10).Text = amt
+                    txtAmount.Text = String.Format("{0:F}", amt)
+                    totalAmt = totalAmt + txtAmount.Text
+                    txtAllocateAmount.Text = String.Format("{0:F}", totalAmt)
+                End If
+
+            End If
+
+        Next
+        'Loop thro the grid items - Stop
+
+        Session("listview") = Nothing
+        Session("listview") = listRect
+        listRect = Nothing
+    End Sub
+
+#End Region
+
+#Region "btnReceipt_Click1 "
+
+    Protected Sub btnReceipt_Click1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnReceipt.Click
+        nReceipt()
+        check_Receiptfor()
+    End Sub
+
+#End Region
+
+#Region "btnSelection_Click1 "
+
+    Protected Sub btnSelection_Click1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSelection.Click
+        'Allocation()
+    End Sub
+
+#End Region
+
+#Region "btnInactive_Click1 "
+
+    Protected Sub btnInactive_Click1(ByVal sender As Object, ByVal e As System.EventArgs)
+
+        MultiView1.SetActiveView(View3)
+        btnReceipt.CssClass = "TabButton"
+        btnSelection.CssClass = "TabButton"
+        btnInactive.CssClass = "TabButtonClick"
+        bankPanel.Visible = False
+        pnlStudentGrid.Visible = False
+
+    End Sub
+
+#End Region
+
+#Region "rBtnSingle_CheckedChanged "
+
+    Protected Sub rBtnSingle_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    End Sub
+
+#End Region
+
+#Region "dgStudentView_SelectedIndexChanged "
+
+    Protected Sub dgStudentView_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        dgInvoices.DataSource = Nothing
+        Dim chk As CheckBox
+        dgInvoices.DataBind()
+        Try
+            If dgStudentView.SelectedIndex <> -1 Then
+                chk = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(8).Controls(1)
+                If chk.Checked = True Then
+                    bTnUpdate.Enabled = True
+                    Auto = chk.Checked
+                    Session("Auto") = Auto
+                End If
+
+                Dim loen As New AccountsEn
+                Dim ListInvObjects As New List(Of AccountsEn)
+                Dim lobo As New AccountsBAL
+                Dim listtrandetailes As New List(Of AccountsDetailsEn)
+                loen.CreditRef = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(2).Text
+
+                If lblStatus.Value = "Ready" Then
+                    Dim manaulchk As CheckBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(8).Controls(1)
+                    Dim alloctext As TextBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(9).Controls(1)
+                    If manaulchk.Checked = True Then
+                        Dim lostulist As New List(Of StudentEn)
+                        lostulist = Session("listview")
+                        Dim listaccounts As New List(Of AccountsDetailsEn)
+                        Dim k As Integer = 0
+                        While k < lostulist.Count
+                            If loen.CreditRef = lostulist(k).MatricNo Then
+                                If lostulist(k).SubReferenceTwo = "Manual" Then
+                                    listaccounts = lostulist(k).AccountDetailsList
+                                    txtStuIndex.Text = lostulist(k).TransactionAmount
+                                    dgInvoices.Visible = True
+                                    dgInvoices.DataSource = listaccounts
+                                    dgInvoices.DataBind()
+                                    Dim dgItem3 As DataGridItem
+                                    Dim amt1 As Double
+                                    Dim txtAmount1 As TextBox
+                                    Dim selchk As CheckBox
+                                    Dim totalamt1 As Double
+                                    For Each dgItem3 In dgInvoices.Items
+                                        txtAmount1 = dgItem3.Cells(5).Controls(1)
+                                        selchk = dgItem3.Cells(0).Controls(1)
+                                        selchk.Checked = True
+                                        amt1 = dgItem3.Cells(4).Text
+                                        dgItem3.Cells(1).Text = dgItem3.Cells(11).Text
+                                        txtAmount1.Text = String.Format("{0:F}", amt1)
+                                        dgItem3.Cells(4).Text = dgItem3.Cells(12).Text
+                                        dgItem3.Cells(8).Text = dgItem3.Cells(13).Text
+                                        totalamt1 = totalamt1 + txtAmount1.Text
+                                        txtALLAmount.Text = String.Format("{0:F}", totalamt1)
+                                        dgItem3.Cells(6).Text = Convert.ToString(CDbl(dgItem3.Cells(4).Text) - CDbl(dgItem3.Cells(8).Text))
+                                    Next
+                                End If
+                            End If
+                            k = k + 1
+                        End While
+                        txtStuIndex.Text = alloctext.Text
+                        Session("ID") = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(11).Text
+                        Allocation()
+                    End If
+                    dgStudentView.SelectedIndex = -1
+
+                ElseIf lblStatus.Value = "Posted" Then
+                    Dim manaulchk As CheckBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(8).Controls(1)
+                    Dim alloctext As TextBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(9).Controls(1)
+                    If manaulchk.Checked = True Then
+                        Dim lostulist As New List(Of StudentEn)
+                        lostulist = Session("listview")
+                        Dim listaccounts As New List(Of AccountsDetailsEn)
+                        Dim k As Integer = 0
+                        While k < lostulist.Count
+                            If loen.CreditRef = lostulist(k).MatricNo Then
+                                If lostulist(k).SubReferenceTwo = "Manual" Then
+                                    listaccounts = lostulist(k).AccountDetailsList
+                                    txtStuIndex.Text = lostulist(k).TransactionAmount
+                                    dgInvoices.Visible = True
+                                    dgInvoices.DataSource = listaccounts
+                                    dgInvoices.DataBind()
+                                    Dim dgItem3 As DataGridItem
+                                    Dim amt1 As Double
+                                    Dim txtAmount1 As TextBox
+                                    Dim selchk As CheckBox
+                                    Dim totalamt1 As Double
+                                    For Each dgItem3 In dgInvoices.Items
+                                        txtAmount1 = dgItem3.Cells(5).Controls(1)
+                                        selchk = dgItem3.Cells(0).Controls(1)
+                                        selchk.Checked = True
+                                        amt1 = dgItem3.Cells(4).Text
+                                        dgItem3.Cells(1).Text = dgItem3.Cells(11).Text
+                                        txtAmount1.Text = String.Format("{0:F}", amt1)
+                                        dgItem3.Cells(4).Text = dgItem3.Cells(12).Text
+                                        dgItem3.Cells(8).Text = dgItem3.Cells(13).Text
+                                        totalamt1 = totalamt1 + txtAmount1.Text
+                                        txtALLAmount.Text = String.Format("{0:F}", totalamt1)
+                                        dgItem3.Cells(6).Text = Convert.ToString(CDbl(dgItem3.Cells(4).Text) - CDbl(dgItem3.Cells(8).Text))
+                                    Next
+                                End If
+                            End If
+                            k = k + 1
+                        End While
+                        txtStuIndex.Text = alloctext.Text
+                        Session("ID") = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(11).Text
+                        bTnUpdate.Enabled = False
+                        Allocation()
+                    End If
+                    dgStudentView.SelectedIndex = -1
+                ElseIf lblStatus.Value = "New" Then
+                    Dim manaulchk As CheckBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(8).Controls(1)
+                    Dim alloctext As TextBox = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(9).Controls(1)
+                    If manaulchk.Checked = True Then
+                        loen.SubType = "Student"
+                        loen.PostStatus = "Posted"
+                        loen.Category = "'Invoice','Debit Note','AFC'"
+
+                        Try
+                            ListInvObjects = lobo.GetStudentAutoAllocation(loen)
+                        Catch ex As Exception
+                            LogError.Log("Receipts", "dgStudentView_SelectedIndexChanged", ex.Message)
+                        End Try
+
+                        dgInvoices.Visible = True
+                        Dim Mno As String = dgStudentView.DataKeys(dgStudentView.SelectedIndex)
+
+                        Dim i As Integer
+                        i = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(11).Text
+                        Dim list As List(Of StudentEn)
+                        list = Session("listview")
+                        listtrandetailes = list(i).AccountDetailsList
+                        If listtrandetailes Is Nothing Then
+                            If lblStatus.Value = "Posted" Then
+                                dgInvoices.DataSource = ListInvObjects
+                                dgInvoices.DataBind()
+                            Else
+                                dgInvoices.DataSource = ListInvObjects
+                                dgInvoices.DataBind()
+                            End If
+
+                        Else
+                            Dim k As Integer = 0
+                            Dim eRecpInv As New AccountsEn
+                            Dim listRecpInvoice As New List(Of AccountsEn)
+                            If listtrandetailes.Count <> 0 Then
+                                While k < listtrandetailes.Count
+                                    Dim j As Integer = 0
+                                    While j < ListInvObjects.Count
+                                        If ListInvObjects(j).TransactionCode = listtrandetailes(k).ReferenceCode Then
+                                            eRecpInv = New AccountsEn
+                                            eRecpInv = ListInvObjects(j)
+                                            eRecpInv.TempAmount = listtrandetailes(k).PaidAmount
+                                            listRecpInvoice.Add(eRecpInv)
+                                        End If
+                                        j = j + 1
+                                    End While
+                                    k = k + 1
+                                End While
+                                Dim dgItem1 As DataGridItem
+                                Dim amt1 As Double
+                                Dim txtAmount1 As TextBox
+                                Dim selckeck As CheckBox
+                                dgInvoices.DataSource = listRecpInvoice
+                                dgInvoices.DataBind()
+                                For Each dgItem1 In dgInvoices.Items
+                                    txtAmount1 = dgItem1.Cells(5).Controls(1)
+                                    selckeck = dgItem1.Cells(0).Controls(1)
+                                    selckeck.Checked = True
+                                    amt1 = dgItem1.Cells(13).Text
+                                    txtAmount1.Text = String.Format("{0:F}", amt1)
+                                    dgItem1.Cells(6).Text = Convert.ToString(CDbl(dgItem1.Cells(4).Text) - CDbl(dgItem1.Cells(8).Text))
+                                Next
+                            Else
+                                dgInvoices.DataSource = ListInvObjects
+                                dgInvoices.DataBind()
+                            End If
+                        End If
+                        Session("ID") = dgStudentView.Items(dgStudentView.SelectedIndex).Cells(11).Text
+                        dgStudentView.SelectedIndex = -1
+                        txtStuIndex.Text = alloctext.Text
+                        Allocation()
+                    Else
+                        dgStudentView.SelectedIndex = -1
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+    End Sub
+
+#End Region
+
+#Region "FLBankFile_DataBinding "
+
+    Protected Sub FLBankFile_DataBinding(ByVal sender As Object, ByVal e As System.EventArgs)
+        Response.Write(FLBankFile.PostedFile.FileName)
+    End Sub
+
+#End Region
+
+#Region "btnUpload_Click "
+
+    Protected Sub btnUpload_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+#End Region
+
+#Region "chkselectall_CheckedChanged "
+
+    Protected Sub chkselectall_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim dgItem1 As DataGridItem
+        Dim chkselect As CheckBox
+        For Each dgItem1 In dgStudentView.Items
+            chkselect = dgItem1.Cells(0).Controls(1)
+            If chkselect.Checked = False Then
+                chkselect.Checked = False
+            Else
+                chkselect.Checked = True
+            End If
+        Next
+
+    End Sub
+
+#End Region
+
+#Region "bTnClose_Click "
+
+    Protected Sub bTnClose_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim i As Integer
+        i = Session("ID")
+        Dim chk As CheckBox
+        chk = dgStudentView.Items(i).Cells(8).Controls(1)
+        If lblStatus.Value = "New" Then
+            If dgStudentView.Items(i).Cells(12).Text = "0.00" Then
+                chk.Checked = False
+            End If
+        Else
+            If dgStudentView.Items(i).Cells(13).Text = "Auto" Then
+                chk.Checked = False
+            Else
+                chk.Checked = True
+            End If
+        End If
+        nReceipt()
+        bTnUpdate.Enabled = False
+    End Sub
+
+#End Region
+
+#Region "bTnUpdate_Click "
+
+    Protected Sub bTnUpdate_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        bTnUpdate.Attributes.Add("onClick", "return CheckInvgrid()")
+        Dim GBFormat As System.Globalization.CultureInfo
+        GBFormat = New System.Globalization.CultureInfo("en-GB")
+        Dim eobjDetails As New AccountsDetailsEn
+        Dim dgItem1 As DataGridItem
+        Dim list As New List(Of AccountsDetailsEn)
+        Dim amount As TextBox
+        Dim selinvchk As CheckBox
+        Try
+            LoadInvTotals()
+            If CDbl(txtALLAmount.Text) > CDbl(txtStuIndex.Text) Then
+                lblMsg.Text = "Amount Exceeded the allocated amount"
+                Exit Sub
+            End If
+
+            Dim allocamount As Double = 0.0
+            For Each dgItem1 In dgInvoices.Items
+                selinvchk = dgItem1.Cells(0).Controls(1)
+                If selinvchk.Checked = True Then
+                    amount = dgItem1.Cells(5).Controls(1)
+                    '   tempAmount = dgItem1.Cells(9).Controls(1)
+                    eobjDetails = New AccountsDetailsEn
+                    eobjDetails.ReferenceCode = dgItem1.Cells(1).Text
+                    eobjDetails.TransactionAmount = CDbl(amount.Text)
+                    eobjDetails.PaidAmount = CDbl(amount.Text)
+                    eobjDetails.ReferenceOne = dgItem1.Cells(10).Text
+                    eobjDetails.ReferenceTwo = "Manual"
+                    eobjDetails.TransactionCode = dgItem1.Cells(1).Text
+                    dgItem1.Cells(2).Text = DateTime.Parse(dgItem1.Cells(2).Text, GBFormat)
+                    dgItem1.Cells(3).Text = DateTime.Parse(dgItem1.Cells(3).Text, GBFormat)
+                    eobjDetails.TransDate = Trim(dgItem1.Cells(2).Text)
+                    eobjDetails.DueDate = Trim(dgItem1.Cells(3).Text)
+                    eobjDetails.TaxAmount = CDbl(dgItem1.Cells(4).Text)
+                    eobjDetails.TempAmount = CDbl(dgItem1.Cells(8).Text)
+                    eobjDetails.ReferenceOne = dgItem1.Cells(10).Text
+                    eobjDetails.CreditRef = dgItem1.Cells(10).Text
+                    'txtALLAmount.Text = CDbl(txtALLAmount.Text) + CDbl(amount.Text)
+                    eobjDetails.TransStatus = "Open"
+                    list.Add(eobjDetails)
+                    allocamount += amount.Text
+                    eobjDetails = Nothing
+                End If
+            Next
+            Dim i As Integer
+            i = Session("ID")
+            Auto = Session("Auto")
+            Dim liststudentView As New List(Of StudentEn)
+            Dim stu As New StudentEn
+            stu.PaidAmount = allocamount
+            liststudentView = Session("listview")
+            liststudentView(i).AmountPaid = stu.PaidAmount
+            liststudentView(i).TransactionAmount = txtStuIndex.Text
+            liststudentView(i).AccountDetailsList = list
+            Session("listview") = Nothing
+
+            Dim manualchk As CheckBox
+            manualchk = dgStudentView.Items(i).Cells(8).Controls(1)
+            dgStudentView.Items(i).Cells(12).Text = txtALLAmount.Text
+            If txtALLAmount.Text = "0.00" Then
+                dgStudentView.Items(i).Cells(13).Text = "Auto"
+                liststudentView(i).SManual = "Auto"
+                'manualchk.Checked = False
+                liststudentView(i).SubReferenceTwo = "Auto"
+            Else
+                dgStudentView.Items(i).Cells(13).Text = "Manual"
+                manualchk.Checked = True
+                liststudentView(i).SManual = "Manual"
+                liststudentView(i).SubReferenceTwo = "Manual"
+            End If
+            Session("listview") = liststudentView
+            nReceipt()
+            liststudentView = Nothing
+            bTnUpdate.Enabled = False
+            Session("ID") = Nothing
+            Session("Auto") = Nothing
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+        'Dim tempAmount As TextBox
+
+    End Sub
+
+#End Region
+
+#Region "BtnSubmit_Click "
+
+    Protected Sub BtnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+#End Region
+
+#Region "dgUnStudent_SelectedIndexChanged "
+
+    Protected Sub dgUnStudent_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+#End Region
+
+#Region "txtRecNo_TextChanged "
+
+    Protected Sub txtRecNo_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+        If Trim(txtRecNo.Text).Length = 0 Then
+            txtRecNo.Text = 0
+            If lblCount.Text <> Nothing Then
+                If CInt(txtRecNo.Text) > CInt(lblCount.Text) Then
+                    txtRecNo.Text = lblCount.Text
+                End If
+                FillData(CInt(txtRecNo.Text) - 1)
+            Else
+                txtRecNo.Text = ""
+            End If
+        Else
+            If lblCount.Text <> Nothing Then
+                If CInt(txtRecNo.Text) > CInt(lblCount.Text) Then
+                    txtRecNo.Text = lblCount.Text
+                End If
+                FillData(CInt(txtRecNo.Text) - 1)
+            Else
+                txtRecNo.Text = ""
+            End If
+        End If
+    End Sub
+
+#End Region
+
+#Region "text Changed "
+
+    Protected Sub txtBankInSlip_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Protected Sub txtTransDate_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Protected Sub txtSpnAmount_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtSpnAmount.TextChanged
+        spnamount()
+    End Sub
+
+#End Region
+
+#Region "ibtnDelete_Click1 "
+
+    Protected Sub ibtnDelete_Click1(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs)
+
+    End Sub
+
+#End Region
+
+#Region "chk_CheckedChanged "
+
+    Protected Sub chk_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim chk As CheckBox
+        Dim manchk As CheckBox
+        Dim dgItem1 As DataGridItem
+        For Each dgItem1 In dgStudentView.Items
+            chk = dgItem1.Cells(0).Controls(1)
+            If chk.Checked = True Then
+                LoadTotals()
+            Else
+                manchk = dgItem1.Cells(8).Controls(1)
+                If (manchk.Checked = True) Then
+                    manchk.Checked = False
+                End If
+                txtAllocateAmount.Text = ""
+                LoadTotals()
+            End If
+        Next
+
+    End Sub
+
+#End Region
+
+#Region "addBankCode "
+
+    ''' <summary>
+    ''' Method to Load BankCode Dropdown
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addBankCode()
+
+        Dim eobjF As New BankProfileEn
+        Dim bsobj As New BankProfileBAL
+        Dim list As New List(Of BankProfileEn)
+        eobjF.BankDetailsCode = ""
+        eobjF.Description = ""
+        eobjF.ACCode = ""
+        eobjF.GLCode = ""
+        eobjF.Status = True
+        ddlBankCode.Items.Clear()
+        ddlBankCode.Items.Add(New ListItem("---Select---", "-1"))
+        ddlBankCode.DataTextField = "Description"
+        ddlBankCode.DataValueField = "BankDetailsCode"
+        If Session("PageMode") = "Add" Then
+
+            Try
+                list = bsobj.GetBankProfileList(eobjF)
+            Catch ex As Exception
+                LogError.Log("Receipts", "addBankCode", ex.Message)
+            End Try
+        Else
+
+            Try
+                list = bsobj.GetBankProfileListAll(eobjF)
+            Catch ex As Exception
+                LogError.Log("Receipts", "addBankCode", ex.Message)
+                lblMsg.Text = ex.Message
+            End Try
+        End If
+        Session("bankcode") = list
+        ddlBankCode.DataSource = list
+        ddlBankCode.DataBind()
+
+    End Sub
+
+#End Region
+
+#Region "addPayMode "
+
+    ''' <summary>
+    ''' Method to Load PaymentMode Dropdown
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addPayMode()
+        Dim eobjF As New PayModeEn
+        Dim bsobj As New PayModeBAL
+        Dim list As New List(Of PayModeEn)
+        eobjF.SAPM_Code = ""
+        eobjF.SAPM_Des = ""
+        eobjF.SAPM_Status = True
+
+        If Session("PageMode") = "Add" Then
+            Try
+                list = bsobj.GetPaytype(eobjF)
+            Catch ex As Exception
+                LogError.Log("Payments", "addPayMode", ex.Message)
+            End Try
+        Else
+            Try
+                list = bsobj.GetPaytypeAll(eobjF)
+            Catch ex As Exception
+                LogError.Log("Payments", "addPayMode", ex.Message)
+                lblMsg.Text = ex.Message
+            End Try
+        End If
+        Session("paymode") = list
+        ddlPaymentMode.Items.Clear()
+        ddlPaymentMode.Items.Add(New ListItem("---Select---", "-1"))
+        ddlPaymentMode.DataSource = list
+        ddlPaymentMode.DataTextField = "SAPM_Des"
+        ddlPaymentMode.DataValueField = "SAPM_Code"
+        ddlPaymentMode.DataBind()
+
+    End Sub
+
+#End Region
+
+#Region "addSpnCode "
+
+    ''' <summary>
+    ''' Method to Load Sponsor
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub addSpnCode()
+        Dim eobjf As New SponsorEn
+        Dim dsobj As New SponsorBAL
+        Dim listsp As New List(Of SponsorEn)
+        Try
+            If spnFlag = True Then
+                eobjf = Session("eobjspn")
+                spnFlag = False
+                txtSponCode.ReadOnly = False
+                txtSponName.ReadOnly = False
+                txtSponCode.Text = eobjf.SponserCode
+                txtSponName.Text = eobjf.Name
+                txtSponCode.ReadOnly = True
+                txtSponName.ReadOnly = True
+                listsp.Add(eobjf)
+                Session("listsp") = listsp
+                Session("eobjspn") = Nothing
+            Else
+                If Not eobjf Is Nothing Then
+                    txtSponCode.Text = eobjf.SponserCode
+                    txtSponName.Text = eobjf.Name
+                    Session("liststu") = Nothing
+                Else
+                    lblMsg.Text = "Sponsor did not exist"
+                    lblMsg.Visible = True
+                End If
+            End If
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Load Student Details "
+
+    ''' <summary>
+    ''' Method to Load Students
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadStudentDetails()
+
+        'Create Instances - Start
+        Dim _Receipts As New ReceiptsClass
+        Dim ListStudent As New List(Of StudentEn)
+        Dim ListStudentView As New List(Of StudentEn)
+        'Create Instances - Stop
+
+        Try
+            'Get Student List from Session
+            ListStudent = Session("liststu")
+
+            'Check and Assign Student List View - Start
+            If Not Session("listview") Is Nothing Then
+                ListStudentView = Session("listview")
+            Else
+                ListStudentView = New List(Of StudentEn)
+            End If
+            'Check and Assign Student List View - Stop
+
+            'Populate Data Grid - Start
+            If Not _Receipts.LoadStudentListToGrid(ListStudent,
+                    ListStudentView, dgStudentView) Then
+                Call SetMessage("Student List Loading Failed...")
+            End If
+            'Populate Data Grid - Stop
+
+            'Set Values - Start
+            StuFlag = False
+            Call grid_load()
+            Session("Type") = Nothing
+            Session("liststu") = Nothing
+            txtAllocateAmount.Text = 0.0
+            Session("listview") = ListStudentView
+            'Set Values - Stop
+
+        Catch ex As Exception
+
+            Call SetMessage(ex.Message)
+
+        End Try
+    End Sub
+
+#End Region
+
+#Region "LoadInvoiceGrid "
+
+    ''' <summary>
+    ''' Method to Load InvoiceGrid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadInvoiceGrid()
+        Dim eob As New AccountsEn
+        Dim bobj As New AccountsBAL
+        Dim list As New List(Of AccountsEn)
+
+    End Sub
+
+#End Region
+
+#Region "Load User Rights "
+
+    ''' <summary>
+    ''' Method to Load UserRights
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadUserRights(ByVal MenuId As Integer, ByVal UserGroup As Integer)
+
+        Dim obj As New UsersBAL
+        Dim eobj As New UserRightsEn
+
+        Try
+            eobj = obj.GetUserRights(MenuId, UserGroup)
+
+        Catch ex As Exception
+            LogError.Log("Receipts", "LoadUserRights", ex.Message)
+        End Try
+        'Rights for Add
+
+        If eobj.IsAdd = True Then
+            onAdd()
+            ibtnNew.ImageUrl = "images/add.png"
+            ibtnNew.Enabled = True
+        Else
+            ibtnNew.ImageUrl = "images/gadd.png"
+            ibtnNew.Enabled = False
+            ibtnNew.ToolTip = "Access Denied"
+
+        End If
+        'Rights for Edit
+        If eobj.IsEdit = True Then
+            ibtnSave.Enabled = True
+            ibtnSave.ImageUrl = "images/save.png"
+            ibtnSave.ToolTip = "Edit"
+            If eobj.IsAdd = False Then
+                ibtnSave.Enabled = False
+                ibtnSave.ImageUrl = "images/gsave.png"
+                ibtnSave.ToolTip = "Access Denied"
+            End If
+
+            Session("EditFlag") = True
+
+        Else
+            Session("EditFlag") = False
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "images/gsave.png"
+        End If
+        'Rights for View
+        ibtnView.Enabled = eobj.IsView
+        If eobj.IsView = True Then
+            ibtnView.ImageUrl = "images/ready.png"
+            ibtnView.Enabled = True
+        Else
+            ibtnView.ImageUrl = "images/ready.png"
+            ibtnView.Enabled = True
+            'ibtnView.ToolTip = "Access Denied"
+        End If
+        'Rights for Delete
+        If eobj.IsDelete = True Then
+            ibtnDelete.ImageUrl = "images/delete.png"
+            ibtnDelete.Enabled = True
+        Else
+            ibtnDelete.ImageUrl = "images/gdelete.png"
+            ibtnDelete.ToolTip = "Access Denied"
+            ibtnDelete.Enabled = False
+        End If
+        'Rights for Print
+        ibtnPrint.Enabled = eobj.IsPrint
+        If eobj.IsPrint = True Then
+            ibtnPrint.Enabled = True
+            ibtnPrint.ImageUrl = "images/print.png"
+            ibtnPrint.ToolTip = "Print"
+        Else
+            ibtnPrint.Enabled = False
+            ibtnPrint.ImageUrl = "images/gprint.png"
+            ibtnPrint.ToolTip = "Access Denied"
+        End If
+        If eobj.IsOthers = True Then
+            ibtnOthers.Enabled = True
+            ibtnOthers.ImageUrl = "images/post.png"
+            ibtnOthers.ToolTip = "Others"
+        Else
+            ibtnOthers.Enabled = False
+            ibtnOthers.ImageUrl = "images/post.png"
+            ibtnOthers.ToolTip = "Access Denied"
+        End If
+        If eobj.IsPost = True Then
+            ibtnPosting.Enabled = True
+            ibtnPosting.ImageUrl = "images/posting.png"
+            ibtnPosting.ToolTip = "Posting"
+        Else
+            ibtnPosting.Enabled = False
+            ibtnPosting.ImageUrl = "images/gposting.png"
+            ibtnPosting.ToolTip = "Access Denied"
+        End If
+    End Sub
+
+#End Region
+
+#Region "onAdd "
+
+    ''' <summary>
+    ''' Method to Load Fields in New Mode
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onAdd()
+        Session("PageMode") = "Add"
+        addBankCode()
+        Session("ListObj") = Nothing
+        Session("ReceiptFor") = Nothing
+        today.Value = Now.Date
+        today.Value = Format(CDate(today.Value), "dd/MM/yyyy")
+        Session("listview") = Nothing
+        OnClearData()
+        If ibtnNew.Enabled = False Then
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "images/gsave.png"
+            ibtnSave.ToolTip = "Access Denied"
+        End If
+        OnLoadItem()
+    End Sub
+
+#End Region
+
+#Region "OnClearData "
+
+    ''' <summary>
+    ''' Method to Clear the Field Values
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnClearData()
+        Session("ListObj") = Nothing
+        Session("stualloc") = Nothing
+        Session("stuupload") = Nothing
+        DisableRecordNavigator()
+        txtSponCode.Text = ""
+        txtSponName.Text = ""
+        txtSpnAmount.Text = ""
+
+        txtBatchId.Text = ""
+        ddlReceiptFor.SelectedValue = "-1"
+        ddlPaymentMode.SelectedValue = "-1"
+        ddlBankCode.SelectedValue = "-1"
+        txtBatchId.Text = ""
+        txtStuIndex.Text = ""
+        txtReferenceNo.Text = ""
+        txtOtherNo.Text = ""
+        txtDescription.Text = ""
+        txtReceiptDate.Text = ""
+        txtBatchDate.Text = ""
+        txtAllocateAmount.Text = ""
+        txtTotalPenAmt.Text = ""
+        txtAddedAmount.Text = ""
+        lblStatus.Value = "New"
+        ibtnStatus.ImageUrl = "images/NotReady.gif"
+        lblMsg.Text = ""
+        'list
+        ListObjects = Nothing
+        dgInvoices.DataSource = Nothing
+        dgInvoices.DataBind()
+        'add mode
+        dgStudentView.DataSource = Nothing
+        dgStudentView.DataBind()
+        dgUnStudent.DataSource = Nothing
+        dgUnStudent.DataBind()
+        Session("PageMode") = "Add"
+        Session("listsp") = Nothing
+        'Onload visible false
+        dgInvoices.Visible = False
+        txtTotalPenAmt.Visible = False
+        txtAddedAmount.Visible = False
+        txtAfterBalance.Visible = False
+        lblTotal.Visible = False
+        check_Receiptfor()
+        txtStudentId.Text = ""
+        txtStudentName.Text = ""
+        txtLoanAmount.Text = "0.00"
+        lblLoanAmountToPay.Text = "0.00"
+        Session("eobjstu") = Nothing
+        'lblPending.Visible = False
+
+    End Sub
+
+#End Region
+
+#Region "onSave "
+
+    ''' <summary>
+    ''' Method to Save and Update Receipts 
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onSave()
+
+        'Create Instances
+        Dim _ReceiptClass As New ReceiptsClass
+
+        'Variable Declarations
+        Dim BatchCode As String = Nothing
+
+        Try
+
+            Select Case GetSubType()
+
+                Case ReceiptsClass.Student
+
+                    If _ReceiptClass.OnSaveStudentReceipt(dgStudentView, GetSubType(), GetDoneBy(),
+                        GetBatchDate(), txtDescription.Text, txtReceiptDate.Text, txtReferenceNo.Text,
+                        ddlPaymentMode.SelectedValue, ddlBankCode.SelectedValue,
+                        clsGeneric.NullToDecimal(txtAllocateAmount.Text), BatchCode) Then
+
+                        'Set Values - Start
+                        lblStatus.Value = "Ready"
+                        txtBatchId.ReadOnly = True
+                        txtBatchId.Text = BatchCode
+                        ibtnStatus.ImageUrl = "images/ready.gif"
+                        'Set Values - Stop
+
+                        'Show Message
+                        Call SetMessage("Records Saved Successfully")
+
+                    Else
+
+                        'Show Message
+                        Call SetMessage("Records Failed to Save.")
+
+                    End If
+
+                Case ReceiptsClass.Sponsor
+
+                    If _ReceiptClass.OnSaveSponsorReceipt(txtSponCode.Text, GetSubType(), GetDoneBy(),
+                        GetBatchDate(), txtDescription.Text, txtReceiptDate.Text, txtReferenceNo.Text,
+                        ddlPaymentMode.SelectedValue, ddlBankCode.SelectedValue, clsGeneric.NullToDecimal(
+                        txtAllocateAmount.Text), BatchCode, ddlSponsorInv.SelectedValue) Then
+
+                        'Set Values - Start
+                        lblStatus.Value = "Ready"
+                        txtBatchId.ReadOnly = True
+                        txtBatchId.Text = BatchCode
+                        ibtnStatus.ImageUrl = "images/ready.gif"
+                        'Set Values - Stop
+
+                        'Show Message
+                        Call SetMessage("Records Saved Successfully")
+
+                    Else
+
+                        'Show Message
+                        Call SetMessage("Records Failed to Save.")
+
+                    End If
+
+            End Select
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "onSaveStudentLoan "
+
+    ''' <summary>
+    ''' Method to Save and Update Student Loan Receipts
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onSaveStudentLoan()
+
+        'Create Instances
+        Dim _ReceiptClass As New ReceiptsClass
+
+        'Variable Declarations
+        Dim BatchCode As String = Nothing
+
+        Try
+
+            If _ReceiptClass.OnSaveStudentLoanReceipt(txtStudentId.Text, GetSubType(), GetDoneBy(),
+                GetBatchDate(), txtDescription.Text, txtReceiptDate.Text, txtReferenceNo.Text,
+                ddlPaymentMode.SelectedValue, ddlBankCode.SelectedValue,
+                clsGeneric.NullToDecimal(txtAllocateAmount.Text), BatchCode) Then
+
+                'Set Values - Start
+                lblStatus.Value = "Ready"
+                txtBatchId.ReadOnly = True
+                txtBatchId.Text = BatchCode
+                ibtnStatus.ImageUrl = "images/ready.gif"
+                'Set Values - Stop
+
+                'Show Message
+                Call SetMessage("Records Saved Successfully")
+
+            Else
+
+                'Show Message
+                Call SetMessage("Records Failed to Save.")
+
+            End If
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+        'Dim eobj As New AccountsEn
+        'Dim bsobj As New AccountsBAL
+        'Dim list As New List(Of AccountsDetailsEn)
+        'Dim listst As New List(Of StudentEn)
+        'Dim eobstu As New StudentEn
+        'lblMsg.Text = ""
+        'lblMsg.Visible = True
+
+        'eobj.TransDate = Trim(txtReceiptDate.Text)
+        'eobj.BatchCode = Trim(txtBatchId.Text)
+        'eobj.BatchDate = Trim(txtBatchDate.Text)
+        'eobj.SubType = "Student"
+        'eobj.TransactionAmount = CDbl(txtAllocateAmount.Text)
+
+        'eobj.Description = txtDescription.Text
+        'eobj.Category = "Receipt"
+        'eobj.PostStatus = "Ready"
+        'eobj.SubReferenceOne = txtReferenceNo.Text
+        'eobj.TransStatus = "Open"
+        'eobj.TransType = "Credit"
+        'eobj.PaymentMode = ddlPaymentMode.SelectedValue
+        'eobj.PostedDateTime = DateTime.Now
+        'eobj.DueDate = DateTime.Now
+        'eobj.UpdatedTime = DateTime.Now
+        'eobj.ChequeDate = DateTime.Now
+        'eobj.CreatedDateTime = DateTime.Now
+        'eobj.BankCode = ddlBankCode.SelectedValue
+        'eobj.UpdatedBy = Session("User")
+
+        'lblMsg.Visible = True
+        'If Session("PageMode") = "Add" Then
+        '    Try
+        '        txtBatchId.Text = bsobj.StudentLoanInsert(eobj)
+        '        txtBatchId.ReadOnly = True
+        '        ErrorDescription = "Record Saved Successfully "
+        '        ibtnStatus.ImageUrl = "images/ready.gif"
+        '        lblStatus.Value = "Ready"
+        '        lblMsg.Text = ErrorDescription
+
+        '    Catch ex As Exception
+        '        lblMsg.Text = ex.Message.ToString()
+        '        LogError.Log("Receipts", "onSave", ex.Message)
+        '    End Try
+        'ElseIf Session("PageMode") = "Edit" Then
+        '    Try
+        '        txtBatchId.Text = bsobj.StudentBatchUpdate(eobj, listst)
+        '        txtBatchId.ReadOnly = False
+        '        ErrorDescription = "Record Updated Successfully "
+        '        ibtnStatus.ImageUrl = "images/ready.gif"
+        '        lblStatus.Value = "Ready"
+        '        lblMsg.Text = ErrorDescription
+
+        '    Catch ex As Exception
+        '        lblMsg.Text = ex.Message.ToString()
+        '        LogError.Log("Receipts", "onSave", ex.Message)
+        '    End Try
+
+        'End If
+
+    End Sub
+
+#End Region
+
+#Region "Disable Record Navigator "
+
+    ''' <summary>
+    ''' Method to Enable or Disable Navigation Buttons
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub DisableRecordNavigator()
+        Dim flag As Boolean
+        If Session("ListObj") Is Nothing Then
+            flag = False
+            txtRecNo.Text = ""
+            lblCount.Text = ""
+        Else
+            flag = True
+        End If
+        ibtnFirst.Enabled = flag
+        ibtnLast.Enabled = flag
+        ibtnPrevs.Enabled = flag
+        ibtnNext.Enabled = flag
+        If flag = False Then
+            ibtnFirst.ImageUrl = "images/gnew_first.png"
+            ibtnLast.ImageUrl = "images/gnew_last.png"
+            ibtnPrevs.ImageUrl = "images/gnew_Prev.png"
+            ibtnNext.ImageUrl = "images/gnew_next.png"
+        Else
+            ibtnFirst.ImageUrl = "images/new_last.png"
+            ibtnLast.ImageUrl = "images/new_first.png"
+            ibtnPrevs.ImageUrl = "images/new_Prev.png"
+            ibtnNext.ImageUrl = "images/new_next.png"
+
+        End If
+    End Sub
+
+#End Region
+
+#Region "Menu Name "
+
+    ''' <summary>
+    ''' Method to get the MenuName
+    ''' </summary>
+    ''' <param name="MenuId">Parameter is MenuId</param>
+    ''' <remarks></remarks>
+    Private Sub Menuname(ByVal MenuId As Integer)
+        Dim eobj As New MenuEn
+        Dim bobj As New MenuBAL
+        eobj.MenuId = MenuId
+        Try
+            eobj = bobj.GetMenus(eobj)
+        Catch ex As Exception
+            LogError.Log("Receipts", "Menuname", ex.Message)
+        End Try
+        lblMenuName.Text = eobj.MenuName
+    End Sub
+
+#End Region
+
+#Region "check_Receiptfor "
+
+    ''' <summary>
+    ''' Method to Check for Receipt to Student or Sponsor
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub check_Receiptfor()
+        If ddlReceiptFor.SelectedValue = "St" Then
+            bankPanel.Visible = True
+            btnInactive.Enabled = True
+            pnlReceiptsp.Visible = False
+            btnUpload.Enabled = True
+            Panel4.Visible = True
+            pnlStudentLoan.Visible = False
+            lblStuSpn.Text = "Select Student"
+            Session("ReceiptFor") = ddlReceiptFor.SelectedValue
+        ElseIf ddlReceiptFor.SelectedValue = "Sp" Then
+            bankPanel.Visible = False
+            btnInactive.Enabled = False
+            btnUpload.Enabled = False
+            pnlReceiptsp.Visible = True
+            Panel4.Visible = False
+            pnlStudentLoan.Visible = False
+            lblStuSpn.Text = "Select Sponsor"
+            Session("ReceiptFor") = ddlReceiptFor.SelectedValue
+        ElseIf ddlReceiptFor.SelectedValue = "Sl" Then
+            bankPanel.Visible = False
+            btnInactive.Enabled = False
+            btnUpload.Enabled = False
+            pnlReceiptsp.Visible = False
+            Panel4.Visible = False
+            pnlStudentLoan.Visible = True
+            lblStuSpn.Text = "Select Student"
+            Session("ReceiptFor") = ddlReceiptFor.SelectedValue
+        Else
+            bankPanel.Visible = False
+            btnInactive.Enabled = False
+            btnUpload.Enabled = False
+            pnlReceiptsp.Visible = False
+            Panel4.Visible = False
+        End If
+    End Sub
+
+#End Region
+
+#Region "Dates "
+
+    ''' <summary>
+    ''' Method to Change the Date Format
+    ''' </summary>
+    ''' <remarks>Date in ddd/mm/yyyy Format</remarks>
+    Private Sub dates()
+
+        'txtBatchDate.Text = Format(Date.Now, "dd/MM/yyyy")
+        txtReceiptDate.Text = Format(Date.Now, "dd/MM/yyyy")
+
+    End Sub
+
+#End Region
+
+#Region "On Load Item "
+
+    ''' <summary>
+    ''' Method to Load DateFields
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnLoadItem()
+        If Session("PageMode") = "Add" Then
+            If AutoNo = True And lblStatus.Value <> "Ready" Then
+                'txtBatchId.Text = "Auto Number"
+                txtBatchId.ReadOnly = True
+            End If
+            txtBatchDate.Text = Format(Date.Now, "dd/MM/yyyy")
+            txtReceiptDate.Text = Format(Date.Now, "dd/MM/yyyy")
+            txtBatchId.ReadOnly = False
+            txtBatchDate.ReadOnly = True
+            txtReceiptDate.ReadOnly = True
+            spnamount()
+            Session("ReceiptFor") = Nothing
+        End If
+    End Sub
+
+#End Region
+
+#Region "total pending Amount "
+
+    ''' <summary>
+    ''' Method to Caliculate the Pending Amount
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub totalpendingAmount()
+        Dim dgItem1 As DataGridItem
+        Dim totalpendingAmount As Double
+        For Each dgItem1 In dgInvoices.Items
+            totalpendingAmount = totalpendingAmount + dgItem1.Cells(5).Text
+        Next
+        txtTotalPenAmt.Text = String.Format("{0:F}", totalpendingAmount)
+        txtAfterBalance.Text = String.Format("{0:F}", totalpendingAmount)
+    End Sub
+
+#End Region
+
+#Region "RemovegirdItem "
+
+    ''' <summary>
+    ''' Method to Remove GridItem
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub RemovegirdItem()
+        Dim dgItem1 As DataGridItem
+        For Each dgItem1 In dgInvoices.Items
+
+        Next
+    End Sub
+
+#End Region
+
+#Region "LoadPaidInvoices "
+
+    ''' <summary>
+    ''' Method to Load Student Invoice into Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadPaidInvoices()
+        Dim dgItem1 As DataGridItem
+        Dim listInvoices As New List(Of AccountsDetailsEn)
+        Dim eTTRDetails As New AccountsDetailsEn
+        Dim tempamount As Double = 0.0
+        Dim InvoiceAmount As Double = 0.0
+        Dim txtAmount As TextBox
+        Dim txtpdAmount As TextBox
+        Dim chk As CheckBox
+        Dim alamount As Double
+        Dim pamount As Double
+        Dim Tamount As Double
+        Dim Status As Double
+        txtAddedAmount.Text = 0
+        Try
+            For Each dgItem1 In dgInvoices.Items
+                chk = dgItem1.Cells(0).Controls(1)
+                txtAmount = dgItem1.Cells(6).Controls(1)
+                txtAmount.Text = "0.00"
+
+                If chk.Checked = True Then
+                    chk.Checked = False
+                End If
+
+                InvoiceAmount = InvoiceAmount + dgItem1.Cells(5).Text
+                If txtAllocateAmount.Text >= InvoiceAmount Then
+                    eTTRDetails = New AccountsDetailsEn
+                    eTTRDetails.ReferenceCode = dgItem1.Cells(1).Text
+                    eTTRDetails.PaidAmount = dgItem1.Cells(5).Text
+                    txtAmount.Text = eTTRDetails.PaidAmount
+                    alamount = txtAmount.Text
+                    If chk.Checked = False Then
+                        chk.Checked = True
+                    End If
+
+                    txtAmount.Text = String.Format("{0:F}", alamount)
+                    listInvoices.Add(eTTRDetails)
+                    eTTRDetails = Nothing
+
+                Else
+                    If txtAllocateAmount.Text = InvoiceAmount Then
+                    Else
+                        tempamount = InvoiceAmount - txtAllocateAmount.Text
+                        eTTRDetails = New AccountsDetailsEn
+                        eTTRDetails.ReferenceCode = dgItem1.Cells(1).Text
+                        eTTRDetails.PaidAmount = dgItem1.Cells(5).Text - tempamount
+
+                        If eTTRDetails.PaidAmount > 0 Then
+                            If chk.Checked = False Then
+                                chk.Checked = True
+                            End If
+                            txtAmount.Text = eTTRDetails.PaidAmount
+
+                            alamount = txtAmount.Text
+                            txtAmount.Text = String.Format("{0:F}", alamount)
+                            Status = dgItem1.Cells(5).Text - txtAmount.Text
+                            If Status = 0 Then
+                                eTTRDetails.Status = "C"
+                            End If
+                            listInvoices.Add(eTTRDetails)
+                        End If
+                        eTTRDetails = Nothing
+                    End If
+                End If
+
+                txtpdAmount = dgItem1.Cells(7).Controls(1)
+                txtpdAmount.Text = dgItem1.Cells(5).Text - txtAmount.Text
+                pamount = txtpdAmount.Text
+                txtpdAmount.Text = String.Format("{0:F}", pamount)
+                Tamount = CDbl(txtAddedAmount.Text) + CDbl(txtAmount.Text)
+                txtAddedAmount.Text = String.Format("{0:F}", Tamount)
+                Dim totalpending As Double
+                totalpending = totalpending + dgItem1.Cells(5).Text
+                txtTotalPenAmt.Text = String.Format("{0:F}", totalpending)
+                txtAfterBalance.Text = String.Format("{0:F}", CDbl(txtTotalPenAmt.Text) - CDbl(txtAddedAmount.Text))
+
+            Next
+        Catch ex As Exception
+            lblMsg.Text = ex.Message
+        End Try
+
+        dgInvoices.Columns(7).FooterText = txtTotalPenAmt.Text
+        Session("paidInvoices") = listInvoices
+
+    End Sub
+
+#End Region
+
+#Region "Navigation Moves "
+
+    ''' <summary>
+    ''' Method to Move to First Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveFirst()
+        txtRecNo.Text = "1"
+        FillData(0)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Next Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveNext()
+        txtRecNo.Text = CInt(txtRecNo.Text) + 1
+        FillData(CInt(txtRecNo.Text) - 1)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Previous Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMovePrevious()
+        txtRecNo.Text = CInt(txtRecNo.Text) - 1
+        FillData(CInt(txtRecNo.Text) - 1)
+    End Sub
+    ''' <summary>
+    ''' Method to Move to Last Record
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnMoveLast()
+        txtRecNo.Text = lblCount.Text
+        FillData(CInt(lblCount.Text) - 1)
+    End Sub
+
+#End Region
+
+#Region "FillData "
+
+    ''' <summary>
+    ''' Method to Fill the Field Values
+    ''' </summary>
+    ''' <param name="RecordNumber"></param>
+    ''' <remarks></remarks>
+    Private Sub FillData(ByVal RecordNumber As Integer)
+
+        'Create Instance - Start
+        Dim _StudentEn As New StudentEn
+        Dim _AccountsEn As New AccountsEn
+        Dim _AccountsBAL As New AccountsBAL
+        Dim _AccountsBAL_1 As New AccountsBAL
+        Dim ListStudentEn As New List(Of StudentEn)
+        Dim ListSponsorEn As New List(Of SponsorEn)
+        Dim _AccountsDetailsEn As AccountsDetailsEn
+        Dim ListAccountsDetailsEn As List(Of AccountsDetailsEn)
+        'Create Instance - Stop
+
+        'Variable Declarations
+        Dim Index As Integer = 0, Index_1 As Integer = 0
+
+        Try
+
+            'Conditions for Button Enable & Disable - Start
+            If txtRecNo.Text = lblCount.Text Then
+                ibtnNext.Enabled = False
+                ibtnNext.ImageUrl = "images/gnew_next.png"
+                ibtnLast.Enabled = False
+                ibtnLast.ImageUrl = "images/gnew_last.png"
+            Else
+                ibtnNext.Enabled = True
+                ibtnNext.ImageUrl = "images/new_next.png"
+                ibtnLast.Enabled = True
+                ibtnLast.ImageUrl = "images/new_last.png"
+            End If
+            If txtRecNo.Text = "1" Then
+                ibtnPrevs.Enabled = False
+                ibtnPrevs.ImageUrl = "images/gnew_Prev.png"
+                ibtnFirst.Enabled = False
+                ibtnFirst.ImageUrl = "images/gnew_first.png"
+            Else
+                ibtnPrevs.Enabled = True
+                ibtnPrevs.ImageUrl = "images/new_prev.png"
+                ibtnFirst.Enabled = True
+                ibtnFirst.ImageUrl = "images/new_first.png"
+            End If
+            'Conditions for Button Enable & Disable - Stop
+
+            If txtRecNo.Text = 0 Then
+                txtRecNo.Text = 1
+            Else
+
+                If lblCount.Text = 0 Then
+                    txtRecNo.Text = 0
+                Else
+
+                    Session(ReceiptsClass.SessionRecordNo) = RecordNumber
+                    ListObjects = Session(ReceiptsClass.SessionListObject)
+                    _AccountsEn = ListObjects(RecordNumber)
+
+                    'populate and set payment method - Start
+                    ddlPaymentMode.Items.Clear()
+                    ddlPaymentMode.Items.Add(New ListItem("---Select---", "-1"))
+                    ddlPaymentMode.DataSource = Session(ReceiptsClass.SessionPayMode)
+                    ddlPaymentMode.DataBind()
+                    ddlPaymentMode.SelectedValue = _AccountsEn.PaymentMode
+                    'populate and set payment method - Stop
+
+                    'populate and set Bank Code - Start
+                    ddlBankCode.Items.Clear()
+                    ddlBankCode.Items.Add(New ListItem("---Select---", "-1"))
+                    ddlBankCode.DataSource = Session(ReceiptsClass.SessionBankCode)
+                    ddlBankCode.DataBind()
+                    ddlBankCode.SelectedValue = _AccountsEn.BankCode
+                    'populate and set Bank Code - Stop
+
+                    'Set Page Values - Start
+                    txtBatchId.Text = _AccountsEn.BatchCode
+                    txtBatchDate.Text = _AccountsEn.BatchDate
+                    txtReceiptDate.Text = _AccountsEn.TransDate
+                    txtDescription.Text = _AccountsEn.Description
+                    txtReferenceNo.Text = _AccountsEn.SubReferenceOne
+                    'Set Page Values - Stop
+
+                End If
+
+                'Check Module Type - Start
+                Select Case GetSubType()
+
+                    Case ReceiptsClass.Student
+
+                        'Set Entity Values - Start
+                        _StudentEn.MatricNo = _AccountsEn.CreditRef
+                        _StudentEn.BatchCode = txtBatchId.Text
+                        _StudentEn.StuIndex = 1
+                        'Set Entity Values - Stop
+
+                        'Get Student List for the given Matric No
+                        ListStudentEn = _AccountsBAL.GetStudentReceiptsbyBatchID(_StudentEn)
+
+                        'Loop thro the Student List - Start
+                        While Index < ListStudentEn.Count
+
+                            'Create instance
+                            ListAccountsDetailsEn = New List(Of AccountsDetailsEn)
+
+                            Index_1 = 0
+
+                            'loop thro the Account details - Start
+                            While Index_1 < ListStudentEn(Index).AccountDetailsList.Count
+
+                                'Create Instance
+                                _AccountsDetailsEn = New AccountsDetailsEn
+
+                                'Set Entity Values - Start
+                                _AccountsDetailsEn.TransactionAmount = ListStudentEn(Index).AccountDetailsList(Index_1).TempPaidAmount
+                                _AccountsDetailsEn.PaidAmount = ListStudentEn(Index).AccountDetailsList(Index_1).TempPaidAmount
+                                _AccountsDetailsEn.TaxAmount = ListStudentEn(Index).AccountDetailsList(Index_1).TransactionAmount
+                                _AccountsDetailsEn.TempAmount = ListStudentEn(Index).AccountDetailsList(Index_1).PaidAmount
+                                _AccountsDetailsEn.ReferenceTwo = ListStudentEn(Index).AccountDetailsList(Index_1).ReferenceTwo
+                                _AccountsDetailsEn.ReferenceOne = ListStudentEn(Index).AccountDetailsList(Index_1).ReferenceOne
+                                _AccountsDetailsEn.TransDate = ListStudentEn(Index).AccountDetailsList(Index_1).TransDate
+                                _AccountsDetailsEn.DueDate = ListStudentEn(Index).AccountDetailsList(Index_1).DueDate
+                                _AccountsDetailsEn.TransactionCode = ListStudentEn(Index).AccountDetailsList(Index_1).TransactionCode
+                                _AccountsDetailsEn.CreditRef = ListStudentEn(Index).AccountDetailsList(Index_1).CreditRef
+                                _AccountsDetailsEn.ReferenceCode = ListStudentEn(Index).AccountDetailsList(Index_1).ReferenceCode
+                                'Set Entity Values - Stop
+
+                                'Add to Accounts Details List
+                                ListAccountsDetailsEn.Add(_AccountsDetailsEn)
+
+                                'Increment Index
+                                Index_1 = Index_1 + 1
+
+                            End While
+                            'loop thro the Account details - Stop
+
+                            'Add Account Details for the Student Record
+                            ListStudentEn(Index).AccountDetailsList = ListAccountsDetailsEn
+
+                            Index = Index + 1
+
+                        End While
+                        'Loop thro the Student List - Stop
+
+                        'If Student List Available - Start
+                        If Not ListStudentEn Is Nothing Then
+
+                            'Bind Student Data Grid - Start
+                            dgStudentView.DataSource = ListStudentEn
+                            dgStudentView.DataBind()
+                            'Bind Student Data Grid - Stop
+
+                            'Set Session
+                            Session(ReceiptsClass.SessionListView) = ListStudentEn
+
+                            'Variable Declarations - Start
+                            Dim AmountTextBox As TextBox = Nothing
+                            Dim TotalAmount As Double = 0, _DataGridItem As DataGridItem = Nothing, Index_2 As Integer = 0
+                            Dim TransAmount As Double = 0, _CheckBox As CheckBox = Nothing, SelectCheckBox As CheckBox = Nothing
+                            'Variable Declarations - Stop
+
+                            'Loop thro the Data grid Items - Start
+                            For Each _DataGridItem In dgStudentView.Items
+
+                                'Get Grid Controls - Start
+                                _CheckBox = _DataGridItem.Cells(8).Controls(1)
+                                AmountTextBox = _DataGridItem.Cells(9).Controls(1)
+                                SelectCheckBox = _DataGridItem.Cells(0).Controls(1)
+                                'Get Grid Controls - Stop
+
+                                'Set Grid Values - Start
+                                SelectCheckBox.Checked = True
+                                TransAmount = _DataGridItem.Cells(10).Text
+                                AmountTextBox.Text = String.Format("{0:F}", TransAmount)
+                                TotalAmount = TotalAmount + TransAmount
+                                txtAllocateAmount.Text = String.Format("{0:F}", TotalAmount)
+                                'Set Grid Values - Stop
+
+                                'get & Set Grid Controls - Start
+                                DirectCast(dgStudentView.Items(Index_2).Cells(16).FindControl("TxtAmt"), TextBox).Text =
+                                  String.Format("{0:F}", clsGeneric.NullToDecimal(ListStudentEn(_DataGridItem.ItemIndex).TransactionAmount))
+                                DirectCast(dgStudentView.Items(Index_2).Cells(16).FindControl("txtBankInSlip"), TextBox).Text =
+                                    ListStudentEn(_DataGridItem.ItemIndex).TransactionCode
+                                DirectCast(dgStudentView.Items(Index_2).Cells(17).FindControl("txtTransDate"), TextBox).Text =
+                                    ListStudentEn(_DataGridItem.ItemIndex).ReceiptDate.ToString("yyyy-MM-dd")
+                                'get & Set Grid Controls - Stop
+
+                                If _DataGridItem.Cells(14).Text = "Manual" Then
+                                    _CheckBox.Checked = True
+                                    _DataGridItem.Cells(13).Text = "Manual"
+                                Else
+                                    _CheckBox.Checked = False
+                                    _DataGridItem.Cells(13).Text = "Auto"
+                                End If
+
+                                _DataGridItem.Cells(11).Text = Index_2
+
+                                'Increment Index
+                                Index_2 = Index_2 + 1
+
+                            Next
+                            'Loop thro the Data grid Items - Stop
+
+                            'Set Post Status - Start
+                            If _AccountsEn.PostStatus = "Posted" Then
+                                lblStatus.Value = "Posted"
+                                ibtnStatus.ImageUrl = "images/Posted.gif"
+                            Else
+                                ibtnStatus.ImageUrl = "images/ready.gif"
+                                lblStatus.Value = "Ready"
+                            End If
+                            'Set Post Status - Start
+
+                        End If
+                        'If Student List Available - Stop
+
+                End Select
+                'Check Module Type - Stop
+
+            End If
+
+            'Set Date Format
+            Call setdateFormat()
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+
+        'If txtRecNo.Text = 0 Then
+        '    txtRecNo.Text = 1
+        'Else
+
+        '    If lblCount.Text = 0 Then
+        '        txtRecNo.Text = 0
+        '    Else
+        '        'Session("recno") = RecNo
+        '        'Dim obj As AccountsEn
+        '        'ListObjects = Session("ListObj")
+        '        'obj = ListObjects(RecNo)
+        '        ''If obj.SubType = "Student" Then
+        '        ''    ddlReceiptFor.SelectedValue = "St"
+        '        ''ElseIf obj.SubType = "Sponsor" Then
+        '        ''    ddlReceiptFor.SelectedValue = "Sp"
+        '        ''End If
+
+
+
+
+        '        Dim Trcptobj As New AccountsBAL
+        '        Dim listTrcpt As New List(Of StudentEn)
+        '        Dim spnlist As New List(Of SponsorEn)
+        '        'Dim eobj As New SponsorEn
+        '        Dim bsobjspn As New AccountsBAL
+        '        check_Receiptfor()
+
+
+
+
+        '        If ddlReceiptFor.SelectedValue = "Sp" Then
+        '            txtSponCode.ReadOnly = False
+        '            txtSponName.ReadOnly = False
+        '            'eobj.SponserCode = obj.CreditRef
+        '            'eobj.BatchCode = txtBatchId.Text
+
+        '            Try
+        '                spnlist = bsobjspn.GetSponserListByBatchID(txtBatchId.Text)
+
+        '            Catch ex As Exception
+        '                LogError.Log("Receipts", "FillData", ex.Message)
+        '                lblMsg.Text = ex.Message
+        '            End Try
+        '            If Not spnlist Is Nothing Then
+        '                txtSponCode.Text = spnlist(0).SponserCode
+        '                txtSponName.Text = spnlist(0).Name
+        '                Session("listsp") = Nothing
+        '                Session("listsp") = spnlist
+        '            End If
+
+        '            txtSponCode.Text = obj.CreditRef
+        '            txtSpnAmount.Text = obj.TransactionAmount
+        '            spnamount()
+        '            txtSponCode.ReadOnly = True
+        '            txtSponName.ReadOnly = True
+        '            If obj.PostStatus = "Posted" Then
+        '                lblStatus.Value = "Posted"
+        '                ibtnStatus.ImageUrl = "images/Posted.gif"
+        '            Else
+        '                ibtnStatus.ImageUrl = "images/ready.gif"
+        '                lblStatus.Value = "Ready"
+        '            End If
+
+        '        ElseIf ddlReceiptFor.SelectedValue = "Sl" Then
+        '            'Load Student Loan Details
+        '            txtStudentId.ReadOnly = False
+        '            txtStudentName.ReadOnly = False
+        '            Dim sobj As New StudentEn
+        '            Dim studentBAL As New StudentBAL
+        '            sobj.MatricNo = obj.CreditRef
+
+        '            Try
+        '                sobj = studentBAL.GetItem(sobj.MatricNo)
+        '            Catch ex As Exception
+        '                LogError.Log("Receipts", "FillData", ex.Message)
+        '                lblMsg.Text = ex.Message
+        '            End Try
+
+        '            txtStudentId.Text = sobj.MatricNo
+        '            txtStudentName.Text = sobj.StudentName
+        '            txtAllocateAmount.Text = String.Format("{0:F}", obj.TransactionAmount)
+        '            txtLoanAmount.Text = String.Format("{0:F}", obj.TransactionAmount)
+
+
+        '            txtStudentId.ReadOnly = True
+        '            txtStudentName.ReadOnly = True
+        '            If obj.PostStatus = "Posted" Then
+        '                lblStatus.Value = "Posted"
+        '                ibtnStatus.ImageUrl = "images/Posted.gif"
+        '            Else
+        '                ibtnStatus.ImageUrl = "images/ready.gif"
+        '                lblStatus.Value = "Ready"
+        '            End If
+
+        '        Else
+
+
+        '        End If
+        '    End If
+        'End If
+
+    End Sub
+
+#End Region
+
+#Region "setdateFormat "
+
+    ''' <summary>
+    ''' Method To Change the Date Format(dd/MM/yyyy)
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub setdateFormat()
+        'Dim GBFormat As System.Globalization.CultureInfo
+        'GBFormat = New System.Globalization.CultureInfo("en-GB")
+        Dim myReceiptDate As Date = CDate(CStr(txtReceiptDate.Text))
+        Dim myFormat As String = "dd/MM/yyyy"
+        Dim myFormattedDate As String = Format(myReceiptDate, myFormat)
+        txtReceiptDate.Text = myFormattedDate
+        Dim myBatchDate As Date = CDate(CStr(txtBatchDate.Text))
+        Dim myFormattedDate1 As String = Format(myBatchDate, myFormat)
+        txtBatchDate.Text = myFormattedDate1
+    End Sub
+
+#End Region
+
+#Region "LoadListObjects "
+
+    ''' <summary>
+    ''' Method to get the List Of Receipts
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub LoadListObjects(ByVal IsPostedRecords As Boolean)
+
+        'Create Instances - Start
+        Dim _AccountsEn As New AccountsEn
+        Dim _AccountsBAL As New AccountsBAL
+        Dim ListAccountsEn As New List(Of AccountsEn)
+        'Create Instances - Stop
+
+        'Variable Declarations
+        Dim TotalRecords As Integer = 0
+
+        Try
+
+            If Session(ReceiptsClass.SessionLoadData) =
+                ReceiptsClass.StatusView Then
+
+                'Set Values - Start
+                _AccountsEn.BatchIntake = String.Empty
+                _AccountsEn.PostStatus = ReceiptsClass.StatusReady
+                _AccountsEn.Category = ReceiptsClass.CategoryReceipt
+                'Set Values - Start
+
+                'Get Batch Code - Start
+                If txtBatchId.Text <> "Auto Number" Then
+                    _AccountsEn.BatchCode = GetBatchCode()
+                Else
+                    _AccountsEn.BatchCode = String.Empty
+                End If
+                'Get Batch Code - Stop
+
+                'Check Module Type to Set Sub Type - Start
+                Select Case GetSubType()
+                    Case ReceiptsClass.Student
+                        _AccountsEn.SubType = ReceiptsClass.Student
+                    Case ReceiptsClass.Sponsor
+                        _AccountsEn.SubType = ReceiptsClass.Sponsor
+                End Select
+                'Check Module Type to Set Sub Type - Stop
+
+                'If Option Posted Records - Start
+                If IsPostedRecords Then
+                    'Set Status to Posted
+                    _AccountsEn.PostStatus = ReceiptsClass.StatusPosted
+                End If
+                'If Option Posted Records - Stop
+
+                'Load List Object
+                ListObjects = _AccountsBAL.GetTransactions(_AccountsEn)
+
+            End If
+
+            'Set Session Values - Start
+            Session(ReceiptsClass.SessionLoadData) = Nothing
+            Session(ReceiptsClass.SessionListObject) = ListObjects
+            Session(ReceiptsClass.SessionReceiptList) = ListObjects
+            'Set Session Values - Stop
+
+            'Get Total Records
+            TotalRecords = ListObjects.Count
+
+            'Display Total Records
+            lblCount.Text = TotalRecords
+
+            'if Records Exist - Start
+            If TotalRecords > 0 Then
+
+                'Disable Record Navigator
+                Call DisableRecordNavigator()
+
+                'Set Record No
+                txtRecNo.Text = "1"
+
+                'On Move First
+                Call OnMoveFirst()
+
+                'Check if User has rights to Edit - Start
+                If Session(ReceiptsClass.SessionEditFlag) = True Then
+                    ibtnSave.Enabled = True
+                    txtSpnCode.Enabled = False
+                    ibtnSave.ImageUrl = "images/save.png"
+                    Session(ReceiptsClass.SessionPageMode) = ReceiptsClass.StatusEdit
+                Else
+                    ibtnSave.Enabled = False
+                    ibtnSave.ImageUrl = "images/gsave.png"
+                    Session(ReceiptsClass.SessionPageMode) = String.Empty
+                End If
+                'Check if User has rights to Edit - Stop
+
+            Else
+
+                txtRecNo.Text = String.Empty
+                lblCount.Text = String.Empty
+                If Not DeleteFlag = ReceiptsClass.StatusDelete Then
+                    DeleteFlag = String.Empty
+                    Call SetMessage("Records does not Exist")
+                End If
+
+            End If
+            'if Records Exist - Stop
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+        'Dim Mylist As New List(Of AccountsEn)
+        'Dim obj As New AccountsBAL
+        'Dim eob As New AccountsEn
+        'If Session("loaddata") = "others" Then
+
+        '    eob.Category = "Receipt"
+        '    eob.PostStatus = "Posted"
+        '    eob.BatchIntake = ""
+
+        '    If txtBatchDate.Text <> "" Then
+        '        eob.BatchDate = txtBatchDate.Text
+        '    End If
+
+        '    If ddlReceiptFor.SelectedValue = "Sp" Then
+        '        eob.SubType = "Sponsor"
+        '    ElseIf ddlReceiptFor.SelectedValue = "St" Then
+        '        eob.SubType = "Student"
+        '    ElseIf ddlReceiptFor.SelectedValue = "Sl" Then
+        '        eob.SubType = "Student"
+        '    End If
+        '    If txtBatchId.Text <> "" Then
+        '        eob.BatchCode = txtBatchId.Text
+        '    Else
+        '        eob.BatchCode = ""
+        '    End If
+
+        '    Try
+        '        If ddlReceiptFor.SelectedValue = "Sl" Then
+        '            ListObjects = obj.GetLoanTransactions(eob)
+        '        Else
+        '            ListObjects = obj.GetTransactions(eob)
+        '        End If
+
+        '    Catch ex As Exception
+        '        LogError.Log("Receipts", "LoadListObjects", ex.Message)
+        '    End Try
+        '    'Removing duplicate batchid object from the list
+        '    Dim i As Integer = 0
+        '    While i < ListObjects.Count
+        '        Dim j As Integer = 0
+        '        Dim objcount As Boolean = False
+        '        While j < Mylist.Count
+        '            If Mylist(j).BatchCode = ListObjects(i).BatchCode Then
+        '                objcount = True
+        '                Exit While
+        '            End If
+        '            j = j + 1
+        '        End While
+        '        If objcount = False Then
+        '            Mylist.Add(ListObjects(i))
+        '        End If
+        '        i = i + 1
+        '    End While
+        '    ListObjects = Nothing
+        '    ListObjects = Mylist
+        'ElseIf Session("loaddata") = "View" Then
+
+        '    eob.Category = "Receipt"
+        '    eob.PostStatus = "Ready"
+        '    eob.BatchIntake = ""
+
+        '    If txtBatchDate.Text <> "" Then
+        '        eob.BatchDate = txtBatchDate.Text
+        '    End If
+
+        '    If ddlReceiptFor.SelectedValue = "Sp" Then
+        '        eob.SubType = "Sponsor"
+        '    ElseIf ddlReceiptFor.SelectedValue = "St" Then
+        '        eob.SubType = "Student"
+        '    ElseIf ddlReceiptFor.SelectedValue = "Sl" Then
+        '        eob.SubType = "Student"
+        '    End If
+        '    If txtBatchId.Text <> "Auto Number" Then
+        '        eob.BatchCode = txtBatchId.Text
+        '    Else
+        '        eob.BatchCode = ""
+        '    End If
+
+        '    If ddlReceiptFor.SelectedValue = "Sl" Then
+        '        ListObjects = obj.GetLoanTransactions(eob)
+        '    Else
+        '        ListObjects = obj.GetTransactions(eob)
+        '    End If
+
+        '    Dim i As Integer = 0
+        '    'Removing Duplicates
+        '    While i < ListObjects.Count
+        '        Dim j As Integer = 0
+        '        Dim objcount As Boolean = False
+        '        While j < Mylist.Count
+        '            If Mylist(j).BatchCode = ListObjects(i).BatchCode Then
+        '                objcount = True
+        '                Exit While
+        '            End If
+        '            j = j + 1
+        '        End While
+        '        If objcount = False Then
+        '            Mylist.Add(ListObjects(i))
+        '        End If
+        '        i = i + 1
+        '    End While
+        '    ListObjects = Nothing
+        '    ListObjects = Mylist
+        'End If
+        'Session("loaddata") = Nothing
+        'Session("ListObj") = ListObjects
+        'Session("RecptList") = ListObjects
+        'lblCount.Text = ListObjects.Count.ToString()
+        'If ListObjects.Count <> 0 Then
+        '    DisableRecordNavigator()
+        '    txtRecNo.Text = "1"
+        '    OnMoveFirst()
+        '    If Session("EditFlag") = True Then
+        '        Session("PageMode") = "Edit"
+        '        txtSpnCode.Enabled = False
+        '        ibtnSave.Enabled = True
+        '        ibtnSave.ImageUrl = "images/save.png"
+        '    Else
+        '        Session("PageMode") = ""
+        '        ibtnSave.Enabled = False
+        '        ibtnSave.ImageUrl = "images/gsave.png"
+        '    End If
+        'Else
+        '    txtRecNo.Text = ""
+        '    lblCount.Text = ""
+        '    If DeleteFlag = "Delete" Then
+        '    Else
+        '        lblMsg.Visible = True
+        '        ErrorDescription = "Records did not Exist"
+        '        lblMsg.Text = ErrorDescription
+        '        DeleteFlag = ""
+        '    End If
+        'End If
+    End Sub
+
+#End Region
+
+#Region "onPost "
+
+    ''' <summary>
+    ''' Method to Post Payments
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onPost()
+
+        'Create Instances
+        Dim _ReceiptClass As New ReceiptsClass
+
+        'Variable Declarations
+        Dim BatchCode As String = Nothing
+
+        Try
+
+            'Get Batch Code
+            BatchCode = clsGeneric.NullToString(txtBatchId.Text)
+
+            'Post to Work flow - Start
+            If _ReceiptClass.PostToWorkflow(BatchCode, GetDoneBy(), "Receipts.aspx.vb") Then
+
+                'Show Message
+                Call SetMessage("Records Posted to Workflow Successfully")
+
+            Else
+
+                'Show Message
+                Call SetMessage("Posting to Workflow Failed.")
+
+            End If
+            'Post to Work flow - Stop
+
+        Catch ex As Exception
+
+            'Log & Show Error - Start
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call SetMessage(ex.Message)
+            'Log & Show Error - Stop
+
+        End Try
+
+        'Dim eobjDetails As New AccountsDetailsEn
+        'Dim list As New List(Of AccountsDetailsEn)
+        'Dim eobj As New AccountsEn
+        'Dim bsobj As New AccountsBAL
+        'Dim LstTRDetails As New List(Of AccountsEn)
+
+        'eobj.TransDate = Trim(txtReceiptDate.Text)
+        'eobj.BatchCode = txtBatchId.Text
+        'If txtBatchDate.Text <> "" Then
+        '    eobj.BatchDate = Trim(txtBatchDate.Text)
+        'Else
+        '    eobj.BatchDate = Format(Date.Now, "dd/MM/yyyy")
+        'End If
+        'If (ddlReceiptFor.SelectedValue = "St") Then
+        '    eobj.SubType = "Student"
+        'Else
+        '    eobj.SubType = "Sponsor"
+        'End If
+        'eobj.BatchTotal = CDbl(txtAllocateAmount.Text)
+        'If Trim(txtAddedAmount.Text).Length = 0 Then
+        '    eobj.PaidAmount = 0
+        'Else
+        '    eobj.PaidAmount = CDbl(txtAddedAmount.Text)
+        'End If
+        'eobj.Description = txtDescription.Text
+        'eobj.Category = "Receipt"
+        'eobj.PostStatus = "Posted"
+        'eobj.SubReferenceOne = txtReferenceNo.Text
+        'eobj.TransStatus = "Open"
+        'eobj.TransType = "Debit"
+        'eobj.PaymentMode = ddlPaymentMode.SelectedValue
+        'eobj.PostedDateTime = DateTime.Now
+        'eobj.DueDate = DateTime.Now
+        'eobj.UpdatedTime = DateTime.Now
+        'eobj.ChequeDate = DateTime.Now
+        'eobj.CreatedDateTime = DateTime.Now
+        'eobj.BankCode = ddlBankCode.SelectedValue
+        'eobj.PostedBy = Session("User")
+        'eobj.UpdatedBy = Session("User")
+        'Dim liststudentListView As New List(Of StudentEn)
+        'Dim listUnMacth As New List(Of StudentEn)
+        'Dim listsponser As New List(Of SponsorEn)
+        'Dim eospn As New SponsorEn
+        'Dim dgItem1 As DataGridItem
+        'Dim eTUnmatch As New StudentEn
+        'If ddlReceiptFor.SelectedValue = "Sp" Then
+        '    If txtSponCode.Text = "" Or txtSpnAmount.Text = "" Then
+        '        lblMsg.Text = " Select a Sponsor. "
+        '        Exit Sub
+        '    Else
+        '        eobj.CreditRef = txtSponCode.Text
+        '        eobj.TransactionAmount = txtSpnAmount.Text
+        '        eospn.SponserCode = txtSponCode.Text
+        '        eospn.Name = txtSponName.Text
+        '        listsponser.Add(eospn)
+
+        '    End If
+        '    If txtSpnAmount.Text = "" Or txtSpnAmount.Text = 0 Then
+        '        lblMsg.Text = " Enter Sponsor Amount "
+        '        Exit Sub
+        '    End If
+        'Else
+        '    liststudentListView = Session("listview")
+        '    If liststudentListView Is Nothing Then
+        '        lblMsg.Text = "Select At least One Student. "
+        '        Exit Sub
+        '    Else
+        '        liststudentListView = Session("listview")
+        '    End If
+        '    LoadTotals()
+        '    Dim txtAmount As TextBox
+        '    Dim selchk As New CheckBox
+        '    For Each dgItem1 In dgStudentView.Items
+        '        Dim p As Integer = 0
+        '        selchk = dgItem1.Cells(0).Controls(1)
+        '        If selchk.Checked = True Then
+        '            While p < liststudentListView.Count
+        '                Dim match As Boolean = False
+        '                If liststudentListView(p).noAkaun Is Nothing Then
+        '                    If dgItem1.Cells(2).Text = liststudentListView(p).MatricNo Then
+        '                        match = True
+        '                    End If
+        '                Else
+        '                    If dgItem1.Cells(2).Text = liststudentListView(p).MatricNo And dgItem1.Cells(15).Text = liststudentListView(p).noAkaun Then
+        '                        match = True
+        '                    End If
+        '                End If
+
+        '                If match = True Then
+        '                    eTUnmatch = New StudentEn
+        '                    txtAmount = dgItem1.Cells(9).Controls(1)
+        '                    eTUnmatch.MatricNo = dgItem1.Cells(2).Text
+        '                    eTUnmatch.StudentName = dgItem1.Cells(3).Text
+        '                    eTUnmatch.ICNo = dgItem1.Cells(4).Text
+        '                    eTUnmatch.TransactionAmount = txtAmount.Text
+        '                    eTUnmatch.PaidAmount = liststudentListView(p).AmountPaid
+        '                    eTUnmatch.SubReferenceTwo = liststudentListView(p).SubReferenceTwo
+        '                    If (liststudentListView(p).AccountDetailsList Is Nothing) Then
+        '                        'If (liststudentListView(p).AccountDetailsList.Count <= 0) Then
+        '                        eTUnmatch.SubReferenceTwo = "Auto"
+        '                    Else
+        '                        If (liststudentListView(p).AccountDetailsList.Count = 0) Then
+        '                            eTUnmatch.SubReferenceTwo = "Auto"
+        '                        End If
+        '                    End If
+        '                    eTUnmatch.AccountDetailsList = liststudentListView(p).AccountDetailsList
+        '                    listUnMacth.Add(eTUnmatch)
+        '                    eTUnmatch = Nothing
+
+        '                End If
+        '                p = p + 1
+        '            End While
+        '        End If
+        '    Next
+        'End If
+        'If (ddlReceiptFor.SelectedValue = "St") Then
+        '    If listUnMacth.Count = 0 Then
+        '        ErrorDescription = "Select At least One Student"
+        '        lblMsg.Text = ErrorDescription
+        '        Exit Sub
+        '    End If
+        '    If txtAllocateAmount.Text = 0 Then
+        '        lblMsg.Text = " Enter Student Amount "
+        '        Exit Sub
+        '    End If
+        'End If
+        'Try
+        '    If ddlReceiptFor.SelectedValue = "Sp" Then
+        '        txtBatchId.Text = bsobj.SponsorBatchUpdate(eobj, listsponser)
+        '    Else
+        '        txtBatchId.Text = bsobj.StudentBatchUpdate(eobj, listUnMacth)
+        '        LoadReport(txtBatchId.Text)
+        '    End If
+
+        '    txtBatchId.ReadOnly = False
+        '    txtBatchId.Text = eobj.BatchCode
+        '    txtBatchId.ReadOnly = True
+        '    ErrorDescription = "Record Posted Successfully "
+        '    ibtnStatus.ImageUrl = "images/posted.gif"
+        '    lblStatus.Value = "Posted"
+        '    lblMsg.Text = ErrorDescription
+
+        '    If txtBatchId.Text <> " " Then
+        '        Dim strBatchNo As String = Trim(txtBatchId.Text)
+
+        '        'Get Status Integration To SAGA
+        '        dsReturn = objIntegrationDL.GetIntegrationStatus()
+
+        '        'Check Status Integration To SAGA
+        '        If dsReturn.Tables(0).Rows(0).Item("CON_Value2") = "1" Then
+        '            objIntegration.Receipt(strBatchNo)
+        '        Else
+        '            ErrorDescription = "Record Posted Successfully But No Integration To CF. Please Call Administrator "
+        '            lblMsg.Text = ErrorDescription
+        '        End If
+        '    End If
+
+        'Catch ex As Exception
+        '    lblMsg.Text = ex.Message.ToString()
+        '    LogError.Log("Receipts", "OnPost", ex.Message)
+        'End Try
+
+
+    End Sub
+
+#End Region
+
+#Region "OnPostStudentLoan "
+
+    ''' <summary>
+    ''' Method to Post Payments
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnPostStudentLoan()
+        Dim eobj As New AccountsEn
+        Dim bsobj As New AccountsBAL
+        Dim eobstu As New StudentEn
+        lblMsg.Text = ""
+        lblMsg.Visible = True
+
+        eobj.TransDate = Trim(txtReceiptDate.Text)
+        eobj.BatchCode = txtBatchId.Text
+        eobj.BatchDate = Trim(txtBatchDate.Text)
+        eobj.BatchTotal = CDbl(txtAllocateAmount.Text)
+        eobj.PaidAmount = 0
+        eobj.Description = txtDescription.Text
+        eobj.Category = "Receipt"
+        eobj.PostStatus = "Posted"
+        eobj.SubReferenceOne = txtReferenceNo.Text
+        eobj.TransStatus = "Open"
+        eobj.PaymentMode = ddlPaymentMode.SelectedValue
+        eobj.PostedDateTime = DateTime.Now
+        eobj.DueDate = DateTime.Now
+        eobj.UpdatedTime = DateTime.Now
+        eobj.ChequeDate = DateTime.Now
+        eobj.CreatedDateTime = DateTime.Now
+        eobj.BankCode = ddlBankCode.SelectedValue
+        eobj.UpdatedBy = Session("User")
+        eobj.CreditRef = Trim(txtStudentId.Text)
+        eobj.SubType = "Student"
+        eobj.TransType = "Credit"
+        eobj.TransactionAmount = CDbl(txtLoanAmount.Text)
+
+        If Not Session("eobjstu") Is Nothing Then
+            eobstu = Session("eobjstu")
+        End If
+
+        Dim bid As String = ""
+        lblMsg.Visible = True
+        'Status=New
+        Try
+            txtBatchId.Text = bsobj.StudentLoanUpdate(eobj, eobstu)
+            ErrorDescription = "Record Posted Successfully "
+            txtBatchId.ReadOnly = True
+            ibtnStatus.ImageUrl = "images/posted.gif"
+            lblMsg.Visible = True
+            lblMsg.Text = ErrorDescription
+            lblStatus.Value = "Posted"
+            eobj.PostStatus = "Posted"
+
+            lblMsg.Text = ErrorDescription
+        Catch ex As Exception
+            lblMsg.Text = ex.Message.ToString()
+            LogError.Log("Payments", "OnPost", ex.Message)
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "LoadReport "
+
+    ''' <summary>
+    ''' Method to Load Reports
+    ''' </summary>
+    ''' <param name="batch"></param>
+    ''' <remarks></remarks>
+    Private Sub LoadReport(ByVal batch As String)
+        If ddlPaymentMode.SelectedValue = "EFT" Then
+            Session("LaporanHarian") = True
+        End If
+        Dim scriptstringOpen As String = "OpenWindow();"
+        ClientScript.RegisterStartupScript(Me.GetType(), "OpenWindow", scriptstringOpen, True)
+
+    End Sub
+
+#End Region
+
+#Region "LoadInvTotals "
+
+    ''' <summary>
+    ''' Method to Add all Invoice Amounts in the Invoice Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadInvTotals()
+        Dim chk As CheckBox
+        Dim txtAmount As TextBox
+        Dim dgItem1 As DataGridItem
+        Dim totalAmt1 As Double = 0
+        Dim BalAmt As Double = 0.0
+        For Each dgItem1 In dgInvoices.Items
+            Dim totalAmt As Double = 0
+            chk = dgItem1.Cells(0).Controls(1)
+            If chk.Checked = True Then
+                Dim AllAmt As Double = 0
+                Dim Allpck As Double = 0
+                txtAmount = dgItem1.Cells(5).Controls(1)
+                If txtAmount.Text <> "" Then
+                    BalAmt = CDbl(txtAmount.Text)
+                End If
+                totalAmt1 += BalAmt
+            End If
+
+        Next
+        txtALLAmount.Text = String.Format("{0:F}", totalAmt1)
+
+    End Sub
+
+#End Region
+
+#Region "LoadTotals "
+
+    ''' <summary>
+    ''' Method to Add all Amounts in the Student Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadTotals()
+        Dim chk As CheckBox
+        Dim txtAmount As TextBox
+        Dim dgItem1 As DataGridItem
+        Dim totalAmt1 As Double = 0
+        Dim BalAmt As Double = 0.0
+        ' DirectCast(dgStudentView.Items(0).Cells(17).FindControl("txtBankInSlip"),TextBox)
+
+        For Each dgItem1 In dgStudentView.Items
+            Dim totalAmt As Double = 0
+            chk = dgItem1.Cells(0).Controls(1)
+            If chk.Checked = True Then
+                Dim AllAmt As Double = 0
+                Dim Allpck As Double = 0
+                txtAmount = dgItem1.Cells(9).Controls(1)
+
+                If txtAmount.Text <> "" Then
+                    BalAmt = CDbl(txtAmount.Text)
+                End If
+                totalAmt1 += BalAmt
+            End If
+
+        Next
+        txtAllocateAmount.Text = String.Format("{0:F}", totalAmt1)
+
+    End Sub
+
+#End Region
+
+#Region "SpaceValidation "
+
+    ''' <summary>
+    ''' Method to Validate
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SpaceValidation()
+        Dim GBFormat As System.Globalization.CultureInfo
+        GBFormat = New System.Globalization.CultureInfo("en-GB")
+
+
+
+        'Receipt For
+        If ddlReceiptFor.SelectedValue = "-1" Then
+            lblMsg.Text = "Select a Receipt For"
+            lblMsg.Visible = True
+            ddlReceiptFor.Focus()
+            Exit Sub
+        End If
+        'Payment Mode
+        If ddlPaymentMode.SelectedValue = "-1" Then
+            lblMsg.Text = "Select a Payment Mode"
+            lblMsg.Visible = True
+            ddlPaymentMode.Focus()
+            Exit Sub
+        End If
+
+        'Bank Code
+        If ddlBankCode.SelectedValue = "-1" Then
+            lblMsg.Text = "Select a Bank Code"
+            lblMsg.Visible = True
+            ddlBankCode.Focus()
+            Exit Sub
+        End If
+        If Trim(txtDescription.Text).Length = 0 Then
+            txtDescription.Text = Trim(txtDescription.Text)
+            lblMsg.Text = "Enter Valid Description "
+            lblMsg.Visible = True
+            txtDescription.Focus()
+            Exit Sub
+        End If
+
+        'Batch date
+        If Trim(txtBatchDate.Text).Length < 10 Then
+            lblMsg.Text = "Enter Valid Batch Date"
+            lblMsg.Visible = True
+            txtBatchDate.Focus()
+            Exit Sub
+        Else
+            Try
+                txtBatchDate.Text = DateTime.Parse(txtBatchDate.Text, GBFormat)
+            Catch ex As Exception
+                lblMsg.Text = "Enter Valid Batch Date"
+                lblMsg.Visible = True
+                txtBatchDate.Focus()
+                Exit Sub
+            End Try
+        End If
+
+        'Due date
+        If Trim(txtReceiptDate.Text).Length < 10 Then
+            lblMsg.Text = "Enter Valid Due Date"
+            lblMsg.Visible = True
+            txtReceiptDate.Focus()
+            Exit Sub
+        Else
+            Try
+                txtReceiptDate.Text = DateTime.Parse(txtReceiptDate.Text, GBFormat)
+            Catch ex As Exception
+                lblMsg.Text = "Enter Valid Due Date"
+                lblMsg.Visible = True
+                txtReceiptDate.Focus()
+                Exit Sub
+            End Try
+        End If
+        If lblStatus.Value = "Posted" Then
+            lblMsg.Text = "Record Already Posted"
+            lblMsg.Visible = True
+            Exit Sub
+        End If
+
+    End Sub
+
+#End Region
+
+#Region "onallocateAmount "
+
+    ''' <summary>
+    ''' Method to Caliculate Allocation Amounts in Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub onallocateAmount()
+        Dim dgi As DataGridItem
+        Dim txtAmount As TextBox
+        Dim txtPdAmount As TextBox
+        Dim chkbox As CheckBox
+        Dim alamount As Double
+        Dim pamount As Double
+        Dim AddedAmount As Double = 0
+        txtAddedAmount.Text = "0.0"
+        'Loading Aotu Allocated amounts
+        For Each dgi In dgInvoices.Items
+
+            txtAmount = dgi.Cells(6).Controls(1)
+            txtPdAmount = dgi.Cells(7).Controls(1)
+
+            AddedAmount = CDbl(txtAddedAmount.Text) + CDbl(txtAmount.Text)
+            txtAddedAmount.Text = String.Format("{0:F}", AddedAmount)
+            If CDbl(txtAllocateAmount.Text) >= AddedAmount Then
+                chkbox = dgi.Cells(0).Controls(1)
+                If chkbox.Checked = True Then
+
+                    alamount = txtAmount.Text
+                    If dgi.Cells(5).Text > alamount Then
+                        txtPdAmount.Text = dgi.Cells(5).Text - alamount
+                    Else
+                        txtAmount = dgi.Cells(6).Controls(1)
+                        txtAmount.Text = "0.00"
+                        txtPdAmount = dgi.Cells(7).Controls(1)
+                        txtPdAmount.Text = "0.00"
+                    End If
+                    pamount = txtPdAmount.Text
+                    txtAmount.Text = String.Format("{0:F}", alamount)
+                    txtPdAmount.Text = String.Format("{0:F}", pamount)
+
+                Else
+                    txtAmount = dgi.Cells(6).Controls(1)
+                    txtAmount.Text = "0.00"
+                    txtPdAmount = dgi.Cells(7).Controls(1)
+                    txtPdAmount.Text = "0.00"
+
+                End If
+            Else
+
+                AddedAmount = CDbl(txtAddedAmount.Text) - CDbl(txtAmount.Text)
+                txtAmount.Text = "0.00"
+                txtAddedAmount.Text = String.Format("{0:F}", AddedAmount)
+            End If
+        Next
+
+
+    End Sub
+
+#End Region
+
+#Region "ondelete "
+
+    ''' <summary>
+    ''' Method to Delete the Transactions
+    ''' </summary>
+    ''' <remarks></remarks> 
+    Private Sub ondelete()
+        Dim RecAff As Boolean
+        Dim eob As New AccountsEn
+        Dim bsobj As New AccountsBAL
+        If lblStatus.Value = "Ready" Then
+            Try
+                eob.BatchCode = Trim(txtBatchId.Text)
+                RecAff = bsobj.BatchDelete(eob)
+                onAdd()
+                DeleteFlag = "Delete"
+                Session("loaddata") = "View"
+                lblMsg.Text = "Record Deleted Successfully "
+
+                '// Logfile created 
+
+                Dim message As String
+                Dim userName As String
+
+
+                If Not Session("User") Is Nothing Then
+                    userName = Session("User")
+                Else
+                    userName = String.Empty
+                End If
+
+                eob.UpdatedTime = DateTime.Now
+                message = "** Date :" + DateTime.Now.ToString() + " ||" + " Receipt Number:" + eob.BatchCode.ToString() + " ||" + " Deleted by:" + userName
+                Dim filePath As String
+                filePath = HttpContext.Current.Server.MapPath("~") + "\\LogErrors" + "\\ReceiptLog.txt"
+                ' Writest to the file 
+                LogEntry(message, filePath)
+
+                eob.DeletedBy = userName
+                eob.UpdatedBy = String.Empty
+
+                'Inserts to the database
+                bsobj.InsertReceiptUserAction(eob)
+
+                '//
+
+                lblMsg.Visible = True
+                LoadListObjects(False)
+            Catch ex As Exception
+                lblMsg.Text = ex.Message.ToString()
+                LogError.Log("Receipts", "ondelete", ex.Message)
+            End Try
+        End If
+    End Sub
+
+#End Region
+
+#Region "OnSearchOthers "
+
+    ''' <summary>
+    ''' Method to Search for Posted Records
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub OnSearchOthers()
+        Session("loaddata") = "others"
+        If lblCount.Text <> "" Then
+            If CInt(lblCount.Text) > 0 Then
+                OnClearData()
+                If ibtnNew.Enabled = False Then
+                    ibtnSave.Enabled = False
+                    ibtnSave.ImageUrl = "images/gsave.png"
+                    ibtnSave.ToolTip = "Access Denied"
+                End If
+            Else
+                Session("PageMode") = "Edit"
+                addBankCode()
+                LoadListObjects(False)
+
+            End If
+        Else
+            Session("PageMode") = "Edit"
+            addBankCode()
+            LoadListObjects(False)
+
+            PostEnFalse()
+        End If
+        If lblCount.Text.Length = 0 Then
+            Session("PageMode") = "Add"
+        End If
+    End Sub
+
+#End Region
+
+#Region "PostEnFalse "
+
+    ''' <summary>
+    ''' Method to Disable Options After Posting
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub PostEnFalse()
+        ibtnNew.Enabled = False
+        ibtnNew.ImageUrl = "images/gadd.png"
+        ibtnNew.ToolTip = "Access Denied"
+        ibtnSave.Enabled = False
+        ibtnSave.ImageUrl = "images/gsave.png"
+        ibtnSave.ToolTip = "Access Denied"
+        ibtnDelete.Enabled = False
+        ibtnDelete.ImageUrl = "images/gdelete.png"
+        ibtnDelete.ToolTip = "Access Denied"
+        'ibtnView.Enabled = True
+        'ibtnView.ImageUrl = "images/ready.png"
+        'ibtnView.ToolTip = "Access Denied"
+        ibtnPrint.Enabled = True
+        ibtnPrint.ImageUrl = "images/print.png"
+        ibtnPrint.ToolTip = "Print"
+        ibtnPosting.Enabled = False
+        ibtnPosting.ImageUrl = "images/gposting.png"
+        ibtnPosting.ToolTip = "Access denied"
+        ' ibtnOthers.Enabled = False
+        'ibtnOthers.ImageUrl = "images/post.png"
+        'ibtnOthers.ToolTip = "Access denied"
+    End Sub
+
+#End Region
+
+#Region "uploadData "
+
+    ''' <summary>
+    ''' Method to Upload Files
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub uploadData()
+        Dim lsDelimeter As String = ","
+        lblMsg.Text = ""
+        Dim path As String = Session("file1")
+        Dim loReader As New StreamReader(path)
+
+        Dim eTstudent As StudentEn
+        Dim listStudent As New List(Of StudentEn)
+        Dim listUnStudent As New List(Of StudentEn)
+        Dim list As New List(Of StudentEn)
+        Dim alllist As New List(Of StudentEn)
+        Dim i As Integer
+        Dim objStu As New StudentBAL
+
+        While loReader.Read() > 0
+
+            Dim lsRow As String = loReader.ReadLine()
+            Dim lsArr As String() = lsRow.Split(lsDelimeter.ToCharArray())
+
+            eTstudent = New StudentEn
+            Try
+                eTstudent.MatricNo = lsArr(0)
+                eTstudent.ICNo = lsArr(1).Trim()
+                eTstudent.StudentName = lsArr(2).Trim()
+                eTstudent.TransactionAmount = CDbl(lsArr(3).Trim())
+            Catch ex As Exception
+                lblMsg.Text = "File Cannot be Read"
+                Exit Sub
+            End Try
+
+            eTstudent.ProgramID = ""
+            eTstudent.Faculty = ""
+            eTstudent.CurrentSemester = 0
+            eTstudent.SASI_StatusRec = True
+            eTstudent.STsponsercode = New StudentSponEn()
+            eTstudent.STsponsercode.Sponsor = ""
+            'Check Student
+            Try
+                list = objStu.CheckStudentList(eTstudent)
+            Catch ex As Exception
+                LogError.Log("Receipts", "UploadData", ex.Message)
+                Exit Sub
+            End Try
+
+            If list.Count = 0 Then
+                eTstudent = New StudentEn
+                Try
+                    eTstudent.StudentName = lsArr(2).Trim()
+                    eTstudent.MatricNo = lsArr(0)
+                    eTstudent.ICNo = lsArr(1).Trim()
+                    eTstudent.StuIndex = i
+                    eTstudent.TransactionAmount = CDbl(lsArr(3).Trim())
+                Catch ex As Exception
+                    lblMsg.Text = "File Cannot be Read"
+                    Exit Sub
+                End Try
+
+                listUnStudent.Add(eTstudent)
+                'eTstudent = Nothing
+            Else
+
+                eTstudent.StudentName = list(0).StudentName
+                eTstudent.MatricNo = list(0).MatricNo
+                eTstudent.ICNo = list(0).ICNo
+                eTstudent.ProgramID = list(0).ProgramID
+                eTstudent.Faculty = list(0).Faculty
+                eTstudent.CurrentSemester = list(0).CurrentSemester
+                eTstudent.StuIndex = i
+                eTstudent.TransactionAmount = CDbl(lsArr(3).Trim())
+                listStudent.Add(eTstudent)
+                eTstudent = Nothing
+            End If
+            i = i + 1
+
+        End While
+        loReader.Close()
+        'loWriter.Close()
+
+        dgUnStudent.DataSource = listUnStudent
+        dgUnStudent.DataBind()
+        Dim dgItem2 As DataGridItem
+        Dim amt As Double
+        Dim txtAmount As TextBox
+        For Each dgItem2 In dgUnStudent.Items
+            txtAmount = dgItem2.Cells(9).Controls(1)
+            amt = dgItem2.Cells(10).Text
+            txtAmount.Text = String.Format("{0:F}", amt)
+
+        Next
+        Dim totalAmt As Double = 0
+        Dim totalPCAmt As Double = 0
+        Dim stuen As New StudentEn
+        Dim bsstu As New AccountsBAL
+        Dim outamt As Double = 0.0
+        Dim eobj As New StudentEn
+        Dim k As Integer
+        If Not Session("listview") Is Nothing Then
+            alllist = Session("listview")
+        Else
+            alllist = New List(Of StudentEn)
+        End If
+        If listStudent.Count <> 0 Then
+            While k < listStudent.Count
+                eobj = listStudent(k)
+                Dim j As Integer = 0
+                Dim Flag As Boolean = False
+                While j < alllist.Count
+                    If alllist(j).MatricNo = eobj.MatricNo Then
+                        Flag = True
+                        Exit While
+                    End If
+                    j = j + 1
+                End While
+                If Flag = False Then
+                    alllist.Add(eobj)
+                End If
+                k = k + 1
+            End While
+        End If
+        If alllist Is Nothing Then
+            dgStudentView.DataSource = Nothing
+            dgStudentView.DataBind()
+        Else
+            Dim dgItem1 As DataGridItem
+            Dim OutAmount As TextBox
+            Dim j As Integer = 0
+            Dim stramt As String
+            Dim selchk As CheckBox
+            Dim manualchk As CheckBox
+            Dim link As New LinkButton
+            dgStudentView.DataSource = alllist
+            Session("listview") = alllist
+            dgStudentView.DataBind()
+            'Loading grid with Outstanding Amounts
+            While j < alllist.Count
+                For Each dgItem1 In dgStudentView.Items
+                    If dgItem1.Cells(2).Text = alllist(j).MatricNo Then
+                        selchk = dgItem1.Cells(0).Controls(1)
+                        manualchk = dgItem1.Cells(8).Controls(1)
+                        selchk.Checked = True
+                        link = dgItem1.Cells(1).Controls(0)
+                        OutAmount = dgItem1.Cells(9).Controls(1)
+                        stramt = dgItem1.Cells(10).Text
+                        If stramt = "" Or stramt = "0" Then stramt = 0.0
+                        If Not alllist(j).AccountDetailsList Is Nothing Then
+                            If alllist(j).AccountDetailsList.Count > 0 Then
+                                dgItem1.Cells(12).Text = alllist(j).AmountPaid
+                                manualchk.Checked = True
+                                dgItem1.Cells(13).Text = False
+                            End If
+                        Else
+                            manualchk.Checked = False
+                            dgItem1.Cells(13).Text = True
+                        End If
+                        OutAmount.Text = String.Format("{0:F}", stramt)
+                        dgItem1.Cells(11).Text = j
+                        Exit For
+                    End If
+                Next
+                j = j + 1
+            End While
+        End If
+        Session("file1") = Nothing
+    End Sub
+
+#End Region
+
+#Region "grid_load "
+
+    ''' <summary>
+    ''' Method to Load Student Grid
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub grid_load()
+        Dim totalAmt1 As Double = 0
+        Dim dgItem1 As DataGridItem
+        Dim amt1 As Double
+        Dim txtAmount1 As TextBox
+        For Each dgItem1 In dgStudentView.Items
+            txtAmount1 = dgItem1.Cells(9).Controls(1)
+            amt1 = dgItem1.Cells(10).Text
+            txtAmount1.Text = String.Format("{0:F}", amt1)
+            totalAmt1 = totalAmt1 + txtAmount1.Text
+            txtAllocateAmount.Text = String.Format("{0:F}", totalAmt1)
+        Next
+    End Sub
+
+#End Region
+
+#Region "Allocation "
+
+    ''' <summary>
+    ''' Method to load the Fields for Allocation Tab
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub Allocation()
+        MultiView1.SetActiveView(View2)
+
+        btnReceipt.CssClass = "TabButton"
+        btnSelection.CssClass = "TabButtonClick"
+        btnInactive.CssClass = "TabButton"
+        bankPanel.Visible = False
+        pnlStudentGrid.Visible = True
+    End Sub
+
+#End Region
+
+#Region "nReceipt "
+
+    ''' <summary>
+    ''' Method to load the Fields for Receipt Tab
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub nReceipt()
+
+        MultiView1.SetActiveView(View1)
+        btnReceipt.CssClass = "TabButtonClick"
+        btnSelection.CssClass = "TabButton"
+        btnInactive.CssClass = "TabButton"
+        bankPanel.Visible = True
+        pnlStudentGrid.Visible = False
+        check_Receiptfor()
+    End Sub
+
+#End Region
+
+#Region "chkManual_CheckedChanged "
+
+    Protected Sub chkManual_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
+        'Create Instances - Start
+        Dim _Receipts As New ReceiptsClass
+        Dim _CheckBox As CheckBox = Nothing
+        Dim GridRowSelect As CheckBox = Nothing
+        Dim _DataGridItem As DataGridItem = Nothing
+        Dim AllocateAmountText As TextBox = Nothing
+        'Create Instances - Stop
+
+        'Variable Declarations - Start
+        Dim GridItemIndex As Integer = 0
+        Dim StudentStatus As String = Nothing, TotalAllocatedAmount As String = Nothing
+        'Variable Declarations - Stop
+
+        Try
+
+            'Get Grid Check Box
+            _CheckBox = CType(sender, CheckBox)
+
+            'Get grid Item
+            _DataGridItem = CType(_CheckBox.NamingContainer, DataGridItem)
+
+            'Get grid Item Index
+            GridItemIndex = _DataGridItem.ItemIndex
+
+            'Get Grid Row Select Check Box
+            GridRowSelect = dgStudentView.Items(GridItemIndex).Cells(0).Controls(1)
+
+            'Get Allocate Amount Text from Grid
+            AllocateAmountText = dgStudentView.Items(GridItemIndex).Cells(9).Controls(1)
+
+            'Set Allocate Amount
+            txtStuIndex.Text = AllocateAmountText.Text
+
+            'if Manual check Box Checked - Start
+            If _CheckBox.Checked = True Then
+
+                If (GridRowSelect.Checked = False) Then
+                    Call SetMessage("Please Select Student To Allocate")
+                    Exit Sub
+                End If
+
+                If (txtStuIndex.Text = "0.00") Then
+                    _CheckBox.Checked = False
+                    Call SetMessage("Enter Some Amount To Allocate")
+                    Exit Sub
+                End If
+
+                'Get Student Status
+                StudentStatus = lblStatus.Value
+
+                'Populate Data Grid - Start
+                If Not _Receipts.LoadStudentInvoicesToGrid(_DataGridItem, StudentStatus,
+                    dgStudentView, dgInvoices, TotalAllocatedAmount) Then
+
+                    dgInvoices.Visible = False
+                    Call SetMessage("Student Invoices Loading Failed...")
+
+                Else
+
+                    Call Allocation()
+                    dgInvoices.Visible = True
+                    Session("ID") = GridItemIndex
+
+                    'if not posted - Start
+                    If Not StudentStatus = ReceiptsClass.StatusPosted Then
+                        bTnUpdate.Enabled = True
+                    End If
+                    'if not posted - Stop
+
+                End If
+                'Populate Data Grid - Stop
+
+            End If
+            'if Manual check Box Checked - Stop
+
+        Catch ex As Exception
+
+            'log error
+            Call MaxModule.Helper.LogError(ex.Message)
+
+            'Show Error Message
+            Call SetMessage(ex.Message)
+
+        End Try
+
+        'Dim chk As CheckBox
+        'Dim loen As New AccountsEn
+        'Dim txtalloc As TextBox
+        'Dim lolist As New List(Of AccountsEn)
+        'Dim lobo As New AccountsBAL
+        'Dim ck As New CheckBox
+        'Dim i As Integer
+        'Dim SelectChk As CheckBox
+
+        ''Getting Row index
+        'ck = CType(sender, CheckBox)
+        'Dim gr As DataGridItem = CType(ck.NamingContainer, DataGridItem)
+        'i = gr.ItemIndex
+
+        'SelectChk = dgStudentView.Items(i).Cells(0).Controls(1)
+        'txtalloc = dgStudentView.Items(i).Cells(9).Controls(1)
+        'chk = dgStudentView.Items(i).Cells(8).Controls(1)
+        'txtStuIndex.Text = txtalloc.Text
+
+        ''Checking Manual Selection
+        'If chk.Checked = True Then
+        '    If (SelectChk.Checked = False) Then
+        '        lblMsg.Text = "Please Select Student To Allocate"
+        '        Exit Sub
+        '    End If
+        '    If (txtStuIndex.Text = "0.00") Then
+        '        lblMsg.Text = "Enter Some Amount To Allocate"
+        '        chk.Checked = False
+        '        Exit Sub
+        '    End If
+        '    loen.CreditRef = dgStudentView.Items(i).Cells(2).Text
+        '    If lblStatus.Value = "New" Then
+        '        loen.SubType = "Student"
+        '        loen.PostStatus = "Posted"
+        '        loen.Category = "'Invoice','Debit Note','AFC'"
+
+        '        Try
+        '            lolist = lobo.GetStudentAutoAllocation(loen)
+        '        Catch ex As Exception
+        '            LogError.Log("Receipts", "chkManual_CheckedChanged", ex.Message)
+        '        End Try
+        '        dgInvoices.Visible = True
+        '        dgInvoices.DataSource = lolist
+        '        dgInvoices.DataBind()
+        '        Dim dgItem2 As DataGridItem
+        '        Dim amt1 As Double
+        '        Dim txtAmount1 As TextBox
+        '        Dim totalamt1 As Double
+        '        For Each dgItem2 In dgInvoices.Items
+        '            txtAmount1 = dgItem2.Cells(5).Controls(1)
+        '            amt1 = 0.0
+        '            txtAmount1.Text = String.Format("{0:F}", amt1)
+        '            totalamt1 += txtAmount1.Text
+        '            txtALLAmount.Text = String.Format("{0:F}", totalamt1)
+        '            dgItem2.Cells(6).Text = Convert.ToString(CDbl(dgItem2.Cells(4).Text) - CDbl(dgItem2.Cells(8).Text))
+        '        Next
+        '        Allocation()
+        '        'Session("ID") = dgStudentView.Items(i).Cells(11).Text
+        '        Session("ID") = i
+        '        bTnUpdate.Enabled = True
+
+        '    ElseIf lblStatus.Value = "Ready" Then
+        '        Dim lostulist As New List(Of StudentEn)
+        '        lostulist = Session("listview")
+        '        Dim listaccounts As New List(Of AccountsEn)
+        '        Dim k As Integer = 0
+        '        While k < lostulist.Count
+        '            If loen.CreditRef = lostulist(k).MatricNo Then
+        '                listaccounts = lostulist(k).Listtaccounts
+        '                If Not listaccounts Is Nothing Then
+        '                    dgInvoices.Visible = True
+        '                    dgInvoices.DataSource = listaccounts
+        '                    dgInvoices.DataBind()
+        '                Else
+        '                    dgInvoices.Visible = True
+        '                    loen.SubType = "Student"
+        '                    loen.PostStatus = "Posted"
+        '                    loen.Category = "'Invoice','Debit Note','AFC'"
+        '                    Try
+        '                        lolist = lobo.GetStudentAutoAllocation(loen)
+        '                    Catch ex As Exception
+        '                        LogError.Log("Receipts", "chkManual_CheckedChanged", ex.Message)
+        '                    End Try
+
+        '                    dgInvoices.DataSource = lolist
+        '                    dgInvoices.DataBind()
+        '                End If
+        '                Dim dgItem3 As DataGridItem
+        '                Dim amt1 As Double
+        '                Dim txtAmount1 As TextBox
+        '                Dim totalamt1 As Double
+        '                Dim selchk As New CheckBox
+        '                For Each dgItem3 In dgInvoices.Items
+        '                    selchk = dgItem3.Cells(0).Controls(1)
+        '                    txtAmount1 = dgItem3.Cells(5).Controls(1)
+        '                    amt1 = dgItem3.Cells(9).Text
+        '                    selchk.Checked = True
+        '                    txtAmount1.Text = String.Format("{0:F}", amt1)
+        '                    totalamt1 = totalamt1 + txtAmount1.Text
+        '                    txtALLAmount.Text = String.Format("{0:F}", totalamt1)
+        '                    dgItem3.Cells(6).Text = Convert.ToString(CDbl(dgItem3.Cells(4).Text) - CDbl(dgItem3.Cells(8).Text))
+        '                Next
+
+        '            End If
+        '            k = k + 1
+        '        End While
+        '        Allocation()
+        '        Session("ID") = dgStudentView.Items(i).Cells(11).Text
+        '        bTnUpdate.Enabled = True
+        '    ElseIf lblStatus.Value = "Posted" Then
+        '        Dim lostulist As New List(Of StudentEn)
+        '        lostulist = Session("listview")
+        '        Dim listaccounts As New List(Of AccountsEn)
+        '        Dim k As Integer = 0
+        '        While k < lostulist.Count
+        '            If loen.CreditRef = lostulist(k).MatricNo Then
+        '                listaccounts = lostulist(k).Listtaccounts
+        '                If Not listaccounts Is Nothing Then
+        '                    dgInvoices.Visible = True
+        '                    dgInvoices.DataSource = listaccounts
+        '                    dgInvoices.DataBind()
+        '                Else
+        '                    dgInvoices.Visible = True
+        '                    loen.SubType = "Student"
+        '                    loen.PostStatus = "Posted"
+        '                    loen.Category = "'Invoice','Debit Note','AFC'"
+
+        '                    Try
+        '                        lolist = lobo.GetStudentAutoAllocation(loen)
+        '                    Catch ex As Exception
+        '                        LogError.Log("Receipts", "chkManual_CheckedChanged", ex.Message)
+        '                    End Try
+        '                    dgInvoices.DataSource = lolist
+        '                    dgInvoices.DataBind()
+        '                End If
+        '                Dim dgItem3 As DataGridItem
+        '                Dim amt1 As Double
+        '                Dim txtAmount1 As TextBox
+        '                Dim totalamt1 As Double
+        '                Dim selchk As New CheckBox
+        '                For Each dgItem3 In dgInvoices.Items
+        '                    selchk = dgItem3.Cells(0).Controls(1)
+        '                    txtAmount1 = dgItem3.Cells(5).Controls(1)
+        '                    amt1 = dgItem3.Cells(9).Text
+        '                    selchk.Checked = True
+        '                    txtAmount1.Text = String.Format("{0:F}", amt1)
+        '                    totalamt1 = totalamt1 + txtAmount1.Text
+        '                    txtALLAmount.Text = String.Format("{0:F}", totalamt1)
+        '                    dgItem3.Cells(6).Text = Convert.ToString(CDbl(dgItem3.Cells(4).Text) - CDbl(dgItem3.Cells(8).Text))
+        '                Next
+
+        '            End If
+        '            k = k + 1
+        '        End While
+        '        Allocation()
+        '        Session("ID") = dgStudentView.Items(i).Cells(11).Text
+        '        bTnUpdate.Enabled = False
+        '    End If
+        'Else
+        '    If (SelectChk.Checked = True) Then
+        '        'lblMsg.Text = "Allocated Amounts Cleared"
+        '        Dim liststudentView As New List(Of StudentEn)
+        '        Dim liststudentaccdetView As New List(Of AccountsDetailsEn)
+        '        liststudentView = Session("listview")
+        '        'liststudentView(i).AccountDetailsList = liststudentaccdetView
+        '        liststudentView(i).SubReferenceTwo = "Auto"
+        '        dgStudentView.Items(i).Cells(13).Text = "Auto"
+        '        dgStudentView.Items(i).Cells(12).Text = "0.00"
+        '        Session("listview") = Nothing
+        '        Session("listview") = liststudentView
+        '        txtStuIndex.Text = "0.00"
+
+        '        nReceipt()
+        '    End If
+        'End If
+
+    End Sub
+
+#End Region
+
+#Region "spnamount "
+
+    ''' <summary>
+    ''' Method to Format Sponsor Amount Field
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub spnamount()
+        If txtSpnAmount.Text = "" Then
+
+            txtSpnAmount.Text = 0
+            txtSpnAmount.Text = String.Format("{0:F}", CDbl(txtSpnAmount.Text))
+        Else
+            txtSpnAmount.Text = String.Format("{0:F}", CDbl(txtSpnAmount.Text))
+        End If
+        txtAllocateAmount.Text = String.Format("{0:F}", CDbl(txtSpnAmount.Text))
+    End Sub
+
+#End Region
+
+#Region "StudentLoanAmount "
+
+    ''' <summary>
+    ''' Method to Format Student Amount Field
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub StudentLoanAmount()
+        If txtLoanAmount.Text = "" Then
+
+            txtLoanAmount.Text = 0
+            txtLoanAmount.Text = String.Format("{0:F}", CDbl(txtLoanAmount.Text))
+        Else
+            txtLoanAmount.Text = String.Format("{0:F}", CDbl(txtLoanAmount.Text))
+        End If
+        txtAllocateAmount.Text = String.Format("{0:F}", CDbl(txtLoanAmount.Text))
+    End Sub
+
+#End Region
+
+#Region "LogEntry "
+
+    Public Sub LogEntry(ByVal msg As String, ByVal path As String)
+        Try
+
+            If My.Computer.FileSystem.FileExists(path) Then
+                'It will open the file, append the your message and close the file
+                My.Computer.FileSystem.WriteAllText(path, Environment.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(path, msg, True)
+            End If
+
+        Catch ex As Exception
+            ex.GetBaseException()
+        End Try
+    End Sub
+
+#End Region
+
+#Region "LoadStudentsTemplates "
+
+    ''' <summary>
+    ''' Method to Load Students Template
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadStudentsTemplates(ByVal studentList As List(Of StudentEn))
+        dgInvoices.DataSource = Nothing
+        dgInvoices.DataBind()
+
+        Dim list As New StudentEn
+        Dim listStud As New List(Of StudentEn)
+        Dim eobj As New StudentEn
+        Dim i As Integer = 0
+
+        Dim dgItem1 As DataGridItem
+        Dim txtAmount As TextBox
+        Dim txtPocket As TextBox
+        Dim amt As Double = 0.0
+        Dim pocAmt As Double = 0.0
+        Dim j As Integer = 0
+        Dim stuen As New StudentEn
+        Dim bsstu As New AccountsBAL
+        Dim objStu As New StudentBAL
+        Dim outamt As Double = 0.0
+
+        For Each stuItem As StudentEn In studentList
+            eobj = New StudentEn
+
+            eobj.MatricNo = stuItem.MatricNo
+            eobj.ICNo = stuItem.NoIC
+            eobj.SASI_StatusRec = True
+            Try
+                list = objStu.GetItem(eobj.MatricNo)
+                listStud.Add(list)
+            Catch ex As Exception
+                LogError.Log("SponsorAllocation", "UploadData", ex.Message)
+                lblMsg.Text = ex.Message
+                Exit Sub
+            End Try
+            If list.MatricNo = "" Then
+                lblMsg.Text = "Invalid Matric No exists in uploaded file."
+                lblMsg.Visible = True
+                Session("fileSponsor") = Nothing
+                Exit Sub
+            End If
+        Next
+
+        dgInvoices.DataSource = listStud
+        dgInvoices.DataBind()
+
+        For Each dgItem1 In dgInvoices.Items
+            Dim cell11 As Double
+            Dim cell12 As Double
+            If dgItem1.Cells(11).Text = "" Or dgItem1.Cells(11).Text = "&nbsp;" Then
+                cell11 = 0.0
+            Else
+                cell11 = dgItem1.Cells(11).Text
+            End If
+            If dgItem1.Cells(12).Text = "" Or dgItem1.Cells(12).Text = "&nbsp;" Then
+                cell12 = 0.0
+            Else
+                cell12 = dgItem1.Cells(12).Text
+            End If
+            txtAmount = dgItem1.Cells(7).Controls(1)
+            amt = CDbl(cell11)
+            pocAmt = CDbl(cell12)
+            txtAmount.Text = String.Format("{0:F}", amt)
+            stuen.MatricNo = dgItem1.Cells(1).Text
+            outamt = bsstu.GetStudentOutstandingAmt(stuen)
+            dgItem1.Cells(6).Text = String.Format("{0:F}", outamt)
+        Next
+        Session("spnObj") = Nothing
+        Session("liststu") = Nothing
+        Session("SPncode") = Nothing
+        Session("paidInvoices") = Nothing
+        btnSelection.CssClass = "TabButton"
+        MultiView1.SetActiveView(View1)
+
+    End Sub
+
+#End Region
+
+#Region "readTextFile "
+
+    ''' <summary>
+    ''' Method to read text file
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Function readTextFile(ByVal filepath As String) As List(Of StudentEn)
+        Dim lstStudents As New List(Of StudentEn)
+        Dim fileEntries As New List(Of String)
+
+        Try
+            ' Read the file into a list...
+            Dim reader As StreamReader = New StreamReader(filepath)
+            fileEntries.Clear()
+
+            Do Until reader.Peek = -1 'Until eof
+                fileEntries.Add(reader.ReadLine)
+            Loop
+
+            reader.Close()
+
+        Catch ex As Exception
+            ' The file's empty.
+            lblMsg.Visible = True
+            lblMsg.Text = "The File`s is empty. Error message: " & ex.Message & ""
+        End Try
+        Dim listStudent As New List(Of StudentEn)
+        Try
+            For Each line As String In fileEntries
+                Dim checkCol As String = line.Substring(0, 10)
+                Dim _studentEN As New StudentEn
+                Dim _studEnFromDB As New StudentEn
+                Dim stud As New StudentBAL
+                Dim _studAccFromDB As New AccountsEn
+                Dim studAcc As New AccountsBAL
+                _studentEN.MatricNo = line.Substring(0, 6)
+                _studEnFromDB = stud.GetItem(_studentEN.MatricNo)
+                _studentEN.StudentName = _studEnFromDB.StudentName
+                _studentEN.Faculty = _studEnFromDB.Faculty
+                _studentEN.ProgramID = _studEnFromDB.ProgramID
+                _studentEN.MatricNo = _studEnFromDB.MatricNo
+                _studentEN.ICNo = _studEnFromDB.ICNo
+                _studentEN.CurretSemesterYear = _studEnFromDB.CurretSemesterYear
+                _studAccFromDB = studAcc.GetItemTrans(_studentEN)
+                _studentEN.CurrentSemester = _studEnFromDB.CurrentSemester
+                _studentEN.TransDate = DateTime.ParseExact(line.Substring(14, 8), "ddMMyyyy", CultureInfo.InvariantCulture)
+                _studentEN.TransactionAmount = Trim(line.Substring(41, 14))
+                _studentEN.noAkaun = line.Substring(30, 9)
+                lstStudents.Add(_studentEN)
+                dgStudentView.SelectedIndex = -1
+                Session("eobjstu") = _studentEN
+                Session("liststu") = lstStudents
+                _studentEN = Nothing
+            Next
+            readTextFile = lstStudents
+            Session("LaporanHarian") = True
+        Catch ex As Exception
+            lblMsg.Visible = True
+            lblMsg.Text = ex.Message
+        End Try
+        Return readTextFile
+    End Function
+
+#End Region
+
+#Region "ibtnPrint_Click1 "
+
+    Protected Sub ibtnPrint_Click1(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ibtnPrint.Click
+        If (ddlReceiptFor.SelectedValue = "St") Then
+            LoadReport(txtBatchId.Text)
+        End If
+    End Sub
+
+#End Region
+
+#Region "txtLoanAmount_TextChanged "
+
+    Protected Sub txtLoanAmount_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtLoanAmount.TextChanged
+        If CDbl(txtLoanAmount.Text.Trim()) > CDbl(lblLoanAmountToPay.Text) Then
+            lblMsg.Visible = True
+            lblMsg.Text = "The amount should not exceed the loan amount"
+            txtLoanAmount.Focus()
+        End If
+        StudentLoanAmount()
+    End Sub
+
+#End Region
+
+#Region "btnHidden_Click "
+
+    Protected Sub btnHidden_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnHidden.Click
+
+    End Sub
+
+#End Region
+
+#Region "ddlPaymentMode_SelectedIndexChanged "
+
+    Protected Sub ddlPaymentMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPaymentMode.SelectedIndexChanged
+
+        If ddlPaymentMode.SelectedValue = "EFT" Then
+            Session("LaporanHarian") = True
+        Else
+            Session("LaporanHarian") = False
+        End If
+    End Sub
+
+#End Region
+
+#Region "Populate Sponsor Invoice "
+
+    Private Sub PopulateSponsorInvoice()
+
+        'Create Instances - Start
+        Dim _SponsorDAL As New SponsorDAL
+        Dim SponsorInvoices As DataTable = Nothing
+        'Create Instances - Stop
+
+        Try
+
+            'Get Sponor Inv Details
+            SponsorInvoices = _SponsorDAL.GetSponsorPostedInvoice()
+
+            'Populate Drop Down List - Start
+            Call FormHelp.PopulateDropDownList(SponsorInvoices,
+                ddlSponsorInv, "invoice_details", "invoice_id")
+            'Populate Drop Down List - Stop
+
+        Catch ex As Exception
+
+            MaxModule.Helper.LogError(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+End Class

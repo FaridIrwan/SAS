@@ -1,0 +1,1142 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>108328</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>DOCTOR OF VETERINARY MEDICINE</sapg_program>
+    <safc_desc>FAKULTI PERUBATAN VETERINAR</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>32</sasi_pgid>
+    <sasi_faculty>1000</sasi_faculty>
+    <sasi_matricno>108328</sasi_matricno>
+    <sasi_name>NURUL NADIRAH BT NASRON</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108329</creditref>
+    <category>Receipt</category>
+    <transamount>222</transamount>
+    <sapg_program>DOCTOR OF VETERINARY MEDICINE</sapg_program>
+    <safc_desc>FAKULTI PERUBATAN VETERINAR</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>32</sasi_pgid>
+    <sasi_faculty>1000</sasi_faculty>
+    <sasi_matricno>108329</sasi_matricno>
+    <sasi_name>ZURAIDAH BINTI RAZALY</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108328</creditref>
+    <category>Receipt</category>
+    <transamount>111</transamount>
+    <sapg_program>DOCTOR OF VETERINARY MEDICINE</sapg_program>
+    <safc_desc>FAKULTI PERUBATAN VETERINAR</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>32</sasi_pgid>
+    <sasi_faculty>1000</sasi_faculty>
+    <sasi_matricno>108328</sasi_matricno>
+    <sasi_name>NURUL NADIRAH BT NASRON</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>RT000000000000242</transcode>
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>RT000000000000243</transcode>
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>RT000000000000244</transcode>
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>130</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>120</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>25</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>D000000000000002</transcode>
+    <creditref>106688</creditref>
+    <category>Refund</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>120</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>25</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>35</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>RT000000000000319</transcode>
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>1526</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>35</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>35</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>25</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode>RT000000000000347</transcode>
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>RT000000000000318</transcode>
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849825</transcode>
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>73</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>25</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>41</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>41</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>107591</creditref>
+    <category>Receipt</category>
+    <transamount>130</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107591</sasi_matricno>
+    <sasi_name>MOHD FAKARUZI BIN MOHD RAZALI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>120</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>107592</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>107592</sasi_matricno>
+    <sasi_name>AZIZUL HAFIZ BIN ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>106688</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <sapg_program>BACHELOR OF ACCOUNTING</sapg_program>
+    <safc_desc>FAKULTI EKONOMI DAN PENGURUSAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>53ES</sasi_pgid>
+    <sasi_faculty>1100</sasi_faculty>
+    <sasi_matricno>106688</sasi_matricno>
+    <sasi_name>MOHD ANSAR BIN ABDANI</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849825</transcode>
+    <creditref>108304</creditref>
+    <category>Receipt</category>
+    <transamount>63</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode />
+    <creditref>108305</creditref>
+    <category>Receipt</category>
+    <transamount>70</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode />
+    <creditref>108304</creditref>
+    <category>Receipt</category>
+    <transamount>60</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849822</transcode>
+    <creditref>108305</creditref>
+    <category>Receipt</category>
+    <transamount>70</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849823</transcode>
+    <creditref>108304</creditref>
+    <category>Receipt</category>
+    <transamount>60</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849825</transcode>
+    <creditref>108305</creditref>
+    <category>Receipt</category>
+    <transamount>73</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849822</transcode>
+    <creditref>108304</creditref>
+    <category>Receipt</category>
+    <transamount>60</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108304</sasi_matricno>
+    <sasi_name>NOORYANTI ABD. JALIL</sasi_name>
+  </Table>
+  <Table>
+    <transdate>24/06/2015</transdate>
+    <transcode>A7849823</transcode>
+    <creditref>108305</creditref>
+    <category>Receipt</category>
+    <transamount>70</transamount>
+    <sapg_program>SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI SAINS</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT16</sasi_pgid>
+    <sasi_faculty>1200</sasi_faculty>
+    <sasi_matricno>108305</sasi_matricno>
+    <sasi_name>FARIDA HARYANI BINTI AB AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108312</creditref>
+    <category>Receipt</category>
+    <transamount>50</transamount>
+    <sapg_program>DIPLOMA IN AGRICULTURAL ENGINEERING</sapg_program>
+    <safc_desc>FAKULTI KEJURUTERAAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>5</sasi_pgid>
+    <sasi_faculty>1300</sasi_faculty>
+    <sasi_matricno>108312</sasi_matricno>
+    <sasi_name>RAFIDAH BINTI ABDUL AZIZ</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108313</creditref>
+    <category>Receipt</category>
+    <transamount>60</transamount>
+    <sapg_program>DIPLOMA IN AGRICULTURAL ENGINEERING</sapg_program>
+    <safc_desc>FAKULTI KEJURUTERAAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>5</sasi_pgid>
+    <sasi_faculty>1300</sasi_faculty>
+    <sasi_matricno>108313</sasi_matricno>
+    <sasi_name>CHE SALINA BT CHE SOH</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108319</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN PENDIDIKAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sasi_faculty>1400</sasi_faculty>
+    <sasi_matricno>108319</sasi_matricno>
+    <sasi_name>NARINI BT YUSOF</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108318</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN PENDIDIKAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sasi_faculty>1400</sasi_faculty>
+    <sasi_matricno>108318</sasi_matricno>
+    <sasi_name>MARZUNIZA BINTI HASSAN</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108318</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN PENDIDIKAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sasi_faculty>1400</sasi_faculty>
+    <sasi_matricno>108318</sasi_matricno>
+    <sasi_name>MARZUNIZA BINTI HASSAN</sasi_name>
+  </Table>
+  <Table>
+    <transdate>19/08/2015</transdate>
+    <transcode />
+    <creditref>108319</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>SPORT SCIENCE EDUCATION</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN PENDIDIKAN</safc_desc>
+    <transstatus>Open</transstatus>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>AT03</sasi_pgid>
+    <sasi_faculty>1400</sasi_faculty>
+    <sasi_matricno>108319</sasi_matricno>
+    <sasi_name>NARINI BT YUSOF</sasi_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>RT000000000000348</transcode>
+    <creditref>456789</creditref>
+    <category>Receipt</category>
+    <transamount>100</transamount>
+    <sapg_program>DOCTOR OF MEDICINE</sapg_program>
+    <safc_desc>FAKULTI PERUBATAN DAN SAINS KESIHATAN</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>72A</sasi_pgid>
+    <sasi_faculty>1500</sasi_faculty>
+    <sasi_matricno>456789</sasi_matricno>
+    <sasi_name>adsd</sasi_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>RT000000000000349</transcode>
+    <creditref>72487</creditref>
+    <category>Receipt</category>
+    <transamount>200</transamount>
+    <sapg_program>BACHELOR OF ECONOMICS</sapg_program>
+    <safc_desc>PUSAT ASASI SAINS PERTANIAN (AGROBIO)</safc_desc>
+    <transstatus>Closed</transstatus>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasi_pgid>62</sasi_pgid>
+    <sasi_faculty>3100</sasi_faculty>
+    <sasi_matricno>72487</sasi_matricno>
+    <sasi_name>FAIRUZA BINTI HASHIM</sasi_name>
+  </Table>
+</NewDataSet>

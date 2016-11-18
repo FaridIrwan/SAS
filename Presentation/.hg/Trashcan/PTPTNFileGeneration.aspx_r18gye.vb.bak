@@ -1,0 +1,145 @@
+﻿#Region "NameSpaces "
+
+Imports HTS.SAS.Entities
+Imports HTS.SAS.BusinessObjects
+Imports System
+Imports System.Data
+Imports System.IO
+Imports System.IO.FileSystemEventArgs
+Imports System.Collections.Generic
+Imports MaxGeneric
+Imports System.Configuration
+
+#End Region
+
+Partial Class PTPTNFileGeneration
+    Inherits System.Web.UI.Page
+
+#Region "Page Load "
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Not IsPostBack() Then
+            Menuname(CInt(Request.QueryString("Menuid")))
+            hdnFileNoCount.Value = 0
+            Response.Clear()
+        End If
+        lblMsg.Text = ""
+    End Sub
+
+#End Region
+
+#Region "Methods "
+    ''' <summary>
+    ''' Method to get the MenuName
+    ''' </summary>
+    ''' <param name="MenuId">Parameter is MenuId</param>
+    ''' <remarks></remarks>
+    Private Sub Menuname(ByVal MenuId As Integer)
+        Dim eobj As New MenuEn
+        Dim bobj As New MenuBAL
+        eobj.MenuId = MenuId
+        eobj = bobj.GetMenus(eobj)
+        lblMenuName.Text = eobj.MenuName
+    End Sub
+
+#End Region
+
+#Region "Display Message "
+
+    Private Sub DisplayMessage(ByVal MessageToDisplay As String)
+
+        lblMsg.Text = String.Empty
+        lblMsg.Text = MessageToDisplay
+
+    End Sub
+
+#End Region
+
+#Region "File Paths "
+
+    Private ReadOnly Property GetUploadFilePath As String
+        Get
+            Return clsGeneric.NullToString(
+                ConfigurationManager.AppSettings("PTPTN_UPLOAD_PATH"))
+        End Get
+    End Property
+
+    Private ReadOnly Property GetDownloadFilePath As String
+        Get
+            Return clsGeneric.NullToString(
+                ConfigurationManager.AppSettings("PTPTN_DOWNLOAD_PATH"))
+        End Get
+    End Property
+
+#End Region
+
+#Region "btnGenerate_Click "
+
+    Protected Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+
+        'Create Instances
+        Dim _FileHelper As New FileHelper()
+
+        'Variable Declarations - Start
+        Dim TotalAmount As Decimal = 0, TotalRecords As Integer = 0
+        Dim UploadedPtptnFile As String = Nothing, DirectDebitFile As String = Nothing
+        'Variable Declarations - Stop
+
+        Try
+            'Get Uploaded File - Start
+            UploadedPtptnFile = FileUpload1.FileName
+            UploadedPtptnFile = GetUploadFilePath & Path.GetFileName(UploadedPtptnFile)
+            'Get Uploaded File - Stop
+
+            'Save File
+            FileUpload1.SaveAs(UploadedPtptnFile)
+
+            'Generate Direct Debit File
+            If _FileHelper.GenerateDirectDebitFile(UploadedPtptnFile,
+                TotalRecords, TotalAmount, DirectDebitFile) Then
+
+                'Show Panel
+                pnlDisplay.Visible = True
+
+                'Display Error Message
+                Call DisplayMessage("File Generation Successful")
+
+                'Display File Details
+                Call TextFileToLabel(DirectDebitFile, TotalAmount, TotalRecords)
+
+            Else
+
+                'Show Panel
+                pnlDisplay.Visible = False
+
+                'Display Error Message
+                Call DisplayMessage("File Generation Failed")
+
+            End If
+
+        Catch ex As Exception
+
+            'Log & Display Error
+            Call MaxModule.Helper.LogError(ex.Message)
+            Call DisplayMessage(ex.Message)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "TextFileToLabel "
+
+    Private Sub TextFileToLabel(ByVal DirectDebitFile As String,
+        ByVal TotalAmount As Decimal, ByVal TotalRecords As Integer)
+
+        lblFileName.Text = DirectDebitFile
+        lblTotalStudent.Text = TotalRecords
+        lblTotalAmount.Text = clsGeneric.SetCurrencyFormat(TotalAmount)
+
+    End Sub
+
+#End Region
+
+End Class

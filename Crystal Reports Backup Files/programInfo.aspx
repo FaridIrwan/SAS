@@ -1,0 +1,531 @@
+<%@ Page Language="VB" MasterPageFile="~/MasterPage3.master" MaintainScrollPositionOnPostback="true" AutoEventWireup="false" 
+    CodeFile="programInfo.aspx.vb" Inherits="programinfo" Title="Program Info" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script language="javascript" type="text/javascript">
+        function geterr() {
+            var digits = "0123456789";
+            var temp;
+            for (var i = 0; i < document.getElementById("<%=txtRecNo.ClientID %>").value.length; i++) {
+         temp = document.getElementById("<%=txtRecNo.ClientID%>").value.substring(i, i + 1);
+         if (digits.indexOf(temp) == -1) {
+             alert("Enter valid Record No");
+             document.getElementById("<%=txtRecNo.ClientID%>").value = 1;
+                        document.getElementById("<%=txtRecNo.ClientID%>").focus();
+                   return false;
+               }
+           }
+           return true;
+       }
+       function getconfirm() {
+           if (document.getElementById("<%=txtProgramCode.ClientID%>").value == "") {
+
+        alert("Select a Record to Delete");
+        return false;
+    }
+    else {
+        if (confirm("Do you want to Delete Record?")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checknValue() {
+
+    if (((event.keyCode < 48) || (event.keyCode > 57)) && (event.keyCode != 13) && (event.keyCode != 46)) {
+        alert("Enter Valid Values");
+        event.keyCode = 0;
+    }
+}
+function validate() {
+    if (document.getElementById("<%=ddlProgramType.ClientID%>").value == "-1") {
+        alert("Select a Program Type");
+        document.getElementById("<%=ddlProgramType.ClientID%>").focus();
+        return false;
+    }
+    var re = /\s*((\S+\s*)*)/;
+    if (document.getElementById("<%=txtProgramCode.ClientID%>").value.replace(re, "$1").length == 0) {
+              alert("Program Code Field Cannot Be Blank");
+              document.getElementById("<%=txtProgramCode.ClientID%>").focus();
+                 return false;
+             }
+             var digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+             var temp;
+             for (var i = 0; i < document.getElementById("<%=txtProgramCode.ClientID %>").value.length; i++) {
+         temp = document.getElementById("<%=txtProgramCode.ClientID%>").value.substring(i, i + 1);
+         if (digits.indexOf(temp) == -1) {
+             alert("Enter Valid Program Code");
+             document.getElementById("<%=txtProgramCode.ClientID%>").focus();
+                        return false;
+                    }
+                }
+                if (document.getElementById("<%=txtProgramName.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Program Description Field Cannot Be Blank");
+        document.getElementById("<%=txtProgramName.ClientID%>").focus();
+                 return false;
+             }
+             if (document.getElementById("<%=txtPnameBM.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Program Description BM Field Cannot Be Blank");
+        document.getElementById("<%=txtPnameBM.ClientID%>").focus();
+                 return false;
+             }
+             if (document.getElementById("<%=txtTotalSemester.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Total Semester Field Cannot Be Blank");
+        document.getElementById("<%=txtTotalSemester.ClientID%>").focus();
+                 return false;
+             }
+
+            if (document.getElementById("<%=txtSemesterYear.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Intake year Cannot Be Blank");
+        document.getElementById("<%=txtTotalSemester.ClientID%>").focus();
+        return false;
+            }
+
+             if (document.getElementById("<%=txtSemesterYear.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Semester/Year Field Cannot Be Blank");
+        document.getElementById("<%=txtSemesterYear.ClientID%>").focus();
+                 return false;
+             }
+             if (document.getElementById("<%=txtFacultyDesc.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Faculty Description Field Cannot Be Blank");
+        document.getElementById("<%=txtFacultyDesc.ClientID%>").focus();
+                 return false;
+             }
+             if (document.getElementById("<%=txtDebtorAcc.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("Debitor GL Account Field Cannot Be Blank");
+        document.getElementById("<%=txtDebtorAcc.ClientID%>").focus();
+                 return false;
+             }
+             if (document.getElementById("<%=txtTuitionFeeAcc.ClientID%>").value.replace(re, "$1").length == 0) {
+        alert("TuitionFee GL Account Field Cannot Be Blank");
+        document.getElementById("<%=txtTuitionFeeAcc.ClientID%>").focus();
+                 return false;
+             }
+
+             return true;
+         }
+    </script>
+    <%--<atlas:ScriptManager ID="scriptmanager1" EnablePartialRendering="true" runat="Server" />
+   <atlas:UpdatePanel ID="up1" runat="server">
+	<ContentTemplate>--%>
+    <asp:Panel ID="Panel1" runat="server" Width="100%">
+        <table style="background-image: url(images/Sample.png);">
+            <tr>
+                <td style="width: 4px; height: 14px"></td>
+                <td style="width: 14px; height: 14px"></td>
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnNew" runat="server" ImageUrl="images/add.png" ToolTip="New" /></td>
+                            <td>
+                                <asp:Label ID="Label11" runat="server" Text="New"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnSave" runat="server" ImageUrl="~/images/save.png" ToolTip="Save" /></td>
+                            <td>
+                                <asp:Label ID="Label14" runat="server" Text="Save"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnDelete" runat="server" ImageUrl="~/images/delete.png" /></td>
+                            <td>
+                                <asp:Label ID="Label13" runat="server" Text="Delete"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnView" runat="server" ImageUrl="~/images/find.png" ToolTip="View" /></td>
+                            <td>
+                                <asp:Label ID="Label16" runat="server" Text="Search"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnPrint" runat="server" ImageUrl="~/images/print.png" ToolTip="Print" /></td>
+                            <td>
+                                <asp:Label ID="Label17" runat="server" Text="Print"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnPosting" runat="server" ImageUrl="~/images/gposting.png" ToolTip="Cancel" /></td>
+                            <td>
+                                <asp:Label ID="Label6" runat="server" Text="Posting"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnOthers" runat="server" ImageUrl="~/images/gothers.gif" ToolTip="Cancel" /></td>
+                            <td>
+                                <asp:Label ID="Label5" runat="server" Text="Others"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table style="border-collapse: collapse;" class="menuoff" onmouseover="className='menuon';" onmouseout="className='menuoff';">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ibtnCancel" runat="server" ImageUrl="~/images/cancel.png" ToolTip="Cancel" /></td>
+                            <td>
+                                <asp:Label ID="Label18" runat="server" Text="Cancel"></asp:Label></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td style="width: 2%; height: 14px">
+                    <asp:ImageButton ID="ibtnFirst" runat="server" ImageUrl="~/images/new_last.png" /></td>
+
+                <td style="width: 2%; height: 14px">
+                    <asp:ImageButton ID="ibtnPrevs" runat="server" ImageUrl="~/images/new_prev.png" /></td>
+                <td style="width: 2%; height: 14px">
+                    <asp:TextBox ID="txtRecNo" runat="server" disabled="disabled" TabIndex="1" dir="ltr" ReadOnly="true" CssClass="text_box" Width="52px" AutoPostBack="True" Style="text-align: right" MaxLength="7"></asp:TextBox></td>
+                <td style="width: 2%; height: 14px">
+                    <asp:Label ID="Label47" runat="server">Of</asp:Label></td>
+                <td style="width: 2%; height: 14px">
+                    <asp:Label ID="lblCount" runat="server" Width="20px"></asp:Label></td>
+
+                <td style="width: 2%; height: 14px">
+                    <asp:ImageButton ID="ibtnNext" runat="server" ImageUrl="~/images/next.png" /></td>
+
+                <td style="width: 2%; height: 14px">
+                    <asp:ImageButton ID="ibtnLast" runat="server" ImageUrl="~/images/new_first.png" /></td>
+                <td style="width: 2%; height: 14px"></td>
+                <td style="width: 100%; height: 14px"></td>
+                <td style="width: 100%; height: 14px"></td>
+            </tr>
+
+        </table>
+        <table class="mainbg" style="width: 100%;">
+            <tr>
+                <td class="vline" style="width: 98%; height: 1px"></td>
+            </tr>
+        </table>
+        <table class="mainbg" style="width: 100%;">
+            <tr>
+                <td style="width: 494px; height: 39px;">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                    </asp:SiteMapPath>
+                </td>
+                <td class="pagetext" style="height: 39px;" align="right">
+                    <asp:Label ID="lblMenuName" runat="server" Text="University Fund" Width="394px" Height="35px"></asp:Label></td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <%-- </ContentTemplate>     
+</atlas:UpdatePanel>
+<atlas:UpdateProgress ID="ProgressIndicator" runat="server">
+    <ProgressTemplate>
+        Loading the data, please wait... 
+        <asp:Image ID="LoadingImage" ImageAlign=AbsMiddle runat="server" ImageUrl="~/Images/spinner.gif" />        
+    </ProgressTemplate>
+ </atlas:UpdateProgress>
+<atlas:UpdatePanel ID="up2" runat="server">
+<ContentTemplate>--%>
+
+    <asp:Panel ID="PnlAdd" runat="server" Width="100%" Visible="true">
+        <table style="width: 100%">
+            <tr>
+                <td style="width: 100%">
+                    <div style="border: thin solid #A6D9F4; width: 100%">
+                        <table class="fields" style="width: 100%; height: 100%;">
+                            <tr>
+                                <td style="width: 3px; height: 26px">&nbsp;</td>
+                                <td class="heading1" style="width: 58px; height: 26px">&nbsp;</td>
+                                <td style="width: 27px; height: 26px; text-align: center">
+                                    <asp:Label ID="lblMsg" runat="server" CssClass="lblError" Style="text-align: center"
+                                        Width="292px"></asp:Label></td>
+                                <td style="width: 314px; height: 26px"></td>
+                                <td style="width: 80px; height: 26px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 26px">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 26px;">
+                                    <asp:Label ID="Label48" runat="server" Text="Program Type " Width="104px"></asp:Label>
+                                </td>
+                                <td class="fields" style="width: 27px; height: 26px;">
+                                    <asp:DropDownList ID="ddlProgramType" AppendDataBoundItems="True" runat="server" Width="147px">
+                                    </asp:DropDownList>
+                                </td>
+                                <td style="width: 314px; height: 26px">&nbsp;</td>
+                                <td style="width: 80px; height: 26px">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 16px;"></td>
+                                <td class="heading1" style="width: 58px; height: 16px;">
+                                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Program Info" Width="101px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 16px;"></td>
+                                <td style="width: 314px; height: 16px;"></td>
+                                <td style="width: 80px; height: 16px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 26px;">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 26px;">
+                                    <asp:Label ID="Label21" runat="server" Text="Program Code " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 26px;">
+                                    <asp:TextBox ID="txtProgramCode" runat="server" Width="142px" MaxLength="20"></asp:TextBox></td>
+                                <td style="width: 314px; height: 26px"></td>
+                                <td style="width: 80px; height: 26px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px;">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px;">
+                                    <asp:Label ID="Label22" runat="server" Text="Program Description" Width="126px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px;">
+                                    <asp:TextBox ID="txtProgramName" runat="server" Width="346px" MaxLength="50"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px;">
+                                    <span style="font-size: 11pt; color: #ff0066"></span></td>
+                                <td style="width: 80px; height: 25px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px;">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px;">
+                                    <asp:Label ID="Label23" runat="server" Text="Program Description BM" Width="145px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px;">
+                                    <asp:TextBox ID="txtPNameBM" runat="server" Width="346px" MaxLength="50"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px;"></td>
+                                <td style="width: 80px; height: 25px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px"></td>
+                                <td class="fields" style="width: 58px">
+                                    <asp:Label ID="Label24" runat="server" Text="Short Description " Width="115px"></asp:Label></td>
+                                <td class="fields" style="width: 27px">
+                                    <asp:TextBox ID="txtprogramSName" runat="server" Width="142px" MaxLength="20"></asp:TextBox></td>
+                                <td style="width: 314px"></td>
+                                <td style="width: 80px"></td>
+                            </tr>
+                            <%-- <tr>
+                            <td style="width: 3px">
+                                <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                            <td class="fields" style="width: 58px">
+                                <asp:Label ID="Label19" runat="server" Text="Field Of study" Width="115px"></asp:Label></td>
+                            <td class="fields" style="width: 27px">
+                                <asp:TextBox ID="txtFieldStudy" runat="server" Width="346px" MaxLength="50"></asp:TextBox>
+                                </td>
+                            <td style="width: 314px">
+                            </td>
+                            <td style="width: 80px">
+                            </td>
+                        </tr>--%>
+                            <tr>
+                                <td style="width: 3px; height: 25px;">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px;">
+                                    <asp:Label ID="Label25" runat="server" Text="Total Semester " Width="106px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px;">
+                                    <asp:TextBox ID="txtTotalSemester" runat="server" Width="71px" MaxLength="4"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px;"></td>
+                                <td style="width: 80px; height: 25px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px;"></td>
+                                <td class="fields" style="width: 58px; height: 25px;">
+                                    <asp:Label ID="Label26" runat="server" Text="Intake " Width="106px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px;">
+                                    <asp:TextBox ID="txtSemesterYear" runat="server" Width="71px" MaxLength="4"></asp:TextBox><span
+                                        style="font-size: 11pt"><span style="color: #ff0066; font-family: Arial"></span><span
+                                            style="color: #ff0066;"></span></span></td>
+                                <td style="width: 314px; height: 25px;"></td>
+                                <td style="width: 80px; height: 25px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px;"></td>
+                                <td class="fields" style="width: 58px; height: 25px;">
+                                    <asp:Label ID="Label27" runat="server" Text="Remarks" Width="78px" Style="vertical-align: middle"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px;">
+                                    <asp:TextBox ID="txtProgramDesc" runat="server" Width="346px" MaxLength="50"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px;"></td>
+                                <td style="width: 80px; height: 25px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label2" runat="server" Style="vertical-align: middle" Text="Status"
+                                        Width="78px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:DropDownList ID="ddlStatus" runat="server" Width="147px">
+                                        <asp:ListItem Value="1">Active</asp:ListItem>
+                                        <asp:ListItem Value="0">Inactive</asp:ListItem>
+                                    </asp:DropDownList></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label3" runat="server" Text="Faculty Info" Font-Bold="True" Width="88px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px"></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label4" runat="server" Text="Faculty Description " Width="119px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">
+                                        <asp:TextBox ID="txtFacultyDesc" runat="server" MaxLength="50" Width="345px" Enabled="False"></asp:TextBox></span> <span style="font-size: 11pt; color: #ff0066">
+                                            <asp:ImageButton ID="ibtnAddFaculty" runat="server" ImageUrl="~/images/find_img.png" Height="16px" Width="16px" /></span></td>
+                                <td style="width: 100px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label7" runat="server" Text="Short Name " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:TextBox ID="txtShortName" runat="server" Width="142px" MaxLength="50" Enabled="False"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label8" runat="server" Font-Bold="True" Text="Account Info:" Width="104px"></asp:Label>
+                                </td>
+                                <td class="fields" style="width: 27px; height: 25px"></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label9" runat="server" Text="Debtor Acc " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:TextBox ID="txtDebtorAcc" runat="server" Width="142px" Rows="20"></asp:TextBox>
+                                    <asp:Button ID="Check" runat="server" Text="Check" />
+                                    &nbsp;
+                                    <br />
+                                    <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                                    <br />
+                                    <asp:Image ID="imgGL" runat="server" Height="18px" ImageAlign="Baseline" ImageUrl="~/images/check.png" Visible="False" />
+                                </td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label10" runat="server" Text="Remarks " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:TextBox ID="txtAccDesc" runat="server" Width="346px" MaxLength="50"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label12" runat="server" Font-Bold="True" Text="Tuition Fee Info "
+                                        Width="113px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px"></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px">
+                                    <span style="font-size: 11pt; color: #ff0066; font-family: Arial">*</span></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label15" runat="server" Text="Debtor Acc " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:TextBox ID="txtTuitionFeeAcc" runat="server" Width="142px" MaxLength="20"></asp:TextBox>
+                                    <asp:Button ID="Check2" runat="server" Text="Check" />
+                                    &nbsp;
+                                    <br />
+                                    <asp:Label ID="lblDesc2" runat="server"></asp:Label>
+                                    <br />
+                                    <asp:Image ID="Image1" runat="server" Height="18px" ImageAlign="Baseline" ImageUrl="~/images/check.png" Visible="False" />
+                                </td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 3px; height: 25px"></td>
+                                <td class="fields" style="width: 58px; height: 25px">
+                                    <asp:Label ID="Label20" runat="server" Text="Remarks " Width="104px"></asp:Label></td>
+                                <td class="fields" style="width: 27px; height: 25px">
+                                    <asp:TextBox ID="txtTuitionFeeDesc" runat="server" Width="346px" MaxLength="50"></asp:TextBox></td>
+                                <td style="width: 314px; height: 25px"></td>
+                                <td style="width: 80px; height: 25px"></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+
+    <asp:Panel ID="PnlView" runat="server" Height="100%" Width="100%">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td style="width: 3px; height: 130px;"></td>
+                <td class="fields" style="width: 98%; height: 130px;">&nbsp;<asp:DataGrid ID="dgView" runat="server" Width="100%" AutoGenerateColumns="False" DataKeyField="SAPG_Code">
+                    <FooterStyle CssClass="dgFooterStyle" Height="20px" />
+                    <SelectedItemStyle CssClass="dgSelectedItemStyle" />
+                    <AlternatingItemStyle BackColor="Beige" CssClass="dgAlternatingItemStyle" Font-Bold="False"
+                        Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                    <ItemStyle CssClass="dgItemStyle" />
+                    <HeaderStyle BackColor="#CDD7EE" CssClass="dgHeaderStyle" Font-Bold="True" Font-Italic="False"
+                        Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" />
+                    <Columns>
+                        <asp:ButtonColumn CommandName="Select" DataTextField="SAPG_Code" HeaderText="Program Code"
+                            Text="SAPG_Code"></asp:ButtonColumn>
+                        <asp:BoundColumn DataField="SAPG_Program" HeaderText="Program"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAPG_ProgramBM" HeaderText="ProgramBm" Visible="False"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAPG_SName" HeaderText="SName" Visible="False"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAPG_TotalSem" HeaderText="SAPG_TotalSem" Visible="False"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAPG_SemByYear" HeaderText="SemByYear" Visible="False"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAPG_Desc" HeaderText="SAPG_Desc" Visible="False"></asp:BoundColumn>
+                        <asp:BoundColumn DataField="SAFC_Code" HeaderText="SAFC_Code" Visible="False"></asp:BoundColumn>
+                    </Columns>
+                </asp:DataGrid></td>
+                <td style="width: 150px; height: 130px;"></td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <%--</ContentTemplate>     
+</atlas:UpdatePanel>--%>
+    <asp:Button ID="btnHidden" runat="Server" OnClick="btnHidden_Click" Style="display: none" />
+
+</asp:Content>
+

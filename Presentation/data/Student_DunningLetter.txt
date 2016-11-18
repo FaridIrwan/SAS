@@ -1,0 +1,49 @@
+<html><body><table><tr><td>
+<p style="font-family:Calibri;font-size:13px">
+    Rujukan Kami : UPM/BEN/SKP/01/Q5 ( {0} )<br />
+    Rujukan Tuan : <br /> 
+    Tarikh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {1}</p> 
+
+<p style="font-family:Calibri;font-size:13px">
+    {5}<br />
+    {6}<br />  
+    {7}<br />  
+    {8}<br />  
+    {9}</p>
+
+<p style="font-family:Calibri;font-size:13px">Tuan,</p>
+<p style="font-family:Calibri;font-size:13px"><strong>{2}</strong></p> 
+
+<p style="font-family:Calibri;font-size:13px">Dengan segala hormatnya perkara di atas adalah dirujuk. </p> 
+<p style="font-family:Calibri;font-size:13px;margin-left:0px">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Untuk makluman tuan, pejabat ini sedang dalam proses pengemaskinian lejar pelajar dan<br />
+daripada semakan didapati pihak tuan masih belum menjelaskan hutang yang tertunggak berjumlah<br />
+<strong>RM {3}</strong></p>
+<p style="font-family:Calibri;font-size:13px;margin-left:0px">
+2.&nbsp;&nbsp;&nbsp;Sehubungan dengan itu, kerjasama pihak tuan amatlah dihargai supaya menjelaskan hutang<br />
+berkenaan dengan membuat bayaran melalui CIMBClicks melalui <strong><i>modul Pay Bill – UNIVERSITI PUTRA</i></strong><br />
+<strong><i>MALAYSIA KAMPUS SERDANG</i></strong> atau menggunakan Slip Bayaran di mana-mana cawangan CIMB Bank<br />
+Berhad atas nama <strong>UPM COLLECTION</strong>, nombor akaun <strong>{4}.</strong> Sila tuliskan Nama, No K/P, No Matrik<br /> 
+dan No Telefon Bimbit di bahagian belakang slip tersebut dan serahkan satu salinan slip ke kaunter <br />
+Seksyen Kewangan Pelajar II atau fax ke no 03-89472048.</p>
+
+<p style="font-family:Calibri;font-size:13px;margin-left:0px">
+3.&nbsp;&nbsp;&nbsp;Bayaran melalui kad kredit Visa atau Mastercard atau Bankcard (Kad ATM) boleh dibuat di<br />
+Kaunter Seksyen Kewangan Pelajar II pada waktu berurusan kaunter. Sekiranya tuan memerlukan<br />
+penjelasan lanjut berkenaan perkara ini, sila hubungi pejabat ini di Seksyen Kewangan Pelajar II<br />
+melalui nombor talian 03 - 8946 4161 / 03 - 8946 4156 atau emel kepada <strong>bursar.student_pg@upm.edu.my</strong></p>
+
+<p style="font-family:Calibri;font-size:13px;margin-left:0px">
+4.&nbsp;&nbsp;&nbsp;Pihak tuan diminta menjelaskan hutang yuran tertunggak pengajian ini dalam tempoh <strong>14 hari</strong><br />
+dari tarikh surat ini dan kegagalan tuan menjelaskan hutang ini membolehkan tindakan diambil ke atas<br />
+tuan. Sila abaikan surat ini jika pihak tuan telah menjelaskan yuran berkenaan.</p>
+
+<p style="font-family:Calibri;font-size:13px">Sekian, terima kasih.<br /><br />
+Saya yang menjalankan tugas,<br /><br /><br />
+<strong>MAZITAH BINTI AHMAD</strong><br />
+Pegawai Kewangan<br />
+Pejabat Bursar<br />
+Universiti Putra Malaysia<br /></p>
+
+<p style="font-family:Calibri;font-size:13px;text-align:center">TIADA TANDATANGAN DIPERLUKAN KERANA INI ADALAH CETAKAN KOMPUTER</p>
+</td></tr></table></body></html>

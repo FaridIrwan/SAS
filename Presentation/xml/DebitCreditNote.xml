@@ -1,0 +1,597 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201020111</sasi_cursemyr>
+    <matricno>159319</matricno>
+    <studentname>MUHAMMAD SYAHIR BIN SHAHARUM</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000013</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201020111</sasi_cursemyr>
+    <matricno>159319</matricno>
+    <studentname>MUHAMMAD SYAHIR BIN SHAHARUM</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>DN000000000000013</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166655</matricno>
+    <studentname>SITI NUR HASANA BINTI SAMSUDDIN</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>DN000000000000014</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166655</matricno>
+    <studentname>SITI NUR HASANA BINTI SAMSUDDIN</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000014</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166673</matricno>
+    <studentname>NURUL BADRIAH BINTI ABDUL RAZAK</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>DN000000000000015</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166673</matricno>
+    <studentname>NURUL BADRIAH BINTI ABDUL RAZAK</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000015</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166771</matricno>
+    <studentname>NUR FATHIAH BINTI MOKHTAR</studentname>
+    <descreceipt>Test for CN-Withdrawn from Hostel</descreceipt>
+    <transamount>40</transamount>
+    <receiptno>CN000000000000010</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166771</matricno>
+    <studentname>NUR FATHIAH BINTI MOKHTAR</studentname>
+    <descreceipt>Test for CN-Withdrawn from Hostel</descreceipt>
+    <transamount>40</transamount>
+    <receiptno>CN000000000000010</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166899</matricno>
+    <studentname>FATIN NUR LYANA BINTI ABDUL RAHMAN</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000016</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166899</matricno>
+    <studentname>FATIN NUR LYANA BINTI ABDUL RAHMAN</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>DN000000000000016</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166994</matricno>
+    <studentname>DINI SYARAFINA BINTI ZAINOL ABIDIN</studentname>
+    <descreceipt>Test Change of Program</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000016</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166994</matricno>
+    <studentname>DINI SYARAFINA BINTI ZAINOL ABIDIN</studentname>
+    <descreceipt>Test Change of Program</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000016</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166994</matricno>
+    <studentname>DINI SYARAFINA BINTI ZAINOL ABIDIN</studentname>
+    <descreceipt>Test for Credit Hour on Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000018</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166994</matricno>
+    <studentname>DINI SYARAFINA BINTI ZAINOL ABIDIN</studentname>
+    <descreceipt>Test Credit Hour-Decrease</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>CN000000000000018</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>166994</matricno>
+    <studentname>DINI SYARAFINA BINTI ZAINOL ABIDIN</studentname>
+    <descreceipt>Test Change of Program</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>CN000000000000016</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167179</matricno>
+    <studentname>NURZULAIKHA SABRINA BINTI KHAIRUL PATAH</studentname>
+    <descreceipt>Test for DN Increase</descreceipt>
+    <transamount>80</transamount>
+    <receiptno>DN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167214</matricno>
+    <studentname>UMI KALSUM BINTI ARIFIN</studentname>
+    <descreceipt>Test for DN Adding Manually</descreceipt>
+    <transamount>0</transamount>
+    <receiptno>DN000000000000002</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167214</matricno>
+    <studentname>UMI KALSUM BINTI ARIFIN</studentname>
+    <descreceipt>Test for DN Adding Manually</descreceipt>
+    <transamount>0</transamount>
+    <receiptno>DN000000000000002</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167214</matricno>
+    <studentname>UMI KALSUM BINTI ARIFIN</studentname>
+    <descreceipt>Test for CN Adding Manually</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000002</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167214</matricno>
+    <studentname>UMI KALSUM BINTI ARIFIN</studentname>
+    <descreceipt>Test for CN Adding Manually</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000002</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167292</matricno>
+    <studentname>RAJA NURUL MASITAH BINTI RAJA YACOB</studentname>
+    <descreceipt>Test for DN Increase</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>DN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <matricno>167300</matricno>
+    <studentname>NOOR AMIRAH BINTI MUSTAFA</studentname>
+    <descreceipt>Test Credit Hour-Decrease</descreceipt>
+    <transamount>212</transamount>
+    <receiptno>CN000000000000019</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <matricno>167300</matricno>
+    <studentname>NOOR AMIRAH BINTI MUSTAFA</studentname>
+    <descreceipt>Test for Credit Hour on Debit Note</descreceipt>
+    <transamount>42.4</transamount>
+    <receiptno>DN000000000000019</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <matricno>167300</matricno>
+    <studentname>NOOR AMIRAH BINTI MUSTAFA</studentname>
+    <descreceipt>Test Change of Program</descreceipt>
+    <transamount>10</transamount>
+    <receiptno>CN000000000000017</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167365</matricno>
+    <studentname>MOHAMAD AMIR WAFIUDDIN BIN MOHD NIZAM</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>DN000000000000017</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167365</matricno>
+    <studentname>MOHAMAD AMIR WAFIUDDIN BIN MOHD NIZAM</studentname>
+    <descreceipt>Test Debit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>DN000000000000017</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167567</matricno>
+    <studentname>NOR SHAMIMI AIDA BINTI SAPIEE</studentname>
+    <descreceipt>Test for Hostel Withdrawn</descreceipt>
+    <transamount>42.4</transamount>
+    <receiptno>CN000000000000020</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167567</matricno>
+    <studentname>NOR SHAMIMI AIDA BINTI SAPIEE</studentname>
+    <descreceipt>Test for Hostel Withdrawn</descreceipt>
+    <transamount>40</transamount>
+    <receiptno>CN000000000000020</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167567</matricno>
+    <studentname>NOR SHAMIMI AIDA BINTI SAPIEE</studentname>
+    <descreceipt>Test for Hostel Withdrawn</descreceipt>
+    <transamount>40</transamount>
+    <receiptno>CN000000000000020</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167567</matricno>
+    <studentname>NOR SHAMIMI AIDA BINTI SAPIEE</studentname>
+    <descreceipt>Test for Hostel Withdrawn</descreceipt>
+    <transamount>150</transamount>
+    <receiptno>CN000000000000020</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167572</matricno>
+    <studentname>MOHAMAD ZAIM BIN ZAINAL HAPIDZI</studentname>
+    <descreceipt>Test for Hostel Withdrawn</descreceipt>
+    <transamount>50</transamount>
+    <receiptno>CN000000000000021</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN- Increase</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>CN000000000000006</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>10</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>30</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167751</matricno>
+    <studentname>WAN NOR SHAMMIRA BINTI AB WAHAB</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000004</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167768</matricno>
+    <studentname>MUHAMAD SHAZWAN BIN MOHAMAD ZAINI</studentname>
+    <descreceipt>Test for CN-Withdrawn from Hostel</descreceipt>
+    <transamount>40</transamount>
+    <receiptno>CN000000000000011</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167768</matricno>
+    <studentname>MUHAMAD SHAZWAN BIN MOHAMAD ZAINI</studentname>
+    <descreceipt>Test for DN Adding Manually</descreceipt>
+    <transamount>0</transamount>
+    <receiptno>DN000000000000003</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167768</matricno>
+    <studentname>MUHAMAD SHAZWAN BIN MOHAMAD ZAINI</studentname>
+    <descreceipt>Test for CN Adding Manually</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000003</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167768</matricno>
+    <studentname>MUHAMAD SHAZWAN BIN MOHAMAD ZAINI</studentname>
+    <descreceipt>Test for CN Adding Manually</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000003</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167768</matricno>
+    <studentname>MUHAMAD SHAZWAN BIN MOHAMAD ZAINI</studentname>
+    <descreceipt>Test for DN Adding Manually</descreceipt>
+    <transamount>0</transamount>
+    <receiptno>DN000000000000003</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167817</matricno>
+    <studentname>NUR AFIFAH ZAHIDAH BINTI MOHD ZAMRI</studentname>
+    <descreceipt>Test Credit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>CN000000000000014</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167817</matricno>
+    <studentname>NUR AFIFAH ZAHIDAH BINTI MOHD ZAMRI</studentname>
+    <descreceipt>Test Credit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>CN000000000000014</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>20</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>30</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>21.2</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN Change of Program</descreceipt>
+    <transamount>10</transamount>
+    <receiptno>CN000000000000005</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167848</matricno>
+    <studentname>NURUL ATIKAH BINTI BADRUNZAMAN</studentname>
+    <descreceipt>Test for CN- Increase</descreceipt>
+    <transamount>160</transamount>
+    <receiptno>CN000000000000007</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-04-21T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167877</matricno>
+    <studentname>NURULL NADIA BINTI ABDUL RASHID</studentname>
+    <descreceipt>Test Credit Note</descreceipt>
+    <transamount>53</transamount>
+    <receiptno>CN000000000000015</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+  <Table>
+    <strheader>Credit Note Amount</strheader>
+    <sasi_cursemyr>201220131</sasi_cursemyr>
+    <matricno>167877</matricno>
+    <studentname>NURULL NADIA BINTI ABDUL RASHID</studentname>
+    <descreceipt>Test Credit Note</descreceipt>
+    <transamount>100</transamount>
+    <receiptno>CN000000000000015</receiptno>
+    <sass_blstatus>true</sass_blstatus>
+    <transdate>2016-05-12T00:00:00+08:00</transdate>
+  </Table>
+</NewDataSet>

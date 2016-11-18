@@ -1,0 +1,575 @@
+Imports System.Collections.Generic
+Imports HTS.SAS.BusinessObjects
+Imports HTS.SAS.Entities
+Imports System.Data
+Partial Class Users
+    Inherits System.Web.UI.Page
+    Dim CFlag As String
+    Dim DFlag As String
+    Dim ListObjects As List(Of UsersEn)
+    Private ErrorDescription As String
+
+    Dim objUserGroupEn As New BusinessEntities.UserGroupEn
+    Dim objUserGroupDL As New SQLPowerQueryManager.PowerQueryManager.UserGroupDL
+
+    Dim objDepartmentEn As New BusinessEntities.DepartmentEn
+    Dim objDepartmentDL As New SQLPowerQueryManager.PowerQueryManager.DepartmentDL
+
+    Dim objUserEn As New BusinessEntities.UserEn
+    Dim objUserDL As New SQLPowerQueryManager.PowerQueryManager.UserDL
+
+    'Dim GlobalSQLConnString As String = ConfigurationManager.ConnectionStrings("SASNEWConnectionString").ToString
+    Private GlobalSQLConnString As String = SQLPowerQueryManager.Helper.GetConnectionString()
+
+    Dim DSReturn As New DataSet
+    Dim strRetrunErrorMsg As String = String.Empty
+    Dim blnReturnValue As Boolean
+    Dim strMode As String
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack() Then
+
+            ibtnSave.Attributes.Add("onclick", "return validate()")
+
+            Session("PageMode") = ""
+            PageFunctional("Default")
+
+            LoadUserRights()
+            lblMsg.Text = ""
+
+            Session("ListObj") = Nothing
+            FillDataGrid()
+            FillDepartment()
+            FillUserGroup()
+
+            Menuname(CInt(Request.QueryString("Menuid")))
+        End If
+        lblMsg.Text = ""
+    End Sub
+
+    Private Sub FillDataGrid()
+
+        Try
+
+            If Not IsNothing(DSReturn) Then DSReturn.Clear()
+
+            DSReturn = objUserDL.DataGrid(objUserEn)
+
+            DataGridDataBinding(DSReturn)
+
+            If DSReturn.Tables(0).Rows.Count > 0 Then
+                lblDataGridMsg.Text = ""
+                lblDataGridMsg.Visible = False
+            Else
+                lblDataGridMsg.Text = "No Record Found..."
+                lblDataGridMsg.Visible = True
+            End If
+
+        Catch ex As Exception
+            LogError.Log("User", "FillDataGrid", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Private Sub DataGridDataBinding(ByVal DSReturn As DataSet)
+
+        Try
+            If DSReturn IsNot Nothing Then
+                If DSReturn.Tables.Count <> 0 Then
+                    If DSReturn.Tables(0).Rows.Count > 0 Then
+                        dgDataGrid.DataSource = DSReturn
+                        dgDataGrid.DataBind()
+                        dgDataGrid.Visible = True
+                    Else
+                        dgDataGrid.Controls.Clear()
+                        dgDataGrid.Visible = False
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            LogError.Log("User", "DataGridDataBinding", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Protected Sub dgDataGrid_PageIndexChanged(source As Object, e As DataGridPageChangedEventArgs) Handles dgDataGrid.PageIndexChanged
+        dgDataGrid.CurrentPageIndex = e.NewPageIndex
+        FillDataGrid()
+    End Sub
+
+    Private Sub FillDepartment()
+
+        Try
+            DSReturn = objDepartmentDL.GetDepartmentList(objDepartmentEn)
+
+            If DSReturn.Tables(0).Rows.Count > 0 Then
+                ddlDepartment.DataSource = DSReturn
+                ddlDepartment.DataTextField = "Department"
+                ddlDepartment.DataValueField = "DepartmentID"
+                ddlDepartment.DataBind()
+                ddlDepartment.Items.Insert(0, New ListItem("--Please Select--", "0"))
+            Else
+                LogError.Log("User", "FillDepartment", "No Record In Department")
+                lblMsg.Text = "No Record In Department"
+            End If
+        Catch ex As Exception
+            LogError.Log("User", "FillDepartment", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Private Sub FillUserGroup()
+
+        If ddlDepartment.SelectedIndex = 0 Then
+            objUserGroupEn.DepartmentID = ""
+        Else
+            objUserGroupEn.DepartmentID = ddlDepartment.SelectedValue
+        End If
+
+        Try
+            DSReturn = objUserGroupDL.GetUserGroupList(objUserGroupEn)
+
+            If DSReturn.Tables(0).Rows.Count > 0 Then
+                ddlUserGroup.DataSource = DSReturn
+                ddlUserGroup.DataTextField = "Description"
+                ddlUserGroup.DataValueField = "UserGroupId"
+                ddlUserGroup.DataBind()
+                ddlUserGroup.Items.Insert(0, New ListItem("--Please Select--", "0"))
+            Else
+                LogError.Log("User Group", "FillUserGroup", "No Record In User Group")
+                lblMsg.Text = "No Record In User Group"
+            End If
+        Catch ex As Exception
+            LogError.Log("User", "FillUserGroup", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Protected Sub ddlDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlDepartment.SelectedIndexChanged
+        FillUserGroup()
+    End Sub
+
+    Private Sub DataGridDataBinding(ByVal DSReturn As DataSet, ByVal blnValue As Boolean)
+
+        Try
+            If DSReturn IsNot Nothing Then
+                If DSReturn.Tables.Count <> 0 Then
+                    If DSReturn.Tables(0).Rows.Count > 0 Then
+                        dgDataGrid.DataSource = DSReturn
+                        dgDataGrid.DataBind()
+                        dgDataGrid.Visible = True
+                    Else
+                        dgDataGrid.Controls.Clear()
+                        dgDataGrid.Visible = False
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            LogError.Log("User", "DataGridDataBinding", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Private Sub LoadData()
+        Try
+            objUserEn.UserID = hdnUserID.Value
+
+            If Not IsNothing(DSReturn) Then DSReturn.Clear()
+
+            DSReturn = objUserDL.GetUser(objUserEn)
+
+            If DSReturn.Tables(0).Rows.Count > 0 Then
+                With DSReturn.Tables(0).Rows(0)
+                    If IsDBNull(.Item("UserName")) Then
+                        txtUserName.Text = ""
+                    Else
+                        txtUserName.Text = .Item("UserName")
+                    End If
+
+                    If IsDBNull(.Item("Password")) Then
+                        txtPassword.Text = ""
+                    Else
+                        txtPassword.Text = .Item("Password")
+                    End If
+
+                    If IsDBNull(.Item("Department")) Then
+                        ddlDepartment.SelectedIndex = -1
+                    Else
+                        ddlDepartment.SelectedValue = .Item("Department")
+                    End If
+
+                    If IsDBNull(.Item("UserGroupId")) Then
+                        ddlUserGroup.SelectedIndex = -1
+                    Else
+                        ddlUserGroup.SelectedValue = .Item("UserGroupId")
+                    End If
+
+                    If IsDBNull(.Item("Email")) Then
+                        txtEmail.Text = ""
+                    Else
+                        txtEmail.Text = .Item("Email")
+                    End If
+
+                    If IsDBNull(.Item("UserStatus")) Then
+                        ddlStatus.SelectedIndex = -1
+                    Else
+                        If .Item("UserStatus") Then
+                            ddlStatus.SelectedValue = 1
+                        Else
+                            ddlStatus.SelectedValue = 0
+                        End If
+                    End If
+
+                End With
+            Else
+                ClearData()
+                lblMsg.Text = "Record doesn't exits!"
+            End If
+
+        Catch ex As Exception
+            LogError.Log("User", "LoadData", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+    End Sub
+
+    Private Sub InsertUpdateData(ByVal strMode As String)
+
+        Try
+            With objUserEn
+                .UserName = clsEmbeddedQuote(txtUserName.Text)
+                .Password = clsEmbeddedQuote(txtPassword.Text)
+                .Department = ddlDepartment.SelectedValue
+                .RecStatus = True
+                .UserGroupId = ddlUserGroup.SelectedValue
+                .Email = clsEmbeddedQuote(txtEmail.Text)
+                If ddlStatus.SelectedValue = 1 Then
+                    .UserStatus = True
+                Else
+                    .UserStatus = False
+                End If
+
+                If strMode = "New" Then
+                    '.CreatedBy = Session("User")
+                    '.CreateDate = Format(Now(), "yyyy-MM-dd")
+                    .LastUpdatedBy = Session("User")
+                    .LastUpdatedDtTm = Format(Now(), "yyyy-MM-dd")
+                Else
+                    .UserID = hdnUserID.Value
+                    .LastUpdatedBy = Session("User")
+                    .LastUpdatedDtTm = Format(Now(), "yyyy-MM-dd")
+                End If
+            End With
+
+            If strMode = "New" Then
+
+                If Not IsNothing(DSReturn) Then DSReturn.Clear()
+
+                DSReturn = objUserDL.GetUser(objUserEn)
+
+                If DSReturn.Tables(0).Rows.Count = 0 Then
+                    blnReturnValue = objUserDL.Insert(objUserEn)
+
+                    If blnReturnValue Then
+                        PageFunctional("Default")
+                        ClearData()
+                        FillDataGrid()
+                        lblMsg.Text = "Record successfully saved"
+                    Else
+                        LogError.Log("User", "InsertUpdateData", "Insert Failed! No Row has been inserted.")
+                        lblMsg.Text = "Insert Failed! No record has been inserted."
+                    End If
+
+                Else
+                    lblMsg.Text = "Record already exist."
+                    Exit Sub
+                End If
+            Else
+                blnReturnValue = objUserDL.Update(objUserEn)
+
+                If blnReturnValue Then
+                    PageFunctional("Default")
+                    ClearData()
+                    FillDataGrid()
+                    lblMsg.Text = "Record successfully updated"
+                Else
+                    LogError.Log("User", "InsertUpdateData", "Update Failed! No Row has been updated.")
+                    lblMsg.Text = "Update Failed! No record has been updated."
+                End If
+
+            End If
+
+        Catch ex As Exception
+            LogError.Log("User", "InsertUpdateData", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Private Sub Delete(strUserID As String)
+        '
+        Try
+            objUserEn.UserID = strUserID
+
+            blnReturnValue = objUserDL.Delete(objUserEn)
+
+            If blnReturnValue Then
+                PageFunctional("Default")
+                FillDataGrid()
+                lblMsg.Text = "Record deleted"
+            Else
+                LogError.Log("User", "Delete", "Delete Failed! No Row has been deleted.")
+                lblMsg.Text = "Delete Failed! No record has been deleted."
+            End If
+        Catch ex As Exception
+            LogError.Log("User", "Delete", ex.Message)
+            lblMsg.Text = ex.Message
+        End Try
+    End Sub
+    
+    Protected Sub ibtnNew_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnNew.Click
+        PageFunctional("Edit")
+        ClearData()
+        ViewState("strMode") = "New"
+    End Sub
+
+    Protected Sub ibtnCancel_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnCancel.Click
+        PageFunctional("Default")
+        ClearData()
+        FillDataGrid()
+    End Sub
+
+    Protected Sub ibtnSearch_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnSearch.Click
+
+        If Not String.IsNullOrEmpty(txtSearch.Text) = True Then
+            objUserEn.SearchCriteria = clsEmbeddedSpace(txtSearch.Text)
+        Else
+            objUserEn.SearchCriteria = ""
+        End If
+
+        FillDataGrid()
+    End Sub
+
+    Protected Sub ibtnOpen_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnOpen.Click
+        Dim atLeastOneSelected As Boolean = True
+        Dim cb As CheckBox
+
+        For Each dgitem In dgDataGrid.Items
+            cb = dgitem.Cells(0).Controls(1)
+            If cb IsNot Nothing AndAlso cb.Checked Then
+                atLeastOneSelected = False
+                hdnUserID.Value = dgitem.Cells(1).Text.Trim
+            End If
+        Next
+
+        If atLeastOneSelected = False Then
+            PageFunctional("Edit")
+            LoadData()
+            ViewState("strMode") = "Edit"
+        Else
+            lblMsg.Text = "Please select atleast 1 User."
+        End If
+    End Sub
+
+    Protected Sub ibtnSave_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnSave.Click
+        strMode = ViewState("strMode")
+        InsertUpdateData(strMode)
+    End Sub
+
+    Protected Sub ibtnDelete_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnDelete.Click
+        Dim atLeastOneSelected As Boolean = True
+        Dim strUserID As String = ""
+        Dim cb As CheckBox
+        '
+        For Each dgitem In dgDataGrid.Items
+            cb = dgitem.Cells(0).Controls(1)
+            If cb IsNot Nothing AndAlso cb.Checked Then
+                atLeastOneSelected = False
+                strUserID = dgitem.Cells(1).Text.Trim
+            End If
+        Next
+        '
+        If atLeastOneSelected = False Then
+            Delete(strUserID)
+        Else
+            lblMsg.Text = "Please select atleast 1 User."
+        End If
+    End Sub
+
+    Protected Sub ibtnRefresh_Click(sender As Object, e As ImageClickEventArgs) Handles ibtnRefresh.Click
+        ClearData()
+        FillDataGrid()
+    End Sub
+
+#Region "Methods"
+
+    ''' <summary>
+    ''' Method Button Configurations
+    ''' </summary>
+    ''' <param name="strMode"></param>
+    ''' <remarks></remarks>
+    Private Sub PageFunctional(ByVal strMode As String)
+
+        If strMode = "Default" Then
+
+            ibtnNew.Visible = True
+            lblNew.Visible = True
+            ibtnOpen.Visible = True
+            lblOpen.Visible = True
+            ibtnDelete.Visible = True
+            lblDelete.Visible = True
+            ibtnSearch.Visible = True
+            lblSearch.Visible = True
+            ibtnRefresh.Visible = True
+            lblRefresh.Visible = True
+            ibtnSave.Visible = False
+            lblSave.Visible = False
+            ibtnCancel.Visible = False
+            lblCancel.Visible = False
+
+            'Panel
+            pnlSearch.Visible = True
+            pnlEdit.Visible = False
+
+        ElseIf strMode = "Edit" Then
+
+            txtUserName.ReadOnly = True
+            txtUserName.Enabled = False
+
+            'Buttons
+            ibtnNew.Visible = False
+            lblNew.Visible = False
+            ibtnOpen.Visible = False
+            lblOpen.Visible = False
+            ibtnDelete.Visible = False
+            lblDelete.Visible = False
+            ibtnSearch.Visible = False
+            lblSearch.Visible = False
+            ibtnRefresh.Visible = False
+            lblRefresh.Visible = False
+            ibtnSave.Visible = True
+            lblSave.Visible = True
+            ibtnCancel.Visible = True
+            lblCancel.Visible = True
+
+            'Panel
+            pnlSearch.Visible = False
+            pnlEdit.Visible = True
+        End If
+    End Sub
+
+    Private Function clsEmbeddedQuote(ByVal strText As String) As String
+        clsEmbeddedQuote = Replace(strText, "'", "''")
+        If String.IsNullOrEmpty(clsEmbeddedQuote) = True Then
+            clsEmbeddedQuote = ""
+        End If
+        Return clsEmbeddedQuote
+    End Function
+
+    Private Function clsEmbeddedSpace(ByVal strText As String) As String
+        clsEmbeddedSpace = Replace(strText, "'", "")
+        If String.IsNullOrEmpty(clsEmbeddedSpace) = True Then
+            clsEmbeddedSpace = ""
+        End If
+        Return clsEmbeddedSpace
+    End Function
+
+    ''' <summary>
+    ''' Method to Load UserRights
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub LoadUserRights()
+        Dim obj As New UsersBAL
+        Dim eobj As New UserRightsEn
+
+        Try
+            eobj = obj.GetUserRights(CInt(Request.QueryString("Menuid")), CInt(Session("UserGroup")))
+        Catch ex As Exception
+            LogError.Log("Users", "LoadUserRights", ex.Message)
+        End Try
+        'Rights for Add
+
+        If eobj.IsAdd = True Then
+            ibtnNew.ImageUrl = "~/images/add.png"
+            ibtnNew.Enabled = True
+        Else
+            ibtnNew.ImageUrl = "~/images/gadd.png"
+            ibtnNew.Enabled = False
+            ibtnNew.ToolTip = "Access Denied"
+        End If
+        'Rights for Edit
+        If eobj.IsEdit = True Then
+            ibtnSave.Enabled = True
+            ibtnSave.ImageUrl = "~/images/save.png"
+            ibtnSave.ToolTip = "Edit"
+            If eobj.IsAdd = False Then
+                ibtnSave.Enabled = False
+                ibtnSave.ImageUrl = "~/images/gsave.png"
+                ibtnSave.ToolTip = "Access Denied"
+            End If
+
+            Session("EditFlag") = True
+
+        Else
+            Session("EditFlag") = False
+            ibtnSave.Enabled = False
+            ibtnSave.ImageUrl = "images/gsave.png"
+        End If
+
+        'Rights for Delete
+        If eobj.IsDelete = True Then
+            ibtnDelete.ImageUrl = "~/images/delete.png"
+            ibtnDelete.Enabled = True
+        Else
+            ibtnDelete.ImageUrl = "~/images/gdelete.png"
+            ibtnDelete.ToolTip = "Access Denied"
+            ibtnDelete.Enabled = False
+        End If
+
+    End Sub
+
+
+    ''' <summary>
+    ''' Method to Clear the Field Values
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub ClearData()
+        txtUserName.Enabled = True
+        txtUserName.ReadOnly = False
+        txtUserName.Text = ""
+        txtEmail.Text = ""
+        txtPassword.Text = ""
+        ddlDepartment.SelectedIndex = "-1"
+        ddlUserGroup.SelectedIndex = "-1"
+        ddlStatus.SelectedValue = "1"
+        lblMsg.Text = ""
+        txtSearch.Text = ""
+        dgDataGrid.CurrentPageIndex = 0
+        dgDataGrid.Controls.Clear()
+        dgDataGrid.Visible = False
+    End Sub
+
+    ''' <summary>
+    ''' Method to get the MenuName
+    ''' </summary>
+    ''' <param name="MenuId">Parameter is MenuId</param>
+    ''' <remarks></remarks>
+    Private Sub Menuname(ByVal MenuId As Integer)
+        Dim eobj As New MenuEn
+        Dim bobj As New MenuBAL
+        eobj.MenuId = MenuId
+        Try
+            eobj = bobj.GetMenus(eobj)
+        Catch ex As Exception
+            LogError.Log("Users", "Menuname", ex.Message)
+        End Try
+        lblMenuName.Text = eobj.MenuName
+    End Sub
+
+#End Region
+
+End Class

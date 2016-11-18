@@ -1,0 +1,8 @@
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\bin\Release\BusinessEntities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\bin\Release\BusinessEntities.pdb
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\bin\Release\BusinessEntities.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\obj\Release\BusinessEntities.Resources.resources
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\obj\Release\BusinessEntities.vbproj.GenerateResource.Cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\obj\Release\BusinessEntities.dll
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\obj\Release\BusinessEntities.xml
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\BusinessEntities\obj\Release\BusinessEntities.pdb

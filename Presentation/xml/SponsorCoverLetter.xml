@@ -1,0 +1,251 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>161212</sasi_matricno>
+    <sasi_name>KHONG SIAU CHENN</sasi_name>
+    <sasi_cursemyr>201320141</sasi_cursemyr>
+    <sasi_icno>920920125247</sasi_icno>
+    <sapg_programbm>DOKTOR PERUBATAN</sapg_programbm>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PERDAFTARAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>21.2</transamount>
+    <taxamount>1.2</taxamount>
+    <tax>0</tax>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>94</transid>
+    <refcode>1420</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000095</transcode>
+    <internal_use>72</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>161212</sasi_matricno>
+    <sasi_name>KHONG SIAU CHENN</sasi_name>
+    <sasi_cursemyr>201320141</sasi_cursemyr>
+    <sasi_icno>920920125247</sasi_icno>
+    <sapg_programbm>DOKTOR PERUBATAN</sapg_programbm>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_feetype>02</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>84.8</transamount>
+    <taxamount>4.8</taxamount>
+    <tax>0</tax>
+    <saft_hostel>T</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>94</transid>
+    <refcode>1432</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000095</transcode>
+    <internal_use>72</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>161036</sasi_matricno>
+    <sasi_name>PATRICIA KOH CHAI HSIA</sasi_name>
+    <sasi_cursemyr>201320141</sasi_cursemyr>
+    <sasi_icno>920129125368</sasi_icno>
+    <sapg_programbm>BACELOR SAINS (DIETETIK)</sapg_programbm>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PERDAFTARAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>21.2</transamount>
+    <taxamount>1.2</taxamount>
+    <tax>0</tax>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>93</transid>
+    <refcode>1420</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000094</transcode>
+    <internal_use>90</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>161036</sasi_matricno>
+    <sasi_name>PATRICIA KOH CHAI HSIA</sasi_name>
+    <sasi_cursemyr>201320141</sasi_cursemyr>
+    <sasi_icno>920129125368</sasi_icno>
+    <sapg_programbm>BACELOR SAINS (DIETETIK)</sapg_programbm>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_feetype>02</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>42.4</transamount>
+    <taxamount>0</taxamount>
+    <tax>0</tax>
+    <saft_hostel>T</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>93</transid>
+    <refcode>1432</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000094</transcode>
+    <internal_use>90</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>166954</sasi_matricno>
+    <sasi_name>LIM SOO HOOI</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_icno>920911075356</sasi_icno>
+    <sapg_programbm>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_programbm>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PERDAFTARAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>21.2</transamount>
+    <taxamount>1.2</taxamount>
+    <tax>0</tax>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>97</transid>
+    <refcode>1420</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000098</transcode>
+    <internal_use>97</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>166954</sasi_matricno>
+    <sasi_name>LIM SOO HOOI</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_icno>920911075356</sasi_icno>
+    <sapg_programbm>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_programbm>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_feetype>02</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>3773.6</transamount>
+    <taxamount>213.6</taxamount>
+    <tax>0</tax>
+    <saft_hostel>T</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>97</transid>
+    <refcode>1432</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000098</transcode>
+    <internal_use>97</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>166626</sasi_matricno>
+    <sasi_name>LEE SOON SENG</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_icno>920228035747</sasi_icno>
+    <sapg_programbm>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_programbm>
+    <saft_code>1420</saft_code>
+    <saft_desc>YURAN PERDAFTARAN</saft_desc>
+    <saft_feetype>01</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>21.2</transamount>
+    <taxamount>1.2</taxamount>
+    <tax>0</tax>
+    <saft_hostel>A</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>96</transid>
+    <refcode>1420</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000097</transcode>
+    <internal_use>97</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>166626</sasi_matricno>
+    <sasi_name>LEE SOON SENG</sasi_name>
+    <sasi_cursemyr>201420151</sasi_cursemyr>
+    <sasi_icno>920228035747</sasi_icno>
+    <sapg_programbm>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_programbm>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_feetype>02</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>3773.6</transamount>
+    <taxamount>213.6</taxamount>
+    <tax>0</tax>
+    <saft_hostel>T</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>96</transid>
+    <refcode>1432</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000097</transcode>
+    <internal_use>97</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <StudentEn>
+    <batchcode>B000000000000364</batchcode>
+    <sasi_matricno>161835</sasi_matricno>
+    <sasi_name>WAN MURNI BINTI AMIRAM @ AMRAN</sasi_name>
+    <sasi_cursemyr>201220132</sasi_cursemyr>
+    <sasi_icno>910915095080</sasi_icno>
+    <sapg_programbm>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_programbm>
+    <saft_code>1432</saft_code>
+    <saft_desc>YURAN PELAJARAN</saft_desc>
+    <saft_feetype>02</saft_feetype>
+    <saft_taxmode>1</saft_taxmode>
+    <transamount>42.4</transamount>
+    <taxamount>0</taxamount>
+    <tax>0</tax>
+    <saft_hostel>T</saft_hostel>
+    <saft_priority>1</saft_priority>
+    <saft_remarks />
+    <saft_status>true</saft_status>
+    <transid>95</transid>
+    <refcode>1432</refcode>
+    <transtempcode />
+    <transcode>SPI000000000000096</transcode>
+    <internal_use>97</internal_use>
+    <creditref1>003</creditref1>
+    <sasc_code>W</sasc_code>
+  </StudentEn>
+  <SponsorCoverLetter>
+    <sascl_code>S1</sascl_code>
+    <sascl_title>Sponsor Cover Letter  sample of testing</sascl_title>
+    <sascl_ourref>732ewf</sascl_ourref>
+    <sascl_yourref>efwe32</sascl_yourref>
+    <sascl_address />
+    <sascl_message>testing</sascl_message>
+    <sascl_signby>syura</sascl_signby>
+    <sascl_name>syura</sascl_name>
+    <sascl_frdate>27/04/2016 00:00:00</sascl_frdate>
+    <sascl_todate>27/04/2016 00:00:00</sascl_todate>
+    <sascl_updatedtime>01/01/0001 00:00:00</sascl_updatedtime>
+  </SponsorCoverLetter>
+  <Sponsor />
+</NewDataSet>

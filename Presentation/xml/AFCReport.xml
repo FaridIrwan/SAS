@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <transid>1441</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>166626</creditref>
+    <sasi_name>LEE SOON SENG</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>3936</totaltrans>
+    <sapg_program>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_program>
+    <safc_desc>FAKULTI BAHASA MODEN DAN KOMUNIKASI</safc_desc>
+  </Table>
+  <Table>
+    <transid>1442</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>166954</creditref>
+    <sasi_name>LIM SOO HOOI</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>3936</totaltrans>
+    <sapg_program>BACELOR SASTERA (KESUSASTERAAN MELAYU)</sapg_program>
+    <safc_desc>FAKULTI BAHASA MODEN DAN KOMUNIKASI</safc_desc>
+  </Table>
+  <Table>
+    <transid>1438</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>166651</creditref>
+    <sasi_name>ASHTON LIM SUELEE</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>3556.8</totaltrans>
+    <sapg_program>BACELOR SAINS DAN TEKNOLOGI ALAM SEKITAR</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN ALAM SEKITAR</safc_desc>
+  </Table>
+  <Table>
+    <transid>1439</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>166950</creditref>
+    <sasi_name>NURUL NADIA FATIHA BINTI YAACOB</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>3896</totaltrans>
+    <sapg_program>BACELOR SAINS DAN TEKNOLOGI ALAM SEKITAR</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN ALAM SEKITAR</safc_desc>
+  </Table>
+  <Table>
+    <transid>1437</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>166771</creditref>
+    <sasi_name>NUR FATHIAH BINTI MOKHTAR</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>586.4</totaltrans>
+    <sapg_program>BACELOR SAINS (KEPUJIAN) BIOKIMIA</sapg_program>
+    <safc_desc>FAKULTI BIOTEKNOLOGI DAN SAINS BIOMOLEKUL</safc_desc>
+  </Table>
+  <Table>
+    <transid>1440</transid>
+    <batchcode>B000000000000497</batchcode>
+    <creditref>167832</creditref>
+    <sasi_name>NORHAYATI BINTI MOHD. AZLAN</sasi_name>
+    <description>AFC-201220131</description>
+    <totaltrans>3811.2</totaltrans>
+    <sapg_program>BACELOR SAINS DAN TEKNOLOGI ALAM SEKITAR</sapg_program>
+    <safc_desc>FAKULTI PENGAJIAN ALAM SEKITAR</safc_desc>
+  </Table>
+</NewDataSet>

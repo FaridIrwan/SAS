@@ -1,0 +1,3363 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HTS.SAS.BusinessObjects</name>
+    </assembly>
+    <members>
+        <member name="T:HTS.SAS.BusinessObjects.AccountsBAL">
+            <summary>
+            Business Class to handle all the Accounting Transactions.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetItemByTransCode(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get an Account Item by TransCode
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.TransCode is the Input Property</param>
+            <returns>Returns an Account Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetTransactions(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Transactions
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SucceedTransaction(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Transactions
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetExportData(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get ExportData
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Category , Subtype,FromDate and toDate are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStGLJournalExportData(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get GL Journal ExportData
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Category , Subtype,FromDate and toDate are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSponsorCBReciptExportData(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor CB Receipts ExportData
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Category , Subtype,FromDate and toDate are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSponsorGLJournalExportData(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor GL Journal ExportData
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Category , Subtype,FromDate and toDate are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStCBPaymentExportData(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get CBPaymentExportData
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Category , Subtype,FromDate and toDate are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetPayments(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Payments
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSPAllocationPayments(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Allocations Payments
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,TransStatus,Category,PostStatus and SubType are Input Properties.</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSPAllocationTransactions(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Allocations 
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,TransStatus,Category,PostStatus and SubType are Input Properties.</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetstAllocationAmounts(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sum of Student Allocation Amounts
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.CreditRef,PostStatus,SubType and Description are Input Properties</param>
+            <returns>Returns Total Student Allocation Amount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetReciptSpAll(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get Sponsor Receipts Allowcation.
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input. Sponsor Code and  Name are the input properties</param>
+            <returns>List of Sponsor Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetReceiptSpAll(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get GetReceiptSpAll
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input. Sponsor Code and  Name are the input properties</param>
+            <returns>List of Sponsor Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetRecipt(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get Sponsor Receipts.
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input. Sponsor Code and  Name are the input properties</param>
+            <returns>List of Sponsor Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetListStudentAccounts(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get the List of Student Transactions
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is the Input Property</param>
+            <returns>Returns the List OF Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetAutoAllocationList(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get the List of Student Transactions
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is the Input Property</param>
+            <returns>Returns the List OF Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentOutstandingAmt(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Student's Outstanding Amount
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the Outstanding Amount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentAllocationTrans(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Student Allocations
+            </summary>
+            <param name="argEn">Student Entity is the Input.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetTotalAllocatedAmount(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get GetTotalAllocatedAmount
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the GetTotalAllocatedAmount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentReceiptsbyBatchID(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get the Student Receipts by BatchID
+            </summary>
+            <param name="argEn">Student Entity is the Input.BatchCode is the Input Property</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetListStudentbyBatchID(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get the List of Students by BatchId
+            </summary>
+            <param name="argEn">Student Entity is an Input Parameter.BatchCode is the Input Property</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentBatchInsert(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},HTS.SAS.Entities.SelectionCriteriaEn,System.Boolean,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},System.Int32)">
+            <summary>
+            Method to Insert StudentBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <param name="scArg">List of SelectionCriteria Entity is the Input (Optional)</param>
+            <param name="isAutoDetails">Account details list will generated (Optional)</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.ReceiptUpdate(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn})">
+            <summary>
+            Method to Update Receipt For Student
+            </summary>
+            Added by Hafiz Roslan
+            Date: 05/01/2016
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentBatchUpdate(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn})">
+            <summary>
+            Method to Update StudentBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentBatchUpdateEditMode(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},HTS.SAS.Entities.SelectionCriteriaEn)">
+            <summary>
+            Method to Update StudentBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <param name="scArg" >SelectionCriteria Entity is the Input(Optional)</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentBatchUpdateEditMode(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},HTS.SAS.Entities.SelectionCriteriaEn,System.Boolean)">
+            <summary>
+            Method to Update StudentBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <param name="scArg" >SelectionCriteria Entity is the Input(Optional)</param>
+            <param name="isAutoDetails" >Data for Account Details will base on student list(Optional)</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorBatchInsert(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.SponsorEn})">
+            <summary>
+            Method to Insert SponsorBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Sponsor Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorBatchPost(System.String,System.String)">
+            <summary>
+            Method to Update SponsorBatchPosting
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Sponsor Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.ReceiptUpdate2(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.SponsorEn})">
+            <summary>
+            Method to Update Receipt For Receipt
+            </summary>
+            Added by Hafiz Roslan
+            Date: 06/01/2016
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorBatchUpdate(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.SponsorEn})">
+            <summary>
+            Method to Update SponsorBatch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Sponsor Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.BatchDelete(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Delete Batch
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is an Input Property</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetList(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get the List Of Accounts
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <returns>Returns the List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentLedgerList(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get StudentLedger list
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Creditref , Subtype and Poststatus are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentLedgerDetailList(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get StudentLedger list
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Creditref , Subtype and Poststatus are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentAutoAllocation(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get StudentAutoAllocation list
+            </summary>
+            <param name="argEn">Accounts Entity is an Input.Creditref , Subtype and Poststatus are Input properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSponserListByBatchID(System.String)">
+            <summary>
+            Method to Get the List of Sponsors by BatchId
+            </summary>
+            <param name="BatchID">BatchID is an Input Parameter.</param>
+            <returns>Returns List of Sponsors</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetItem(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get an Accounts Item
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is the Input Property</param>
+            <returns>Returns an Accounts Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetListSucceedHeader">
+            <summary>
+            Method to Get an Succeed Transaction Header Item
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <returns>Returns an Accounts Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetHeaderPTPTN(System.String)">
+            <summary>
+            Method to Get Sponsor Receipt
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.TranssactionCode is the Input Property</param>
+            <returns>Returns an Account Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetItemReceipt(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Receipt
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.TranssactionCode is the Input Property</param>
+            <returns>Returns an Account Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetItemReceiptAllow(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Receipt
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.TranssactionCode is the Input Property</param>
+            <returns>Returns an Account Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetItemTrans(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Transaction Amount
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.TranssactionCode is the Input Property</param>
+            <returns>Returns an Account Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.Insert(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Insert Accounts
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.Update(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Update Accounts
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.Delete(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Delete
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is an Input Property</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.DeleteSucceedTrans(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Delete Succeed Transaction
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.Autonumber is an Input Property</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.IsValid(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Accounts Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.InsertReceiptUserAction(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Receipt History of Updation and Deltetion 
+            </summary>
+            <param name="argEn">Account Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentLoanInsert(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Insert Student Loan
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.BatchLoanDelete(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Delete Student loan
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is an Input Property</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetReceiptHistory(System.String,System.String)">
+            <summary>
+            Method to Get Receipt History
+            </summary>
+            <param name="argEn">Receipt History Properties</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorInvoiceInsert(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},System.Boolean)">
+            <summary>
+            Method to Insert SponsorInvoice
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorInvoiceUpdate(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn})">
+            <summary>
+            Method to Update SponsorInvoice
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorInvoiceUpdate(HTS.SAS.Entities.AccountsEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn},System.Boolean)">
+            <summary>
+            Method to Update SponsorInvoice
+            </summary>
+            <param name="argEn">Accounts Entity is the Input</param>
+            <param name="argList">List of Student Entity is the Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSponsorInvoiceTransactions(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Invoice Transactions
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.SponsorInvoiceDelete(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Delete Sponsor Invoice
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode is an Input Property</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetListStudentSponsorInvoicebyBatchID(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get the List of Students SponsorInvoice by BatchId
+            </summary>
+            <param name="argEn">Student Entity is an Input Parameter.BatchCode is the Input Property</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetTotalAllocatedAmountWithTransID(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get GetTotalAllocatedAmountWithTransID
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the GetTotalAllocatedAmountWithTransID</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetAvailableAmountBasedonTransID(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get GetAvailableAmountBasedonTransID
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the GetAvailableAmountBasedonTransID</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.StudentOutstandingAmount(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Student's Outstanding Amount
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the Outstanding Amount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentOutstandingAmtInSponsorAllocation(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Student's Outstanding Amount In Sponsor Allocation
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the Outstanding Amount In Sponsor Allocation</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetSPAllocationTransactionsStudentPayment(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Sponsor Allocations in Student Payment
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,TransStatus,Category,PostStatus and SubType are Input Properties.</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.Subcategoryupdate(System.String,System.String)">
+            <summary>
+            Method to Get Update Subcategory for allocation
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Subcategoryupdate</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetTransactionsForAllocation(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Transactions For Allocation
+            </summary>
+            <param name="argEn">Accounts Entity is the Input.BatchCode,Category,PostStatus and SubType are the Input Property</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsBAL.GetStudentSponsorAmtInSponsorAllocation(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get Student's Sponsor Amount In Sponsor Allocation
+            </summary>
+            <param name="argEn">Student Entity is an Input</param>
+            <returns>Returns the Outstanding Amount In Sponsor Allocation</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.AccountsDetailsBAL">
+            <summary>
+            Business Class to handle all the AccountingDetails Transactions.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetList(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get List Of AccountDetails Entity
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input</param>
+            <returns>Returns List of AccountsDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStuDentAllocation(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get Student Allocations
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input.TransactionID is an Input Property</param>
+            <returns>Returns List of AccountsDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetListStudentSponsorAlloc(System.String)">
+            <summary>
+            Method to Get Student AccountDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetItemDetails(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Succeed Transaction
+            </summary>
+            <param name="argEn">Accounts Entity is an Input</param>
+            <returns>Returns List of Accounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentAccountsDetails(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get Student AccountDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentAccountsDetailsWithTaxAmount(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get Student AccountDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentAccountsDetailsByBatchCode(HTS.SAS.Entities.AccountsEn,System.String)">
+            <summary>
+            Method to Get Student AccountDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetItem(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get an AccountsDetails Entity
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input</param>
+            <returns>Returns AccountDetails Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.Insert(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Insert 
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.Update(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Update 
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.Delete(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Delete 
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.IsValid(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">AccountsDetails Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentSponsorInvoiceAccountsDetails(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get Student Sponsor Invoice AccountsDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentSponsorInvoiceAccountsDetailsByBatchCode(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to Get Student Sponsor Invoice AccountsDetails
+            </summary>
+            <param name="argEn">AccountsDetails Entity is an Input.TransactionId is an Input Property</param>
+            <returns>Returns List Of AccountDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentListBasedonReceiptNoo(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to GetStudentListBasedonReceiptNoo
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input.TransactionID is an Input Property</param>
+            <returns>Returns List of GetStudentListBasedonReceiptNoo Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStuDentAllocationPocketAmount(HTS.SAS.Entities.AccountsEn)">
+            <summary>
+            Method to GetStuDentAllocationPocketAmount
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input.TransactionID is an Input Property</param>
+            <returns>Returns List of AccountsDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AccountsDetailsBAL.GetStudentPaymentAllocation(HTS.SAS.Entities.AccountsDetailsEn)">
+            <summary>
+            Method to Get Student Allocations
+            </summary>
+            <param name="argEn">AccountDetails Entity is an Input.TransactionID is an Input Property</param>
+            <returns>Returns List of AccountsDetails Entities</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.AFCBAL">
+            <summary>
+            Business Class to handle all the AFC Transactions.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.CheckAFC(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Check AFC if Exists
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns AFC Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.GetList(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Get List of AFC
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns List of AFC Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.AFCEdit(HTS.SAS.Entities.AFCEn,System.String,System.String)">
+            <summary>
+            Method to Edit AFC
+            </summary>
+            <param name="argEn">AFC Entity is an Input</param>
+            <param name="RecStatus">RecStatus is an Input</param>
+            <param name="batch">Batch is an Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.AFCNEW(HTS.SAS.Entities.AFCEn,System.String,System.String)">
+            <summary>
+            Method to Generate AFC
+            </summary>
+            <param name="argEn">AFC Entity is an Input</param>
+            <param name="RecStatus">RecStatus is an Input</param>
+            <param name="batch">Batch is an Input</param>
+            <returns>Returns BatchCode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.GetItem(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Get an AFC Entity
+            </summary>
+            <param name="argEn">AFC Entity is an Input</param>
+            <returns>Returns AFC Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.GetItemJBilling(System.String)">
+            <summary>
+            Method to Get an AFC Entity For Billing
+            </summary>
+            <param name="argEn">AFC Entity is an Input</param>
+            <returns>Returns AFC Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.Insert(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Insert 
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.InsertJBitBilling(HTS.SAS.Entities.AFCEn,System.String)">
+            <summary>
+            Method to Insert JBilling
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.InsertJBitBillingDetails(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Insert JBilling Details
+            </summary>
+            <param name="argEn">AFC Entity Details is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.Update(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Update 
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.Delete(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Delete AFC
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.BatchDelete(HTS.SAS.Entities.AFCEn,System.String)">
+            <summary>
+            Method to Delete Batch AFC
+            </summary>
+            <param name="argEn">AFC Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCBAL.IsValid(HTS.SAS.Entities.AFCEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">AFC Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.AFCDetailsBAL">
+            <summary>
+            Business Class to handle all the AFCDetails Transactions.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.GetList(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Get List of AFCDetails
+            </summary>
+            <param name="argEn">AFCDetails Entity is an Input.</param>
+            <returns>Returns List of AFCDetails Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.GetItem(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Get an AFCDetails Entity
+            </summary>
+            <param name="argEn">AFCDetails Entity is an Input</param>
+            <returns>Returns AFCDetails Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.Insert(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Insert 
+            </summary>
+            <param name="argEn">AFCetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.Update(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Update 
+            </summary>
+            <param name="argEn">AFCDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.Delete(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Delete 
+            </summary>
+            <param name="argEn">AFCDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AFCDetailsBAL.IsValid(HTS.SAS.Entities.AFCDetailsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">AFCDetails Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.AutoNumberBAL">
+            <summary>
+            Business Class to handle all the AutoNumber Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.GetList(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Get List of AutoNumber
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.</param>
+            <returns>Returns List of AutoNumber Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.GetAutoNumberList(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Get List Of all AutoNumbers
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.SAAN_Des,SAAN_NoDigit,SAAN_Prefix and SAAN_StartNo are Input Properties.</param>
+            <returns>Returns List of AutoNumber Entities</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.GetItem(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Get an AutoNumber Entity
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input</param>
+            <returns>Returns AutoNumber Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.Insert(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Insert 
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.Update(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Update 
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.UpdateAutoNumber(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Update AutoNumber 
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.AutoNumberBAL.Delete(HTS.SAS.Entities.AutoNumberEn)">
+            <summary>
+            Method to Delete 
+            </summary>
+            <param name="argEn">AutoNumber Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.BankProfileBAL">
+            <summary>
+            Business Class to handle all the BankProfiles Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.GetList(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Get List of BankProfiles
+            </summary>
+            <param name="argEn">BankProfile Entity is an Input.</param>
+            <returns>Returns List of BankProfiles</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.GetBankProfileListAll(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Get List of All BankProfiles
+            </summary>
+            <param name="argEn">BankProfile Entity is an Input.BankDetailsCode,Description,ACCode and GLCode are Input Properties</param>
+            <returns>Returns List of BankProfiles</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.GetBankProfileList(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Get List of Active or Inactive BankProfiles
+            </summary>
+            <param name="argEn">BankProfile Entity is an Input.BankDetailsCode,Description,ACCode,GLCode,Status are Input Properties</param>
+            <returns>Returns List of BankProfiles</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.GetItem(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Get BankProfile Entity
+            </summary>
+            <param name="argEn">BankProfile Entity is an Input</param>
+            <returns>Returns BankProfile Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.Insert(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Insert Bankprofiles
+            </summary>
+            <param name="argEn">Bankprofile Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.Update(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Update Bankprofiles
+            </summary>
+            <param name="argEn">Bankprofile Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.Delete(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Delete Bankprofiles
+            </summary>
+            <param name="argEn">Bankprofile Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BankProfileBAL.IsValid(HTS.SAS.Entities.BankProfileEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">BankProfile Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.BlockBAL">
+            <summary>
+            Business Class to handle all the Block Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.GetList(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get List of Blocks
+            </summary>
+            <param name="argEn">Blocks Entity is an Input.</param>
+            <returns>Returns List of Blocks</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.GetBlockListall(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get List of All Block
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns List of Block</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.GetBlockList(System.String)">
+            <summary>
+            Method to Get List of Blocks by BlockCode
+            </summary>
+            <param name="argEn">BlockCode is an Input.</param>
+            <returns>Returns List of Blocks</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.GetItem(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get Block Entity
+            </summary>
+            <param name="argEn">Block Entity is an Input</param>
+            <returns>Returns Block Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.Insert(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Insert Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.Update(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Update Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.Delete(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Delete Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.BlockBAL.IsValid(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Block Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.ChequeBAL">
+            <summary>
+            Business Class to handle all the Cheques.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.GetList(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Get Cheques
+            </summary>
+            <param name="argEn">Cheques Entity is an Input.ProcessID is Input Property.</param>
+            <returns>Returns List of Cheques.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.GetRefundList(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Get refund Cheques
+            </summary>
+            <param name="argEn">Cheques Entity is an Input.ProcessID is Input Property.</param>
+            <returns>Returns List of Cheques</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.GetItem(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Get Cheque Item
+            </summary>
+            <param name="argEn">Cheques Entity is an Input.ProcessID is Input Property.</param>
+            <returns>Returns a Cheque Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.Insert(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Insert Cheques
+            </summary>
+            <param name="argEn">Cheques Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.Update(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Update Cheques
+            </summary>
+            <param name="argEn">Cheques Entity is the Input.</param>
+            <returns>Returns Boolean.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.BatchDelete(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Delete Cheques Batch
+            </summary>
+            <param name="argEn">Cheques Entity is the Input.ProcessID is the Input Property.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.Delete(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Delete Cheques
+            </summary>
+            <param name="argEn">Cheques Entity is the Input.ProcessID is the Input Property.</param>
+            <returns>Returns Boolean.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeBAL.IsValid(HTS.SAS.Entities.ChequeEn)">
+            <summary>
+            Method to Validate Cheque Fields 
+            </summary>
+            <param name="argEn">Cheques Entity is an Input</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.ChequeDetailsBAL">
+            <summary>
+            Business Class to handle all the ChequeDetails.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.GetList(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Get ChequeDetails 
+            </summary>
+            <param name="argEn">ChequeDetails Entity is an Input.ProcessID is Input Property.</param>
+            <returns>Returns List of ChequeDetails</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.GetItem(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Get ChequeDetails Item
+            </summary>
+            <param name="argEn">ChequeDetails Entity is an Input.</param>
+            <returns>Returns a ChequeDetails Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.Insert(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Insert ChequeDetails
+            </summary>
+            <param name="argEn">ChequeDetails Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.Update(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Update ChequeDetails
+            </summary>
+            <param name="argEn">ChequeDetails Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.Delete(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Delete  ChequeDetails
+            </summary>
+            <param name="argEn">ChequeDetails Entity is an Input.ProceddID is Property.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ChequeDetailsBAL.IsValid(HTS.SAS.Entities.ChequeDetailsEn)">
+            <summary>
+            Method to Validate ChequeDetails Fields 
+            </summary>
+            <param name="argEn">ChequeDetails Entity is an Input</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.ConnectionBAL">
+            <summary>
+            Business Class to handle all the Menus Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ConnectionBAL.GetConnectionString(HTS.SAS.Entities.ConnectionEn)">
+            <summary>
+            Method to Get ConnectionString.
+            </summary>
+            <param name="argEn">Menu Entity is an Input.MenuID is an Input Property</param>
+            <returns>List of Menu Entity</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.DegreeTypeBAL">
+            <summary>
+            Business Class to handle all the DegreeTypes Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.GetList(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Get List of DegreeTypes
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input.</param>
+            <returns>Returns List of DegreeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.GetDegreeTypeList(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Get List of Active or Inactive DegreeTypes
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input.DegreeTypeCode,Description,SName and Status are Input Parameters</param>
+            <returns>Returns List of DegreeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.GetItem(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Get DegreeType Entity
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input</param>
+            <returns>Returns DegreeType Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.Insert(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Insert DegreeType 
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.Update(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Update DegreeType 
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.Delete(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Delete DegreeType 
+            </summary>
+            <param name="argEn">DegreeType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DegreeTypeBAL.IsValid(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">DegreeType Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.DepartmentBAL">
+            <summary>
+            Business Class to handle all the Block Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.GetList(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get List of Blocks
+            </summary>
+            <param name="argEn">Department Entity is an Input.</param>
+            <returns>Returns List of Dept</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.GetBlockListall(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get List of All Block
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns List of Block</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.GetBlockList(System.String)">
+            <summary>
+            Method to Get List of Blocks by BlockCode
+            </summary>
+            <param name="argEn">BlockCode is an Input.</param>
+            <returns>Returns List of Blocks</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.GetItem(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Get Block Entity
+            </summary>
+            <param name="argEn">Block Entity is an Input</param>
+            <returns>Returns Block Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.Insert(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Insert Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.Update(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Update Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.Delete(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Delete Blocks 
+            </summary>
+            <param name="argEn">Block Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DepartmentBAL.IsValid(HTS.SAS.Entities.BlockEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Block Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.DunningLettersBAL">
+            <summary>
+            Business Class to handle all the DunningLetters.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.GetListDunning(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.CheckDunningListing(HTS.SAS.Entities.DunningLettersEn,System.String)">
+            <summary>
+            Method to Get DunningLetters 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.CheckListDunning(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.ListDunningWarning(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get Dunning Letter 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.</param>
+            <returns>Returns List of DunningLettersWarning.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.GetList(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.Code and Title as Input Properties.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.GetListStudent(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters Student List
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.Code and Title as Input Properties.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.GetListWarning(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters Warning
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.Code and Title as Input Properties.</param>
+            <returns>Returns List of DunningLetters.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.GetItem(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Get DunningLetters Item
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.SADL_Code  as Input Property.</param>
+            <returns>Returns a DunningLetters Item</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.InsertDunning(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Insert DunningLetters Item
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.SADL_Code  as Input Property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.Insert(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Insert DunningLetters
+            </summary>
+            <param name="argEn">DunningLetters Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.Update(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Update DunningLetters
+            </summary>
+            <param name="argEn">DunningLetters Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.Delete(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+             Method to Delete  DunningLetters 
+            </summary>
+            <param name="argEn">DunningLetters Entity is an Input.SADL_Code is Property.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.DunningLettersBAL.IsValid(HTS.SAS.Entities.DunningLettersEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">DunningLetters Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.GetList(HTS.SAS.Entities.ExportDataEN)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.GetItem(HTS.SAS.Entities.ExportDataEN)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.Insert(HTS.SAS.Entities.ExportDataEN)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.Update(HTS.SAS.Entities.ExportDataEN)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.Delete(HTS.SAS.Entities.ExportDataEN)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.ExportDataBAL.IsValid(HTS.SAS.Entities.ExportDataEN)" -->
+        <member name="T:HTS.SAS.BusinessObjects.FacultyBAL">
+            <summary>
+            Business Class to handle all the Faculty Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.GetList(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Get List of Faculty
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns List of Faculty</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.GetFacultyList(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Get List of All Faculty
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns List of Faculty</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.GetItem(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Get Faculty Entity
+            </summary>
+            <param name="argEn">Faculty Entity is an Input</param>
+            <returns>Returns Faculty Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.Insert(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Insert Faculty 
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.Update(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Update Faculty 
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.Delete(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Delete Faculty 
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FacultyBAL.IsValid(HTS.SAS.Entities.FacultyEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Faculty Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.FeeChargesBAL">
+            <summary>
+            Business Class to handle all the FeeCharges Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.GetFeeCharges(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Get List of FeeCharges
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.FTCode is an Input Property</param>
+            <returns>Returns List of FeeCharges</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.GetKokoCharges(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Get List of FeeCharges
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.FTCode is an Input Property</param>
+            <returns>Returns List of FeeCharges</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.Getkokobaru(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Get List of FeeCharges
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.FTCode is an Input Property</param>
+            <returns>Returns List of FeeCharges</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.GetItem(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Get FeeCharges Entity
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input</param>
+            <returns>Returns FeeCharges Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.Insert(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Insert FeeCharges 
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.Update(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Update FeeCharges 
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.UpdateKokoDetails(HTS.SAS.Entities.KokoEn)">
+            <summary>
+            Method to Update FeeCharges 
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.Delete(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Delete FeeCharges 
+            </summary>
+            <param name="argEn">FeeCharges Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeChargesBAL.IsValid(HTS.SAS.Entities.FeeChargesEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">FeeCharges Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.FeeStrAmountBAL">
+            <summary>
+            Business Class to handle all the FeeStructureAmount Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.GetList(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Get List of FeeStrAmount
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is an Input.</param>
+            <returns>Returns List of FeeStrAmount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.GetItem(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Get FeeStrAmount Entity
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is an Input</param>
+            <returns>Returns FeeStrAmount Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.Insert(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Insert FeeStrAmount 
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.Update(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Update FeeStrAmount 
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.Delete(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Delete FeeStrAmount 
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrAmountBAL.IsValid(HTS.SAS.Entities.FeeStrAmountEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">FeeStrAmount Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.FeeStrDetailsBAL">
+            <summary>
+            Business Class to handle all the FeeStructureDetails Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.GetList(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Get List of FeeStrDetails
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is an Input.</param>
+            <returns>Returns List of FeeStrDetails</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.GetItem(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Get FeeStrDetails Entity
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is an Input</param>
+            <returns>Returns FeeStrDetails Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.Insert(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Insert FeeStrDetails 
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.Update(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Upate FeeStrDetails 
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.Delete(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Delete FeeStrDetails 
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStrDetailsBAL.IsValid(HTS.SAS.Entities.FeeStrDetailsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">FeeStrDetails Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.FeeStructBAL">
+            <summary>
+            Business Class to handle all the FeeStructure Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.GetList(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Get List of FeeStructure
+            </summary>
+            <param name="argEn">FeeStructure Entity is an Input.</param>
+            <returns>Returns List of FeeStructure</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.GetFeeStructure(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Get List of Active or Inactive FeeStucture
+            </summary>
+            <param name="argEn">FeeStucture Entity is an Input.FeeStryctureCode,PGCode,Semester,Description and status are Input Properties</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.GetFeeStructureList(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Get List of Active or Inactive FeeStucture BY StudentCategory
+            </summary>
+            <param name="argEn">FeeStucture Entity is an Input.FeeStryctureCode,PGCode,EffectFm and Status are Input Properties</param>
+            <returns></returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.GetItem(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Get FeeStructure Entity
+            </summary>
+            <param name="argEn">FeeStructure Entity is an Input</param>
+            <returns>Returns FeeStructure Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.Insert(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Insert FeeStructure 
+            </summary>
+            <param name="argEn">FeeStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.Update(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Update FeeStructure 
+            </summary>
+            <param name="argEn">FeeStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.Delete(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Delete FeeStructure 
+            </summary>
+            <param name="argEn">FeeStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.IsValid(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">FeeStructure Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeStructBAL.GetFeeStructureDetailList(HTS.SAS.Entities.FeeStructEn)">
+            <summary>
+            Method to Get List of Active or Inactive FeeStucture
+            </summary>
+            <param name="argEn">FeeStucture Entity is an Input.PGCode,Semester,Description and status are Input Properties</param>
+            <returns></returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.FeeTypesBAL">
+            <summary>
+            Business Class to handle all the FeeTypes Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of FeeTypes
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetFeeTypesList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of Active or Inactive FeeTypes
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.FeeTypeCode,FeeType,Description and Status are Input Properties.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetKokoList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of Koko Charges
+            </summary>
+            <param name="argEn">Koko Charges Entity is an Input.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetKokokurikulumList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of Koko Charges
+            </summary>
+            <param name="argEn">Koko Charges Entity is an Input.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetKokoListddl(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of Koko Charges
+            </summary>
+            <param name="argEn">Koko Charges Entity is an Input.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetFeeList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of FeeTypes
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.FeeTypeCode,FeeType,Hostel,Description,GLCode,Priority and Status are Input Properties.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetStudentFee(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get List of Student FeeTypes
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.FeeTypeCode,FeeType,Hostel,Description and Status are Input Properties.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.GetItem(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Get FeeTypes Entity
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.FeeTypeCode ia an Input Property</param>
+            <returns>Returns FeeTypes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.Insert(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Insert FeeTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.InsertKoko(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Insert KokoTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.Update(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Update FeeTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.UpdateKokoList(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Update Koko List 
+            </summary>
+            <param name="argEn">Koko List Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.Delete(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Delete FeeTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.DeleteKoko(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Delete FeeTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.FeeDelete(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Delete All FeeTypes 
+            </summary>
+            <param name="argEn">FeeTypes Entity is an Input.FeeTypeCode ia an Input Property</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.FeeTypesBAL.IsValid(HTS.SAS.Entities.FeeTypesEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">FeeTypes Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.HostelStrAmountBAL">
+            <summary>
+            Business Class to handle all the HostelStructureAmount Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.GetList(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Get List of HostelStructureAmount
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is an Input.</param>
+            <returns>Returns List of HostelStrAmounts</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.GetItem(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Get FeeTypes Entity
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is an Input.HSCode as Input Property.</param>
+            <returns>Returns HostelStrAmount Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.Insert(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Insert HostelStrAmount 
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.Update(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Update HostelStrAmount 
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.Delete(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Delete HostelStrAmount 
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrAmountBAL.IsValid(HTS.SAS.Entities.HostelStrAmountEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">HostelStrAmount Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.HostelStrDetailsBAL">
+            <summary>
+            Business Class to handle all the HostelStructureDetails Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.GetList(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Get List of HostelStrDetails
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is an Input.</param>
+            <returns>Returns List of HostelStrDetails</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.GetItem(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Get HostelStrDetails Entity
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is an Input.HSCode as Input Property.</param>
+            <returns>Returns HostelStrDetails Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.Insert(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Insert HostelStrDetails 
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.Update(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Update HostelStrDetails 
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.Delete(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Delete HostelStrDetails 
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStrDetailsBAL.IsValid(HTS.SAS.Entities.HostelStrDetailsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">HostelStrDetails Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.HostelStructBAL">
+            <summary>
+            Business Class to handle all the HostelStructure Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetList(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get List of HostelStructure
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.</param>
+            <returns>Returns List of HostelStructure</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetHostelFeeList(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get List of HostelSructure Feelist
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.HostelStructureCode,Code,Block and Status are Input Properties.</param>
+            <returns>Returns List of HostelStructure</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetHostelList(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get List of Active or Inactive Hostels
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.RoomType,Code,Block and Status are Input Properties.</param>
+            <returns>Returns List of HostelStructure</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetItem(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get HostelStructucture Entity
+            </summary>
+            <param name="argEn">HostelStructucture Entity is an Input.HostelStuctureCode as Input Property.</param>
+            <returns>Returns HostelStructucture Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.Insert(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Insert HostelStructure 
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.Update(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Update HostelStructure 
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.Delete(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Delete HostelStructure 
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.IsValid(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">HostelStructure Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetHostelStructList(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get List of Active or Inactive Hostels
+            </summary>
+            <param name="argEn">HostelStructure Entity is an Input. Code,Block and Status are Input Properties.</param>
+            <returns>Returns List of HostelStructure</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.HostelStructBAL.GetHostelStudent(HTS.SAS.Entities.HostelStructEn)">
+            <summary>
+            Method to Get List of Hostel Fee On Student
+            </summary>
+            <param name="argEn">Koko Charges Entity is an Input.</param>
+            <returns>Returns List of FeeTypes</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.KolejBAL">
+            <summary>
+            Business Class to handle all the Kolej Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.GetList(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Get List of Kolej
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns List of Kolej</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.GetListKolej(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Get List of Kolej
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns List of Kolej</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.GetListKokorikulum(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Get List of Kolej
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns List of Kolej</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.GetKolejList(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Get List of All Kolej
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns List of Kolej</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.GetItem(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Get Kolej Entity
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.SAKO_Code as Input Property.</param>
+            <returns>Returns Kolej Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.Insert(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Insert Kolej 
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.Update(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Update Kolej 
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.Delete(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Delete Kolej 
+            </summary>
+            <param name="argEn">Kolej Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.KolejBAL.IsValid(HTS.SAS.Entities.KolejEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Kolej Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.MenuBAL">
+            <summary>
+            Business Class to handle all the Menus Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.MenuBAL.GetMenus(HTS.SAS.Entities.MenuEn)">
+            <summary>
+            Method to Get Menus.
+            </summary>
+            <param name="argEn">Menu Entity is an Input.MenuID is an Input Property</param>
+            <returns>List of Menu Entity</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.PayModeBAL">
+            <summary>
+            Business Class to handle all the PayMode Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.GetPaytype(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Get List of PayMode
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.SAPM_Code,SAPM_Des and SAPM_Status are Input Properties.</param>
+            <returns>Returns List of PayMode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.GetPaytypeAll(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Get List of PayMode
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.SAPM_Code,SAPM_Des and SAPM_Status are Input Properties.</param>
+            <returns>Returns List of PayMode</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.GetItem(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Get PayMode Entity
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.SAPM_Code as Input Property.</param>
+            <returns>Returns PayMode Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.Insert(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Insert PayMode 
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.Update(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Update PayMode 
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.Delete(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Delete PayMode 
+            </summary>
+            <param name="argEn">PayMode Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.PayModeBAL.IsValid(HTS.SAS.Entities.PayModeEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">PayMode Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.ProgramAccountBAL">
+            <summary>
+            Business Class to handle all the ProgramAccount Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.GetList(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Get List of ProgramAccount
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.</param>
+            <returns>Returns List of ProgramAccount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.GetListProgram(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Get List of ProgramAccount
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.</param>
+            <returns>Returns List of ProgramAccount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.GetListProgramCombine(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Get List of Program,Faculty And Semester
+            </summary>
+            <param name="argEn">Program,Faculty And Semester Entity is an Output.</param>
+            <returns>Returns List of ProgramAccount</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.GetItem(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Get ProgramAccount Entity
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.SAPA_Code as Input Property.</param>
+            <returns>Returns ProgramAccount Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.Insert(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Insert ProgramAccount 
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.Update(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Update ProgramAccount 
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.Delete(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Delete ProgramAccount 
+            </summary>
+            <param name="argEn">ProgramAccount Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramAccountBAL.IsValid(HTS.SAS.Entities.ProgramAccountEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">ProgramAccount Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.ProgramInfoBAL">
+            <summary>
+            Business Class to handle all the ProgramInfo Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetProgramListByDegreeType(HTS.SAS.Entities.DegreeTypeEn)">
+            <summary>
+            Method to Get List for all record
+            </summary>
+            <param name="argEn">SAPG_ProgramType as Input if not null.</param>
+            <returns>Returns List of ProgramInfo</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetProgramList(System.String)">
+            <summary>
+            Method to Get List of Active ProgramInfo
+            </summary>
+            <param name="argEn">SAFC_Code as Input.</param>
+            <returns>Returns List of ProgramInfo</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetList(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get Programs
+            </summary>
+            <param name="argEn">ProgramInfo Entity as Input.SAFC_Code as Input Property.</param>
+            <returns>Returns List Of Programs</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetAfcPrograms(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get List of AFC Programs
+            </summary>
+            <param name="argEn">ProgramInfo Entity as an Input.SAFC_Code  as Input Property.</param>
+            <returns>Returns List of ProgramInfo</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetAfcProgramsByBidang(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get List of AFC Programs By Bidang
+            </summary>
+            <param name="argEn">ProgramInfo Entity as an Input.SAFC_Code  as Input Property.</param>
+            <returns>Returns List of ProgramInfo</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetProgramInfoAll(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get List of All ProgramInfo
+            </summary>
+            <param name="argEn">ProgramInfo Entity as an Input.ProgramCode,Program and ProgramBM  as Input Properties.</param>
+            <returns>Returns List of ProgramInfo</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetProgramInfoListAll(System.String)">
+            <summary>
+            Method to Get List of ProgramInfo by SAFC_Code
+            </summary>
+            <param name="argEn">ProgramInfo Entity as an Input.SAFC_Code  as Input Property.</param>
+            <returns>Returns List of ProgramInfo</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetProgramInfoList(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get List of Active or Inactive ProgramInfo
+            </summary>
+            <param name="argEn">ProgramInfo Entity as an Input.ProgramCode,Program,ProgramBM and Status as Input Properties.</param>
+            <returns>Returns List of ProgramInfo</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.GetItem(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Get ProgramInfo Entity
+            </summary>
+            <param name="argEn">ProgramInfo Entity is an Input.SAPG_SName as Input Property.</param>
+            <returns>Returns ProgramInfo Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.Insert(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Insert ProgramInfo 
+            </summary>
+            <param name="argEn">ProgramInfo Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.Update(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Update ProgramInfo 
+            </summary>
+            <param name="argEn">ProgramInfo Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.Delete(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Delete ProgramInfo 
+            </summary>
+            <param name="argEn">ProgramInfo Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.ProgramInfoBAL.IsValid(HTS.SAS.Entities.ProgramInfoEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">ProgramInfo Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.RoomTypeBAL">
+            <summary>
+            Business Class to handle all the RoomType Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.GetList(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Get List of RoomType
+            </summary>
+            <param name="argEn">RoomType Entity as an Input.</param>
+            <returns>Returns List of RoomType</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.GetRoomTypeListall(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Get List of All RoomType
+            </summary>
+            <param name="argEn">RoomType Entity is an Input.</param>
+            <returns>Returns List of RoomType</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.GetRoomTypeList(System.String)">
+            <summary>
+            Method to Get List of RoomType by SART_Code
+            </summary>
+            <param name="argEn">SABK_Code as Input.</param>
+            <returns>Returns List of RoomType</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.GetItem(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Get RoomType Entity
+            </summary>
+            <param name="argEn">RoomType Entity is an Input.SART_Code as Input Property.</param>
+            <returns>Returns RoomType Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.Insert(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Insert RoomType 
+            </summary>
+            <param name="argEn">RoomType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.Update(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Update RoomType 
+            </summary>
+            <param name="argEn">RoomType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.Delete(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Delete RoomType 
+            </summary>
+            <param name="argEn">RoomType Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.RoomTypeBAL.IsValid(HTS.SAS.Entities.RoomTypeEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">RoomType Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.SelectionCriteriaBAL">
+            <summary>
+            Business Class to handle all the SelectionCriteria Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SelectionCriteriaBAL.GetSC(HTS.SAS.Entities.SelectionCriteriaEn)">
+            <summary>
+            Method to Get SelectionCriteria
+            </summary>
+            <param name="argEn">SelectionCriteria Entity is an Input.</param>
+            <returns>Returns SelectionCriteria</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SelectionCriteriaBAL.Insert(HTS.SAS.Entities.SelectionCriteriaEn)">
+            <summary>
+            Method to Insert SelectionCriteria 
+            </summary>
+            <param name="argEn">SelectionCriteria Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SelectionCriteriaBAL.Update(HTS.SAS.Entities.SelectionCriteriaEn)">
+            <summary>
+            Method to Update SelectionCriteria 
+            </summary>
+            <param name="argList">SelectionCriteria Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SelectionCriteriaBAL.Delete(HTS.SAS.Entities.SelectionCriteriaEn)">
+            <summary>
+            Method to Delete Faculty 
+            </summary>
+            <param name="argEn">Faculty Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.SemesterSetupBAL">
+            <summary>
+            Business Class to handle all the SemesterSetup Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetSessionList(System.String)">
+            <summary>
+            Method to Get List of Semesters
+            </summary>
+            <param name="argEn">SemisterSetupCode as Input.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetItemBySession(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of Semesters
+            </summary>
+            <param name="argEn">SemisterSetupCode as Input.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetListSemesterCur(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of SemesterSetup
+            </summary>
+            <param name="argEn">SemesterSetup Entity as an Input.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetList(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of SemesterSetup
+            </summary>
+            <param name="argEn">SemesterSetup Entity as an Input.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetListSemesterCode(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of SemesterSetup
+            </summary>
+            <param name="argEn">SemesterSetup Entity as an Input.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetSemesterSetupListAll(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of All Semesters
+            </summary>
+            <param name="argEn">SemesterSetup Entity as an Input.SemesterSetupCode and Description as Input Properties.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetSemesterSetupList(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get List of Active or Inactive Semesters
+            </summary>
+            <param name="argEn">SemesterSetup Entity as an Input.SemesterSetupCode,Description and Status as Input Properties.</param>
+            <returns>Returns List of SemesterSetup</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetItem(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Get SemesterSetup Entity
+            </summary>
+            <param name="argEn">SemesterSetup Entity is an Input.Semester and Description as Input Property.</param>
+            <returns>Returns SemesterSetup Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.GetSessionItem(System.String)">
+            <summary>
+            Method to Get SemesterSetup Entity
+            </summary>
+            <param name="argEn">SemesterSetup Entity is an Input.SAST_Code as Input Property.</param>
+            <returns>Returns SemesterSetup Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.Insert(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Insert SemesterSetup 
+            </summary>
+            <param name="argEn">SemesterSetup Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.Update(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Update SemesterSetup 
+            </summary>
+            <param name="argEn">SemesterSetup Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.Delete(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Delete SemesterSetup 
+            </summary>
+            <param name="argEn">SemesterSetup Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SemesterSetupBAL.IsValid(HTS.SAS.Entities.SemesterSetupEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">SemesterSetup Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL">
+            <summary>
+            Business Class to handle all the SponsorFeeTypes Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.GetList(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Get List of SponsorFeeTypes
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity as an Input.</param>
+            <returns>Returns List of SponsorFeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.GetSPFeeTypeList(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Get List of Sponsor FeeTypes by SponsorCode
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity as an Input.SponsorCode as Input Property.</param>
+            <returns>Returns List of SponsorFeeTypes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.GetItem(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Get SponsorFeeTypes Entity
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity is an Input.SASR_Code as Input Property.</param>
+            <returns>Returns SponsorFeeTypes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.Insert(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Insert SponsorFeeTypes 
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.Update(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Insert SponsorFeeTypes 
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity is an Input.Sponsor Code and Feetype Code as Input Properties.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.Delete(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Delete SponsorFeeTypes 
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity is an Input.SASR_Code as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorFeeTypesBAL.IsValid(HTS.SAS.Entities.SponsorFeeTypesEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">SponsorFeeTypes Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.SponsorBAL">
+            <summary>
+            Business Class to handle all the Sponsors Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.GetList(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get List of Sponsors
+            </summary>
+            <param name="argEn">Sponsors Entity as an Input.</param>
+            <returns>Returns List of Sponsors</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.GetSponserList(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get List Active or Inactive of Sponsors
+            </summary>
+            <param name="argEn">Sponsors Entity as an Input.SponsorCode,Name,Type,GLAccount and Status as Input Properties.</param>
+            <returns>Returns List of Sponsors</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.GetItem(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Get Sponsor Entity
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input.SASR_Code as Input Property.</param>
+            <returns>Returns Sponsor Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.Insert(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Insert Sponsor 
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.Update(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Update Sponsor 
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.Delete(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Delete Sponsor 
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input.SASR_Code as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorBAL.IsValid(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Sponsor Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL">
+            <summary>
+            Business Class to handle all the DunningLetters.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.GetList(HTS.SAS.Entities.SponsorCoverLetterEn)">
+            <summary>
+            Method to Get SponsorCoverLetter
+            </summary>
+            <param name="argEn">SponsorCoverLetter Entity is an Input.</param>
+            <returns>Returns List of SponsorCoverLetterEn.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.Insert(HTS.SAS.Entities.SponsorCoverLetterEn)">
+            <summary>
+            Method to Insert SponsorCoverLetter
+            </summary>
+            <param name="argEn">SponsorCoverLetter Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.Update(HTS.SAS.Entities.SponsorCoverLetterEn)">
+            <summary>
+            Method to Update SponsorCoverLetter
+            </summary>
+            <param name="argEn">SponsorCoverLetter Entity is the Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.Delete(HTS.SAS.Entities.SponsorCoverLetterEn)">
+            <summary>
+             Method to Delete  SponsorCoverLetter 
+            </summary>
+            <param name="argEn">SponsorCoverLetter Entity is an Input.SASCL_Code is Property.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.GetProgramBySponsor(System.String)">
+            <summary>
+            Method to Get Program By Sponsor
+            </summary>
+            <param name="SponsorId">SponsorId is an Input.</param>
+            <returns>Returns List of ProgramInfoEn.</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.GetSponsorStudentDetails(HTS.SAS.Entities.SponsorCoverLetterEn)">
+            <summary>
+            Method to get student details by sponsor
+            </summary>
+            <param name="argEn">Sponsor cover letter Entity is an Input</param>
+            <returns>returns list of SponsorCoverLetterEn</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.SponsorCoverLetterBAL.GetSponsorWithStudent(HTS.SAS.Entities.SponsorEn)">
+            <summary>
+            Method to get sponsor list (filter by student registration status and activation status)
+            </summary>
+            <param name="argEn">Sponsor Entity is an Input</param>
+            <returns>returns list of Sponsor</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StudentBAL">
+            <summary>
+            Business Class to handle all the Students Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetList(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListBySemProgTypeProgID(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetlisStudent(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Students with Sponsers
+            </summary>
+            <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetKokoDetails(HTS.SAS.Entities.KokoEn)">
+            <summary>
+            Method to Get List of Students with Sponsers
+            </summary>
+            <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetlistStudentByStudent(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Students with Sponsers
+            </summary>
+            <param name="argEn">Students Entity as an Input.Sponsor,SAKO_Code,ProgramID,Faculty and CategoryCode as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.StudentBAL.GetlistStudentByStudentWithValidity(HTS.SAS.Entities.StudentEn)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.StudentBAL.GetStudentDetailsBySponsorAllocationWithStuValidity(HTS.SAS.Entities.StudentEn)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.StudentBAL.GetStudentSponsorship(System.String,System.String)" -->
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.CheckStudentList(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Check For Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId and Faculty as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListByProgram(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Active or Inactive Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId and StatusRec as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListByProgramForFee(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Added by Solomon to fetch the details based on the status.
+            </summary>
+            <param name="argEn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetStudentList(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of Active or Inactive Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId and StatusRec as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListStudent(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of All Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId,ID and StatusRec as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListStudentOutstanding(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of All Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId,ID and StatusRec as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListOutstanding(HTS.SAS.Entities.StudentEn,System.Boolean,System.Boolean)">
+            <summary>
+            Method to Get List of Students who has Outstanding amount.
+            </summary>
+            <param name="argEn">Students Entity as an Input.Students Program Id, Semester Properties.</param>
+            <param name="HasToIncludeLoan">Include Loan Amount Status</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetItem(System.String)">
+            <summary>
+            Method to Get Student Entity
+            </summary>
+            <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Student Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetStudInfo(System.String)">
+            <summary>
+            Method to Get Student Information
+            </summary>
+            <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Student Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.Insert(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Insert Student 
+            </summary>
+            <param name="argEn">Student Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.Update(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Update Student 
+            </summary>
+            <param name="argEn">Student Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.UpdateSemester(System.String,System.String,System.String)">
+            <summary>
+            Method to Update Student 
+            </summary>
+            <param name="argEn">Student Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.Delete(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Delete Student 
+            </summary>
+            <param name="argEn">Student Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.IsValid(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Student Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.InsertStudentOutstanding(System.Collections.Generic.List{HTS.SAS.Entities.StudentEn})">
+            <summary>
+            Method to Insert Student Outstanding 
+            </summary>
+            <param name="argEn">Student Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.UpdatingStudentOutstandingReleaseStatus(HTS.SAS.Entities.StudentEn,System.Collections.Generic.List{HTS.SAS.Entities.StudentEn})">
+            <summary>
+            Method to Insert Student Outstanding 
+            </summary>
+            <param name="argEn">Student Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBAL.GetListOutstandingAmtAllStud(HTS.SAS.Entities.StudentEn)">
+            <summary>
+            Method to Get List of All Students
+            </summary>
+            <param name="argEn">Students Entity as an Input.MatricNo,StudentName,ICNo,ProgramId,ID and StatusRec as Input Properties.</param>
+            <returns>Returns List of Students</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.StudentBAL.GetStudentSponsorshipWithoutValidity(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.StudentBAL.GetSponsorFeeList(System.String)" -->
+        <member name="M:HTS.SAS.BusinessObjects.StudentBankBAL.Insert(HTS.SAS.Entities.StudentBankEn)">
+            <summary>
+            Method to Insert StudentBank 
+            </summary>
+            <param name="argEn">StudentBank Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBankBAL.Delete(HTS.SAS.Entities.StudentBankEn)">
+            <summary>
+            Method to Delete StudentBank 
+            </summary>
+            <param name="argEn">StudentBank Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBankBAL.GetStudentBankTypelist(HTS.SAS.Entities.StudentBankEn)">
+            <summary>
+            Method to Get List of  Active or Inactive StudentBank
+            </summary>
+            <param name="argEn">StudentBank Entity as an Input.StudentBankCode,Description and Status as Input Properties.</param>
+            <returns>Returns List of StudentBank</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentBankBAL.GetStudentBankTypeListAll(HTS.SAS.Entities.StudentBankEn)">
+            <summary>
+            Method to Get List of All StudentCategory
+            </summary>
+            <param name="argEn">StudentBank Entity as an Input.StudentBankCode and Description as Input Properties.</param>
+            <returns>Returns List of StudentBank</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL">
+            <summary>
+            Business Class to handle all the StudentCategoryAccess Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.GetMenuList(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Get List of Menus
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity as an Input.MenuName as Input Property.</param>
+            <returns>Returns List of StudentCategoryAccess</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.GetList(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Get List of StudentCategoryAccess
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity as an Input.</param>
+            <returns>Returns List of StudentCategoryAccess</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.GetStuCatAccessList(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Get List of All StudentCategoryAccess
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity as an Input.StudentCategoryCode as Input Property.</param>
+            <returns>Returns List of StudentCategoryAccess</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.GetItem(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Get StudentCategoryAccess Entity
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity is an Input.StudentCategoryCode as Input Property.</param>
+            <returns>Returns StudentCategoryAccess Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.Insert(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Insert StudentCategoryAccess 
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.Update(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Update StudentCategoryAccess 
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity is an Input.StudentCategoryCode,MenuID and Status as Input Properties.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.Delete(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Delete StudentCategoryAccess 
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity is an Input.StudentCategoryCode as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryAccessBAL.IsValid(HTS.SAS.Entities.StudentCategoryAccessEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StudentCategoryAccess Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StudentCategoryBAL">
+            <summary>
+            Business Class to handle all the StudentCategory Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.GetList(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Get List of StudentCategory
+            </summary>
+            <param name="argEn">StudentCategory Entity as an Input.</param>
+            <returns>Returns List of StudentCategory</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.GetStudentCategoryListAll(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Get List of All StudentCategory
+            </summary>
+            <param name="argEn">StudentCategory Entity as an Input.StudentCategoryCode and Description  as Input Properties.</param>
+            <returns>Returns List of StudentCategory</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.GetStudentCategoryList(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Get List of  Active or Inactive StudentCategory
+            </summary>
+            <param name="argEn">StudentCategory Entity as an Input.StudentCategoryCode,Description and Status as Input Properties.</param>
+            <returns>Returns List of StudentCategory</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.GetItem(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Get StudentCategory Entity
+            </summary>
+            <param name="argEn">StudentCategory Entity is an Input.StudentCategoryCode as Input Property.</param>
+            <returns>Returns StudentCategory Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.Insert(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Insert StudentCategory 
+            </summary>
+            <param name="argEn">StudentCategory Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.Update(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Update StudentCategory 
+            </summary>
+            <param name="argEn">StudentCategory Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.Delete(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Delete StudentCategory 
+            </summary>
+            <param name="argEn">StudentCategory Entity is an Input.StudentCategoryCode as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentCategoryBAL.IsValid(HTS.SAS.Entities.StudentCategoryEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StudentCategory Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StudentSponBAL">
+            <summary>
+            Business Class to handle all the StudentSponsor Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.GetList(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Get List of StudentSponsor
+            </summary>
+            <param name="argEn">StudentSponsor Entity as an Input.</param>
+            <returns>Returns List of StudentSponsor</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.GetStuSponsorList(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Get List of StudentSponsor
+            </summary>
+            <param name="argEn">StudentSponsor Entity as an Input.MatricNo as Input Property.</param>
+            <returns>Returns List of StudentSponsor</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.GetItem(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Get StudentSponsor Entity
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns StudentSponsor Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.Insert(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Insert StudentSponsor 
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.Update(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Update StudentSponsor 
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.Delete(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Delete StudentSponsor 
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentSponBAL.IsValid(HTS.SAS.Entities.StudentSponEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StudentSponsor Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StudentStatusBAL">
+            <summary>
+            Business Class to handle all the StudentStatus Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.GetStudentBIStatus(System.String)">
+            <summary>
+            Method to Get StudentStatus by StudentStatusCode
+            </summary>
+            <param name="argEn">StudentStatusCode as an Input.</param>
+            <returns>Returns StudentStatus Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.GetList(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Get List of StudentStatus
+            </summary>
+            <param name="argEn">StudentStatus Entity as an Input.</param>
+            <returns>Returns List of StudentStatus</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.GetStudentStatusList(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Get List of Active or Inactive StudentStatus
+            </summary>
+            <param name="argEn">StudentStatus Entity as an Input.StudentStatusCode,Description,Status and BlStatus as Input Property.</param>
+            <returns>Returns List of StudentStatus</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.GetStudentStatusListAll(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Get List of All StudentStatus
+            </summary>
+            <param name="argEn">StudentStatus Entity as an Input.StudentStatusCode and Description as Input Property.</param>
+            <returns>Returns List of StudentStatus</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.GetItem(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Get StudentStatus Entity
+            </summary>
+            <param name="argEn">StudentStatus Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns StudentStatus Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.Insert(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Insert StudentStatus 
+            </summary>
+            <param name="argEn">StudentStatus Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.Update(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Update StudentStatus 
+            </summary>
+            <param name="argEn">StudentStatus Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.Delete(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Insert StudentStatus 
+            </summary>
+            <param name="argEn">StudentStatus Entity is an Input.StudentStatusCode as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StudentStatusBAL.IsValid(HTS.SAS.Entities.StudentStatusEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StudentStatus Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StuNotesBAL">
+            <summary>
+            Business Class to handle all the StudentNotes Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.GetList(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Get List of StudentNotes
+            </summary>
+            <param name="argEn">StudentNotes Entity as an Input.Student MatricNo as Input Property</param>
+            <returns>Returns List of StudentNotes</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.GetItem(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Get StudentNotes Entity
+            </summary>
+            <param name="argEn">StudentNotes Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns StudentNotes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.Insert(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Insert StudentNotes
+            </summary>
+            <param name="argEn">StudentNotes Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.Update(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Update StudentNotes
+            </summary>
+            <param name="argEn">StudentNotes Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.Delete(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Delete StudentNotes
+            </summary>
+            <param name="argEn">StudentNotes Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuNotesBAL.IsValid(HTS.SAS.Entities.StuNotesEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StudentNotes Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL">
+            <summary>
+            Business Class to handle all the StudentSponsor FeeTypes Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.GetList(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Get StudentSponsor FeeTypes 
+            </summary>
+            <param name="argEn">StuSponFeeTypes Entity as an Input.</param>
+            <returns>Returns StuSponFeeTypes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.GetStuSpnFTList(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Get StudentSponsor FeeTypes 
+            </summary>
+            <param name="argEn">StuSponFeeTypes Entity as an Input.MatricNo as Input Property.</param>
+            <returns>Returns StuSponFeeTypes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.GetItem(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Get StudentSponsor FeeTypes Entity
+            </summary>
+            <param name="argEn">StudentSponFeeTypes Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns StudentSponFeeTypes Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.Insert(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Insert StudentSponsor FeeTypes
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.Update(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Update StudentSponsor FeeTypes
+            </summary>
+            <param name="argEn">StudentSponsor Entity is an Input.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.Delete(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Delete StudentSponsor FeeTypes 
+            </summary>
+            <param name="argEn">StuSponFeeTypes Entity is an Input.MatricNo as Input Property.</param>
+            <returns>Returns Boolean</returns> 
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.StuSponFeeTypesBAL.IsValid(HTS.SAS.Entities.StuSponFeeTypesEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">StuSponFeeTypes Entity is as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.UniversityProfileBAL">
+            <summary>
+            Business Class to handle all the UniversityProfile Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.GetList(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Get List of UniversityProfile
+            </summary>
+            <param name="argEn">UniversityProfile Entity as an Input.</param>
+            <returns>Returns List of UniversityProfile</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.GetUniversityProfileList(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Get List of All UniversityProfiles
+            </summary>
+            <param name="argEn">UniversityProfile Entity as an Input.UniversityProfileCode,Name and SName as Input Properties.</param>
+            <returns>Returns List of UniversityProfile</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.GetItem(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Get UniversityProfile Entity
+            </summary>
+            <param name="argEn">UniversityProfile Entity is an Input.UniversityProfileCode as Input Property.</param>
+            <returns>Returns UniversityProfile Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.Insert(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Insert UniversityProfile 
+            </summary>
+            <param name="argEn">UniversityProfile Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.Update(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Update UniversityProfile 
+            </summary>
+            <param name="argEn">UniversityProfile Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.Delete(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Delete UniversityProfile 
+            </summary>
+            <param name="argEn">UniversityProfile Entity is an Input.UniversityProfileCode as Input Propoerty.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityProfileBAL.IsValid(HTS.SAS.Entities.UniversityProfileEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">UniversityProfile Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.UniversityFundBAL">
+            <summary>
+            Business Class to handle all the UniversityFund Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.GetList(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Get List of UniversityFund
+            </summary>
+            <param name="argEn">UniversityFund Entity as an Input.</param>
+            <returns>Returns List of UniversityFund</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.GetUniversityFundList(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Get List of Active or Inactive UniversityFunds
+            </summary>
+            <param name="argEn">UniversityFund Entity as an Input.UniversityFundCode,Description,GLCode and Status as Input Properties.</param>
+            <returns>Returns List of UniversityFund</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.GetItem(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Get UniversityFund Entity
+            </summary>
+            <param name="argEn">UniversityFund Entity is an Input.UniversityFundCode as Input Property.</param>
+            <returns>Returns UniversityFund Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.Insert(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Insert UniversityFund 
+            </summary>
+            <param name="argEn">UniversityFund Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.Update(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Update UniversityFund 
+            </summary>
+            <param name="argEn">UniversityFund Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.Delete(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Delete UniversityFund 
+            </summary>
+            <param name="argEn">UniversityFund Entity is an Input.UniversityFundCode as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UniversityFundBAL.IsValid(HTS.SAS.Entities.UniversityFundEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">UniversityFund Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.UserGroupsBAL">
+            <summary>
+            Business Class to handle all the UserGroups Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetUserGroups">
+            <summary>
+            Method to Get List of Active UserGroups
+            </summary>
+            <returns>Returns List of UserGroups</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetUserGroupsTypelistAll(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Get List of All UserGroups
+            </summary>
+            <param name="argEn">UserGroups Entity as an Input.UserGroupName and Description as Input properties.</param>
+            <returns>Returns List of UserGroups</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetUserGroupsTypelist(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Get List of Active or Inative UserGroups
+            </summary>
+            <param name="argEn">UserGroups Entity as an Input.UserGroupName,Description and Status as Input properties.</param>
+            <returns>Returns List of UserGroups</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetList(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Get List of UserGroups
+            </summary>
+            <param name="argEn">UserGroups Entity as an Input.</param>
+            <returns>Returns List of UserGroups</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetUserGroupList(HTS.SAS.Entities.UserGroupsEn)" -->
+        <!-- Badly formed XML comment ignored for member "M:HTS.SAS.BusinessObjects.UserGroupsBAL.GetItem(HTS.SAS.Entities.UserGroupsEn)" -->
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.Insert(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Insert UserGroups 
+            </summary>
+            <param name="argEn">UserGroups Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.Update(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Update UserGroups 
+            </summary>
+            <param name="argEn">UserGroups Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.Delete(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Delete UserGroups 
+            </summary>
+            <param name="argEn">UserGroups Entity is an Input.UserGroupId as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserGroupsBAL.IsValid(HTS.SAS.Entities.UserGroupsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">UserGroups Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.UserRightsBAL">
+            <summary>
+            Business Class to handle all the UserRights Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetMenuByUserGroup(System.String,System.Int32,System.String)">
+            <summary>
+            Method to Get List of Menus By UserGroups
+            </summary>
+            <param name="MenuName">MenuName as Input.</param>
+            <param name="UserGroupID">UserGroupID  as Input.</param>
+            <returns>Returns List of Menus</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.InsertUserRights(System.Collections.Generic.List{HTS.SAS.Entities.UserRightsEn})">
+            <summary>
+            Method to Insert List of UserRights 
+            </summary>
+            <param name="argEn">List of UserRights Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetUserMenu(System.Int32)">
+            <summary>
+            Method to Get List of UserRights by GroupID
+            </summary>
+            <param name="UserGroupID">UserGroupID  as an Input.</param>
+            <returns>Returns List of UserRights</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetList(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Get List of All UserRights  by UserGroupID
+            </summary>
+            <param name="argEn">UserGroupID  as an Input.</param>
+            <returns>Returns List of UserRights</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetItem(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Get UserRights Entity
+            </summary>
+            <param name="argEn">UserRights Entity is an Input.</param>
+            <returns>Returns UserRights Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.Insert(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Insert UserRights 
+            </summary>
+            <param name="argEn">UserRights Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.Update(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Update UserRights 
+            </summary>
+            <param name="argEn">UserRights Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.Delete(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Delete UserRights 
+            </summary>
+            <param name="argEn">UserRights Entity is an Input.UserGroup as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.IsValid(HTS.SAS.Entities.UserRightsEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">UserRights Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetMenuByWorkflowGroup(System.String,System.Int32,System.Int32)">
+            <summary>
+            Method to Get List of Menus for Workflow Group
+            </summary>
+            <param name="MenuName">MenuName as Input.</param>
+            <param name="UserGroupID">UserGroupID  as Input.</param>
+            <returns>Returns List of Menus</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UserRightsBAL.GetMenuByUser(System.Int32)">
+            <summary>
+            Method to Get List of Menus By UserGroups
+            </summary>
+            <param name="MenuName">MenuName as Input.</param>
+            <param name="UserGroupID">UserGroupID  as Input.</param>
+            <returns>Returns List of Menus</returns>
+        </member>
+        <member name="T:HTS.SAS.BusinessObjects.UsersBAL">
+            <summary>
+            Business Class to handle all the Users Methods.
+            </summary>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetUserRights(System.Int32,System.Int32)">
+            <summary>
+            Method to Get UserRights
+            </summary>
+            <param name="MenuId">GroupId  as Input Property.</param>
+            <param name="GroupId">MenuId as Input Property.</param>
+            <returns>Returns UserRights Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetUsersList(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Get List of Active Or Inactive Users
+            </summary>
+            <param name="argEn">Users Entity  as an Input.UserName,Email,UserStatus,UserGroupId and RecStatus as Input Properties.</param>
+            <returns>Returns List of Users</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetLoginUser(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Get Login User
+            </summary>
+            <param name="argEn">Users Entity  as an Input.UserName and Password as Input Properties.</param>
+            <returns>Returns Users Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetList(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Get List of Users
+            </summary>
+            <param name="argEn">Users Entity  as an Inputs.</param>
+            <returns>Returns List of Users</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetItem(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Get Users Entity
+            </summary>
+            <param name="argEn">Users Entity is an Input.UserName as Input Property.</param>
+            <returns>Returns Users Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.Insert(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Insert Users 
+            </summary>
+            <param name="argEn">Users Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.Update(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Update Users 
+            </summary>
+            <param name="argEn">Users Entity is an Input.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.Delete(System.Collections.Generic.List{HTS.SAS.Entities.UsersEn})">
+            <summary>
+            Method to Delete Users 
+            </summary>
+            <param name="argEn">Users Entity is an Input.UserName as Input Property.</param>
+            <returns>Returns Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.IsValid(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to Check Validation
+            </summary>
+            <param name="argEn">Users Entity as Input.</param>
+            <returns>Returns Users Entity</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.DataGrid(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to get DataGrid
+            </summary>
+            <param name="argEn">Users Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+        <member name="M:HTS.SAS.BusinessObjects.UsersBAL.GetUser(HTS.SAS.Entities.UsersEn)">
+            <summary>
+            Method to get GetUser
+            </summary>
+            <param name="argEn">Users Entity as Input.</param>
+            <returns>Returns a Boolean</returns>
+        </member>
+    </members>
+</doc>

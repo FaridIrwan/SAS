@@ -1,0 +1,28 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe assembly's progress.
+The file is located at C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe assembly's progress.
+The file is located at C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe assembly's progress.
+The file is located at C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.exe assembly's progress.
+The file is located at C:\SAS\SASV218032009\SASInterfaceService\bin\Debug\SASInterfaceService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.

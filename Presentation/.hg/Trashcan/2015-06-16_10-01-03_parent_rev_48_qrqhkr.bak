@@ -1,0 +1,364 @@
+diff --git a/addSpnRecpts.aspx b/addSpnRecpts.aspx
+--- a/addSpnRecpts.aspx
++++ b/addSpnRecpts.aspx
+@@ -45,9 +45,7 @@
+                 </td>
+             </tr>
+         </table>
+-        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="500px">
+-            <hr /><table style="width: 100%">
+-                <tr>
+-                    <td colspan="1" style="width: 503px">
+-                    </td>
++        <asp:Panel ID="pnlSpn" runat="server" Height="450px" Width="611px">
++            <hr /><table style="width: 82%">
++                <tr>                    
+                     <td colspan="2" style="width: 153px">
+@@ -53,5 +51,5 @@
+                     <td colspan="2" style="width: 153px">
+-                        <div style="overflow: auto; width: 500px; height: 150px">
++                        <div style="overflow: auto; width: 569px; height: 150px">
+                             <asp:DataGrid ID="dgView" runat="server" AutoGenerateColumns="False" DataKeyField="TransactionCode"
+                                 Width="100%">
+                                 <FooterStyle CssClass="dgFooterStyle" Height="20px" />
+@@ -60,7 +58,7 @@
+                                     Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                                 <ItemStyle CssClass="dgItemStyle" />
+                                 <HeaderStyle BackColor="#CDD7EE" CssClass="dgHeaderStyle" Font-Bold="True" Font-Italic="False"
+-                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" />
++                                    Font-Overline="False" Font-Size="Medium" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" />
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
+@@ -64,5 +62,6 @@
+                                 <Columns>
+                                     <asp:ButtonColumn CommandName="Select" DataTextField="TransactionCode" HeaderText="Code"
+                                         Text="TransactionCode"></asp:ButtonColumn>
++                                    <asp:BoundColumn DataField="BatchCode" HeaderText="Sponsor Invoice"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+@@ -67,8 +66,8 @@
+                                     <asp:BoundColumn DataField="SponserCode" HeaderText="Sponsor Code"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Name" HeaderText="Sponsor Name"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}"></asp:BoundColumn>
+-                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransDate" HeaderText="Date " DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="TransactionAmount" HeaderText="Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
++                                    <asp:BoundColumn DataField="PaidAmount" HeaderText="Paid Amount" DataFormatString="{0:F}" ItemStyle-HorizontalAlign="Center"></asp:BoundColumn>
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+@@ -72,9 +71,7 @@
+                                     <asp:BoundColumn DataField="Category" HeaderText="Category" Visible="False"></asp:BoundColumn>
+                                 </Columns>
+                             </asp:DataGrid></div>
+-                    </td>
+-                    <td colspan="1" style="width: 4192px">
+-                    </td>
++                    </td>                    
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+@@ -78,21 +75,25 @@
+                 </tr>
+             </table>
+             <table style="width: 100%; height: 2%">
+-                <tr><hr />
+-                    <td style="width: 8px; height: 30px; text-align: right">
+-                        <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif"
+-                            Width="28px" /></td>
+-                    <td style="width: 49px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label></td>
+-                    <td style="width: 34px; height: 30px; text-align: left">
+-                        <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg"
+-                            Width="28px" /></td>
+-                    <td style="width: 158px; height: 30px; text-align: left">
+-                        <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label></td>
+-                    <td style="width: 142px; height: 30px; text-align: left">
+-                    </td>
+-                    <td style="width: 100px; height: 30px; text-align: left">
+-                    </td>
++                <caption>
++                    <hr />
++                    <tr>
++                        <td style="width: 8px; height: 30px; text-align: right">
++                            <asp:ImageButton ID="ibtnOK" runat="server" Height="28px" ImageUrl="~/images/add_list.gif" Width="28px" />
++                        </td>
++                        <td style="width: 49px; height: 30px; text-align: left">
++                            <asp:Label ID="Label4" runat="server" Text="Select" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 34px; height: 30px; text-align: left">
++                            <asp:ImageButton ID="ibtnClose" runat="server" Height="28px" ImageUrl="~/images/ok_cancel.jpg" Width="28px" />
++                        </td>
++                        <td style="width: 158px; height: 30px; text-align: left">
++                            <asp:Label ID="Label6" runat="server" Text="Close" Width="21px"></asp:Label>
++                        </td>
++                        <td style="width: 142px; height: 30px; text-align: left"></td>
++                        <td style="width: 100px; height: 30px; text-align: left"></td>
++                    </tr>
++                </caption>
+                 </tr>
+             </table>
+         </asp:Panel>
+diff --git a/addSpnRecpts.aspx.vb b/addSpnRecpts.aspx.vb
+--- a/addSpnRecpts.aspx.vb
++++ b/addSpnRecpts.aspx.vb
+@@ -42,11 +42,11 @@
+         If dgView.SelectedIndex <> -1 Then
+             Dim eobj As New SponsorEn
+             eobj.TransactionCode = dgView.DataKeys(dgView.SelectedIndex)
+-            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(1).Text
+-            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(2).Text
+-            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(4).Text
+-            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
+-            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.CreditRef = dgView.Items(dgView.SelectedIndex).Cells(2).Text
++            eobj.Name = dgView.Items(dgView.SelectedIndex).Cells(3).Text
++            eobj.TransactionAmount = dgView.Items(dgView.SelectedIndex).Cells(5).Text
++            eobj.PaidAmount = dgView.Items(dgView.SelectedIndex).Cells(6).Text
++            eobj.Category = dgView.Items(dgView.SelectedIndex).Cells(7).Text
+             dgView.SelectedIndex = -1
+             Session("spnobj") = eobj
+         End If
+diff --git a/App_Code/Generic.vb b/App_Code/Generic.vb
+--- a/App_Code/Generic.vb
++++ b/App_Code/Generic.vb
+@@ -51,6 +51,7 @@
+         Exclusive = 1
+         Inclusive = 2
+     End Enum
++
+     Public Enum _ProcessType
+         Post = 1
+         Reject = 2
+@@ -54,6 +55,6 @@
+     Public Enum _ProcessType
+         Post = 1
+         Reject = 2
+-        Suceess = 3
++        Success = 3
+     End Enum
+ 
+@@ -58,5 +59,11 @@
+     End Enum
+ 
++    Public Enum _WorkflowType
++        Received = 1
++        Posted = 2
++        Rejected = 3
++        Approved = 4
++    End Enum
+ 
+ #End Region
+ 
+diff --git a/App_Code/Helper.vb b/App_Code/Helper.vb
+--- a/App_Code/Helper.vb
++++ b/App_Code/Helper.vb
+@@ -2,7 +2,7 @@
+ 
+ Imports MaxGeneric
+ Imports Microsoft.VisualBasic
+-
++Imports System.IO
+ #End Region
+ 
+ Public Class Helper
+@@ -6,6 +6,12 @@
+ #End Region
+ 
+ Public Class Helper
++#Region "Create Instances "
++    'Create Instances - Start
++    Private _WorkflowDAL As New HTS.SAS.DataAccessObjects.WorkflowDAL
++    Private _AccountsDAL As New HTS.SAS.DataAccessObjects.AccountsDAL
++    'Create Instances - Ended
++#End Region
+ 
+ #Region "Generic Constants "
+ 
+@@ -86,5 +92,40 @@
+     End Function
+ #End Region
+ 
++#Region "Post to Workflow "
++
++    'Purpose			: Post To Workflow
++    'Author			    : Sujith Sharatchandran - T-Melmax Sdn Bhd
++    'Created Date		: 04/06/2015
++    Public Function PostToWorkflow(ByVal BatchCode As String,
++        ByVal DoneBy As String, ByVal PageName As String) As Boolean
++
++
++        Try
++
++            'Post To workflow for apporval - Start
++            If _WorkflowDAL.Workflow(BatchCode, DoneBy, PageName) Then
++
++                'Update Accounts Details - Start
++                If _AccountsDAL.UpdatePostingStatus(BatchCode) Then
++                    Return True
++                End If
++                'Update Accounts Details - Stop
++
++            End If
++            'Post To workflow for apporval - Stop
++
++            Return False
++
++        Catch ex As Exception
++
++            Call MaxModule.Helper.LogError(ex.Message)
++            Return False
++
++        End Try
++
++    End Function
++    '  PostToWorkflow("", "", "")
++#End Region
+ 
+ End Class
+diff --git a/BatchInvoice.aspx.vb b/BatchInvoice.aspx.vb
+--- a/BatchInvoice.aspx.vb
++++ b/BatchInvoice.aspx.vb
+@@ -541,7 +541,7 @@
+         Dim BatchCode As String = MaxGeneric.clsGeneric.NullToString(txtBatchNo.Text)
+ 
+         'Calling PostToWorFlow
+-        '_Helper.PostToWorkflow(BatchCode, DoneBy(), Request.Url.AbsoluteUri)
++        _Helper.PostToWorkflow(BatchCode, DoneBy(), Request.Url.AbsoluteUri)
+ 
+         'If lblStatus.Value = "New" Then
+         '    lblMsg.Text = "Record not ready for Posting"
+@@ -1536,7 +1536,7 @@
+         If Request.QueryString("Formid") = "Inv" Then
+             eobj.Category = "Invoice"
+             Status = "O"
+-            eobj.TransType = "Credit"
++            eobj.TransType = "Debit"
+         ElseIf Request.QueryString("Formid") = "DN" Then
+             eobj.Category = "Debit Note"
+             Status = "O"
+@@ -1540,7 +1540,7 @@
+         ElseIf Request.QueryString("Formid") = "DN" Then
+             eobj.Category = "Debit Note"
+             Status = "O"
+-            eobj.TransType = "Credit"
++            eobj.TransType = "Debit"
+         ElseIf Request.QueryString("Formid") = "CN" Then
+             eobj.Category = "Credit Note"
+             Status = "O"
+@@ -1544,7 +1544,7 @@
+         ElseIf Request.QueryString("Formid") = "CN" Then
+             eobj.Category = "Credit Note"
+             Status = "O"
+-            eobj.TransType = "Debit"
++            eobj.TransType = "Credit"
+         End If
+ 
+         If dgView.Items.Count <> 0 Then
+@@ -2086,6 +2086,8 @@
+         dgStudentProg.Columns(7).Visible = False
+         dgStudentProg.Columns(8).Visible = False
+         dgStudentProg.Columns(9).Visible = False
++
++        btnViewStu.Enabled = False
+         
+     End Sub
+ 
+@@ -2096,54 +2098,6 @@
+         Dim lstobjects As New List(Of StudentEn)
+         Dim eob As New StudentEn
+         Dim sem As Integer = 0
+-        'Dim faculty As String
+-        'Dim cat As String
+-        'Dim trackid As Integer = 0
+-
+-        'If rbProYes.Checked = True Then inprogram()
+-        'If rbSemYes.Checked = True Then inSponsor()
+-        'If rbHosYes.Checked = True Then inHOstel()
+-        'If rbSemAll.Checked = True Then
+-        '    eob.CurrentSemester = 0
+-        'Else
+-        '    If txtSemster.Text = "" Then
+-        '        eob.CurrentSemester = 0
+-        '    Else
+-        '        eob.CurrentSemester = txtSemster.Text
+-        '    End If
+-        'End If
+-        'eob.STsponsercode = New StudentSponEn
+-        'If Not Session("spnstr") Is Nothing Then
+-        '    eob.STsponsercode.Sponsor = Session("spnstr")
+-        'Else
+-        '    eob.STsponsercode.Sponsor = ""
+-        'End If
+-        'If Not Session("sstr") Is Nothing Then
+-        '    eob.SAKO_Code = Session("sstr")
+-        'Else
+-        '    eob.SAKO_Code = ""
+-        'End If
+-        'If Not Session("prgstr") Is Nothing Then
+-        '    eob.ProgramID = Session("prgstr")
+-        'Else
+-        '    eob.ProgramID = ""
+-        'End If
+-        'If ddlFaculty.SelectedValue = "-1" Then
+-        '    faculty = ""
+-        'Else
+-        '    faculty = ddlFaculty.SelectedValue
+-
+-        'End If
+-        'If ddlStudentType.SelectedValue = "-1" Then
+-        '    cat = ""
+-        'Else
+-        '    cat = ddlStudentType.SelectedValue
+-
+-        'End If
+-        'eob.Faculty = faculty
+-        'eob.CategoryCode = cat
+-        'eob.StCategoryAcess = New StudentCategoryAccessEn
+-        'eob.StCategoryAcess.MenuID = Session("Menuid")
+ 
+         Try
+             lstobjects = objup.GetListStudentChange(Category, ModuleId)
+@@ -2193,8 +2147,8 @@
+     Private Sub OnViewStudentGridChange(ModuleId As Integer)
+ 
+         MultiView1.SetActiveView(View4)
+-        btnViewStu.CssClass = "TabButtonClick"
+-
++        'btnViewStu.CssClass = "TabButtonClick"
++        btnViewStu.Enabled = False
+         btnBatchInvoice.CssClass = "TabButton"
+ 
+         btnSelection.CssClass = "TabButton"
+@@ -2226,6 +2180,8 @@
+         dgStudentProg.Columns(8).Visible = False
+         dgStudentProg.Columns(9).Visible = False
+ 
++        btnViewStu.Enabled = False
++
+     End Sub
+ 
+     Protected Sub btnChangeHostel_Click(sender As Object, e As EventArgs) Handles btnChangeHostel.Click
+@@ -2240,6 +2196,8 @@
+         dgStudentProg.Columns(5).Visible = False
+         dgStudentProg.Columns(6).Visible = False
+         dgStudentProg.Columns(7).Visible = False
++
++        btnViewStu.Enabled = False
+     End Sub
+ 
+ End Class
+diff --git a/FeePosting.aspx b/FeePosting.aspx
+--- a/FeePosting.aspx
++++ b/FeePosting.aspx
+@@ -930,7 +930,7 @@
+                             </asp:BoundColumn>
+                             <asp:BoundColumn DataField="Faculty" HeaderText="Faculty" Visible="False"></asp:BoundColumn>
+                             <asp:BoundColumn DataField="Semester" HeaderText="Semester" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"></asp:BoundColumn>
+-                            <asp:BoundColumn DataField="BatchNo" HeaderText="Batch Number"></asp:BoundColumn>
++                            <asp:BoundColumn DataField="BatchNo" HeaderText="Batch Number" Visible="false"></asp:BoundColumn>
+                             <asp:BoundColumn DataField="TransStatus" HeaderText="Status" Visible="False"></asp:BoundColumn>
+                             <asp:TemplateColumn HeaderText="View">
+                                 <HeaderStyle HorizontalAlign="Center" Width="12%" />

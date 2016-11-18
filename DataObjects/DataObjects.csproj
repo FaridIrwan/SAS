@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{169F92A2-4C92-49BC-AD2D-84F0BCE83786}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataObjects</RootNamespace>
+    <AssemblyName>DataObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Jbit_billing.cs" />
+    <Compile Include="ParameterObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAS_Account.cs" />
+    <Compile Include="SAS_AccountsDetail.cs" />
+    <Compile Include="SAS_AFC.cs" />
+    <Compile Include="SAS_AFCDetail.cs" />
+    <Compile Include="SAS_AutoNumber.cs" />
+    <Compile Include="SAS_BankDetail.cs" />
+    <Compile Include="SAS_BillingDetail.cs" />
+    <Compile Include="SAS_Block.cs" />
+    <Compile Include="SAS_Branch.cs" />
+    <Compile Include="SAS_CF.cs" />
+    <Compile Include="SAS_Cheque.cs" />
+    <Compile Include="SAS_ChequeDetail.cs" />
+    <Compile Include="SAS_DegreeType.cs" />
+    <Compile Include="SAS_Department.cs" />
+    <Compile Include="SAS_DunningLetter.cs" />
+    <Compile Include="SAS_ExportData.cs" />
+    <Compile Include="SAS_Faculty.cs" />
+    <Compile Include="SAS_FeeCharge.cs" />
+    <Compile Include="SAS_FeeStrAmount.cs" />
+    <Compile Include="SAS_FeeStrDetail.cs" />
+    <Compile Include="SAS_FeeStruct.cs" />
+    <Compile Include="SAS_FeeType.cs" />
+    <Compile Include="SAS_HostelStrAmount.cs" />
+    <Compile Include="SAS_HostelStrDetail.cs" />
+    <Compile Include="SAS_HostelStruct.cs" />
+    <Compile Include="SAS_Kokorikulum.cs" />
+    <Compile Include="SAS_KokorikulumDetail.cs" />
+    <Compile Include="SAS_Kolej.cs" />
+    <Compile Include="SAS_LogAutoNumber.cs" />
+    <Compile Include="SAS_PayMode.cs" />
+    <Compile Include="SAS_Program.cs" />
+    <Compile Include="SAS_PTPTNFeeSetup.cs" />
+    <Compile Include="SAS_PTPTNFileGenarate.cs" />
+    <Compile Include="SAS_ReceiptHistory.cs" />
+    <Compile Include="SAS_RoomType.cs" />
+    <Compile Include="SAS_SemesterSetup.cs" />
+    <Compile Include="SAS_Sponsor.cs" />
+    <Compile Include="SAS_SponsorFeeType.cs" />
+    <Compile Include="SAS_SponsorInvoice.cs" />
+    <Compile Include="SAS_SponsorInvoiceDetail.cs" />
+    <Compile Include="SAS_Student.cs" />
+    <Compile Include="SAS_StudentCategory.cs" />
+    <Compile Include="SAS_StudentCategoryAccess.cs" />
+    <Compile Include="SAS_StudentLoan.cs" />
+    <Compile Include="SAS_StudentOutstanding.cs" />
+    <Compile Include="SAS_StudentSpon.cs" />
+    <Compile Include="SAS_StudentStatu.cs" />
+    <Compile Include="SAS_StuNote.cs" />
+    <Compile Include="SAS_StuSponFeeType.cs" />
+    <Compile Include="SAS_SucceedTransactionDetail.cs" />
+    <Compile Include="SAS_SucceedTransactionHeader.cs" />
+    <Compile Include="SAS_TblReference.cs" />
+    <Compile Include="SAS_TempTable.cs" />
+    <Compile Include="SAS_UniversityFund.cs" />
+    <Compile Include="SAS_UniversityProfile.cs" />
+    <Compile Include="UR_MenuMaster.cs" />
+    <Compile Include="UR_MenuMaster1.cs" />
+    <Compile Include="UR_User.cs" />
+    <Compile Include="UR_UserGroup.cs" />
+    <Compile Include="UR_UserRight.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

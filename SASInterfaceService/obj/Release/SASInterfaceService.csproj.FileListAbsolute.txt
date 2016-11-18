@@ -1,0 +1,6 @@
+D:\Development Workspace\Framework 4.5 Projects\SAS\SASInterfaceService\obj\Release\SASInterfaceService.csprojResolveAssemblyReference.cache
+D:\Development Workspace\Framework 4.5 Projects\SAS\SASInterfaceService\obj\Release\SASInterfaceService.ProjectInstaller.resources
+D:\Development Workspace\Framework 4.5 Projects\SAS\SASInterfaceService\obj\Release\SASInterfaceService.csproj.GenerateResource.Cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SASInterfaceService\obj\Release\SASInterfaceService.csprojResolveAssemblyReference.cache
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SASInterfaceService\obj\Release\SASInterfaceService.ProjectInstaller.resources
+D:\DEVELOPMENT\PROJECT_VS2012\SAS4.0\SASInterfaceService\obj\Release\SASInterfaceService.csproj.GenerateResource.Cache

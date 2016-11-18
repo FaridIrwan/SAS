@@ -1,0 +1,371 @@
+#region NameSpaces 
+
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.Common;
+using HTS.SAS.Entities;
+using MaxGeneric;
+
+#endregion
+
+namespace HTS.SAS.DataAccessObjects
+{
+    /// <summary>
+    /// Class to handle all the StudentSponsor Methods.
+    /// </summary>
+    public class StudentSponDAL
+    {
+        #region Global Declarations 
+
+        private DbParameterCollection _DbParameterCollection = null;
+
+        private MaxModule.DatabaseProvider _DatabaseFactory =
+            new MaxModule.DatabaseProvider();
+
+        private string DataBaseConnectionString = Helper.
+           GetConnectionString();
+
+        #endregion
+
+        public StudentSponDAL()
+        {
+        }
+
+        #region GetList 
+
+        /// <summary>
+        /// Method to Get List of StudentSponsor
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity as an Input.</param>
+        /// <returns>Returns List of StudentSponsor</returns>
+        public List<StudentSponEn> GetList(StudentSponEn argEn)
+        {
+            List<StudentSponEn> loEnList = new List<StudentSponEn>();
+            string sqlCmd = "select * from SAS_StudentSpon";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentSponEn loItem = LoadObject(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetStudentSpn 
+
+        /// <summary>
+        /// Method to Get List of StudentSponsor by MatricNo
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity as an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns List of StudentSponsor</returns>
+        public List<StudentSponEn> GetStudentSpn(string argEn)
+        {
+            List<StudentSponEn> loEnList = new List<StudentSponEn>();
+            string sqlCmd = "select * from SAS_StudentSpon where SASI_MatricNo='"+argEn+"'";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentSponEn loItem = LoadObject(loReader);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetStuSponserList 
+
+        /// <summary>
+        /// Method to Get List of All StudentSponsors
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity as an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns List of StudentSponsor</returns>
+        public List<StudentSponEn> GetStuSponserList(StudentSponEn argEn)
+        {
+            List<StudentSponEn> loEnList = new List<StudentSponEn>();
+            //string sqlCmd = "select SS.*,SP.SASR_Name from sas_StudentSpon SS,sas_Sponsor SP where SS.SASS_Sponsor=SP.SASR_Code";
+            string sqlCmd="SELECT SAS_StudentSpon.SASI_MatricNo, SAS_StudentSpon.SASS_Sponsor, SAS_Sponsor.SASR_Name, SAS_StudentSpon.SASS_SDate, " + 
+                      " SAS_StudentSpon.SASS_EDate, SAS_StudentSpon.SASS_Status, SAS_StudentSpon.SASS_Num, SAS_StudentSpon.SASS_Type " +
+                      " FROM  SAS_Student INNER JOIN SAS_StudentSpon ON SAS_Student.SASI_MatricNo = SAS_StudentSpon.SASI_MatricNo INNER JOIN " +
+                      " SAS_Sponsor ON SAS_StudentSpon.SASS_Sponsor = SAS_Sponsor.SASR_Code WHERE SAS_StudentSpon.SASI_MatricNo ='" +argEn.MatricNo + "'";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    {
+                        while (loReader.Read())
+                        {
+                            StudentSponEn loItem = LoadObject(loReader);
+                            loItem.Name = GetValue<string>(loReader, "SASR_Name");
+                            StuSponFeeTypesDAL loStuSpnFTDal = new StuSponFeeTypesDAL();
+                            StuSponFeeTypesEn loStuSpnFTEn = new StuSponFeeTypesEn();
+                            loStuSpnFTEn.MatricNo = loItem.MatricNo;
+                            loStuSpnFTEn.SASR_Code = loItem.Sponsor;
+                            loItem.ListStuSponFeeTypes = loStuSpnFTDal.GetStuSponFTList(loStuSpnFTEn);
+                            loEnList.Add(loItem);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loEnList;
+        }
+
+        #endregion
+
+        #region GetItem 
+
+        /// <summary>
+        /// Method to Get StudentSponsor Entity
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity is an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns StudentSponsor Entity</returns>
+        public StudentSponEn GetItem(StudentSponEn argEn)
+        {
+            StudentSponEn loItem = new StudentSponEn();
+            string sqlCmd = "Select * FROM SAS_StudentSpon WHERE SASI_MatricNo = @SASI_MatricNo";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                    _DbParameterCollection = cmd.Parameters;
+
+                    using (IDataReader loReader = _DatabaseFactory.GetIDataReader(Helper.GetDataBaseType, cmd,
+                        DataBaseConnectionString, sqlCmd, _DbParameterCollection).CreateDataReader()) 
+                    {
+                        if (loReader != null)
+                        {
+                            loReader.Read();
+                            loItem = LoadObject(loReader);
+                        }
+                        loReader.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return loItem;
+        }
+
+        #endregion
+
+        #region Insert 
+
+        /// <summary>
+        /// Method to Insert StudentSponsor 
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns> 
+        public bool Insert(StudentSponEn argEn)
+        {
+            bool lbRes = false;
+            string sqlCmd;
+            try
+            {
+                        sqlCmd = "INSERT INTO SAS_StudentSpon(SASI_MatricNo,SASS_Sponsor,SASS_SDate,SASS_EDate,SASS_Status,SASS_Num,SASS_Type) VALUES (@SASI_MatricNo,@SASS_Sponsor,@SASS_SDate,@SASS_EDate,@SASS_Status,@SASS_Num,@SASS_Type) ";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Sponsor", DbType.String, argEn.Sponsor);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_SDate", DbType.String, argEn.SDate);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_EDate", DbType.String, argEn.EDate);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Status", DbType.Boolean, argEn.Status);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Num", DbType.Int32, argEn.Num);                            
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Boolean, argEn.FullySponsered);
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+                            
+                            if (liRowAffected > -1)
+                                lbRes = true;
+                            else
+                                throw new Exception("Insertion Failed! No Row has been updated...");
+                        }
+             }
+                
+            
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region Update 
+
+        /// <summary>
+        /// Method to Update StudentSponsor 
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity is an Input.</param>
+        /// <returns>Returns Boolean</returns> 
+        public bool Update(StudentSponEn argEn)
+        {
+            bool lbRes = false;
+            int iOut = 0;
+            string sqlCmd = "Select count(*) as cnt From SAS_StudentSpon WHERE SASI_MatricNo = @SASI_MatricNo";
+            try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmdSel = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmdSel, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                    _DbParameterCollection = cmdSel.Parameters;
+
+                    using (IDataReader dr = _DatabaseFactory.GetIDataReader(Helper.GetDataBaseType, cmdSel,
+                        DataBaseConnectionString, sqlCmd, _DbParameterCollection).CreateDataReader()) 
+                    {
+                        if (dr.Read())
+                            iOut = clsGeneric.NullToInteger(dr["cnt"]);
+                        if (iOut > 0)
+                            throw new Exception("Update Failed! No Record Exist!");
+                    }
+                    if (iOut == 0)
+                    {
+                        sqlCmd = "UPDATE SAS_StudentSpon SET SASI_MatricNo = @SASI_MatricNo, SASS_Sponsor = @SASS_Sponsor, SASS_SDate = @SASS_SDate, SASS_EDate = @SASS_EDate, SASS_Status = @SASS_Status, SASS_Num = @SASS_Num, SASS_Type = @SASS_Type WHERE SASI_MatricNo = @SASI_MatricNo";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Sponsor", DbType.String, argEn.Sponsor);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_SDate", DbType.String, argEn.SDate);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_EDate", DbType.String, argEn.EDate);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Status", DbType.Boolean, argEn.Status);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Num", DbType.Int32, argEn.Num);
+                            _DatabaseFactory.AddInParameter(ref cmd, "@SASS_Type", DbType.Boolean, argEn.FullySponsered);
+                            _DbParameterCollection = cmd.Parameters;
+
+                            int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+                            
+                            if (liRowAffected > -1)
+                                lbRes = true;
+                            else
+                                throw new Exception("Update Failed! No Row has been updated...");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region Delete 
+
+        /// <summary>
+        /// Method to Delete StudentSponsor 
+        /// </summary>
+        /// <param name="argEn">StudentSponsor Entity is an Input.MatricNo as Input Property.</param>
+        /// <returns>Returns Boolean</returns> 
+        public bool Delete(StudentSponEn argEn)
+        {
+            bool lbRes = false;
+            string sqlCmd = "DELETE FROM SAS_StudentSpon WHERE SASI_MatricNo = @SASI_MatricNo";
+           try
+            {
+                if (!FormHelp.IsBlank(sqlCmd))
+                {
+                    DbCommand cmd = _DatabaseFactory.GetDbCommand(Helper.GetDataBaseType, sqlCmd, DataBaseConnectionString);
+                    _DatabaseFactory.AddInParameter(ref cmd, "@SASI_MatricNo", DbType.String, argEn.MatricNo);
+                    _DbParameterCollection = cmd.Parameters;
+
+                    int liRowAffected = _DatabaseFactory.ExecuteNonQuery(Helper.GetDataBaseType, cmd,
+                                DataBaseConnectionString, sqlCmd, _DbParameterCollection);
+                    
+                    if (liRowAffected > -1)
+                        lbRes = true;
+                    else
+                        throw new Exception("Insertion Failed! No Row has been updated...");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lbRes;
+        }
+
+        #endregion
+
+        #region LoadObject 
+
+        /// <summary>
+        /// Method to Load StudentSponsor Entity 
+        /// </summary>
+        /// <param name="argReader">IDataReader Object is an Input.</param>
+        /// <returns>Returns StudentSponsor Entity</returns>
+        private StudentSponEn LoadObject(IDataReader argReader)
+        {
+            StudentSponEn loItem = new StudentSponEn();
+            loItem.MatricNo = GetValue<string>(argReader, "SASI_MatricNo");
+            loItem.Sponsor = GetValue<string>(argReader, "SASS_Sponsor");
+            loItem.SDate = GetValue<string>(argReader, "SASS_SDate");
+            loItem.EDate = GetValue<string>(argReader, "SASS_EDate");
+            loItem.Status = GetValue<bool>(argReader, "SASS_Status");
+            loItem.Num = GetValue<int>(argReader, "SASS_Num");
+            loItem.FullySponsered = GetValue<bool>(argReader, "SASS_Type");
+            return loItem;
+        }
+
+        private static T GetValue<T>(IDataReader argReader, string argColNm)
+        {
+            if (!argReader.IsDBNull(argReader.GetOrdinal(argColNm)))
+                return (T)argReader.GetValue(argReader.GetOrdinal(argColNm));
+            else
+                return default(T);
+        }
+
+        #endregion
+    }
+
+}

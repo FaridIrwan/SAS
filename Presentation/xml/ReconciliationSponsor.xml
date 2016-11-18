@@ -1,0 +1,199 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>RT000000000000247</transcode>
+    <creditref>1</creditref>
+    <category>Receipt</category>
+    <transamount>20000</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Testing Receipt Sponsor 1</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>1</sasr_code>
+    <sasr_name>JABATAN PERKHIDMATAN AWAM MALAYSIA  (JPA)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>SPT000000000000004</transcode>
+    <creditref>1</creditref>
+    <category>Payment</category>
+    <transamount>0</transamount>
+    <transstatus>Closed</transstatus>
+    <description>qqawerwer</description>
+    <bankcode>A11104</bankcode>
+    <sabd_desc>BCBB (BANKSLIP)</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>1</sasr_code>
+    <sasr_name>JABATAN PERKHIDMATAN AWAM MALAYSIA  (JPA)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>SA000000000000006</transcode>
+    <creditref>2</creditref>
+    <category>Allocation</category>
+    <transamount>180</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test1408</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>RT000000000000235</transcode>
+    <creditref>2</creditref>
+    <category>Receipt</category>
+    <transamount>183</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test1408</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>14/08/2015</transdate>
+    <transcode>SA000000000000007</transcode>
+    <creditref>2</creditref>
+    <category>Allocation</category>
+    <transamount>3</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>18/08/2015</transdate>
+    <transcode />
+    <creditref>2</creditref>
+    <category>Receipt</category>
+    <transamount>0</transamount>
+    <transstatus>Open</transstatus>
+    <description>Loan Description1234</description>
+    <bankcode>A11103</bankcode>
+    <sabd_desc>BCBB CHANNEL-E</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>2</sasr_code>
+    <sasr_name>KEMENTERIAN PELAJARAN MALAYSIA (KPM)</sasr_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>SPT000000000000002</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Payment</category>
+    <transamount>-100</transamount>
+    <transstatus>Closed</transstatus>
+    <description>test</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>SA000000000000008</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Allocation</category>
+    <transamount>250</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>SPT000000000000003</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Payment</category>
+    <transamount>-100</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test for student</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>17/08/2015</transdate>
+    <transcode>RT000000000000248</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test for new student</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>RT000000000000350</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Receipt</category>
+    <transamount>300</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test On Student</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>RT000000000000351</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Receipt</category>
+    <transamount>600</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test On Student</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>RT000000000000352</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Receipt</category>
+    <transamount>900</transamount>
+    <transstatus>Closed</transstatus>
+    <description>Test On Student</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+  <Table>
+    <transdate>20/08/2015</transdate>
+    <transcode>SA000000000000009</transcode>
+    <creditref>NewSponsor</creditref>
+    <category>Allocation</category>
+    <transamount>800</transamount>
+    <transstatus>Closed</transstatus>
+    <description>test</description>
+    <bankcode>A11101</bankcode>
+    <sabd_desc>BCBB</sabd_desc>
+    <transtype>Credit</transtype>
+    <sasr_code>NewSponsor</sasr_code>
+    <sasr_name>New Sponsor</sasr_name>
+  </Table>
+</NewDataSet>

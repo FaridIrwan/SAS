@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <Status>Allocation</Status>
+    <StatusPaymentMode>CHEQUE</StatusPaymentMode>
+    <BankCode>BIMB</BankCode>
+    <Description>ttttt</Description>
+    <CreditRef>SA000000000000001</CreditRef>
+    <CreditRef1>RCPT000000000000003</CreditRef1>
+    <BatchCode>B000000000000031</BatchCode>
+    <BatchDate>24/06/2011</BatchDate>
+    <TransDate>2011-06-24T00:00:00+08:00</TransDate>
+    <SubRef1>PTPTN</SubRef1>
+	<VoucherNo>V-503</VoucherNo>
+	<PocketAmount>100</PocketAmount>
+	<RefCode>20100001</RefCode>
+	<SASI_Name>HELWA BINTI AHMAD</SASI_Name>
+    <SASI_PgId>BACC</SASI_PgId>
+    <TransAmount>0</TransAmount>
+	<SASI_MatricNo>20100001</SASI_MatricNo>
+	<SASI_CurSem>1</SASI_CurSem>
+	<TransAmount1>0.00</TransAmount1>
+  </Table>
+</NewDataSet>

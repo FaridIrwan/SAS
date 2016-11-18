@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <strheader>Debit Note Amount</strheader>
+    <sasi_cursemyr>0120132014</sasi_cursemyr>
+    <MatricNo>PS0130</MatricNo>
+    <StudentName>WAN PUTRI ELENA BINTI WAN DALI</StudentName>
+    <descReceipt>AFC-9120132014</descReceipt>
+    <TransAmount>637.09</TransAmount>
+    <ReceiptNo>INV000000000000002</ReceiptNo>
+    <StudentStatus>PA</StudentStatus>
+    <TransDate>2013-08-29 00:00:00.000</TransDate>
+  </Table>
+</NewDataSet>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99D0C1EB-1E04-4743-834E-9AD364F2E20E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTS.SAS.Entities</RootNamespace>
+    <AssemblyName>HTS.SAS.Entities</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Presentation\Runtime\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Runtime\Documentation\HTS.SAS.Entities.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\Runtime\Documentation\HTS.SAS.Entities.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Presentation\Bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Runtime\System.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsDetailsEn.cs" />
+    <Compile Include="AccountsEn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AFCDetailsEn.cs" />
+    <Compile Include="AFCEn.cs" />
+    <Compile Include="AutoNumberEn.cs" />
+    <Compile Include="BankProfileEn.cs" />
+    <Compile Include="BidangEn.cs" />
+    <Compile Include="BlockEn.cs" />
+    <Compile Include="ChequeDetailsEn.cs" />
+    <Compile Include="ChequeEn.cs" />
+    <Compile Include="ConnectionEn.cs" />
+    <Compile Include="KolejGLAccEn.cs" />
+    <Compile Include="FacultyGLAccEn.cs" />
+    <Compile Include="WorkflowEn.cs" />
+    <Compile Include="WFApprovalListEn.cs" />
+    <Compile Include="WorkflowApproverEn.cs" />
+    <Compile Include="WorkflowPrepaperEn.cs" />
+    <Compile Include="PTPTNSetupEn.cs" />
+    <Compile Include="DegreeTypeEn.cs" />
+    <Compile Include="DepartmentEn.cs" />
+    <Compile Include="DunningLettersEn.cs" />
+    <Compile Include="ErrorLogEn.cs" />
+    <Compile Include="ExportDataEN.cs" />
+    <Compile Include="FacultyEn.cs" />
+    <Compile Include="FeeChargesEn.cs" />
+    <Compile Include="FeeStrAmountEn.cs" />
+    <Compile Include="FeeStrDetailsEn.cs" />
+    <Compile Include="FeeStructEn.cs" />
+    <Compile Include="FeeTypesEn.cs" />
+    <Compile Include="HostelStrAmountEn.cs" />
+    <Compile Include="HostelStrDetailsEn.cs" />
+    <Compile Include="HostelStructEn.cs" />
+    <Compile Include="Interface1.cs" />
+    <Compile Include="KokoEn.cs" />
+    <Compile Include="KolejEn.cs" />
+    <Compile Include="MenuEn.cs" />
+    <Compile Include="MenuMasterEn.cs" />
+    <Compile Include="PayModeEn.cs" />
+    <Compile Include="ProgramAccountEn.cs" />
+    <Compile Include="ProgramInfoEn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RoomTypeEn.cs" />
+    <Compile Include="SelectionCriteriaEn.cs" />
+    <Compile Include="SemesterSetupEn.cs" />
+    <Compile Include="SponserFeeTypesEn.cs" />
+    <Compile Include="SponsorCoverLetterEn.cs" />
+    <Compile Include="SponsorEn.cs" />
+    <Compile Include="StudentBankEn.cs" />
+    <Compile Include="StudentCategoryAccessEn.cs" />
+    <Compile Include="StudentCategoryEn.cs" />
+    <Compile Include="StudentEn.cs" />
+    <Compile Include="StudentSponEn.cs" />
+    <Compile Include="StudentStatusEn.cs" />
+    <Compile Include="StuNotesEn.cs" />
+    <Compile Include="StuSponFeetypesEn.cs" />
+    <Compile Include="UniversityFundEn.cs" />
+    <Compile Include="UniversityProfileEn.cs" />
+    <Compile Include="UserGroupEn.cs" />
+    <Compile Include="UserRightsEn.cs" />
+    <Compile Include="UsersEn.cs" />
+    <Compile Include="WorkflowSetupEn.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
