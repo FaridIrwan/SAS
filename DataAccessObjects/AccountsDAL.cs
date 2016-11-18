@@ -6507,40 +6507,18 @@ public double GetSponserStuAllocateAmount(string BatchId)
 
         public bool UpdatePostingStatus(string BatchCode, string UserId)
         {
-            //create instances
-            IDataReader _IDataReader = null;
-
-            //variable declarations
-            string SqlStatement = null; string UpdateStatement = null; int TransId = 0;
+            string UpdateStatement = null;
+            string transstatus = "Open";
 
             try
             {
-                //Build Sql Statement - Start
-                SqlStatement = "SELECT transid from sas_accounts WHERE batchcode = "
-                    + clsGeneric.AddQuotes(BatchCode);
-                //Build Sql Statement - Stop
+                //Build Update Statement - Start
+                UpdateStatement += "UPDATE sas_accountsdetails AS sas_details SET transcode = substring(sas_details.transtempcode from 2 for Length(sas_details.transtempcode)),poststatus = 'Posted',transstatus=" + clsGeneric.AddQuotes(transstatus) + " ,transtempcode = '' FROM sas_accounts sas_acc WHERE sas_acc.transid = sas_details.transid AND sas_acc.batchcode = " + clsGeneric.AddQuotes(BatchCode) + ";";
 
-                //Get Batch Details - Start
-                _IDataReader = _DatabaseFactory.ExecuteReader(
-                    Helper.GetDataBaseType, DataBaseConnectionString, SqlStatement).CreateDataReader();
-                //Get Batch Details - Stop
+                UpdateStatement += "UPDATE sas_accounts SET transcode = substring(transtempcode from 2 for Length(transtempcode)),poststatus = 'Posted',transstatus=" + clsGeneric.AddQuotes(transstatus) + " ,transtempcode = '',";
 
-                //loop thro the batch details - start
-                while (_IDataReader.Read())
-                {
-                    //Get Transaction Id
-                    TransId = clsGeneric.NullToInteger(_IDataReader[0]);
-                    //Updated Mona 19/2/2016
-                    string transstatus = "Open";
-                    //string transstatus = "Closed";
-
-                    //Build Update Statement - Start
-                    UpdateStatement += "UPDATE sas_accountsdetails SET transcode = substring(transtempcode from 2 for Length(transtempcode)),poststatus = 'Posted',transstatus=" + clsGeneric.AddQuotes(transstatus) + " ,transtempcode = '' WHERE transid = " + TransId + ";";
-                    UpdateStatement += "UPDATE sas_accounts SET transcode = substring(transtempcode from 2 for Length(transtempcode)),poststatus = 'Posted',transstatus=" + clsGeneric.AddQuotes(transstatus) + " ,transtempcode = '',";
-                    UpdateStatement += "postedby = " + clsGeneric.AddQuotes(UserId) + clsGeneric.AddComma() + "postedtimestamp = " + clsGeneric.AddQuotes(Helper.DateConversion(DateTime.Now)) + " WHERE transid = " + TransId + ";";
-                    //Build Update Statement - Stop
-                }
-                //loop thro the batch details - stop
+                UpdateStatement += "postedby = " + clsGeneric.AddQuotes(UserId) + clsGeneric.AddComma() + "postedtimestamp = " + clsGeneric.AddQuotes(Helper.DateConversion(DateTime.Now)) + " WHERE batchcode = " + clsGeneric.AddQuotes(BatchCode) + ";";
+                //Build Update Statement - Stop
 
                 //if update statement successful - Start
                 if (!FormHelp.IsBlank(UpdateStatement))
