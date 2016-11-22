@@ -6520,40 +6520,40 @@ public double GetSponserStuAllocateAmount(string BatchId)
                 UpdateStatement += "postedby = " + clsGeneric.AddQuotes(UserId) + clsGeneric.AddComma() + "postedtimestamp = " + clsGeneric.AddQuotes(Helper.DateConversion(DateTime.Now)) + " WHERE batchcode = " + clsGeneric.AddQuotes(BatchCode) + ";";
                 //Build Update Statement - Stop
 
-                //if update statement successful - Start
                 if (!FormHelp.IsBlank(UpdateStatement))
                 {
                     if (_DatabaseFactory.ExecuteSqlStatement(Helper.GetDataBaseType,
                         DataBaseConnectionString, UpdateStatement) > -1)
                     {
-                        //Added by Hafiz Roslan @ 4/2/2016 - Check for Category = Loan
-                        //updated on 10/2/2016 - category change back to receipt
-                        if (UpdatePostingOnStudLoan(BatchCode, UserId)) { }
+                        //modified by Hafiz @ 22/11/2016 - increases performance
+                        string sqlCmd = "select * from SAS_Accounts WHERE BatchCode = '" + BatchCode + "'";
+                        if (!FormHelp.IsBlank(sqlCmd))
+                        {
+                            using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
+                                DataBaseConnectionString, sqlCmd).CreateDataReader())
+                            {
+                                while (loReader.Read())
+                                {
+                                    AccountsEn loItem = LoadObject(loReader);
+                                    if (loItem.Category == "Receipt" || loItem.Category == "Loan")
+                                    {
+                                        //Category = Loan
+                                        if (UpdatePostingOnStudLoan(BatchCode, UserId)) { return true; }
+                                        if (UpdateStudLoanPaidAmt(BatchCode)) { return true; }
+                                    }
+                                    else if (loItem.Category == "Credit Note" || loItem.Category == "Debit Note")
+                                    {
+                                        //Category = Sponsor Debit/Note
+                                        if (UpdateRecpForSponsCreditDebitNote(BatchCode)) { return true; }
+                                    }
 
-                        //updated of 11/2/2015
-                        if (UpdateStudLoanPaidAmt(BatchCode)) { }
-
-                        //added by Hafiz @ 01/4/2016
-                        //update outstanding amount of the selected batchcode - start
-                        //if (UpdateOutstandingAmtOfReceipt(BatchCode)) { }
-                        //update outstanding amount of the selected batchcode - end
-
-                        //added by Hafiz @ 25/4/2016
-                        //update outstanding amount - start
-                        //string type = "studledger";
-
-                        //if (UpdateOutAmt(BatchCode, type)) { }
-                        if (UpdateOutAmt(BatchCode)) { }
-                        //update outstanding amount - end
-
-                        //added by Hafiz @ 27/5/2016
-                        //update receipt amounts that affected Sponsor Debit/Note - start
-                        if (UpdateRecpForSponsCreditDebitNote(BatchCode)) { }
-                        //update receipt amounts that affected Sponsor Debit/Note - end
-                        return true;
+                                    //update end-result outstanding amount
+                                    if (UpdateOutAmt(BatchCode)) { return true; }
+                                }
+                            }
+                        }
                     }
                 }
-                //if update statement successful - Stop
 
                 return false;
             }
@@ -8157,63 +8157,24 @@ public double GetSponserStuAllocateAmount(string BatchId)
 
         #region UpdateOutAmt
         //added by Hafiz @ 25/4/2016
-        //modified by Hafiz @ 27/5/2016
+        //modified by Hafiz @ 21/11/2016
 
         public bool UpdateOutAmt(String BatchCode)
         {
-            bool res = false;
-            double GetStudOutstndAmt = 0, outamt = 0;
-
-            string sqlCmd = "select * from SAS_Accounts WHERE BatchCode = '" + BatchCode + "'";
+            bool result = false;
 
             try
             {
-                if (!FormHelp.IsBlank(sqlCmd))
+                using (IDataReader loReader = _DatabaseFactory.Update_OutstandingAmount(BatchCode).CreateDataReader())
                 {
-                    using (IDataReader loReader = _DatabaseFactory.ExecuteReader(Helper.GetDataBaseType,
-                        DataBaseConnectionString, sqlCmd).CreateDataReader())
+                    if (loReader != null)
                     {
-                        while (loReader.Read())
+                        if (loReader.Read().Equals(true))
                         {
-                            AccountsEn loItem = LoadObject(loReader);
-                            StudentEn loItemStudEn = new StudentEn();
-
-                            //get outstanding amt
-                            loItemStudEn = GetStudentOutstanding(loItem.CreditRef);
-
-                            if (!string.IsNullOrEmpty(loItemStudEn.MatricNo))
-                            {
-                                if (loItem.PostStatus == "Posted")
-                                {
-                                    if (loItem.TransType == "Credit")
-                                    {
-                                        GetStudOutstndAmt = (loItemStudEn.OutstandingAmount) - (loItem.TransactionAmount);
-                                    }
-                                    else if (loItem.TransType == "Debit")
-                                    {
-                                        GetStudOutstndAmt = (loItemStudEn.OutstandingAmount) + (loItem.TransactionAmount);
-                                    }
-                                }
-
-                                res = UpdateNewOutstandingAmt(loItem.CreditRef, GetStudOutstndAmt);
-
-                            }
-                            else
-                            {
-                                res = InsertOutstandingAmountAfterPosted(loItem);
-                            }
-
-                            //update Receipt Outstanding Amount - start
-                            if (loItem.Category == "Receipt")
-                            {
-                                outamt = (loItemStudEn.OutstandingAmount) - (loItem.TransactionAmount);
-                                UpdateOutAmtTblSASAcc(BatchCode, loItem.CreditRef, outamt);
-                            }
-                            //update Receipt Outstanding Amount - end
+                            result = true;
                         }
-
-                        loReader.Close();
                     }
+                    loReader.Close();
                 }
             }
             catch (Exception ex)
@@ -8221,7 +8182,7 @@ public double GetSponserStuAllocateAmount(string BatchId)
                 throw ex;
             }
 
-            return res;
+            return result;
         }
 
         #endregion

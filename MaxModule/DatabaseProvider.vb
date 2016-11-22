@@ -968,11 +968,45 @@ Public Class DatabaseProvider
             Call Helper.LogError(ex.Message)
 
             Return Nothing
-
         End Try
 
     End Function
 
 #End Region
+
+#Region "Move Function to PLPGSQL"
+    'added by Hafiz @ 21/11/2016 
+
+    Public Function Update_OutstandingAmount(ByVal BatchCode As String) As DataTable
+
+        Dim _DataTable As New DataTable
+        Dim _DbCommand As DbCommand = Nothing
+        Dim _IDataReader As IDataReader = Nothing
+
+        Try
+            Dim _NpgsqlDatabase As NpgsqlDatabase = New NpgsqlDatabase(Helper.NpgSqlConnectionString())
+            _DbCommand = _NpgsqlDatabase.GetStoredProcCommand("Update_OutstandingAmount")
+            _NpgsqlDatabase.AddInParameter(_DbCommand, "BatchCode", DbType.String, BatchCode)
+            _DbCommand.CommandTimeout = Helper.CommandTimeOut
+
+            _IDataReader = _NpgsqlDatabase.ExecuteReader(_DbCommand)
+            _DataTable.Load(_IDataReader)
+
+            Return _DataTable
+
+        Catch ex As Exception
+
+            'log error
+            Call Helper.LogError(ex.Message)
+
+            Return Nothing
+
+        End Try
+
+    End Function
+
+
+#End Region
+
 
 End Class

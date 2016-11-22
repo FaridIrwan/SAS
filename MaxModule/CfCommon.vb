@@ -602,6 +602,7 @@ Public Class CfCommon
                 Case Helper.DataBaseType.PostGres
                     Dim _NpgsqlDatabase As NpgsqlDatabase = New NpgsqlDatabase(Helper.FinancialsConnectionString)
                     _DbCommand = _NpgsqlDatabase.GetSqlStringCommand(SqlStatement)
+                    _DbCommand.CommandTimeout = Helper.CommandTimeOut
                     _DbDataReader = _NpgsqlDatabase.ExecuteReader(_DbCommand)
                     If _DbDataReader.HasRows Then
                         Return True
@@ -624,7 +625,9 @@ Public Class CfCommon
 
             'log error
             Call Helper.LogError(ex.Message)
-
+        Finally
+            _DbDataReader.Close()
+            _DbCommand.Dispose()
         End Try
 
     End Function

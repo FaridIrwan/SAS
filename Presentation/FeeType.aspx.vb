@@ -1124,7 +1124,7 @@ Partial Class Feetype
                         imgGL.ImageUrl = "~/images/cross.png"
                         lblMsg.Visible = True
                         lblMsg.Text = "Enter Valid GL Account"
-                        res = False
+                        Return False
                     End If
                 End If
 
@@ -1278,7 +1278,7 @@ Partial Class Feetype
                         imgGL.ImageUrl = "~/images/cross.png"
                         lblMsg.Visible = True
                         lblMsg.Text = "Enter Valid GL Account"
-                        res = False
+                        Return False
                     End If
                 End If
 
